@@ -9,7 +9,7 @@ import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import { login } from "../services/authServices";
 import { useNavigate } from "react-router-dom";
-import { useGlobalState } from "../utils/StateContext";
+// import { useGlobalState } from "../utils/StateContext";
 
 function SignIn() {
   const initialFormState = {
@@ -18,7 +18,8 @@ function SignIn() {
   };
 
   const [formState, setFormState] = useState(initialFormState);
-  const { dispatch } = useGlobalState();
+// ! using seesion storage instead
+//   const { dispatch } = useGlobalState();
   let navigate = useNavigate();
 
   //setup onchange for email and password
@@ -56,10 +57,11 @@ function SignIn() {
         sessionStorage.setItem("token", token);
         // ? bot suer do we need this
         sessionStorage.setItem("user", JSON.stringify(user));
-        // ! stringfy the user data 
+        // ! stringfy the user data, compare with sesion Storage
         // localStorage.setItem("user", JSON.stringify(user));
-        dispatch({ type: "setLoggedInUser", data: JSON.stringify(user) });
-        dispatch({ type: "setToken", data: token });
+        // ! using seesionstorage instead
+        // dispatch({ type: "setLoggedInUser", data: JSON.stringify(user) });
+        // dispatch({ type: "setToken", data: token });
         //go to home page
         navigate("/");
       })

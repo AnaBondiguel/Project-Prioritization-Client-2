@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Grid from '@mui/material/Grid';
 import { Typography, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { useGlobalState } from "../utils/StateContext";
+// import { useGlobalState } from "../utils/StateContext";
 import { logout } from "../services/authServices";
 
 
@@ -15,9 +15,12 @@ const Header = () => {
       const [data, setData] = useState(initialData);
 
       let navigate = useNavigate();
-      const { dispatch } = useGlobalState();
-      // no need loggedInUser
+      
+      // const { dispatch } = useGlobalState();
+      // !! no need loggedInUser
       // const {loggedInUser} = store;
+
+
       // ! set sessionStorage no need loggInUser so need to optimize 
       const user = JSON.parse(sessionStorage.getItem("user"));
       // console.log(user);
@@ -27,10 +30,11 @@ const Header = () => {
       function handleLogout(event) {
         event.preventDefault();
         logout()
-        .then(() => {
-            dispatch({type: "setLoggedInUser", data: null});
-            dispatch({type: "setToken", data: null});
-        })
+        // ! using sessionStorage no need global dispatch
+        // .then(() => {
+        //     dispatch({type: "setLoggedInUser", data: null});
+        //     dispatch({type: "setToken", data: null});
+        // })
       }
 
       //setup OnChange for search bar 
