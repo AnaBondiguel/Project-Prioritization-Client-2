@@ -3,7 +3,7 @@ import axios from 'axios';
 // Define an API
 const projectAPI = axios.create({
    //deployment for backend
-    baseURL: 'http://localhost:4000'
+    baseURL: 'http://localhost:55000'
 })
 
 //If we don't have these code, it will give us 401 error, we are not specified any authorization header to our request. 

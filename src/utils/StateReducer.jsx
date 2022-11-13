@@ -74,6 +74,9 @@ export default function reducer (state, action) {
                 }
             }
         }
+        case 'setUser': {
+            return
+        }
         // case 'saveTicket': {
         //     const ticket = state.tickets.find((ticket) => ticket.id == action.data.id)
         //     const updatedTicket = Object.assign(ticket, action.data) 

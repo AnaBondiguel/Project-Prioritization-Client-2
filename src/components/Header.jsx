@@ -15,15 +15,21 @@ const Header = () => {
       const [data, setData] = useState(initialData);
 
       let navigate = useNavigate();
-      const {store, dispatch} = useGlobalState();
-      const {loggedInUser} = store;
+      const { dispatch } = useGlobalState();
+      // no need loggedInUser
+      // const {loggedInUser} = store;
+      // ! set sessionStorage no need loggInUser so need to optimize 
+      const user = JSON.parse(sessionStorage.getItem("user"));
+      // console.log(user);
+      
     //setup a function to handle logout. We set login user in the token back to null when they log out.
+    // ! need to optimize this function
       function handleLogout(event) {
         event.preventDefault();
-        logout().then(() => {
+        logout()
+        .then(() => {
             dispatch({type: "setLoggedInUser", data: null});
             dispatch({type: "setToken", data: null});
-    
         })
       }
 
@@ -82,11 +88,12 @@ const Header = () => {
             <input type="text" onChange={handleOnChange}></input>
           </Grid>
           <Grid item xs>
-            {loggedInUser ? (
+            {/* change from logginUser to user */}
+            {user ? (
               <>
                 <Grid container spacing={1}>
                   <Grid item xs={4}>
-                    <Typography m={2}>Hello, {loggedInUser.email}</Typography>
+                    <Typography m={2}>Hello, {user.email}</Typography>
                   </Grid>
                   <Grid item xs={4}>
                     <Button variant="contained" onClick={handleLogout}>
