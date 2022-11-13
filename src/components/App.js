@@ -36,11 +36,11 @@ function App() {
     confidences: [],
     efforts: [],
     tickets: null,
-    loggedInUser: sessionStorage.getItem("user") || null,
-    auth: sessionStorage.getItem("token") || null,
+    loggedInUser: localStorage.getItem("user") || null,
+    auth: localStorage.getItem("token") || null,
   };
   const [store, dispatch] = useReducer(reducer, initialState);
-  const { loggedInUser} = store;
+  const { loggedInUser } = store;
 
   useEffect(() => {
     if (!loggedInUser){
@@ -82,7 +82,8 @@ function App() {
 
 
   return (
-    <StateContext.Provider value={{ store, dispatch }}>
+    // ! use ...store to pass array value no need to get store in eveay global state
+    <StateContext.Provider value={{ ...store, dispatch }}>
     <div className="App">
         <Header />
         <Container maxWidth='lg'>

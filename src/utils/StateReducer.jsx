@@ -60,21 +60,21 @@ export default function reducer (state, action) {
         }
 
         // !using sessionStorage instead
-        // case 'setLoggedInUser': {
-        //     return {
-        //         ...state,
-        //         loggedInUser: action.data
-        //     }
-        // }
-        // case 'setToken': {
-        //     return {
-        //         ...state,
-        //         auth: {
-        //             ...state.auth,
-        //             token: action.data
-        //         }
-        //     }
-        // }
+        case 'setLoggedInUser': {
+            return {
+                ...state,
+                loggedInUser: action.data
+            }
+        }
+        case 'setToken': {
+            return {
+                ...state,
+                auth: {
+                    ...state.auth,
+                    token: action.data
+                }
+            }
+        }
 
 
         case 'setUser': {

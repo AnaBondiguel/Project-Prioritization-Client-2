@@ -9,7 +9,7 @@ import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
 import { login } from "../services/authServices";
 import { useNavigate } from "react-router-dom";
-// import { useGlobalState } from "../utils/StateContext";
+import { useGlobalState } from "../utils/StateContext";
 
 function SignIn() {
   const initialFormState = {
@@ -18,8 +18,10 @@ function SignIn() {
   };
 
   const [formState, setFormState] = useState(initialFormState);
+  // * set error
+  const[error, setError] = useState(null);
 // ! using seesion storage instead
-//   const { dispatch } = useGlobalState();
+  const { dispatch } = useGlobalState();
   let navigate = useNavigate();
 
   //setup onchange for email and password
@@ -52,7 +54,7 @@ function SignIn() {
             return <TicketForm disabledFields={['priority']} />
             */
         // console.log(user);
-
+            
         let token = data.token;
         localStorage.setItem("token", token);
         // ? bot suer do we need this
@@ -60,12 +62,13 @@ function SignIn() {
         // ! stringfy the user data, compare with sesion Storage
         // localStorage.setItem("user", JSON.stringify(user));
         // ! using seesionstorage instead
-        // dispatch({ type: "setLoggedInUser", data: JSON.stringify(user) });
-        // dispatch({ type: "setToken", data: token });
+        dispatch({ type: "setLoggedInUser", data: JSON.stringify(user) });
+        dispatch({ type: "setToken", data: token });
         //go to home page
         navigate("/");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setError(error.response.data.error)); // ! ger error message when log in faild
+      
   }
 
   return (
@@ -88,6 +91,11 @@ function SignIn() {
             value={formState.password}
             onChange={handleChange}
           ></input>
+
+        {/* ！！ set the error info when faild log in */}
+          {error && <div className="error">{error}</div>}
+          
+          
           <br></br> <br></br>
           <FormControlLabel
             control={<Checkbox defaultChecked />}

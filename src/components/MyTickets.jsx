@@ -7,8 +7,8 @@ import { getTickets } from "../services/ticketServices";
 
 function MyTickets(){
     let navigate = useNavigate();
-    const { store, dispatch } = useGlobalState();
-    const { tickets, loggedInUser } = store;
+    const { tickets, loggedInUser, dispatch } = useGlobalState();
+    // const { tickets, loggedInUser } = store;
     const [dense] = React.useState(false);
 
 // Get the list of tickets
