@@ -22,14 +22,15 @@ const Header = () => {
 
 
       // ! set sessionStorage no need loggInUser so need to optimize 
-      const user = JSON.parse(sessionStorage.getItem("user"));
+      const user = JSON.parse(localStorage.getItem("user"));
       // console.log(user);
       
     //setup a function to handle logout. We set login user in the token back to null when they log out.
     // ! need to optimize this function
       function handleLogout(event) {
         event.preventDefault();
-        logout()
+        logout();
+        navigate('/')
         // ! using sessionStorage no need global dispatch
         // .then(() => {
         //     dispatch({type: "setLoggedInUser", data: null});

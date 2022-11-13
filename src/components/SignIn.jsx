@@ -54,9 +54,9 @@ function SignIn() {
         // console.log(user);
 
         let token = data.token;
-        sessionStorage.setItem("token", token);
+        localStorage.setItem("token", token);
         // ? bot suer do we need this
-        sessionStorage.setItem("user", JSON.stringify(user));
+        localStorage.setItem("user", JSON.stringify(user));
         // ! stringfy the user data, compare with sesion Storage
         // localStorage.setItem("user", JSON.stringify(user));
         // ! using seesionstorage instead
