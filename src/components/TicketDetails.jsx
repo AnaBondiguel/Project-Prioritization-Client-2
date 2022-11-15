@@ -51,27 +51,35 @@ const TicketDetails = () => {
               <p>Target: {ticket.target}</p>
               <p>Due Date: {dateFormat(ticket.dueDate, "ddd, mmm dS, yyyy")}</p>
               <p>Author: {ticket.author.email}</p>
-              {/* test to get user role */}
-              <p>Author Role: {user.role}</p>
+
               {/* test get submitted conditions */}
-              <p>isSubmitted: {ticket.isSubmitted ? <p> Yes </p> : <p> Not submitted </p> }</p>
+              <p>
+                isSubmitted:{" "}
+                {ticket.isSubmitted ? <p> Yes </p> : <p> Not submitted </p>}
+              </p>
             </Grid>
             <Grid item xs={8}>
               <p>Impact: {ticket.impact}</p>
               <p>Confidence: {ticket.confidence}</p>
               <p>Effort: {ticket.effort}</p>
-              <p>ICE Score: {iceScoreCalculation(ticket.impact, ticket.confidence, ticket.effort)}</p>
+              <p>
+                ICE Score:{" "}
+                {iceScoreCalculation(
+                  ticket.impact,
+                  ticket.confidence,
+                  ticket.effort
+                )}
+              </p>
               <p>Priority: {ticket.priorityValue}</p>
+
+              {/* test to get user role */}
+              <p>Current User Role: {user.role}</p>
               <p>Feedback: {ticket.feedback}</p>
             </Grid>
           </Grid>
 
           <Box>
-            <Button
-              onClick={() =>
-                navigate(`/mytickets/update/${_id}` )
-              }
-            >
+            <Button onClick={() => navigate(`/mytickets/update/${_id}`)}>
               Edit
             </Button>
             <Button onClick={handleDelete}>Delete</Button>
