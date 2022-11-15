@@ -38,7 +38,7 @@ function Listings(){
        
     }, [dispatch, loggedInUser])
   
-    // if(!tickets) return "null";
+    if(!tickets) return "null";
 
     return (
       //if users log in their account, they can see their tickets, otherwise, please sign in. 
