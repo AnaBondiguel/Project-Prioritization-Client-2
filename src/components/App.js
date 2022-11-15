@@ -43,47 +43,40 @@ function App() {
   const { loggedInUser } = store;
 
   useEffect(() => {
-    if (!loggedInUser){
+    // const user = JSON.parse(localStorage.getItem("user"));
+    // if (user) {
+    //   dispatch({ type: "setLoggedInUser", data: user });
+    // }
+    if (!loggedInUser) {
       return;
     }
 
     getTickets()
-      .then((tickets) =>
-        dispatch({ type: "setTickets", data: tickets })
-      )
+      .then((tickets) => dispatch({ type: "setTickets", data: tickets }))
       .catch((error) => console.log(error));
 
-      getTargets()
-      .then((targets) =>
-        dispatch({ type: "setTargets", data: targets })
-      )
+    getTargets()
+      .then((targets) => dispatch({ type: "setTargets", data: targets }))
       .catch((error) => console.log(error));
 
-      getImpacts()
-      .then((impacts) =>
-        dispatch({ type: "setImpacts", data: impacts })
-      )
+    getImpacts()
+      .then((impacts) => dispatch({ type: "setImpacts", data: impacts }))
       .catch((error) => console.log(error));
 
-      getConfidences()
+    getConfidences()
       .then((confidences) =>
         dispatch({ type: "setConfidences", data: confidences })
       )
       .catch((error) => console.log(error));
 
-      getEfforts()
-      .then((efforts) =>
-        dispatch({ type: "setEfforts", data: efforts })
-      )
+    getEfforts()
+      .then((efforts) => dispatch({ type: "setEfforts", data: efforts }))
       .catch((error) => console.log(error));
-
-
   }, [loggedInUser]);
 
 
   return (
-    // ! use ...store to pass array value no need to get store in eveay global state
-    <StateContext.Provider value={{ ...store, dispatch }}>
+    <StateContext.Provider value={{ store, dispatch }}>
     <div className="App">
         <Header />
         <Container maxWidth='lg'>
@@ -103,7 +96,7 @@ function App() {
           <Route path="signup" element={<SignUp />} />
           <Route path="searchresults" element={<SearchResults />} />
           <Route path="submissionsuccess" element={<SubmissionSuccess />} />
-          <Route path="mytickets/:id" element={<TicketDetails  />} />
+          <Route path="mytickets/:_id" element={<TicketDetails  />} />
           {/* <Route path="mytickets/update/:id" element={<EditTicket  />} /> */}
          
           {/* <Route path="*" element={<NotFound />} /> */}

@@ -34,27 +34,32 @@ import projectAPI from "../config/api";
 
 function transformTicket(ticket) {
  let transformedTicket = {
-    author: ticket.username,
-    initiative: ticket.initiative,
+    author: ticket.author,
+    initialtive: ticket.initialtive,
     description: ticket.description,
     target: ticket.target,
     impact: ticket.impact,
     confidence: ticket.confidence,
     effort: ticket.effort,
     dueDate: ticket.dueDate,
-    ICE_Score: ticket.ICE_Score,
-    priority: ticket.priority,
-    feedback: ticket.feedback,
   };
   return transformedTicket;
 }
 
-//get all tickets
+//get my tickets
 export async function getTickets() {
-  const response = await projectAPI.get('/api/tickets');
+  const response = await projectAPI.get('/api/tickets/myTickets');
   return response.data;
   // return tickets;
 }
+
+//get all the tickets
+export async function getAllTickets() {
+  const response = await projectAPI.get('/api/tickets/submitted');
+  return response.data;
+  // return tickets;
+}
+
 
 //get a single ticket
 export async function getTicket(id) {
@@ -84,18 +89,18 @@ export async function deleteTicket(id) {
 //update a ticket
 export async function updateTicket(ticket) {
    //return ticket;
-  let updatedTicket = {
-    initiative: ticket.initiative,
-		description: ticket.description,
-    target: ticket.target,
-    impact: ticket.impact,
-    confidence: ticket.confidence,
-    effort: ticket.effort,
-    dueDate: ticket.duedate,
-    ICE_Score: ticket.ICE_Score,
-    priority: ticket.priority,
-	}
-	const response = await projectAPI.put(`/api/tickets/${ticket.id}`, updatedTicket);
+  // let updatedTicket = {
+  //   initiative: ticket.initialtive,
+	// 	description: ticket.description,
+  //   target: ticket.target,
+  //   impact: ticket.impact,
+  //   confidence: ticket.confidence,
+  //   effort: ticket.effort,
+  //   dueDate: ticket.duedate,
+  //   ICE_Score: ticket.ICE_Score,
+  //   priority: ticket.priority,
+	// }
+	const response = await projectAPI.put(`/api/tickets/${ticket.id}`, ticket);
 	return response.data;
 }
 

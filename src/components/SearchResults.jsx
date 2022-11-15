@@ -4,28 +4,28 @@ import {Link} from "react-router-dom";
 
   function SearchResults(){
     let initialData = {
-        projects: [],
+        tickets: [],
         userInput: "",
       };
     
       const [data] = useState(initialData);
 
-    function getFilteredProjects() {
+    function getFilteredTickets() {
         if(!data.userInput) {
-            return data.projects;
+            return data.tickets;
         }
-        let filteredProjects = data.projects.filter((project) => {
-            return project.includes(data.userInput);
+        let filteredTickets = data.tickets.filter((ticket) => {
+            return ticket.includes(data.userInput);
         });
-        return filteredProjects;
+        return filteredTickets;
       }
 
     return (
         <div>
             <h1>Search Results</h1>
                 <ul>
-                    {getFilteredProjects().map((project, index) => {
-                        return <li key={index}><Link to={project}>{project}</Link></li>;
+                    {getFilteredTickets().map((ticket, index) => {
+                        return <li key={index}><Link to={ticket}>{ticket}</Link></li>;
                     })}
                 </ul>
         </div>

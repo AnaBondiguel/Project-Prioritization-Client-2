@@ -23,7 +23,6 @@ function SignUp() {
       ...formState,
       [event.target.name]: event.target.value,
     });
-    
   }
 
   //setup submit button for sign up
@@ -35,8 +34,15 @@ function SignUp() {
       //   console.log("registered", data);
       // set token in session storage later
       sessionStorage.setItem("token", token);
-      sessionStorage.setItem("user", user);
-      dispatch({ type: "setLoggedInUser", data: [...user] });
+      // user = { username: '...', email: './..'}
+      // user = '{ username: "", email: "" ... }'
+      // sessionStorage.setItem("value", 5) // '5' Number(sessionStorage.getItem('value'))
+      sessionStorage.setItem("user", JSON.stringify(user)); //sessionstorage allows string 
+      // sessionStorage.getItem("user") // returns string
+      // then you need to parse the string
+      // user = JSON.parse(sessionStorage.getItem('user'))
+      // todo: check if this is needed
+      dispatch({ type: "setLoggedInUser", data: user });
       dispatch({ type: "setToken", data: token });
       navigate("/");
     });
