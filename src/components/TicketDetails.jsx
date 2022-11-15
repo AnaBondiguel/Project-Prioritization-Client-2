@@ -69,7 +69,7 @@ const TicketDetails = () => {
           <Box>
             <Button
               onClick={() =>
-                navigate(`/mytickets/update/${_id}`, { state: ticket })
+                navigate(`/mytickets/update/${_id}` )
               }
             >
               Edit

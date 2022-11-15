@@ -27,14 +27,14 @@ function Listings(){
       //     // console.log("tickets inside:", tickets)
       //     dispatch ({type: "setTickets", data: tickets})
       //   })
-        const fetchSubmittedTickets =async () => {
+        const fetchSubmittedTickets = async () => {
           const result = await getAllTickets();
           dispatch({type: "setTickets", data: result})
         }
       
-        // if (loggedInUser){
+        if (loggedInUser){
           fetchSubmittedTickets()
-        // }
+        }
        
     }, [dispatch, loggedInUser])
   
@@ -67,7 +67,9 @@ function Listings(){
                   >
                     <TableCell align="left">{ticket.priority} </TableCell>
 
-                    <Link to={`/mytickets/${ticket._id}`}>
+                    <Link to={`/mytickets/${ticket._id}`} state={{ 
+                ticket: JSON.stringify(ticket)
+              }}>
                       <TableCell align="right">{ticket.initialtive} </TableCell>
                     </Link>
 
