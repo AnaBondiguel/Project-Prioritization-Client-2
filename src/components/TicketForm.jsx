@@ -35,15 +35,18 @@ import { v4 as uuidv4 } from "uuid";
 
 const target = ["Free", "Pro", "Teams", "Education", "All", "Others"]
 
-function TicketForm(state) {
+function TicketForm() {
   const location = useLocation();
-  // console.log(location.state);
+  console.log(location.state)
   
   if (location.state) {
-    var initialDate = location.state.dueDate
-  } else {
-     initialDate = Date.now();
-  }
+  var ticket = JSON.parse(location.state.ticket) 
+  var initialDate = ticket.dueDate;
+} else {
+  initialDate = null;
+}
+  console.log(ticket);
+  
 
   const initialFormState = {
     initialtive: "",
@@ -69,7 +72,7 @@ function TicketForm(state) {
   // const [ticket, setTicket] = useState(null);
   const [formState, setFormState] = useState(initialFormState);
   const { dispatch, store } = useGlobalState();
-  const { targets, impacts, confidences, efforts } = store;
+  const { impacts, confidences, efforts } = store;
   // ! date is in ininitialFormState no need another one
   const [dateValue, setDateValue] = useState(initialDate); //for date picker
 
@@ -98,10 +101,10 @@ function TicketForm(state) {
       
       return {
         ...state, // this is the initialFormState
-        ...location.state, // this is the ticket details
+        ...ticket, // this is the ticket details
       };
     });
-  }, [location]);
+  }, [ticket]);
 
   function handleChange(event) {
     setFormState({

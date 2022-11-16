@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Box, Button, Typography, Paper, Grid } from "@mui/material";
-import { useNavigate, useParams, useLocation } from "react-router-dom";
+import { useNavigate, useParams, useLocation,Link } from "react-router-dom";
 import {
   deleteTicket,
   getTicket,
@@ -79,7 +79,16 @@ const TicketDetails = () => {
         </Grid>
 
         <Box>
-          <Button onClick={() => navigate(`/mytickets/update/${_id}`)}>
+          <Button
+            // onClick={() => {
+            //   navigate(`/mytickets/update/${_id}`);
+            // }}
+            component={Link}
+            to={`/mytickets/update/${_id}`}
+            state={{ 
+              ticket: JSON.stringify(ticket)
+            }}
+          >
             Edit
           </Button>
           <Button onClick={handleDelete}>Delete</Button>
@@ -94,8 +103,9 @@ const TicketDetails = () => {
           <Feedbacks />
         </Paper>
       ) : (
-        <Paper>No feedback because current user role is {user.role}
-        <p>{user.email}</p>
+        <Paper>
+          No feedback because current user role is {user.role}
+          <p>{user.email}</p>
         </Paper>
       )}
     </div>
