@@ -20,7 +20,7 @@ export default function Feedbacks() {
    
       fetchFeedback()
     
-  }, [dispatch])
+  }, [dispatch, _id])
   
   return (
     <>
