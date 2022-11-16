@@ -1,27 +1,31 @@
 import React, {useEffect} from 'react'
 import { useGlobalState } from "../utils/StateContext";
-import {getFeedback} from '../services/feedbackServices'
+import {getFeedback} from '../services/feedbackServices';
+import { useParams } from "react-router-dom";
 
 
-export default function Feedbacks({ticket}) {
-  const {feedback,store,dispatch} = useGlobalState();
-  // console.log(store.loggedInUser)
-  // console.log(ticket)
-  const user = JSON.parse(store.loggedInUser)
+export default function Feedbacks() {
+  const {store,dispatch} = useGlobalState();
+  const {feedbacks} = store
+ console.log(feedbacks)
+  // const user = JSON.parse(store.loggedInUser)
+  const { _id } = useParams();
+  
   useEffect(() =>{
     const fetchFeedback = async () =>{
-      const response = await getFeedback(ticket._id)
+      const response = await getFeedback(_id)
       dispatch({ type: "setFeedbacks", data: response})
     }
 
-    if (user.role === "manager" || user.id === ticket.author.id) {
+   
       fetchFeedback()
-    }
-  }, [dispatch, user, ticket])
+    
+  }, [dispatch])
   
   return (
     <>
   <h1> This is Feedback form page</h1>
+  <p>{feedbacks.findFeedback[0].context}</p>
     </>
 
   );

@@ -72,10 +72,17 @@ export default function reducer(state, action) {
     case "setFeedbacks": {
       return {
         ...state,
-        tickets: action.data,
+        feedbacks: action.data,
       };
     }
 
+    case "createFeedbacks": {
+      return {
+        ...state,
+        feedbacks: [action.data, ...(state.feedbcaks || [])],
+      };
+    }
+    
     case "setLoggedInUser": {
       return {
         ...state,

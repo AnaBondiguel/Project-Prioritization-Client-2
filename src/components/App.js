@@ -45,7 +45,7 @@ function App() {
     confidences: [],
     efforts: [],
     tickets: null,
-    feedback: null,
+    feedbacks: null,
     loggedInUser: localStorage.getItem("user") || null,
     auth: localStorage.getItem("token") || null,
   };
