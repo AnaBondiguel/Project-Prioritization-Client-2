@@ -33,7 +33,8 @@ import { v4 as uuidv4 } from "uuid";
  * }, [location.state])
  */
 
-const target = ["?", "Small", "Medium", "Large", "Xlarge"]
+const target = ["Free", "Pro", "Teams", "Education", "All", "Others"]
+
 function TicketForm(state) {
   const location = useLocation();
   // console.log(location.state);
