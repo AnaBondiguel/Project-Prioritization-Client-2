@@ -63,7 +63,7 @@ const TicketDetails = () => {
               <p>Confidence: {ticket.confidence}</p>
               <p>Effort: {ticket.effort}</p>
               <p>
-                ICE Score:{" "}
+                ICE Score:
                 {iceScoreCalculation(
                   ticket.impact,
                   ticket.confidence,
