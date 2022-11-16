@@ -33,7 +33,7 @@ export default function reducer(state, action) {
     case "addTicket": {
       return {
         ...state,
-        tickets: [action.data, ...(state.tickets || [])],
+        tickets: [action.data, ...state.tickets],
       };
     }
     case "deleteTicket": {
