@@ -13,7 +13,8 @@ export default function Feedbacks() {
   useEffect(() => {
     const fetchFeedback = async () => {
       const response = await getFeedback(_id);
-      dispatch({ type: "setFeedbacks", data: response });
+      // console.log(response);
+      dispatch({ type: "setFeedbacks", data: response.findFeedback });
     };
 
     fetchFeedback();
@@ -21,8 +22,8 @@ export default function Feedbacks() {
 
   if (!feedbacks) return;
 
-  if (feedbacks.findFeedback.length > 0) {
-    return <p>{feedbacks.findFeedback[0].context}</p>;
+  if (feedbacks.length >0) {
+    return <p>{feedbacks[0].context}</p>;
   } else {
     return <p>Haha, this is Feedbacks page</p>;
   }
