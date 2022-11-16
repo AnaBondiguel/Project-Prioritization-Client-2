@@ -7,9 +7,8 @@ import { getTickets } from "../services/ticketServices";
 import iceScoreCalculation from "./ICE_Score";
 
 function TicketsList({ tickets, onAddTicketClick }) {
-  
   // console.log(tickets);
-  
+
   return (
     <>
       <Typography variant="h4" align="left">
@@ -32,7 +31,7 @@ function TicketsList({ tickets, onAddTicketClick }) {
               >
                 <Typography>
                   Initative: {ticket.initialtive} By {ticket.author.email} &
-                  ICE:{" "}
+                  ICE:
                   {iceScoreCalculation(
                     ticket.impact,
                     ticket.confidence,
@@ -70,19 +69,18 @@ function MyTickets() {
     //   if (!loggedInUser) {
     //     return;
     //   }
-    // ! rewrite 
+    // ! rewrite
     const fetchMyTickets = async () => {
-      const result = await getTickets()
-      dispatch({ type: "setTickets", data: result})
-    }
-    if (loggedInUser){
+      const result = await getTickets();
+      dispatch({ type: "setTickets", data: result });
+    };
+    if (loggedInUser) {
       fetchMyTickets();
     }
-    
-    }, [dispatch, loggedInUser]);
+  }, [dispatch, loggedInUser]);
 
   const ticketsView =
-    (tickets && tickets.length > 0) ? (
+    tickets && tickets.length > 0 ? (
       <TicketsList
         tickets={tickets}
         onAddTicketClick={() => navigate("/newticket")}

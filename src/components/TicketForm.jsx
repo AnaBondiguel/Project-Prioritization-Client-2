@@ -37,7 +37,7 @@ const target = ["Free", "Pro", "Teams", "Education", "All", "Others"]
 
 function TicketForm() {
   const location = useLocation();
-  console.log(location.state)
+  // console.log(location.state)
   
   if (location.state) {
   var ticket = JSON.parse(location.state.ticket) 
@@ -45,7 +45,7 @@ function TicketForm() {
 } else {
   initialDate = null;
 }
-  console.log(ticket);
+  // console.log(ticket);
   
 
   const initialFormState = {
@@ -97,14 +97,13 @@ function TicketForm() {
     //setFormState(location.state)
 
     // state = initialFormState
-    setFormState((state) => {
-      
+    setFormState((state) => {     
       return {
         ...state, // this is the initialFormState
         ...ticket, // this is the ticket details
       };
     });
-  }, [ticket]);
+  }, []);
 
   function handleChange(event) {
     setFormState({
