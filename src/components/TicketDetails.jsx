@@ -49,7 +49,7 @@ const TicketDetails = () => {
   // console.log(_id)
   // console.log(ticket);
 
-  if (!ticket) return null;
+  if (!ticket || !user) return null;
 
   return (
     <div>

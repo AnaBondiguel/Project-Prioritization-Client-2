@@ -6,7 +6,6 @@ export async function getFeedback(ticketid) {
 }
 
 export async function createFeedback(feedback) {
-  console.log(feedback);
   const response = await projectAPI.post(
     `/api/tickets/${feedback.ticketId}/feedbacks`,
     feedback

@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 export default function Feedbacks() {
   const { store, dispatch } = useGlobalState();
   const { feedbacks } = store;
-  console.log(feedbacks);
+  // console.log(feedbacks);
   // const user = JSON.parse(store.loggedInUser)
   const { _id } = useParams();
 

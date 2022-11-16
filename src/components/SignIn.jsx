@@ -51,7 +51,8 @@ function SignIn(){
 
             return <TicketForm disabledFields={['priority']} />
             */
-            console.log(user)  
+            // ! get user info
+            // console.log(user)  
 
             const token = data.token;
             localStorage.setItem("token", token);
