@@ -94,7 +94,7 @@ const TicketDetails = () => {
           <Feedbacks />
         </Paper>
       ) : (
-        <Paper>No feedback</Paper>
+        <Paper>No feedback because current user role is {user.role}</Paper>
       )}
     </div>
   );
