@@ -103,7 +103,7 @@ function TicketForm() {
         ...ticket, // this is the ticket details
       };
     });
-  }, []);
+  }, [ticket]);
 
   function handleChange(event) {
     setFormState({

@@ -16,6 +16,6 @@ export async function login(data) {
 
 export async function logout() {
   //clear the token of the current user when we press logout
-  localStorage.clear();
+  // localStorage.clear();
   return "Logged out.";
 }

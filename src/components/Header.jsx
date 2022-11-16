@@ -24,8 +24,8 @@ const Header = () => {
         logout().then(() => {
             dispatch({type: "setLoggedInUser", data: null});
             dispatch({type: "setToken", data: null});
-            // localStorage.removeItem('user');
-            // localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            localStorage.removeItem('token');
         })
       }
 

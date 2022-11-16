@@ -53,8 +53,8 @@ export default function reducer(state, action) {
       };
     }
     case "updateTicket": {
-      const ticket = state.tickets.find((ticket) => 
-        ticket._id === action.data.id
+      const ticket = state.tickets.find(
+        (ticket) => ticket._id === action.data.id
       );
       console.log(ticket);
       console.log(action.data);
@@ -67,7 +67,13 @@ export default function reducer(state, action) {
         ...state,
         tickets: [updatedTicket, ...otherTickets],
       };
-  
+    }
+
+    case "setFeedbacks": {
+      return {
+        ...state,
+        tickets: action.data,
+      };
     }
 
     case "setLoggedInUser": {

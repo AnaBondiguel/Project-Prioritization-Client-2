@@ -1,34 +1,42 @@
 import { React, useEffect, useReducer } from "react";
-import MyTickets from './MyTickets';
-import TicketForm from './TicketForm';
-import TicketDetails from './TicketDetails';
-import Listings from './Listings';
-import SearchResults from './SearchResults';
-import SubmissionSuccess from './SubmissionSuccess';
-import SignIn from './SignIn';
-import SignUp from './SignUp';
-import Feedbacks from "./Feedbacks";
-import Container from '@mui/material/Container';
-import NavBar from './NavBar';
+import MyTickets from "./MyTickets";
+import TicketForm from "./TicketForm";
+import TicketDetails from "./TicketDetails";
+import Listings from "./Listings";
+import SearchResults from "./SearchResults";
+import SubmissionSuccess from "./SubmissionSuccess";
+import SignIn from "./SignIn";
+import SignUp from "./SignUp";
+import FeedbackForm from "./FeedbackForm";
+import Container from "@mui/material/Container";
+import NavBar from "./NavBar";
 import { Routes, Route } from "react-router-dom";
 import Header from "./Header";
-import { StateContext } from "../utils/StateContext"
+import { StateContext } from "../utils/StateContext";
 import reducer from "../utils/StateReducer";
 import { getTickets } from "../services/ticketServices";
-import { getTargets, getImpacts, getConfidences, getEfforts} from "../services/selectionServices";
-
+import {
+  getTargets,
+  getImpacts,
+  getConfidences,
+  getEfforts,
+} from "../services/selectionServices";
+import { Feed } from "@mui/icons-material";
 
 const sections = [
   {
-    title: "My Tickets", url:"/mytickets"
+    title: "My Tickets",
+    url: "/mytickets",
   },
   {
-    title: "New Ticket", url:"/newticket"
+    title: "New Ticket",
+    url: "/newticket",
   },
   {
-    title: "Listings", url:"/listings"
-  }
-]
+    title: "Listings",
+    url: "/listings",
+  },
+];
 
 function App() {
   const initialState = {
@@ -37,6 +45,7 @@ function App() {
     confidences: [],
     efforts: [],
     tickets: null,
+    feedback: null,
     loggedInUser: localStorage.getItem("user") || null,
     auth: localStorage.getItem("token") || null,
   };
@@ -75,13 +84,12 @@ function App() {
       .catch((error) => console.log(error));
   }, [loggedInUser]);
 
-
   return (
     <StateContext.Provider value={{ store, dispatch }}>
-    <div className="App">
+      <div className="App">
         <Header />
-        <Container maxWidth='lg'>
-            <NavBar title="Project Priorization" sections={sections}></NavBar>
+        <Container maxWidth="lg">
+          <NavBar title="Project Priorization" sections={sections}></NavBar>
         </Container>
 
         <Routes>
@@ -97,15 +105,17 @@ function App() {
           <Route path="signup" element={<SignUp />} />
           <Route path="searchresults" element={<SearchResults />} />
           <Route path="submissionsuccess" element={<SubmissionSuccess />} />
-          <Route path="mytickets/:_id" element={<TicketDetails  />} />
-          <Route path="mytickets/:id" element={<Feedbacks />} />
+          <Route path="mytickets/:_id" element={<TicketDetails />} >
+            <Route path="feedback" element={<FeedbackForm />} />
+          </Route>
+
+        
 
           {/* <Route path="mytickets/update/:id" element={<EditTicket  />} /> */}
-         
+
           {/* <Route path="*" element={<NotFound />} /> */}
-      </Routes>
-      
-    </div>
+        </Routes>
+      </div>
     </StateContext.Provider>
   );
 }

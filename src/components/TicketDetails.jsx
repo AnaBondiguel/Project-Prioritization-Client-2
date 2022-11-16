@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 import { Box, Button, Typography, Paper, Grid } from "@mui/material";
-import { useNavigate, useParams, useLocation,Link } from "react-router-dom";
+import {
+  useNavigate,
+  useParams,
+  useLocation,
+  Link,
+  Outlet
+} from "react-router-dom";
 import {
   deleteTicket,
   getTicket,
@@ -8,6 +14,7 @@ import {
 } from "../services/ticketServices";
 import Feedbacks from "./Feedbacks";
 import { useGlobalState } from "../utils/StateContext";
+
 import dateFormat from "dateformat";
 import iceScoreCalculation from "./ICE_Score";
 
@@ -40,7 +47,7 @@ const TicketDetails = () => {
   // }, [_id, loggedInUser]);
 
   // console.log(_id)
-  console.log(ticket);
+  // console.log(ticket);
 
   if (!ticket) return null;
 
@@ -85,8 +92,8 @@ const TicketDetails = () => {
             // }}
             component={Link}
             to={`/mytickets/update/${_id}`}
-            state={{ 
-              ticket: JSON.stringify(ticket)
+            state={{
+              ticket: JSON.stringify(ticket),
             }}
           >
             Edit
@@ -97,11 +104,25 @@ const TicketDetails = () => {
       <hr />
 
       {user.role === "manager" ? (
-        <Paper>
-          {/* test to get user role */}
-          <p>Current User Role: {user.role}</p>
-          <Feedbacks />
-        </Paper>
+        <>
+          <Paper>
+            <Feedbacks  ticket={ticket}/>
+            </Paper>
+            <hr/>
+          <Paper>
+            <Button
+              component={Link}
+              to="feedback"
+              state={{
+                ticket: JSON.stringify(ticket),
+              }}
+            >
+              Add Feedback
+            </Button>
+
+            <Outlet />
+          </Paper>
+        </>
       ) : (
         <Paper>
           No feedback because current user role is {user.role}
