@@ -111,6 +111,9 @@ export default function AccountPopover() {
           {...stringAvatar(
             `${user.firstName[0]}` + " " + `${user.lastName[0]}`
           )}
+          // 
+          // change avatar size
+          // sx={{ width: 40, height: 40}}
         />
       </IconButton>
 
