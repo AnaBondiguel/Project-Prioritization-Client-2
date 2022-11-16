@@ -7,6 +7,7 @@ import SearchResults from './SearchResults';
 import SubmissionSuccess from './SubmissionSuccess';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import Feedbacks from "./Feedbacks";
 import Container from '@mui/material/Container';
 import NavBar from './NavBar';
 import { Routes, Route } from "react-router-dom";
@@ -97,6 +98,8 @@ function App() {
           <Route path="searchresults" element={<SearchResults />} />
           <Route path="submissionsuccess" element={<SubmissionSuccess />} />
           <Route path="mytickets/:_id" element={<TicketDetails  />} />
+          <Route path="mytickets/:id" element={<Feedbacks />} />
+
           {/* <Route path="mytickets/update/:id" element={<EditTicket  />} /> */}
          
           {/* <Route path="*" element={<NotFound />} /> */}

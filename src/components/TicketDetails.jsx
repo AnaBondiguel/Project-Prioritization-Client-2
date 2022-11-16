@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Box, Button,Typography, Paper, Grid } from "@mui/material";
 import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { deleteTicket, getTicket, updateTicket } from "../services/ticketServices";
+import Feedbacks from "./Feedbacks"
 import { useGlobalState } from "../utils/StateContext";
 import dateFormat from "dateformat";
 import iceScoreCalculation from "./ICE_Score";
@@ -71,10 +72,6 @@ const TicketDetails = () => {
                 )}
               </p>
               <p>Priority: {ticket.priorityValue}</p>
-
-              {/* test to get user role */}
-              <p>Current User Role: {user.role}</p>
-              <p>Feedback: {ticket.feedback}</p>
             </Grid>
           </Grid>
 
@@ -84,6 +81,12 @@ const TicketDetails = () => {
             </Button>
             <Button onClick={handleDelete}>Delete</Button>
           </Box>
+        </Paper>
+        <hr />
+        <Paper>
+          {/* test to get user role */}
+          <p>Current User Role: {user.role}</p>
+          <Feedbacks />
         </Paper>
       </div>
     );
