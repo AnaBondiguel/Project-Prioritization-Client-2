@@ -81,5 +81,9 @@ const priorityValue = [
 ];
 
 return priorityValue;
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> 4b380258792c3c4062d989c070d259452d1fa7d7

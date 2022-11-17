@@ -14,8 +14,14 @@ export async function login(data) {
   return response.data;
 }
 
+export async function updateUser(data) {
+  const response = await projectAPI.patch(`/api/users/${data.id}`, data)
+  return response.data;
+}
+
+
 export async function logout() {
   //clear the token of the current user when we press logout
-  // sessionStorage.clear();
+  // localStorage.clear();
   return "Logged out.";
 }

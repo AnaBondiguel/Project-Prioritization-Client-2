@@ -34,7 +34,11 @@ import projectAPI from "../config/api";
 
 function transformTicket(ticket) {
  let transformedTicket = {
+<<<<<<< HEAD
     author: ticket.username,
+=======
+    author: ticket.author,
+>>>>>>> 4b380258792c3c4062d989c070d259452d1fa7d7
     initialtive: ticket.initialtive,
     description: ticket.description,
     target: ticket.target,
@@ -42,9 +46,12 @@ function transformTicket(ticket) {
     confidence: ticket.confidence,
     effort: ticket.effort,
     dueDate: ticket.dueDate,
+<<<<<<< HEAD
     ICE_Score: ticket.ICE_Score,
     priority: ticket.priorityValue,
     feedback: ticket.feedback,
+=======
+>>>>>>> 4b380258792c3c4062d989c070d259452d1fa7d7
   };
   return transformedTicket;
 }
@@ -94,6 +101,7 @@ export async function deleteTicket(id) {
 //update a ticket
 export async function updateTicket(ticket) {
    //return ticket;
+<<<<<<< HEAD
   let updatedTicket = {
     initiative: ticket.initialtive,
 		description: ticket.description,
@@ -106,6 +114,20 @@ export async function updateTicket(ticket) {
     priority: ticket.priority,
 	}
 	const response = await projectAPI.put(`/api/tickets/${ticket.id}`, updatedTicket);
+=======
+  // let updatedTicket = {
+  //   initiative: ticket.initialtive,
+	// 	description: ticket.description,
+  //   target: ticket.target,
+  //   impact: ticket.impact,
+  //   confidence: ticket.confidence,
+  //   effort: ticket.effort,
+  //   dueDate: ticket.duedate,
+  //   ICE_Score: ticket.ICE_Score,
+  //   priority: ticket.priority,
+	// }
+	const response = await projectAPI.put(`/api/tickets/${ticket.id}`, ticket);
+>>>>>>> 4b380258792c3c4062d989c070d259452d1fa7d7
 	return response.data;
 }
 
