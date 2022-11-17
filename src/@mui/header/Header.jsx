@@ -9,6 +9,7 @@ import Iconify from "../components/iconify";
 //
 import Searchbar from "./Searchbar";
 import AccountPopover from "./AccountPopover";
+import Logo from '../components/logo/Logo'
 // import LanguagePopover from "./LanguagePopover";
 // import NotificationsPopover from "./NotificationsPopover";
 
@@ -21,10 +22,10 @@ const HEADER_MOBILE = 64;
 const HEADER_DESKTOP = 92;
 
 const StyledRoot = styled(AppBar)(({ theme }) => ({
-  ...bgBlur({ color: theme.palette.background.default }),
+  ...bgBlur({ color: "#fdfbfb" }),
   boxShadow: "none",
   [theme.breakpoints.up("lg")]: {
-    width: `calc(90% - ${NAV_WIDTH + 1}px)`,
+    width: `calc(100% - ${NAV_WIDTH + 1}px)`,
   },
 }));
 
@@ -58,7 +59,7 @@ export default function Header({ onOpenNav }) {
         >
           <Iconify icon="eva:menu-2-fill" />
         </IconButton>
-
+        <Logo />
         <Searchbar />
         <Box sx={{ flexGrow: 1 }} />
 

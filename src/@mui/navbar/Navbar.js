@@ -1,18 +1,8 @@
-
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 // @mui
 import { styled, alpha } from "@mui/material/styles";
-import {
-  Box,
-  Link,
-  Button,
-  Drawer,
-  Typography,
-  Avatar,
-  Stack,
-} from "@mui/material";
-// mock
+import { Box, Drawer, Typography, Avatar, Divider } from "@mui/material";
 // hooks
 import useResponsive from "../hooks/useReponsive";
 // components
@@ -38,14 +28,45 @@ const StyledAccount = styled("div")(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 
+// ----------------------------------------------------------------------
+function stringToColor(string) {
+  let hash = 0;
+  let i;
+
+  /* eslint-disable no-bitwise */
+  for (i = 0; i < string.length; i += 1) {
+    hash = string.charCodeAt(i) + ((hash << 5) - hash);
+  }
+
+  let color = "#";
+
+  for (i = 0; i < 3; i += 1) {
+    const value = (hash >> (i * 8)) & 0xff;
+    color += `00${value.toString(16)}`.slice(-2);
+  }
+  /* eslint-enable no-bitwise */
+
+  return color;
+}
+
+function stringAvatar(name) {
+  return {
+    sx: {
+      bgcolor: stringToColor(name),
+    },
+    children: `${name.split(" ")[0][0]}${name.split(" ")[1][0]}`,
+  };
+}
+// -----------------------------------------
+
 export default function Nav({ openNav, onCloseNav }) {
   const { pathname } = useLocation();
 
   const isDesktop = useResponsive("up", "lg");
   // ----------------------------------------------------------------------
-   const { store } = useGlobalState();
-   const { loggedInUser } = store;
-   const user = JSON.parse(loggedInUser);
+  const { store } = useGlobalState();
+  const { loggedInUser } = store;
+  const user = JSON.parse(loggedInUser);
 
   useEffect(() => {
     if (openNav) {
@@ -65,34 +86,38 @@ export default function Nav({ openNav, onCloseNav }) {
         },
       }}
     >
-      <Box sx={{ px: 2.5, py: 3, display: "inline-flex" }}>
-        <span>Project Priorization</span>
+      <Box sx={{ px: 3, py: 1, display: "inline-flex" }}>
+        <h1>Project</h1>
+        <hr/>
+        <h1>Priorization</h1>
       </Box>
+      <Divider/>
+      <Box sx={{ mb: 5, mx: 2.5, mt: 5 }}>
+        <StyledAccount>
+          <Avatar
+            {...stringAvatar(
+              `${user.firstName[0]}` + " " + `${user.lastName[0]}`
+            )}
+          />
 
-      <Box sx={{ mb: 5, mx: 2.5 }}>
-        <Link underline="none">
-          <StyledAccount>
-            {/* <Avatar src={account.photoURL} alt="photoURL" /> */}
+          <Box sx={{ ml: 2 }}>
+            <Typography variant="subtitle2" sx={{ color: "text.primary" }}>
+              {user.email}
+            </Typography>
 
-            <Box sx={{ ml: 2 }}>
-              <Typography variant="subtitle2" sx={{ color: "text.primary" }}>
-                {user.email}
-              </Typography>
-
-              <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                {user.role}
-              </Typography>
-            </Box>
-          </StyledAccount>
-        </Link>
+            <Typography variant="body2" sx={{ color: "text.secondary" }}>
+              {user.role}
+            </Typography>
+          </Box>
+        </StyledAccount>
       </Box>
-
-      <NavSection data={navConfig} />
+      <Divider />
+      <NavSection data={navConfig} sx={{ mt: 5, mb: 5 }} />
 
       <Box sx={{ flexGrow: 1 }} />
-
-      <Box sx={{ px: 2.5, pb: 1, mt: 10}}>
-     <span>Copyright @2022</span>
+      <Divider />
+      <Box sx={{ px: 2.5, pb: 1, mt: 5 }}>
+        <span>Copyright @2022</span>
       </Box>
     </Scrollbar>
   );
