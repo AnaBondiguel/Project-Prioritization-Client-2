@@ -9,6 +9,7 @@
     "@emotion/styled": "^11.10.4",
     "@iconify/react": "^4.0.0",
     "@mui/icons-material": "^5.10.9",
+    "@mui/lab": "^5.0.0-alpha.108",
     "@mui/material": "^5.10.11",
     "@mui/x-data-grid": "^5.17.9",
     "@mui/x-date-pickers": "^5.0.6",

@@ -21,7 +21,8 @@ import TicketDetails from "./components/TicketDetails";
 import Listings from "./components/Listings";
 import SearchResults from "./components/SearchResults";
 import SubmissionSuccess from "./components/SubmissionSuccess";
-import SignIn from "./components/SignIn";
+// import SignIn from "./components/SignIn";
+import SignIn from './pages/SingIn.jsx'
 import SignUp from "./components/SignUp";
 import FeedbackForm from "./components/FeedbackForm";
 import Page404 from "./pages/Page404.jsx";
