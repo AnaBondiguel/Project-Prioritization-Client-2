@@ -1,15 +1,10 @@
 // @mui
 import { styled } from "@mui/material/styles";
-import {
-  Link,
-  Container,
-  Typography,
-  Box
-} from "@mui/material";
+import { Link, Container, Typography, Box } from "@mui/material";
 // hooks
 import useResponsive from "../@mui/hooks/useReponsive";
 // sections
-import SigninForm from "../@mui/components/authpage/SigninForm";
+import SignupForm from "../@mui/components/authpage/SignupForm";
 
 // ----------------------------------------------------------------------
 
@@ -41,7 +36,7 @@ const StyledContent = styled("div")(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-export default function SingIn() {
+export default function SingUp() {
   const mdUp = useResponsive("up", "md");
 
   return (
@@ -49,12 +44,16 @@ export default function SingIn() {
       <Container fixed>
         <StyledRoot>
           {mdUp && (
-            <StyledSection sx={{mt:7}}>
+            <StyledSection sx={{ mt: 5, mb: 5 }}>
               <Typography variant="h3" sx={{ px: 5, mb: 3 }}>
-                Hi, Welcome Back to
+                Hi, Welcome to
               </Typography>
-              <Typography variant="h4" sx={{ px: 5, mt: 3, mb: 5 }}>
-                 Project Priorization
+              <Typography
+                variant="h4"
+                color="#50bdd8"
+                sx={{ px: 5, mt: 3, mb: 5 }}
+              >
+                Project Priorization
               </Typography>
             </StyledSection>
           )}
@@ -62,15 +61,17 @@ export default function SingIn() {
           <Container maxWidth="sm">
             <StyledContent>
               <Typography variant="h4" gutterBottom>
-                Sign in
+                Sign Up
               </Typography>
 
               <Typography variant="body2" sx={{ mb: 5 }}>
-                Don't have an account? {""}
-                <Link href="/signup" variant="subtitle2" >Get started</Link>
+                Have an account? {""}
+                <Link href="/signin" variant="subtitle2">
+                  Sign In
+                </Link>
               </Typography>
 
-              <SigninForm />
+              <SignupForm />
             </StyledContent>
           </Container>
         </StyledRoot>
