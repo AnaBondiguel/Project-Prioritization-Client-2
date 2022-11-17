@@ -12,8 +12,7 @@ import SignUp from "./components/SignUp";
 import FeedbackForm from "./components/FeedbackForm";
 import Page404 from "./pages/Page404.jsx";
 
-
-const user = JSON.parse(localStorage.getItem("user"))
+const user = JSON.parse(localStorage.getItem("user"));
 
 export default function Router() {
   const routes = useRoutes([
@@ -31,19 +30,21 @@ export default function Router() {
           index: true,
         },
         { path: "mytickets", element: <MyTickets /> },
-        {path: "newtickets", element: <TicketForm />},
-        {path: "mytickets/update/:id", element: <TicketForm />},
-        {path: "listings", element: <Listings />},
-        {path: "searchreults", element: <SearchResults />},
-        {path: "submissionsuccess", element: <SubmissionSuccess />},
-        {path: "mytickets/update/:id", element: <TicketDetails />, children: [
-            {path: "feedback", element: <FeedbackForm />}
-        ]}
+        { path: "newticket", element: <TicketForm /> },
+        { path: "mytickets/update/:_id", element: <TicketForm /> },
+        { path: "listings", element: <Listings /> },
+        { path: "searchreults", element: <SearchResults /> },
+        { path: "submissionsuccess", element: <SubmissionSuccess /> },
+        {
+          path: "mytickets/:_id",
+          element: <TicketDetails />,
+          children: [{ path: "feedback", element: <FeedbackForm /> }],
+        },
       ],
     },
-    { path: "signin", element: <SignIn />},
-    {path: "signup", element: <SignUp />},
-    {path: "*", element: <Page404 />}
+    { path: "signin", element: <SignIn /> },
+    { path: "signup", element: <SignUp /> },
+    { path: "*", element: <Page404 /> },
   ]);
 
   return routes;
