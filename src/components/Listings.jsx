@@ -1,15 +1,8 @@
 import React, { useEffect } from "react";
 import { Typography } from "@mui/material";
 import { useGlobalState } from "../utils/StateContext";
-<<<<<<< HEAD
 import {  getAllTickets } from "../services/ticketServices";
 import TicketTable from "./TicketTable";
-=======
-import { getTickets, getAllTickets } from "../services/ticketServices";
-import DeleteIcon from '@mui/icons-material/Delete';
-import iceScoreCalculation from "./ICE_Score";
-// import { handleDelete } from "./TicketDetails";
->>>>>>> 4b380258792c3c4062d989c070d259452d1fa7d7
 
 
 
@@ -25,7 +18,6 @@ function Listings(){
       //   return;
       // }
 
-<<<<<<< HEAD
       // console.log("tickets at top:", tickets)
       if(!tickets){
         getAllTickets() 
@@ -37,24 +29,6 @@ function Listings(){
         .catch((error) => console.log(error));
       }
     }, [dispatch, tickets, loggedInUser])
-=======
-      // // console.log("tickets at top:", tickets)
-      //   getAllTickets() 
-      //   .then(tickets => {
-      //     // console.log("tickets inside:", tickets)
-      //     dispatch ({type: "setTickets", data: tickets})
-      //   })
-        const fetchSubmittedTickets = async () => {
-          const result = await getAllTickets();
-          dispatch({type: "setTickets", data: result})
-        }
-      
-        if (loggedInUser){
-          fetchSubmittedTickets()
-        }
-       
-    }, [dispatch, loggedInUser])
->>>>>>> 4b380258792c3c4062d989c070d259452d1fa7d7
   
     if(!tickets) return "null";
 
@@ -65,53 +39,9 @@ function Listings(){
               <>
               <Typography variant="h4" align="left">All Submitted Tickets</Typography>
               
-<<<<<<< HEAD
              <TicketTable
              tickets={tickets}
              />
-=======
-              <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell align="left">Priority</TableCell>
-            <TableCell align="left">Initiative</TableCell>
-            <TableCell align="left">Target</TableCell>
-            <TableCell align="left">ICE Score</TableCell>
-          </TableRow>
-        </TableHead>
-            
-        <TableBody>
-              {tickets.map((ticket, index) => {
-                return (
-                  <TableRow
-                    key={ticket._id}
-                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                  >
-                    <TableCell align="left">{ticket.priority} </TableCell>
-
-                    <Link to={`/mytickets/${ticket._id}`} state={{ 
-                ticket: JSON.stringify(ticket)
-              }}>
-                      <TableCell align="right">{ticket.initialtive} </TableCell>
-                    </Link>
-
-                    <TableCell align="left">{ticket.target} </TableCell>
-                    <TableCell align="left">
-                      {iceScoreCalculation(
-                        ticket.impact,
-                        ticket.confidence,
-                        ticket.effort
-                      )}
-                    </TableCell>
-                  </TableRow>
-                );
-                }
-                )}
-        </TableBody>
-      </Table>
-    </TableContainer> 
->>>>>>> 4b380258792c3c4062d989c070d259452d1fa7d7
              
               </>
             ) : (

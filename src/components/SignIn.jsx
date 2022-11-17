@@ -51,19 +51,10 @@ function SignIn(){
 
             return <TicketForm disabledFields={['priority']} />
             */
-<<<<<<< HEAD
            console.log(user)    
             let token = data.token;
             sessionStorage.setItem("token", token);
             sessionStorage.setItem("user", JSON.stringify(user));
-=======
-            // ! get user info
-            // console.log(user)  
-
-            const token = data.token;
-            localStorage.setItem("token", token);
-            localStorage.setItem("user", JSON.stringify(user));
->>>>>>> 4b380258792c3c4062d989c070d259452d1fa7d7
             dispatch({ type: "setLoggedInUser", data: JSON.stringify(user) });
             dispatch({ type: "setToken", data: token });
             

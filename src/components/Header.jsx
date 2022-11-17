@@ -16,24 +16,16 @@ const Header = () => {
       const {store, dispatch} = useGlobalState();
       const {loggedInUser} = store;
       const user = JSON.parse(loggedInUser);
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 4b380258792c3c4062d989c070d259452d1fa7d7
     //setup a function to handle logout. We set login user in the token back to null when they log out.
       function handleLogout(event) {
         event.preventDefault();
         logout().then(() => {
             dispatch({type: "setLoggedInUser", data: null});
             dispatch({type: "setToken", data: null});
-<<<<<<< HEAD
             sessionStorage.removeItem('user');
             sessionStorage.removeItem('token');
-=======
-            localStorage.removeItem('user');
-            localStorage.removeItem('token');
->>>>>>> 4b380258792c3c4062d989c070d259452d1fa7d7
         })
       }
 
@@ -45,7 +37,6 @@ const Header = () => {
         });
       }
 
-<<<<<<< HEAD
       //setup onKeyUp to search for all the submitted tickets
       function handleSubmit(event){
         if (event.key === "Enter") {
@@ -93,43 +84,6 @@ const Header = () => {
         // only run on component did mount
         []
       );
-=======
-    //fetch ticket from http://localhost:3000/listings
-      // useEffect(
-      //   () => {
-      //     function fetchTickets() {
-      //       const url = "http://localhost:3000/listings"; 
-      //       fetch(url)
-      //         .then((result) => {
-      //           return result.json();
-      //         })
-      //         .then((data) => {
-      //           const tickets = data // array
-      //             .map((ticket) => ({
-      //               initiative: ticket.initialtive,
-      //               description: ticket.description,
-      //               target: ticket.target,
-      //               ICE_Score: ticket.ICE_Score,
-      //             }));
-      //           setData({
-      //             ...data,
-      //             tickets: tickets,
-      //           });
-      //         })
-      //         .catch((error) => {
-               
-      //         })
-      //         .finally(() => {
-      //           console.log("Fetch completed.");
-      //         });
-      //     }
-    
-      //     fetchTickets();
-      //   },
-      //   // only run on component did mount
-      //   []
-      // );
->>>>>>> 4b380258792c3c4062d989c070d259452d1fa7d7
 
     return (
       <header>

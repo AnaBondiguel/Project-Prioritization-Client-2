@@ -39,11 +39,7 @@ function SignUp() {
       // sessionStorage.setItem("value", 5) // '5' Number(sessionStorage.getItem('value'))
       sessionStorage.setItem("user", JSON.stringify(user)); //sessionstorage allows string 
       // sessionStorage.getItem("user") // returns string
-<<<<<<< HEAD
       // then we need to parse the string
-=======
-      // then you need to parse the string
->>>>>>> 4b380258792c3c4062d989c070d259452d1fa7d7
       // user = JSON.parse(sessionStorage.getItem('user'))
       // todo: check if this is needed
       dispatch({ type: "setLoggedInUser", data: user });
