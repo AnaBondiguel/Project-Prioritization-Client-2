@@ -56,8 +56,8 @@ export default function reducer(state, action) {
       const ticket = state.tickets.find(
         (ticket) => ticket._id === action.data.id
       );
-      console.log(ticket);
-      console.log(action.data);
+      // console.log(ticket);
+      // console.log(action.data);
       const updatedTicket = Object.assign(ticket, action.data);
       //we only changed one ticket and need to remain the rest of ticket list the same as before
       const otherTickets = state.tickets.filter(
@@ -67,6 +67,13 @@ export default function reducer(state, action) {
         ...state,
         tickets: [updatedTicket, ...otherTickets],
       };
+    }
+    case "updateUser": {
+      const user = localStorage.getItem("user");
+      const updatedUser = Object.assign(user, action.data);
+      return {
+        user: updatedUser
+      }
     }
 
     case "setFeedbacks": {

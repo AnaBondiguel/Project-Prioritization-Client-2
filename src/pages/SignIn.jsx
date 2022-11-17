@@ -1,15 +1,10 @@
 // @mui
 import { styled } from "@mui/material/styles";
-import {
-  Link,
-  Container,
-  Typography,
-  Box
-} from "@mui/material";
+import { Link, Container, Typography, Box } from "@mui/material";
 // hooks
 import useResponsive from "../@mui/hooks/useReponsive";
 // sections
-import SigninForm from "../@mui/components/authpage/SigninForm";
+import SigninForm from "../@mui/components/userpage/SigninForm";
 
 // ----------------------------------------------------------------------
 
@@ -53,7 +48,11 @@ export default function SingIn() {
               <Typography variant="h3" sx={{ px: 5, mb: 3 }}>
                 Hi, Welcome Back to
               </Typography>
-              <Typography variant="h4" color="#50bdd8" sx={{ px: 5, mt: 3, mb: 5 }}  >
+              <Typography
+                variant="h4"
+                color="#50bdd8"
+                sx={{ px: 5, mt: 3, mb: 5 }}
+              >
                 Project Priorization
               </Typography>
             </StyledSection>

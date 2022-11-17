@@ -4,7 +4,7 @@ import { Link, Container, Typography, Box } from "@mui/material";
 // hooks
 import useResponsive from "../@mui/hooks/useReponsive";
 // sections
-import SignupForm from "../@mui/components/authpage/SignupForm";
+import SignupForm from "../@mui/components/userpage/SignupForm";
 
 // ----------------------------------------------------------------------
 

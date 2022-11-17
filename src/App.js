@@ -21,9 +21,9 @@ import TicketDetails from "./components/TicketDetails";
 import Listings from "./components/Listings";
 import SearchResults from "./components/SearchResults";
 import SubmissionSuccess from "./components/SubmissionSuccess";
-// import SignIn from "./components/SignIn";
+import Profile from './pages/Profile'
 import SignIn from './pages/SignIn.jsx'
-// import SignUp from "./components/SignUp";
+
 import SignUp from './pages/SignUp.jsx'
 import FeedbackForm from "./components/FeedbackForm";
 import Page404 from "./pages/Page404.jsx";
@@ -97,7 +97,9 @@ function App() {
               }
               index={true}
             />
+            
             <Route path="mytickets" element={<MyTickets />} />
+            <Route path="profile" element={<Profile />} />
             <Route path="listings" element={<Listings />} />
             <Route path="newticket" element={<TicketForm />} />
             <Route path="mytickets/update/:_id" element={<TicketForm />} />
