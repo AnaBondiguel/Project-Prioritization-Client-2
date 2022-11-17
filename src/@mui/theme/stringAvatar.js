@@ -11,7 +11,7 @@ function stringToColor(string) {
   let color = "#";
 
   for (i = 0; i < 3; i += 1) {
-    const value = (hash >> (i * 8)) & 0xff;
+    const value = (hash >> (i * 4)) & 0xff;
     color += `00${value.toString(16)}`.slice(-2);
   }
   /* eslint-enable no-bitwise */

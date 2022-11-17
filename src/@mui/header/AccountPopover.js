@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {Link} from 'react-router-dom'
 // @mui
 import { alpha } from "@mui/material/styles";
 import {
@@ -21,14 +22,12 @@ const MENU_OPTIONS = [
   {
     label: "Home",
     icon: "eva:home-fill",
+    to: "/"
   },
   {
     label: "Profile",
     icon: "eva:person-fill",
-  },
-  {
-    label: "Settings",
-    icon: "eva:settings-2-fill",
+    to: "/profile"
   },
 ];
 
@@ -82,7 +81,7 @@ export default function AccountPopover() {
           {...stringAvatar(
             `${user.firstName[0]}` + " " + `${user.lastName[0]}`
           )}
-          // 
+          //
           // change avatar size
           // sx={{ width: 40, height: 40}}
         />
@@ -120,7 +119,7 @@ export default function AccountPopover() {
 
         <Stack sx={{ p: 1 }}>
           {MENU_OPTIONS.map((option) => (
-            <MenuItem key={option.label} onClick={handleClose}>
+            <MenuItem key={option.label} onClick={handleClose} component={Link} to={`${option.to}`}>
               {option.label}
             </MenuItem>
           ))}
