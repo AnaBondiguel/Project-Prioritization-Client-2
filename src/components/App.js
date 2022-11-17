@@ -12,6 +12,7 @@ import ScrollToTop from "../@mui/components/scrolltotop/ScroolToTop";
 import StyledChart from '../@mui/components/chart/styles.js';
 import Header from "../@mui/header/Header";
 import Nav from "../@mui/navbar/Navbar";
+import Page404 from "../pages/Page404.jsx"
 // import Container from "@mui/material/Container";
 // import NavBar from "./NavBar";
 import { Routes, Route } from "react-router-dom";
@@ -127,8 +128,8 @@ function App() {
           {/* <Container maxWidth="lg">
             <NavBar title="Project Priorization" sections={sections}></NavBar>
           </Container> */}
-          <Main>
-            <Routes>
+         <Main>
+            <Routes> 
               <Route path="/" element={<MyTickets />} />
               <Route path="mytickets" element={<MyTickets />} />
               <Route path="newticket" element={<TicketForm />} />
@@ -147,7 +148,7 @@ function App() {
 
               {/* <Route path="mytickets/update/:id" element={<EditTicket  />} /> */}
 
-              {/* <Route path="*" element={<NotFound />} /> */}
+              <Route path="*" element={<Page404 />} />
             </Routes>
           </Main>
         </StyledRoot>
