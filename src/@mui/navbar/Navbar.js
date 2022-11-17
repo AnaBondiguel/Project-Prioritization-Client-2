@@ -87,11 +87,9 @@ export default function Nav({ openNav, onCloseNav }) {
       }}
     >
       <Box sx={{ px: 3, py: 1, display: "inline-flex" }}>
-        <h1>Project</h1>
-        <hr/>
-        <h1>Priorization</h1>
+        <h2 style={{ color: "#50bdd8" }}>Project Priorization</h2>
       </Box>
-      <Divider/>
+      <Divider />
       <Box sx={{ mb: 5, mx: 2.5, mt: 5 }}>
         <StyledAccount>
           <Avatar

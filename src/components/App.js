@@ -8,13 +8,16 @@ import SubmissionSuccess from "./SubmissionSuccess";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import FeedbackForm from "./FeedbackForm";
+import ScrollToTop from "../@mui/components/scrolltotop/ScroolToTop";
+import StyledChart from '../@mui/components/chart/styles.js';
+import Header from "../@mui/header/Header";
+import Nav from "../@mui/navbar/Navbar";
 // import Container from "@mui/material/Container";
 // import NavBar from "./NavBar";
-import { Routes, Route, Outlet } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { styled } from "@mui/material/styles";
 // import Header from "./Header";
-import Header from '../@mui/header/Header'
-import Nav from '../@mui/navbar/Navbar'
+
 import { StateContext } from "../utils/StateContext";
 import reducer from "../utils/StateReducer";
 import { getTickets } from "../services/ticketServices";
@@ -24,8 +27,8 @@ import {
   getConfidences,
   getEfforts,
 } from "../services/selectionServices";
-// 
-import ThemeProvider  from '../@mui/theme'
+//
+import ThemeProvider from "../@mui/theme";
 
 // const sections = [
 //   {
@@ -115,41 +118,39 @@ function App() {
 
   return (
     <ThemeProvider>
+      <ScrollToTop />
+      <StyledChart />
       <StateContext.Provider value={{ store, dispatch }}>
         <StyledRoot>
-          
           <Header onOpenNav={() => setOpen(true)} />
           <Nav openNav={open} onCloseNav={() => setOpen(false)} />
           {/* <Container maxWidth="lg">
             <NavBar title="Project Priorization" sections={sections}></NavBar>
           </Container> */}
           <Main>
-          
-       
-
-          <Routes>
-            <Route path="/" element={<MyTickets />} />
-            <Route path="mytickets" element={<MyTickets />} />
-            <Route path="newticket" element={<TicketForm />} />
-            {/* { store.user.role === 'manager' ? <Route path="editticket" element={<NewTicket enableInitiative={false} /> : 
+            <Routes>
+              <Route path="/" element={<MyTickets />} />
+              <Route path="mytickets" element={<MyTickets />} />
+              <Route path="newticket" element={<TicketForm />} />
+              {/* { store.user.role === 'manager' ? <Route path="editticket" element={<NewTicket enableInitiative={false} /> : 
           <Route path="editticket" element={<NewTicket />} */}
-            {/* <Route path="editticket" element={<NewTicket enableInitiative={false} />} /> */}
-            <Route path="mytickets/update/:id" element={<TicketForm />} />
-            <Route path="listings" element={<Listings />} />
-            <Route path="signin" element={<SignIn />} />
-            <Route path="signup" element={<SignUp />} />
-            <Route path="searchresults" element={<SearchResults />} />
-            <Route path="submissionsuccess" element={<SubmissionSuccess />} />
-            <Route path="mytickets/:_id" element={<TicketDetails />}>
-              <Route path="feedback" element={<FeedbackForm />} />
-            </Route>
+              {/* <Route path="editticket" element={<NewTicket enableInitiative={false} />} /> */}
+              <Route path="mytickets/update/:id" element={<TicketForm />} />
+              <Route path="listings" element={<Listings />} />
+              <Route path="signin" element={<SignIn />} />
+              <Route path="signup" element={<SignUp />} />
+              <Route path="searchresults" element={<SearchResults />} />
+              <Route path="submissionsuccess" element={<SubmissionSuccess />} />
+              <Route path="mytickets/:_id" element={<TicketDetails />}>
+                <Route path="feedback" element={<FeedbackForm />} />
+              </Route>
 
-            {/* <Route path="mytickets/update/:id" element={<EditTicket  />} /> */}
+              {/* <Route path="mytickets/update/:id" element={<EditTicket  />} /> */}
 
-            {/* <Route path="*" element={<NotFound />} /> */}
-          </Routes>
+              {/* <Route path="*" element={<NotFound />} /> */}
+            </Routes>
           </Main>
-         </StyledRoot>
+        </StyledRoot>
       </StateContext.Provider>
     </ThemeProvider>
   );
