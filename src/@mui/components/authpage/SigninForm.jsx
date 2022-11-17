@@ -108,7 +108,6 @@ export default function SigninForm() {
         justifyContent="space-between"
         sx={{ my: 2 }}
       >
-        <Checkbox name="remember" label="Remember me" />
         <Link variant="subtitle2" underline="hover">
           Forgot password?
         </Link>

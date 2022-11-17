@@ -68,7 +68,7 @@ export default function SingIn() {
               <Typography variant="body2" sx={{ mb: 5 }}>
                 Don't have an account? {""}
                 <Link href="/signup" variant="subtitle2">
-                  Get started
+                  Sign Up?
                 </Link>
               </Typography>
 
