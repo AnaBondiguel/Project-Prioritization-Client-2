@@ -28,7 +28,7 @@ const navConfig = [
   },
   {
     title: "blog",
-    path: "/dashboard/blog",
+    path: "/blog",
     icon: icon("ic_blog"),
   },
   {
