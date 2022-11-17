@@ -69,10 +69,12 @@ export default function reducer(state, action) {
       };
     }
     case "updateUser": {
-      const user = localStorage.getItem("user");
+      const user = JSON.parse(localStorage.getItem("user"));
       const updatedUser = Object.assign(user, action.data);
+      localStorage.setItem("user", JSON.stringify(updatedUser));
       return {
-        user: updatedUser
+        ...state,
+        loggedInUser: JSON.stringify(updatedUser)
       }
     }
 

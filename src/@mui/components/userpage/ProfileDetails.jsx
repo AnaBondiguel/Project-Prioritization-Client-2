@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Box,
   Button,
@@ -14,6 +15,7 @@ import { useGlobalState } from "../../../utils/StateContext";
 
 export const ProfileDetails = () => {
   const user = JSON.parse(localStorage.getItem("user"));
+  const navigate = useNavigate();
   const { dispatch } = useGlobalState();
   const [values, setValues] = useState({
     firstName: user.firstName,
@@ -34,6 +36,7 @@ export const ProfileDetails = () => {
     updateUser({ id: user._id, ...values }).then(() => {
       dispatch({ type: "updateUser", data: { id: user._id, ...values } });
     });
+    navigate("/");
   };
 
   return (

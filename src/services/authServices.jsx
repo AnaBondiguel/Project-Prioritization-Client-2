@@ -15,7 +15,7 @@ export async function login(data) {
 }
 
 export async function updateUser(data) {
-  const response = await projectAPI.patch(`/api/users/${data.id}`)
+  const response = await projectAPI.patch(`/api/users/${data.id}`, data)
   return response.data;
 }
 
