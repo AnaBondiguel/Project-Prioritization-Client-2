@@ -87,7 +87,7 @@ export default function Nav({ openNav, onCloseNav }) {
 
       <Box sx={{ flexGrow: 1 }} />
       <Divider />
-      <Box sx={{ px: 2.5, pb: 1, mt: 5 }}>
+      <Box sx={{ px: 4, pb: 1, mt: 5 }}>
         <span style={{ color: "#ddd" }}>Copyright @2022</span>
       </Box>
     </Scrollbar>

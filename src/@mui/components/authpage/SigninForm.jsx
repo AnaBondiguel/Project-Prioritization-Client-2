@@ -9,8 +9,7 @@ import {
   Stack,
   IconButton,
   InputAdornment,
-  TextField,
-  Checkbox,
+  TextField
 } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 // components
