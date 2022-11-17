@@ -1,4 +1,4 @@
-import { React, useEffect, useReducer } from "react";
+import { React, useEffect, useReducer, useState } from "react";
 import MyTickets from "./MyTickets";
 import TicketForm from "./TicketForm";
 import TicketDetails from "./TicketDetails";
@@ -8,13 +8,13 @@ import SubmissionSuccess from "./SubmissionSuccess";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import FeedbackForm from "./FeedbackForm";
-import Container from "@mui/material/Container";
-import NavBar from "./NavBar";
+// import Container from "@mui/material/Container";
+// import NavBar from "./NavBar";
 import { Routes, Route, Outlet } from "react-router-dom";
 import { styled } from "@mui/material/styles";
-import Logo from "../@mui/header/Header.jsx";
 // import Header from "./Header";
 import Header from '../@mui/header/Header'
+import Nav from '../@mui/navbar/Navbar'
 import { StateContext } from "../utils/StateContext";
 import reducer from "../utils/StateReducer";
 import { getTickets } from "../services/ticketServices";
@@ -27,20 +27,43 @@ import {
 // 
 import ThemeProvider  from '../@mui/theme'
 
-const sections = [
-  {
-    title: "My Tickets",
-    url: "/mytickets",
+// const sections = [
+//   {
+//     title: "My Tickets",
+//     url: "/mytickets",
+//   },
+//   {
+//     title: "New Ticket",
+//     url: "/newticket",
+//   },
+//   {
+//     title: "Listings",
+//     url: "/listings",
+//   },
+// ];
+// ----------------------------------------------------------------
+const APP_BAR_MOBILE = 64;
+const APP_BAR_DESKTOP = 92;
+
+const StyledRoot = styled("div")({
+  display: "flex",
+  minHeight: "100%",
+  overflow: "hidden",
+});
+
+const Main = styled("div")(({ theme }) => ({
+  flexGrow: 1,
+  overflow: "auto",
+  minHeight: "100%",
+  paddingTop: APP_BAR_MOBILE + 24,
+  paddingBottom: theme.spacing(10),
+  [theme.breakpoints.up("lg")]: {
+    paddingTop: APP_BAR_DESKTOP + 24,
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
   },
-  {
-    title: "New Ticket",
-    url: "/newticket",
-  },
-  {
-    title: "Listings",
-    url: "/listings",
-  },
-];
+}));
+// ------------------------------------------------------------------
 
 function App() {
   const initialState = {
@@ -55,6 +78,8 @@ function App() {
   };
   const [store, dispatch] = useReducer(reducer, initialState);
   const { loggedInUser } = store;
+
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     // const user = JSON.parse(localStorage.getItem("user"));
@@ -91,13 +116,16 @@ function App() {
   return (
     <ThemeProvider>
       <StateContext.Provider value={{ store, dispatch }}>
-        <div className="App">
-          <Logo />
-          <Header />
-          <Container maxWidth="lg">
+        <StyledRoot>
+          
+          <Header onOpenNav={() => setOpen(true)} />
+          <Nav openNav={open} onCloseNav={() => setOpen(false)} />
+          {/* <Container maxWidth="lg">
             <NavBar title="Project Priorization" sections={sections}></NavBar>
-          </Container>
-          <Outlet />
+          </Container> */}
+          <Main>
+          
+       
 
           <Routes>
             <Route path="/" element={<MyTickets />} />
@@ -120,7 +148,8 @@ function App() {
 
             {/* <Route path="*" element={<NotFound />} /> */}
           </Routes>
-        </div>
+          </Main>
+         </StyledRoot>
       </StateContext.Provider>
     </ThemeProvider>
   );
