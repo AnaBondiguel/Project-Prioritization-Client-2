@@ -112,8 +112,8 @@ function App() {
               <Route path="feedback" element={<FeedbackForm />} />
             </Route>
           </Route>
-          <Route path="signup" element={<SignUp />} />
-          <Route path="signin" element={<SignIn />} />
+          <Route path="signup" element={!user? <SignUp /> :<Navigate to="/" /> } />
+          <Route path="signin" element={!user? <SignIn /> :<Navigate to="/" /> } />
           <Route path="*" element={<Page404 />} />
         </Routes>
       </StateContext.Provider>
