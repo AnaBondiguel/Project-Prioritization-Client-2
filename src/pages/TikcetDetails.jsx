@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   Container,
   Grid,
@@ -43,13 +43,21 @@ export default function TikcetDetails() {
     });
   }
 
-  // const [button, setButton] =useState("none")
-  // if (!ticket.isSubmitted) {
-  //   setButton("")
-  // }
-
   if (!ticket || !user) return null;
-
+  let box = "none";
+  if (
+    (user.id === ticket.author.id && !ticket.isSubmitted) ||
+    user.role === "manager"
+  ) {
+    box = "";
+  }
+   let delButton = false;
+  if (ticket.isSubmitted && user.role === "manager" && user.id === ticket.author.id) {
+    delButton = true;
+  } else {
+      delButton = false;
+  }
+  console.log(delButton);
   return (
     <Container fluid className="main-content-container px-4 pb-4">
       <TicketDetailsHeader />
@@ -58,24 +66,22 @@ export default function TikcetDetails() {
         <Grid item xs={12} md={6} lg={8}>
           <Card sx={{ p: 5 }}>
             <Typography variant="h4" sx={{ color: "text.primary" }} noWrap>
-              {`${ticket.initialtive}` + "          "  }  
+              {`${ticket.initialtive}` + "          "}
               {ticket.isSubmitted ? (
-              <Chip
-                label="Submitted"
-                color="success"
-                size="small"
-                variant="outlined"
-                
-              />
-            ) : (
-              <Chip
-                label="Not Submit"
-                color="primary"
-                size="small"
-                variant="outlined"
-  
-              />
-            )}
+                <Chip
+                  label="Submitted"
+                  color="success"
+                  size="small"
+                  variant="outlined"
+                />
+              ) : (
+                <Chip
+                  label="Not Submit"
+                  color="primary"
+                  size="small"
+                  variant="outlined"
+                />
+              )}
             </Typography>
             <Typography
               variant="subtitle1"
@@ -87,7 +93,7 @@ export default function TikcetDetails() {
             <Typography variant="subtitle1" sx={{ color: "info.main" }} noWrap>
               Launch Date: {dateFormat(ticket.dueDate, "ddd, mmm dS, yyyy")}
             </Typography>
-            
+
             <Typography
               variant="h6"
               sx={{ color: "text.primary" }}
@@ -108,7 +114,7 @@ export default function TikcetDetails() {
 
         <Grid item xs={12} md={6} lg={4}>
           <Card sx={{ p: 4, pb: 3 }}>
-            <Typography variant="subtitle1"  noWrap>
+            <Typography variant="subtitle1" noWrap>
               Target:
               <Chip
                 label={`${ticket.target}`}
@@ -137,7 +143,7 @@ export default function TikcetDetails() {
             <p></p>
           </Card>
 
-          <Box mt={1} display="" >
+          <Box mt={1} display={`${box}`}>
             <Button
               component={Link}
               to={`/mytickets/update/${_id}`}
@@ -147,7 +153,9 @@ export default function TikcetDetails() {
             >
               Edit
             </Button>
-            <Button onClick={handleDelete}>Delete</Button>
+            <Button onClick={handleDelete} disabled={delButton}>
+              Delete
+            </Button>
           </Box>
         </Grid>
       </Grid>
