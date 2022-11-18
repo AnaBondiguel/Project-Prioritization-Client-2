@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Container,
   Grid,
-  Paper,
-  Box,
+ 
   Button,
   Card,
   Typography,
@@ -52,6 +51,7 @@ export default function TikcetDetails() {
   ) {
     box = "";
   }
+
   let delButton = false;
   let colorButton = "sucess";
   if (ticket.isSubmitted && user.role === "manager") {

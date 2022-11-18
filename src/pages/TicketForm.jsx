@@ -122,7 +122,7 @@ function TicketForm() {
   }
 
   let saveButton = false
-  let colorButton = "sucess"
+  let colorButton = "success";
   if (ticket && ticket.isSubmitted) {
     saveButton = true;
     colorButton = "warning"
