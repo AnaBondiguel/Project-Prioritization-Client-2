@@ -91,18 +91,8 @@ export async function deleteTicket(id) {
 //update a ticket
 export async function updateTicket(ticket) {
    //return ticket;
-  let updatedTicket = {
-    initiative: ticket.initialtive,
-		description: ticket.description,
-    target: ticket.target,
-    impact: ticket.impact,
-    confidence: ticket.confidence,
-    effort: ticket.effort,
-    dueDate: ticket.duedate,
-    ICE_Score: ticket.ICE_Score,
-    priority: ticket.priority,
-	}
-	const response = await projectAPI.put(`/api/tickets/${ticket.id}`, updatedTicket);
+
+	const response = await projectAPI.put(`/api/tickets/${ticket.id}`, ticket);
 	return response.data;
 }
 

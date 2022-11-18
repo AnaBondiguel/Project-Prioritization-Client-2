@@ -38,6 +38,7 @@ function App() {
     feedbacks: null,
     loggedInUser: localStorage.getItem("user") || null,
     auth: localStorage.getItem("token") || null,
+    filterTickets: [],
   };
   const [store, dispatch] = useReducer(reducer, initialState);
   const user = JSON.parse(localStorage.getItem("user"));
