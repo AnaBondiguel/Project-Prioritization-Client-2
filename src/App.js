@@ -1,8 +1,7 @@
 import { React, useEffect, useReducer } from "react";
 import ScrollToTop from "./@mui/components/scrolltotop/ScroolToTop";
-import StyledChart from "./@mui/components/chart/styles.js";
+// import StyledChart from "./@mui/components/chart/styles.js";
 import ThemeProvider from "./@mui/theme";
-
 import { Routes, Route, Navigate } from "react-router-dom";
 import { StateContext } from "./utils/StateContext";
 import reducer from "./utils/StateReducer";
@@ -78,7 +77,7 @@ function App() {
   return (
     <ThemeProvider>
       <ScrollToTop />
-      <StyledChart />
+      {/* <StyledChart /> */}
       <StateContext.Provider value={{ store, dispatch }}>
         {/* <Router />    
       //----------------------------------------------------------------
