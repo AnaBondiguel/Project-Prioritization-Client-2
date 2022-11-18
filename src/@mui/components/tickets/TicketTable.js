@@ -20,7 +20,7 @@ export const TicketTable = (data) => {
 
   const tickets = data.tickets;
   const listing = window.location.href
-  console.log(listing);
+ 
   
   const [limit, setLimit] = useState(5);
   const [page, setPage] = useState(0);
