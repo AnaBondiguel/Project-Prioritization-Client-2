@@ -3,6 +3,7 @@ import React from "react";
 
 
 export default function SubmittedTicketsHeader() {
+ 
   return (
     <Stack
       direction="row"

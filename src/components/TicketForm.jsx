@@ -1,17 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Grid, Typography, Button, Paper, NativeSelect } from "@mui/material";
+import React, { useState } from "react";
+import { Grid, Typography, Button, Paper, NativeSelect, Container } from "@mui/material";
 import { useGlobalState } from "../utils/StateContext";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
-import {
-  createTicket,
-  updateTicket,
-  getTicket,
-} from "../services/ticketServices";
-import FileBase from "react-file-base64";
+import { createTicket, updateTicket } from "../services/ticketServices";
 
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import TextField from "@mui/material/TextField";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import EditOrNewTicketHeader from './tickets/EditOrNewTicketHeader'
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { v4 as uuidv4 } from "uuid";
 
@@ -120,130 +116,133 @@ function TicketForm() {
   }
 
   return (
-    <Paper elevation={3}>
-      <Typography variant="h4" align="left">
-        New Ticket
-      </Typography>
-      <Grid container spacing={2} columns={16}>
-        <Grid item xs={8}>
-          <form>
-            <Typography>Initiative:</Typography>
-            <input
-              type="text"
-              name="initialtive"
-              value={formState.initialtive}
-              onChange={handleChange}
-            ></input>
+    <Container fluid className="main-content-container px-4 pb-4">
+      <EditOrNewTicketHeader id={_id}/>
+      <Paper elevation={3}>
+        <Typography variant="h4" align="left">
+          New Ticket
+        </Typography>
+        <Grid container spacing={2} columns={16}>
+          <Grid item xs={8}>
+            <form>
+              <Typography>Initiative:</Typography>
+              <input
+                type="text"
+                name="initialtive"
+                value={formState.initialtive}
+                onChange={handleChange}
+              ></input>
 
-            <Typography>Description:</Typography>
-            <textarea
-              type="text"
-              name="description"
-              value={formState.description}
-              onChange={handleChange}
-            ></textarea>
+              <Typography>Description:</Typography>
+              <textarea
+                type="text"
+                name="description"
+                value={formState.description}
+                onChange={handleChange}
+              ></textarea>
 
-            <Typography>Target:</Typography>
-            <NativeSelect
-              name="target"
-              value={formState.target}
-              onChange={handleChange}
-            >
-              {target.map((target) => (
-                <option key={target} value={target}>
-                  {target}
-                </option>
-              ))}
-            </NativeSelect>
+              <Typography>Target:</Typography>
+              <NativeSelect
+                name="target"
+                value={formState.target}
+                onChange={handleChange}
+              >
+                {target.map((target) => (
+                  <option key={target} value={target}>
+                    {target}
+                  </option>
+                ))}
+              </NativeSelect>
 
-            <Typography>Due Date:</Typography>
-            <LocalizationProvider dateAdapter={AdapterDateFns}>
-              <DatePicker
-                value={dateValue}
-                label="dueDate"
-                onChange={(v) => {
-                  setDateValue(v);
-                }}
-                renderInput={(params) => <TextField {...params} />}
-              />
-            </LocalizationProvider>
-          </form>
+              <Typography>Due Date:</Typography>
+              <LocalizationProvider dateAdapter={AdapterDateFns}>
+                <DatePicker
+                  value={dateValue}
+                  label="dueDate"
+                  onChange={(v) => {
+                    setDateValue(v);
+                  }}
+                  renderInput={(params) => <TextField {...params} />}
+                />
+              </LocalizationProvider>
+            </form>
+          </Grid>
+
+          <Grid item xs={8}>
+            <form>
+              <Typography>Impact:</Typography>
+              <NativeSelect
+                name="impact"
+                value={formState.impact}
+                onChange={handleChange}
+              >
+                {impacts.map((impact) => (
+                  <option key={impact.name} value={impact.name}>
+                    {impact.name}
+                  </option>
+                ))}
+              </NativeSelect>
+
+              <Typography>Confidence:</Typography>
+              <NativeSelect
+                name="confidence"
+                value={formState.confidence}
+                onChange={handleChange}
+              >
+                {confidences.map((confidence) => (
+                  <option key={confidence.name} value={confidence.name}>
+                    {confidence.name}
+                  </option>
+                ))}
+              </NativeSelect>
+
+              <Typography>Effort:</Typography>
+              <NativeSelect
+                name="effort"
+                value={formState.effort}
+                onChange={handleChange}
+              >
+                {efforts.map((effort) => (
+                  <option key={effort.name} value={effort.name}>
+                    {effort.name}
+                  </option>
+                ))}
+              </NativeSelect>
+
+              <Typography>Feedback:</Typography>
+              <textarea
+                type="text"
+                name="feedback"
+                value={formState.feedback}
+                onChange={handleChange}
+              ></textarea>
+            </form>
+          </Grid>
         </Grid>
-
-        <Grid item xs={8}>
-          <form>
-            <Typography>Impact:</Typography>
-            <NativeSelect
-              name="impact"
-              value={formState.impact}
-              onChange={handleChange}
+        <br></br> <br></br> {/** search for mui spacer components */}
+        {/* If id is in the url, that means we update the ticket. If id is not in the url, that means we create a new ticket. */}
+        <Grid container spacing={1}>
+          <Grid item xs={1}>
+            <Button
+              variant="contained"
+              color="warning"
+              onClick={handleClick({ isSubmitted: false })}
             >
-              {impacts.map((impact) => (
-                <option key={impact.name} value={impact.name}>
-                  {impact.name}
-                </option>
-              ))}
-            </NativeSelect>
-
-            <Typography>Confidence:</Typography>
-            <NativeSelect
-              name="confidence"
-              value={formState.confidence}
-              onChange={handleChange}
+              Save
+            </Button>
+          </Grid>
+          <Grid item xs={1}>
+            <Button
+              variant="contained"
+              color="success"
+              onClick={handleClick({ isSubmitted: true })}
             >
-              {confidences.map((confidence) => (
-                <option key={confidence.name} value={confidence.name}>
-                  {confidence.name}
-                </option>
-              ))}
-            </NativeSelect>
-
-            <Typography>Effort:</Typography>
-            <NativeSelect
-              name="effort"
-              value={formState.effort}
-              onChange={handleChange}
-            >
-              {efforts.map((effort) => (
-                <option key={effort.name} value={effort.name}>
-                  {effort.name}
-                </option>
-              ))}
-            </NativeSelect>
-
-            <Typography>Feedback:</Typography>
-            <textarea
-              type="text"
-              name="feedback"
-              value={formState.feedback}
-              onChange={handleChange}
-            ></textarea>
-          </form>
+              Submit
+            </Button>
+          </Grid>
         </Grid>
-      </Grid>
-      <br></br> <br></br> {/** search for mui spacer components */}
-      {/* If id is in the url, that means we update the ticket. If id is not in the url, that means we create a new ticket. */}
-      <Grid container spacing={1}>
-        <Grid item xs={1}>
-          <Button
-            variant="contained"
-            color="warning"
-            onClick={handleClick({ isSubmitted: false })}
-          >
-            Save
-          </Button>
-        </Grid>
-        <Grid item xs={1}>
-          <Button
-            variant="contained"
-            color="success"
-            onClick={handleClick({ isSubmitted: true })}
-          >
-            Submit
-          </Button>
-        </Grid>
-      </Grid>
-    </Paper>
+      </Paper>
+    </Container>
   );
 }
 

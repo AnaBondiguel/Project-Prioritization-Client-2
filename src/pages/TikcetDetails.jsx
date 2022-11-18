@@ -62,7 +62,7 @@ export default function TikcetDetails() {
   } else {
     delButton = false;
   }
-  console.log(delButton);
+  // console.log(delButton);
   return (
     <Container fluid className="main-content-container px-4 pb-4">
       <TicketDetailsHeader />
@@ -148,7 +148,7 @@ export default function TikcetDetails() {
             <p></p>
           </Card>
 
-          <Stack direction="row" mt={2} spacing={2} display={`${box}`}>
+          <Stack direction="row" mt={2} spacing={2} display={box}>
             <Button
               variant="contained"
               color="success"
