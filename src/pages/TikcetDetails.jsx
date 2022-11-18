@@ -8,6 +8,7 @@ import {
   Card,
   Typography,
   Chip,
+  Stack,
 } from "@mui/material";
 import {
   useNavigate,
@@ -51,11 +52,15 @@ export default function TikcetDetails() {
   ) {
     box = "";
   }
-   let delButton = false;
-  if (ticket.isSubmitted && user.role === "manager" && user.id === ticket.author.id) {
+  let delButton = false;
+  if (
+    ticket.isSubmitted &&
+    user.role === "manager" &&
+    user.id === ticket.author.id
+  ) {
     delButton = true;
   } else {
-      delButton = false;
+    delButton = false;
   }
   console.log(delButton);
   return (
@@ -143,8 +148,10 @@ export default function TikcetDetails() {
             <p></p>
           </Card>
 
-          <Box mt={1} display={`${box}`}>
+          <Stack direction="row" mt={2} spacing={2} display={`${box}`}>
             <Button
+              variant="contained"
+              color="success"
               component={Link}
               to={`/mytickets/update/${_id}`}
               state={{
@@ -153,10 +160,15 @@ export default function TikcetDetails() {
             >
               Edit
             </Button>
-            <Button onClick={handleDelete} disabled={delButton}>
+            <Button
+              variant="outlined"
+              color="error"
+              onClick={handleDelete}
+              disabled={delButton}
+            >
               Delete
             </Button>
-          </Box>
+          </Stack>
         </Grid>
       </Grid>
 
