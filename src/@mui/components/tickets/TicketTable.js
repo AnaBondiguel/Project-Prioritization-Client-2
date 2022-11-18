@@ -17,10 +17,15 @@ import {
 } from "@mui/material";
 
 export const TicketTable = (data) => {
+
   const tickets = data.tickets;
+  const listing = window.location.href
+  console.log(listing);
+  
   const [limit, setLimit] = useState(5);
   const [page, setPage] = useState(0);
-  console.log(tickets);
+
+
   const handleLimitChange = (event) => {
     setLimit(event.target.value);
   };
@@ -37,18 +42,35 @@ export const TicketTable = (data) => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell />
+              {listing.includes("listing") ? (
+                <TableCell>Author</TableCell>
+              ) : (
+                <TableCell />
+              )}
               <TableCell>Initialtive</TableCell>
               <TableCell>Target</TableCell>
               <TableCell>ICE</TableCell>
               <TableCell>Launch Date</TableCell>
-              <TableCell>Status</TableCell>
+              {listing.includes("listing") ? (
+                <TableCell />
+              ) : (
+                 <TableCell>Status</TableCell>
+              )}
+             
             </TableRow>
           </TableHead>
           <TableBody>
             {tickets.slice(0, limit).map((ticket) => (
               <TableRow hover key={ticket._id}>
-                <TableCell />
+                {listing.includes("listing") ? (
+                  <TableCell>
+                    {`${ticket.author.firstName}` +
+                      " " +
+                      `${ticket.author.lastName}`}
+                  </TableCell>
+                ) : (
+                  <TableCell />
+                )}
                 <TableCell>
                   <Box
                     sx={{
@@ -82,13 +104,18 @@ export const TicketTable = (data) => {
                 <TableCell>
                   {dateFormat(ticket.dueDate, "mm/dd/yyyy")}
                 </TableCell>
-                <TableCell>
-                  {ticket.isSubmitted ? (
-                    <Chip label="Submitted" color="success" size="small" />
-                  ) : (
-                    <Chip label="Not Submit" color="primary" size="small" />
-                  )}
-                </TableCell>
+
+                {listing.includes("listing") ? (
+                  <TableCell />
+                ) : (
+                  <TableCell>
+                    {ticket.isSubmitted ? (
+                      <Chip label="Submitted" color="success" size="small" />
+                    ) : (
+                      <Chip label="Not Submit" color="primary" size="small" />
+                    )}
+                  </TableCell>
+                )}
               </TableRow>
             ))}
           </TableBody>
