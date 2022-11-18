@@ -24,6 +24,7 @@ import Profile from './pages/Profile'
 import SignIn from './pages/SignIn.jsx'
 // ----------------------------------------------------------------
 import MyTickets1 from "./pages/MyTickets.jsx";
+import SubmittedTickets from './pages/SubmittedTickets'
 // ----------------------------------------------------------------
 import SignUp from './pages/SignUp.jsx'
 import FeedbackForm from "./components/FeedbackForm";
@@ -98,11 +99,11 @@ function App() {
               }
               index={true}
             />
-            
+
             <Route path="mytickets" element={<MyTickets />} />
             <Route path="blog" element={<MyTickets1 />} />
             <Route path="profile" element={<Profile />} />
-            <Route path="listings" element={<Listings />} />
+            <Route path="listings" element={<SubmittedTickets />} />
             <Route path="newticket" element={<TicketForm />} />
             <Route path="mytickets/update/:_id" element={<TicketForm />} />
             <Route path="searchresults" element={<SearchResults />} />

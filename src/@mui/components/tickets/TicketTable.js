@@ -32,75 +32,69 @@ export const TicketTable = (data) => {
   if (!tickets) return;
 
   return (
-     
-      <Card>
-     
-        <Box sx={{ minWidth: 850 }}>
-          
-          <Table>
-            
-            <TableHead>
-              <TableRow>
+    <Card>
+      <Box sx={{ minWidth: 850 }}>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell />
+              <TableCell>Initialtive</TableCell>
+              <TableCell>Target</TableCell>
+              <TableCell>ICE</TableCell>
+              <TableCell>Launch Date</TableCell>
+              <TableCell>Status</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {tickets.slice(0, limit).map((ticket) => (
+              <TableRow hover key={ticket._id}>
                 <TableCell />
-                <TableCell>Initialtive</TableCell>
-                <TableCell>Target</TableCell>
-                <TableCell>ICE</TableCell>
-                <TableCell>Launch Date</TableCell>
-                <TableCell>Status</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {tickets.slice(0, limit).map((ticket) => (
-                <TableRow hover key={ticket._id}>
-                  <TableCell />
-                  <TableCell>
-                    <Box
-                      sx={{
-                        alignItems: "center",
-                        display: "flex",
+                <TableCell>
+                  <Box
+                    sx={{
+                      alignItems: "center",
+                      display: "flex",
+                    }}
+                  >
+                    {/* <Avatar src={customer.avatarUrl} sx={{ mr: 2 }} /> */}
+
+                    <Typography
+                      color="textPrimary"
+                      variant="body1"
+                      component={Link}
+                      to={`/mytickets/${ticket._id}`}
+                      state={{
+                        ticket: JSON.stringify(ticket),
                       }}
                     >
-                      {/* <Avatar src={customer.avatarUrl} sx={{ mr: 2 }} /> */}
+                      {ticket.initialtive}
+                    </Typography>
+                  </Box>
+                </TableCell>
+                <TableCell>{ticket.target}</TableCell>
+                <TableCell>
+                  {iceScoreCalculation(
+                    ticket.impact,
+                    ticket.confidence,
+                    ticket.effort
+                  )}
+                </TableCell>
+                <TableCell>
+                  {dateFormat(ticket.dueDate, "mm/dd/yyyy")}
+                </TableCell>
+                <TableCell>
+                  {ticket.isSubmitted ? (
+                    <Chip label="Submitted" color="success" size="small" />
+                  ) : (
+                    <Chip label="Not Submit" color="primary" size="small" />
+                  )}
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </Box>
 
-                      <Typography
-                        color="textPrimary"
-                        variant="body1"
-                        component={Link}
-                        to={`/mytickets/${ticket._id}`}
-                        state={{
-                          ticket: JSON.stringify(ticket),
-                        }}
-                      >
-                        {ticket.initialtive}
-                      </Typography>
-                    </Box>
-                  </TableCell>
-                  <TableCell>{ticket.target}</TableCell>
-                  <TableCell>
-                    {iceScoreCalculation(
-                      ticket.impact,
-                      ticket.confidence,
-                      ticket.effort
-                    )}
-                  </TableCell>
-                  <TableCell>
-                    {dateFormat(ticket.dueDate, "mm/dd/yyyy")}
-                  </TableCell>
-                  <TableCell>
-                    {ticket.isSubmitted ? (
-                      <Chip label="Not Submit" color="primary" size="small" />
-                    ) : (
-                      <Chip label="Submitted" color="success" size="small" />
-                    )}
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-           
-          </Table>
-          
-        </Box>
-      
       <TablePagination
         component="div"
         count={tickets.length}
@@ -111,6 +105,5 @@ export const TicketTable = (data) => {
         rowsPerPageOptions={[5, 10, 25]}
       />
     </Card>
-    
   );
 };
