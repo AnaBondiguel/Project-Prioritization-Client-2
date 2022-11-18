@@ -1,5 +1,5 @@
 // component
-import SvgColor from "../components/svgcolor/SvgColor";
+import SvgColor from "../../@mui/components/svgcolor/SvgColor";
 
 // ----------------------------------------------------------------------
 

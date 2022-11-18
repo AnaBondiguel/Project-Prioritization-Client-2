@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
-import iceScoreCalculation from "./ICE_Score";
+import iceScoreCalculation from "../components/ICE_Score";
 
 function TicketTable({ tickets }) {
   return (

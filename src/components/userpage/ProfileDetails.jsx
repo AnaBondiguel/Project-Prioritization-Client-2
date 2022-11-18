@@ -10,8 +10,8 @@ import {
   Grid,
   TextField,
 } from "@mui/material";
-import { updateUser } from "../../../services/authServices";
-import { useGlobalState } from "../../../utils/StateContext";
+import { updateUser } from "../../services/authServices";
+import { useGlobalState } from "../../utils/StateContext";
 
 export const ProfileDetails = () => {
   const user = JSON.parse(localStorage.getItem("user"));

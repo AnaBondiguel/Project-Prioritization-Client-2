@@ -1,8 +1,8 @@
-import React, {useState} from 'react'
-import Header from "../@mui/header/Header";
-import Nav from "../@mui/navbar/Navbar";
+import React, { useState } from "react";
+import Header from "../components/header/Header";
+import Nav from "../components/navbar/Navbar.js";
 import { styled } from "@mui/material/styles";
-import {Outlet} from "react-router-dom"
+import { Outlet } from "react-router-dom";
 
 // ----------------------------------------------------------------
 const APP_BAR_MOBILE = 64;
@@ -28,18 +28,17 @@ const Main = styled("div")(({ theme }) => ({
 }));
 // ------------------------------------------------------------------
 
-
 export default function Home() {
-      const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   return (
     <>
-    <StyledRoot>
-    <Header onOpenNav={() => setOpen(true)} />
-    <Nav openNav={open} onCloseNav={() => setOpen(false)} />
-    <Main>
-        <Outlet />
-    </Main>
-    </StyledRoot>
+      <StyledRoot>
+        <Header onOpenNav={() => setOpen(true)} />
+        <Nav openNav={open} onCloseNav={() => setOpen(false)} />
+        <Main>
+          <Outlet />
+        </Main>
+      </StyledRoot>
     </>
-  )
+  );
 }

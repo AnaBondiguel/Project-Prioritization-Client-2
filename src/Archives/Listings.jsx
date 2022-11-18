@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Typography } from "@mui/material";
 import { useGlobalState } from "../utils/StateContext";
 import {  getAllTickets } from "../services/ticketServices";
-import TicketTable from "./TicketTable.jsx";
+import TicketTable from "../components/TicketTable.jsx";
 
 
 

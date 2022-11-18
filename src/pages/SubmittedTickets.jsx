@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { getAllTickets } from "../services/ticketServices";
 import { Box, Container } from "@mui/material";
 
-import SubmittedTicketsHeader from "../@mui/components/tickets/SubmittedTicketsHeader";
+import SubmittedTicketsHeader from "../components/tickets/SubmittedTicketsHeader";
 // import { useParams } from "react-router-dom";
 // import {customers} from '../_mocks/customers'
-import { TicketTable } from "../@mui/components/tickets/TicketTable";
+import { TicketTable } from "../components/tickets/TicketTable";
 import { useGlobalState } from "../utils/StateContext";
 
 export default function SubmittedTickets() {

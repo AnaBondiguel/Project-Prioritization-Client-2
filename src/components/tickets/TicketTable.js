@@ -1,5 +1,5 @@
 import { useState } from "react";
-import iceScoreCalculation from "../../../components/ICE_Score";
+import iceScoreCalculation from "../ICE_Score";
 import { Link } from "react-router-dom";
 
 import dateFormat from "dateformat";

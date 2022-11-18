@@ -4,12 +4,12 @@ import { useLocation } from "react-router-dom";
 import { styled, alpha } from "@mui/material/styles";
 import { Box, Drawer, Typography, Avatar, Divider } from "@mui/material";
 // hooks
-import useResponsive from "../hooks/useReponsive";
+import useResponsive from "../../@mui/hooks/useReponsive";
 // components
-import stringAvatar from '../theme/stringAvatar.js'
+import stringAvatar from "../../@mui/theme/stringAvatar.js";
 // import Logo from "../../../components/logo";
-import Scrollbar from "../components/scrollbar/Scrollbar";
-import NavSection from "../components/nav-section/NavSection";
+import Scrollbar from "../../@mui/components/scrollbar/Scrollbar";
+import NavSection from "../nav-section/NavSection";
 //
 import navConfig from "./config";
 import { useGlobalState } from "../../utils/StateContext.jsx";

@@ -1,13 +1,12 @@
 import { useState } from "react";
-import { register } from "../../../services/authServices";
+import { register } from "../../services/authServices";
 import { useNavigate } from "react-router-dom";
-import { useGlobalState } from "../../../utils/StateContext";
+import { useGlobalState } from "../../utils/StateContext";
 
 // @mui
 import { Stack, TextField } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 // components
-import Iconify from "../iconify";
 // ------------------------------------------------------------
 
 // ----------------------------------------------------------------------
