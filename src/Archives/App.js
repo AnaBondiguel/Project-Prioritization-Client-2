@@ -1,6 +1,6 @@
 import { React, useEffect, useReducer } from "react";
 import MyTickets from "./MyTickets";
-import TicketForm from "../components/TicketForm";
+import TicketForm from "../pages/TicketForm";
 import TicketDetails from "../components/TicketDetails";
 import Listings from "../components/Listings";
 import SearchResults from "../components/SearchResults";

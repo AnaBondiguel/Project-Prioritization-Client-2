@@ -12,7 +12,7 @@ import { createTicket, updateTicket } from "../services/ticketServices";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import TextField from "@mui/material/TextField";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import EditOrNewTicketHeader from "./tickets/EditOrNewTicketHeader";
+import EditOrNewTicketHeader from "../components/tickets/EditOrNewTicketHeader";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { v4 as uuidv4 } from "uuid";
 
@@ -39,7 +39,6 @@ const target = ["Free", "Pro", "Teams", "Education", "All", "Others"];
 function TicketForm() {
   const location = useLocation();
   // console.log(location.state)
-  
 
   if (location.state) {
     var ticket = JSON.parse(location.state.ticket);
@@ -254,9 +253,6 @@ function TicketForm() {
           </Stack>
         </Grid>
       </Grid>
-
-      
-    
     </Container>
   );
 }
