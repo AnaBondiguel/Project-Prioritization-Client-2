@@ -23,7 +23,9 @@ import SearchResults from "./components/SearchResults";
 import SubmissionSuccess from "./components/SubmissionSuccess";
 import Profile from './pages/Profile'
 import SignIn from './pages/SignIn.jsx'
-
+// ----------------------------------------------------------------
+import Tickets from './pages/Tickets'
+// ----------------------------------------------------------------
 import SignUp from './pages/SignUp.jsx'
 import FeedbackForm from "./components/FeedbackForm";
 import Page404 from "./pages/Page404.jsx";
@@ -99,6 +101,7 @@ function App() {
             />
             
             <Route path="mytickets" element={<MyTickets />} />
+            <Route path="blog" element={<Tickets />} />
             <Route path="profile" element={<Profile />} />
             <Route path="listings" element={<Listings />} />
             <Route path="newticket" element={<TicketForm />} />

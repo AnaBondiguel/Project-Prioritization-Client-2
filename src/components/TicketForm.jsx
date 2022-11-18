@@ -33,20 +33,18 @@ import { v4 as uuidv4 } from "uuid";
  * }, [location.state])
  */
 
-const target = ["Free", "Pro", "Teams", "Education", "All", "Others"]
+const target = ["Free", "Pro", "Teams", "Education", "All", "Others"];
 
 function TicketForm() {
   const location = useLocation();
   // console.log(location.state)
-  
+
   if (location.state) {
-  var ticket = JSON.parse(location.state.ticket) 
-  var initialDate = ticket.dueDate;
-} else {
-  initialDate = null;
-}
-  // console.log(ticket);
-  
+    var ticket = JSON.parse(location.state.ticket);
+    var initialDate = ticket.dueDate;
+  } else {
+    initialDate = null;
+  }
 
   const initialFormState = {
     initialtive: "",
@@ -56,90 +54,49 @@ function TicketForm() {
     impact: "",
     confidence: "",
     effort: "",
-    // selectedFile: "",
     feedback: "",
-    // isSubmitted: false,
   };
-  // const {
-  //     enableInitiative = false,
-  //     enableDescription = true,
-  //     enableTargetId = true,
-  //     enableImpactId = true,
-  //     enableConfidenceId = true,
-  //     enableEffortId = true,
-  //     enableSelectedFile = true,
-  // } = props;
-  // const [ticket, setTicket] = useState(null);
-  const [formState, setFormState] = useState(initialFormState);
+
+  const [formState, setFormState] = useState(ticket || initialFormState);
   const { dispatch, store } = useGlobalState();
   const { impacts, confidences, efforts } = store;
   // ! date is in ininitialFormState no need another one
   const [dateValue, setDateValue] = useState(initialDate); //for date picker
 
-  const { id } = useParams();
+  const { _id } = useParams();
   let navigate = useNavigate();
-
-  useEffect(() => {
-    // if (id) {
-    //   getTicket(id).then((ticket) => {
-    //     const target = targets.find(
-    //       (target) => target.name.toLowerCase() === ticket.target.toLowerCase()
-    //     );
-    //     setFormState({
-    //       target_id: target.id,
-    //       description: ticket.description,
-    //     });
-    //   });
-    // }
-    // /tickets/new
-    // location.state = undefined
-    // setFormState(undefined)
-    //setFormState(location.state)
-
-    // state = initialFormState
-    setFormState((state) => {     
-      return {
-        ...state, // this is the initialFormState
-        ...ticket, // this is the ticket details
-      };
-    });
-  }, [ticket]);
 
   function handleChange(event) {
     setFormState({
       ...formState,
       [event.target.name]: event.target.value,
     });
-    
-    // console.log(location);
-    // console.log(dateValue)
-    // console.log(props);
-    // console.log(event.target.value);
   }
 
-  // <button onClick={handleClick()}>Save</button>
-  // <button onClick={handleClick({ isSubmitted: true })}>Submit</button>
-  // updateTicket -> PUT /api/tickets
-  // createTicket -> POST /api/tickets
   function handleClick({ isSubmitted = false }) {
     return (event) => {
       event.preventDefault();
       //if statement to handle update ticket and create ticket
-      if (id) {
+      if (_id) {
         // from saved ticket to submitted
-        updateTicket({ id: id, ...formState, isSubmitted: isSubmitted, dueDate: dateValue })
+        updateTicket({
+          id: _id,
+          ...formState,
+          isSubmitted: isSubmitted,
+          dueDate: dateValue,
+        })
           .then(() => {
             dispatch({
               type: "updateTicket",
               data: {
-                id: id,
+                id: _id,
                 ...formState,
                 isSubmitted: isSubmitted,
-                dueDate: dateValue
+                dueDate: dateValue,
               },
             });
             //if user update ticket with form, leave ticket to show on the page.
-            navigate(`/mytickets/${id}`);
+            navigate(`/mytickets`);
           })
           .catch((error) => console.log(error));
       } else {
@@ -148,7 +105,7 @@ function TicketForm() {
           ...formState,
           ticket_id: uuidv4(),
           isSubmitted: isSubmitted,
-          dueDate: dateValue
+          dueDate: dateValue,
         })
           .then((ticket) => {
             dispatch({ type: "addTicket", data: ticket });
@@ -200,31 +157,16 @@ function TicketForm() {
             </NativeSelect>
 
             <Typography>Due Date:</Typography>
-            <LocalizationProvider dateAdapter={AdapterDateFns} >
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DatePicker
                 value={dateValue}
                 label="dueDate"
-                onChange={(v)=>{
-                  setDateValue(v)
-                } }
+                onChange={(v) => {
+                  setDateValue(v);
+                }}
                 renderInput={(params) => <TextField {...params} />}
               />
             </LocalizationProvider>
-
-            {/* <Typography>Upload files:</Typography>
-            <input
-              type="text"
-              name="uselectedFile"
-              value={formState.selectedFile}
-              onChange={handleChange}
-            ></input>
-            <FileBase
-              type="file"
-              multiple={false}
-              onDone={({ base64 }) =>
-                setFormState({ ...formState, selectedFile: base64 })
-              }
-            /> */}
           </form>
         </Grid>
 
