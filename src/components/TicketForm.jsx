@@ -39,6 +39,7 @@ const target = ["Free", "Pro", "Teams", "Education", "All", "Others"];
 function TicketForm() {
   const location = useLocation();
   // console.log(location.state)
+  
 
   if (location.state) {
     var ticket = JSON.parse(location.state.ticket);
@@ -133,7 +134,6 @@ function TicketForm() {
                 name="initialtive"
                 onChange={handleChange}
                 value={formState.initialtive}
-                required
                 variant="outlined"
               />
             </Grid>
@@ -203,7 +203,7 @@ function TicketForm() {
             </FormControl>
 
             <FormControl sx={{ m: 1, minWidth: 160 }}>
-              <InputLabel>Impact</InputLabel>
+              <InputLabel>Confidence</InputLabel>
               <Select
                 name="confidence"
                 label="Confidence"
