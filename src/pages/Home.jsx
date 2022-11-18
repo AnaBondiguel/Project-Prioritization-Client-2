@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import Header from "../components/header/Header";
 import Nav from "../components/navbar/Navbar.js";
 import { styled } from "@mui/material/styles";
 import { Outlet } from "react-router-dom";
-const Header = React.lazy(()=>import("../components/header/Header") );
 
 // ----------------------------------------------------------------
 const APP_BAR_MOBILE = 64;

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useGlobalState } from "../../utils/StateContext.jsx";
 import { getAllTickets } from "../../services/ticketServices.jsx";
 // @mui
@@ -50,7 +50,7 @@ export default function Searchbar() {
 
   const [data, setData] = useState(initialData);
   let navigate = useNavigate();
-  const { store, dispatch } = useGlobalState();
+  const { dispatch } = useGlobalState();
 
   function handleOnChange(event) {
     setData({
@@ -62,6 +62,8 @@ export default function Searchbar() {
 
   //setup onKeyUp to search for all the submitted tickets
   function handleSubmit(event) {
+    
+    fetchTickets();
     if (event.key === "Enter") {
       const filteredTickets = getFilteredTickets();
       console.log("filterticket", filteredTickets);
@@ -87,29 +89,23 @@ export default function Searchbar() {
 
   // console.log(data.tickets);
   // fetch ticket from all the submitted listing tickets
-  useEffect(
-    () => {
-      function fetchTickets() {
-        getAllTickets()
-          .then((tickets) => {
-            // console.log("insearch", tickets);
-            setData({
-              ...data,
-              tickets: tickets,
-            });
-          })
-          .catch((error) => {
-            console.log("Error!", error);
-          })
-          .finally(() => {
-            console.log("Fetch completed.");
-          });
-      }
-      fetchTickets();
-    },
-    // only run on component did mount
-    []
-  );
+
+  function fetchTickets() {
+    getAllTickets()
+      .then((tickets) => {
+        // console.log("insearch", tickets);
+        setData({
+          ...data,
+          tickets: tickets,
+        });
+      })
+      .catch((error) => {
+        console.log("Error!", error);
+      })
+      .finally(() => {
+        console.log("Fetch completed.");
+      });
+  }
 
   // -----------------------------------------
   const [open, setOpen] = useState(false);
@@ -123,7 +119,7 @@ export default function Searchbar() {
   };
 
   return (
-    <ClickAwayListener onClickAway={handleClose}>
+    <ClickAwayListener onClickAway={handleClose} >
       <div>
         {!open && (
           <IconButton onClick={handleOpen}>
@@ -132,7 +128,7 @@ export default function Searchbar() {
         )}
 
         <Slide direction="down" in={open} mountOnEnter unmountOnExit>
-          <StyledSearchbar>
+          <StyledSearchbar >
             <Input
               autoFocus
               fullWidth
@@ -140,22 +136,17 @@ export default function Searchbar() {
               onChange={handleOnChange}
               onKeyUp={handleSubmit}
               placeholder="Search…"
-              // startAdornment={
-              //   <InputAdornment position="start">
-              //     <Iconify
-              //       icon="eva:search-fill"
-              //       sx={{ color: "text.disabled", width: 20, height: 20 }}
-              //     />
-              //   </InputAdornment>
-              // }
+              startAdornment={
+                <InputAdornment position="start">
+                  <Iconify
+                    icon="eva:search-fill"
+                    sx={{ color: "text.disabled", width: 20, height: 20 }}
+                  />
+                </InputAdornment>
+              }
               sx={{ mr: 1, fontWeight: "fontWeightBold" }}
             />
-            <Button
-              variant="contained"
-              onClick={handleSubmit}
-            >
-              Search
-            </Button>
+            <Button variant="contained" onClick={handleSubmit}>Search</Button>
           </StyledSearchbar>
         </Slide>
       </div>
