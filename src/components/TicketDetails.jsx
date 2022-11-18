@@ -9,8 +9,6 @@ import {
 } from "react-router-dom";
 import {
   deleteTicket,
-  getTicket,
-  updateTicket,
 } from "../services/ticketServices";
 import Feedbacks from "./Feedbacks";
 import { useGlobalState } from "../utils/StateContext";

@@ -6,7 +6,7 @@ import {
 import {Link} from "react-router-dom"
 
 
-export const CustomerListToolbar = (props) => (
+export const MyTickets = (props) => (
   <Box {...props}>
     <Box
       sx={{

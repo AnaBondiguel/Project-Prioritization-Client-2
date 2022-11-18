@@ -48,13 +48,13 @@ export default function reducer(state, action) {
       return {
         ...state,
         tickets: state.tickets.filter(
-          (ticket) => ticket.id !== action.data._id
+          (ticket) => ticket.id !== action.data.id
         ),
       };
     }
     case "updateTicket": {
       const ticket = state.tickets.find(
-        (ticket) => ticket._id === action.data.id
+        (ticket) => ticket._id === action.data._id
       );
       // console.log(ticket);
       // console.log(action.data);
