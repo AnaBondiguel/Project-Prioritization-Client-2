@@ -1,8 +1,7 @@
 import { React, useEffect, useReducer } from "react";
 import ScrollToTop from "./@mui/components/scrolltotop/ScroolToTop";
-import StyledChart from "./@mui/components/chart/styles.js";
+// import StyledChart from "./@mui/components/chart/styles.js";
 import ThemeProvider from "./@mui/theme";
-
 import { Routes, Route, Navigate } from "react-router-dom";
 import { StateContext } from "./utils/StateContext";
 import reducer from "./utils/StateReducer";
@@ -24,7 +23,8 @@ import SubmissionSuccess from "./components/SubmissionSuccess";
 import Profile from './pages/Profile'
 import SignIn from './pages/SignIn.jsx'
 // ----------------------------------------------------------------
-import Tickets from './pages/Tickets'
+import MyTickets1 from "./pages/MyTickets.jsx";
+import SubmittedTickets from './pages/SubmittedTickets'
 // ----------------------------------------------------------------
 import SignUp from './pages/SignUp.jsx'
 import FeedbackForm from "./components/FeedbackForm";
@@ -78,7 +78,7 @@ function App() {
   return (
     <ThemeProvider>
       <ScrollToTop />
-      <StyledChart />
+      {/* <StyledChart /> */}
       <StateContext.Provider value={{ store, dispatch }}>
         {/* <Router />    
       //----------------------------------------------------------------
@@ -99,11 +99,11 @@ function App() {
               }
               index={true}
             />
-            
+
             <Route path="mytickets" element={<MyTickets />} />
-            <Route path="blog" element={<Tickets />} />
+            <Route path="blog" element={<MyTickets1 />} />
             <Route path="profile" element={<Profile />} />
-            <Route path="listings" element={<Listings />} />
+            <Route path="listings" element={<SubmittedTickets />} />
             <Route path="newticket" element={<TicketForm />} />
             <Route path="mytickets/update/:_id" element={<TicketForm />} />
             <Route path="searchresults" element={<SearchResults />} />

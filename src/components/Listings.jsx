@@ -30,7 +30,7 @@ function Listings(){
       }
     }, [dispatch, tickets, loggedInUser])
   
-    if(!tickets) return "null";
+    if(!tickets) return ;
 
     return (
       //if users log in their account, they can see their tickets, otherwise, please sign in. 
