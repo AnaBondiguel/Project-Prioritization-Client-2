@@ -1,6 +1,6 @@
 // @mui
 import { styled } from "@mui/material/styles";
-import { Link, Container, Typography, Box } from "@mui/material";
+import { Link, Container, Typography} from "@mui/material";
 // hooks
 import useResponsive from "../@mui/hooks/useReponsive";
 // sections
