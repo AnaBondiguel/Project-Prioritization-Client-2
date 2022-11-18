@@ -6,18 +6,18 @@
 //   return response.data;
 // }
 
- export async function getTargets(){
-    const targets = [
-        {name:"Free"},
-        {name:"Pro"},
-        {name:"Teams"},
-        {name:"Education"},
-        {name:"All"},
-        {name:"Others"},
-    ]
+//  export async function getTargets(){
+//     const targets = [
+//         {name:"Free"},
+//         {name:"Pro"},
+//         {name:"Teams"},
+//         {name:"Education"},
+//         {name:"All"},
+//         {name:"Others"},
+//     ]
 
-    return targets;
- }
+//     return targets;
+//  }
 
 
 // export async function getImpacts() {

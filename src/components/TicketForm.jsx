@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { Grid, Typography, Button, Paper, NativeSelect, Container } from "@mui/material";
+import { Grid, Button, Container, Card, Select, Stack } from "@mui/material";
+import InputLabel from "@mui/material/InputLabel";
+import FormControl from "@mui/material/FormControl";
+import MenuItem from "@mui/material/MenuItem";
+import FormHelperText from "@mui/material/FormHelperText";
+
 import { useGlobalState } from "../utils/StateContext";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { createTicket, updateTicket } from "../services/ticketServices";
@@ -7,7 +12,7 @@ import { createTicket, updateTicket } from "../services/ticketServices";
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import TextField from "@mui/material/TextField";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import EditOrNewTicketHeader from './tickets/EditOrNewTicketHeader'
+import EditOrNewTicketHeader from "./tickets/EditOrNewTicketHeader";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { v4 as uuidv4 } from "uuid";
 
@@ -116,113 +121,122 @@ function TicketForm() {
   }
 
   return (
-    <Container fluid className="main-content-container px-4 pb-4">
-      <EditOrNewTicketHeader id={_id}/>
-      <Paper elevation={3}>
-        <Typography variant="h4" align="left">
-          New Ticket
-        </Typography>
-        <Grid container spacing={2} columns={16}>
-          <Grid item xs={8}>
-            <form>
-              <Typography>Initiative:</Typography>
-              <input
-                type="text"
+    <Container className="main-content-container px-4 pb-4">
+      <EditOrNewTicketHeader id={_id} />
+      <Grid container spacing={3}>
+        <Grid item xs={12} md={6} lg={8}>
+          <Card sx={{ p: 5 }}>
+            <Grid item md={9} xs={12}>
+              <TextField
+                fullWidth
+                label="Initialtive"
                 name="initialtive"
+                onChange={handleChange}
                 value={formState.initialtive}
-                onChange={handleChange}
-              ></input>
+                required
+                variant="outlined"
+              />
+            </Grid>
 
-              <Typography>Description:</Typography>
-              <textarea
-                type="text"
+            <Grid item md={12} mt={3}>
+              <TextField
+                fullWidth
+                label="Descrpition"
                 name="description"
+                onChange={handleChange}
+                multiline
+                rows={5}
                 value={formState.description}
-                onChange={handleChange}
-              ></textarea>
+                mt={5}
+              />
+            </Grid>
 
-              <Typography>Target:</Typography>
-              <NativeSelect
-                name="target"
-                value={formState.target}
-                onChange={handleChange}
-              >
-                {target.map((target) => (
-                  <option key={target} value={target}>
-                    {target}
-                  </option>
-                ))}
-              </NativeSelect>
-
-              <Typography>Due Date:</Typography>
+            <Grid item md={6} xs={12} mt={3}>
               <LocalizationProvider dateAdapter={AdapterDateFns}>
                 <DatePicker
                   value={dateValue}
-                  label="dueDate"
+                  label="Launch Date"
                   onChange={(v) => {
                     setDateValue(v);
                   }}
                   renderInput={(params) => <TextField {...params} />}
                 />
               </LocalizationProvider>
-            </form>
-          </Grid>
+            </Grid>
+          </Card>
+        </Grid>
 
-          <Grid item xs={8}>
-            <form>
-              <Typography>Impact:</Typography>
-              <NativeSelect
+        <Grid item xs={12} md={6} lg={4}>
+          <Card sx={{ p: 4, pb: 3 }}>
+            <FormControl sx={{ m: 1, minWidth: 220 }}>
+              <InputLabel>Target</InputLabel>
+              <Select
+                name="target"
+                label="Target"
+                value={formState.target}
+                onChange={handleChange}
+              >
+                {target.map((target) => (
+                  <MenuItem key={target} value={target}>
+                    {target}
+                  </MenuItem>
+                ))}
+              </Select>
+              <FormHelperText>Target Audience</FormHelperText>
+            </FormControl>
+
+            <FormControl sx={{ m: 1, minWidth: 160 }}>
+              <InputLabel>Impact</InputLabel>
+              <Select
                 name="impact"
+                label="Impact"
                 value={formState.impact}
                 onChange={handleChange}
               >
                 {impacts.map((impact) => (
-                  <option key={impact.name} value={impact.name}>
+                  <MenuItem key={impact.name} value={impact.name}>
                     {impact.name}
-                  </option>
+                  </MenuItem>
                 ))}
-              </NativeSelect>
+              </Select>
+              <FormHelperText>Project Impact</FormHelperText>
+            </FormControl>
 
-              <Typography>Confidence:</Typography>
-              <NativeSelect
+            <FormControl sx={{ m: 1, minWidth: 160 }}>
+              <InputLabel>Impact</InputLabel>
+              <Select
                 name="confidence"
+                label="Confidence"
                 value={formState.confidence}
                 onChange={handleChange}
               >
                 {confidences.map((confidence) => (
-                  <option key={confidence.name} value={confidence.name}>
+                  <MenuItem key={confidence.name} value={confidence.name}>
                     {confidence.name}
-                  </option>
+                  </MenuItem>
                 ))}
-              </NativeSelect>
+              </Select>
+              <FormHelperText>How Confidence you are?</FormHelperText>
+            </FormControl>
 
-              <Typography>Effort:</Typography>
-              <NativeSelect
+            <FormControl sx={{ m: 1, minWidth: 160 }}>
+              <InputLabel>Effort</InputLabel>
+              <Select
                 name="effort"
+                label="Effort"
                 value={formState.effort}
                 onChange={handleChange}
               >
                 {efforts.map((effort) => (
-                  <option key={effort.name} value={effort.name}>
+                  <MenuItem key={effort.name} value={effort.name}>
                     {effort.name}
-                  </option>
+                  </MenuItem>
                 ))}
-              </NativeSelect>
-
-              <Typography>Feedback:</Typography>
-              <textarea
-                type="text"
-                name="feedback"
-                value={formState.feedback}
-                onChange={handleChange}
-              ></textarea>
-            </form>
-          </Grid>
-        </Grid>
-        <br></br> <br></br> {/** search for mui spacer components */}
-        {/* If id is in the url, that means we update the ticket. If id is not in the url, that means we create a new ticket. */}
-        <Grid container spacing={1}>
-          <Grid item xs={1}>
+              </Select>
+              <FormHelperText>Estimate Effort of the project?</FormHelperText>
+            </FormControl>
+          </Card>
+          <Stack direction="row" mt={2} spacing={2}>
             <Button
               variant="contained"
               color="warning"
@@ -230,8 +244,6 @@ function TicketForm() {
             >
               Save
             </Button>
-          </Grid>
-          <Grid item xs={1}>
             <Button
               variant="contained"
               color="success"
@@ -239,9 +251,12 @@ function TicketForm() {
             >
               Submit
             </Button>
-          </Grid>
+          </Stack>
         </Grid>
-      </Paper>
+      </Grid>
+
+      
+    
     </Container>
   );
 }

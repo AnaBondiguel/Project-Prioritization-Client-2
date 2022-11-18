@@ -64,7 +64,7 @@ export default function TikcetDetails() {
   }
   // console.log(delButton);
   return (
-    <Container fluid className="main-content-container px-4 pb-4">
+    <Container  className="main-content-container px-4 pb-4">
       <TicketDetailsHeader />
 
       <Grid container spacing={3}>

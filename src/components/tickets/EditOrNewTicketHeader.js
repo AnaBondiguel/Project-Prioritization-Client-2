@@ -2,7 +2,7 @@ import { Stack, Typography } from "@mui/material";
 import React from "react";
 
 export default function EditOrNewTicketHeader(data) {
-   console.log(data);
+  //  console.log(data);
   return (
     <Stack
       direction="row"
