@@ -99,7 +99,8 @@ export default function reducer (state, action) {
             }
         }
 ```
-
+In TicketForm.jsx:
+```
 function handleClick({ isSubmitted = false }) {
     return (event) => {
       event.preventDefault();
@@ -146,3 +147,37 @@ function handleClick({ isSubmitted = false }) {
       }
     };
   }
+
+      <Button
+              variant="contained"
+              color="warning"
+              onClick={handleClick({ isSubmitted: false })}
+              disabled={saveButton}
+            >
+              Save
+            </Button>
+            <Button
+              variant="contained"
+              color="success"
+              onClick={handleClick({ isSubmitted: true })}
+            >
+              Submit
+            </Button>
+  ```
+
+- Applies Object Oriented (OO) principles/patterns & Uses appropriate data structures
+
+In order to write more testable, flexible, and maintainable code, we followed the four principles of object-oriented programming: abstraction, inheritance, encapsulation, and polymorphism. For our application, each component has its own function and each page is written as a function with all the functionality for the page that contained in various methods. Our structure is followed:
+
+- Function Name
+
+- State objects contains keys with values that are subject to change
+
+- UseEffect to fetch data from the MongoDB database and render it on the page
+
+- All the functions to control the functionality. e.g. handleChange and handleClick allows users to fill and submit the form.
+
+- A render function to display the contents of the page 
+
+For example, when ticket form is completed from the front-end, a new ticket is created from the values of the form. Then the information is saved and a HTTP request is sent to the back-end. 
+

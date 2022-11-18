@@ -60,7 +60,7 @@ export const TicketTable = (data) => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {tickets.slice(0, limit).map((ticket) => (
+            {tickets.slice(page*limit, page*limit+limit).map((ticket) => (
               <TableRow hover key={ticket._id}>
                 {listing.includes("listing") ? (
                   <TableCell>

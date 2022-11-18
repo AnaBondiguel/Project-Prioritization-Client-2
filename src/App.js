@@ -12,17 +12,18 @@ import {
 // -----------------------------------------------------------
 // pages
 import Home from "./pages/Home.jsx";
-import TicketForm from "./components/TicketForm";
-import TicketDetails from "./components/TicketDetails";
+import TicketForm from "./pages/TicketForm";
+// import TicketDetails from "./components/TicketDetails";
 import SearchResults from "./components/SearchResults";
 import SubmissionSuccess from "./components/SubmissionSuccess";
-import Profile from './pages/Profile'
-import SignIn from './pages/SignIn.jsx'
+import Profile from "./pages/Profile";
+import SignIn from "./pages/SignIn.jsx";
 // ----------------------------------------------------------------
 import MyTickets from "./pages/MyTickets.jsx";
-import SubmittedTickets from './pages/SubmittedTickets'
+import SubmittedTickets from "./pages/SubmittedTickets";
+import TicketDetails from "./pages/TikcetDetails";
 // ----------------------------------------------------------------
-import SignUp from './pages/SignUp.jsx'
+import SignUp from "./pages/SignUp.jsx";
 import FeedbackForm from "./components/FeedbackForm";
 import Page404 from "./pages/Page404.jsx";
 // ------------------------------------------------
@@ -43,7 +44,6 @@ function App() {
   // todo ------------------------------------------------
 
   useEffect(() => {
-    
     // ------------------------------------------------------
     // * can get from backend or use array instead
     getImpacts()
@@ -100,8 +100,14 @@ function App() {
               <Route path="feedback" element={<FeedbackForm />} />
             </Route>
           </Route>
-          <Route path="signup" element={!user? <SignUp /> :<Navigate to="/" /> } />
-          <Route path="signin" element={!user? <SignIn /> :<Navigate to="/" /> } />
+          <Route
+            path="signup"
+            element={!user ? <SignUp /> : <Navigate to="/" />}
+          />
+          <Route
+            path="signin"
+            element={!user ? <SignIn /> : <Navigate to="/" />}
+          />
           <Route path="*" element={<Page404 />} />
         </Routes>
       </StateContext.Provider>
