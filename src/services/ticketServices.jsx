@@ -78,7 +78,7 @@ export async function createTicket(ticket) {
   const response = await projectAPI.post('/api/tickets/new', ticket);
 	return response.data;
 }
-console.log("hello")
+// console.log("hello")
 
 
 //delete a ticket

@@ -13,7 +13,7 @@ import {
 // pages
 import Home from "./pages/Home.jsx";
 import TicketForm from "./components/TicketForm";
-import TicketDetails from "./components/TicketDetails";
+// import TicketDetails from "./components/TicketDetails";
 import SearchResults from "./components/SearchResults";
 import SubmissionSuccess from "./components/SubmissionSuccess";
 import Profile from './pages/Profile'
@@ -21,6 +21,7 @@ import SignIn from './pages/SignIn.jsx'
 // ----------------------------------------------------------------
 import MyTickets from "./pages/MyTickets.jsx";
 import SubmittedTickets from './pages/SubmittedTickets'
+import TicketDetails from "./pages/TikcetDetails"
 // ----------------------------------------------------------------
 import SignUp from './pages/SignUp.jsx'
 import FeedbackForm from "./components/FeedbackForm";
