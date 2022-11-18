@@ -2,7 +2,6 @@ import React from "react";
 import {
   Container,
   Grid,
- 
   Button,
   Card,
   Typography,
@@ -53,7 +52,7 @@ export default function TikcetDetails() {
   }
 
   let delButton = false;
-  let colorButton = "sucess";
+  let colorButton = "success";
   if (ticket.isSubmitted && user.role === "manager") {
     delButton = true;
     colorButton = "warning";
