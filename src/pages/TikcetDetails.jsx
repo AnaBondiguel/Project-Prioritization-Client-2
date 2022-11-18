@@ -62,7 +62,7 @@ export default function TikcetDetails() {
   } 
   // console.log(delButton);
   return (
-    <Container  className="main-content-container px-4 pb-4">
+    <Container className="main-content-container px-4 pb-4">
       <TicketDetailsHeader />
 
       <Grid container spacing={3}>
@@ -109,6 +109,7 @@ export default function TikcetDetails() {
               variant="body1"
               sx={{ color: "text.secondary" }}
               paragraph={true}
+              style={{ wordWrap: "break-word" }}
             >
               {ticket.description}
             </Typography>

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Grid, Button, Container, Card, Select, Stack } from "@mui/material";
+import { Grid, Button, Container, Card, Select, Stack, Typography, Chip } from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
 import FormHelperText from "@mui/material/FormHelperText";
+import dateFormat from "dateformat";
 
 import { useGlobalState } from "../utils/StateContext";
 import { useParams, useNavigate, useLocation } from "react-router-dom";
@@ -63,7 +64,7 @@ function TicketForm() {
   const { impacts, confidences, efforts } = store;
   // ! date is in ininitialFormState no need another one
   const [dateValue, setDateValue] = useState(initialDate); //for date picker
-
+  const user = JSON.parse(localStorage.getItem("user"))
   const { _id } = useParams();
   let navigate = useNavigate();
 
@@ -121,7 +122,7 @@ function TicketForm() {
   }
 
   let saveButton = false
-  if (ticket.isSubmitted) {
+  if (ticket && ticket.isSubmitted) {
     saveButton = true;
   }
   return (
@@ -129,44 +130,99 @@ function TicketForm() {
       <EditOrNewTicketHeader id={_id} />
       <Grid container spacing={3}>
         <Grid item xs={12} md={6} lg={8}>
-          <Card sx={{ p: 5 }}>
-            <Grid item md={9} xs={12}>
-              <TextField
-                fullWidth
-                label="Initialtive"
-                name="initialtive"
-                onChange={handleChange}
-                value={formState.initialtive}
-                variant="outlined"
-              />
-            </Grid>
+          {ticket && ticket.isSubmitted && ticket.author._id !== user.id ? (
+            <Card sx={{ p: 5 }}>
+              <Typography variant="h4" sx={{ color: "text.primary" }} noWrap>
+                {`${ticket.initialtive}` + "          "}
+                {ticket.isSubmitted ? (
+                  <Chip
+                    label="Submitted"
+                    color="success"
+                    size="small"
+                    variant="outlined"
+                  />
+                ) : (
+                  <Chip
+                    label="Not Submit"
+                    color="primary"
+                    size="small"
+                    variant="outlined"
+                  />
+                )}
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                sx={{ color: "text.secondary" }}
+                noWrap
+              >
+                {`${ticket.author.firstName}` +
+                  " " +
+                  `${ticket.author.lastName}`}
+              </Typography>
+              <Typography
+                variant="subtitle1"
+                sx={{ color: "info.main" }}
+                noWrap
+              >
+                Launch Date: {dateFormat(ticket.dueDate, "ddd, mmm dS, yyyy")}
+              </Typography>
 
-            <Grid item md={12} mt={3}>
-              <TextField
-                fullWidth
-                label="Descrpition"
-                name="description"
-                onChange={handleChange}
-                multiline
-                rows={5}
-                value={formState.description}
-                mt={5}
-              />
-            </Grid>
-
-            <Grid item md={6} xs={12} mt={3}>
-              <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <DatePicker
-                  value={dateValue}
-                  label="Launch Date"
-                  onChange={(v) => {
-                    setDateValue(v);
-                  }}
-                  renderInput={(params) => <TextField {...params} />}
+              <Typography
+                variant="h6"
+                sx={{ color: "text.primary" }}
+                noWrap
+                mt={3}
+              >
+                Description:
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{ color: "text.secondary" }}
+                style={{ wordWrap: "break-word" }}
+              >
+                {ticket.description}
+              </Typography>
+            </Card>
+          ) : (
+            <Card sx={{ p: 5 }}>
+              <Grid item md={9} xs={12}>
+                <TextField
+                  fullWidth
+                  label="Initialtive"
+                  name="initialtive"
+                  onChange={handleChange}
+                  value={formState.initialtive}
+                  variant="outlined"
                 />
-              </LocalizationProvider>
-            </Grid>
-          </Card>
+              </Grid>
+
+              <Grid item md={12} mt={3}>
+                <TextField
+                  fullWidth
+                  label="Descrpition"
+                  name="description"
+                  onChange={handleChange}
+                  multiline
+                  rows={5}
+                  value={formState.description}
+                  mt={5}
+                />
+              </Grid>
+
+              <Grid item md={6} xs={12} mt={3}>
+                <LocalizationProvider dateAdapter={AdapterDateFns}>
+                  <DatePicker
+                    value={dateValue}
+                    label="Launch Date"
+                    onChange={(v) => {
+                      setDateValue(v);
+                    }}
+                    renderInput={(params) => <TextField {...params} />}
+                  />
+                </LocalizationProvider>
+              </Grid>
+            </Card>
+          )}
         </Grid>
 
         <Grid item xs={12} md={6} lg={4}>
