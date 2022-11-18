@@ -76,10 +76,10 @@ function TicketForm() {
   // ! date is in ininitialFormState no need another one
   const [dateValue, setDateValue] = useState(initialDate); //for date picker
 
-  const { id } = useParams();
+  const { _id } = useParams();
   let navigate = useNavigate();
 
-  useEffect(() => {
+  // useEffect(() => {
     // if (id) {
     //   getTicket(id).then((ticket) => {
     //     const target = targets.find(
@@ -97,13 +97,13 @@ function TicketForm() {
     //setFormState(location.state)
 
     // state = initialFormState
-    setFormState((state) => {     
-      return {
-        ...state, // this is the initialFormState
-        ...ticket, // this is the ticket details
-      };
-    });
-  }, [ticket]);
+  //   setFormState((state) => {     
+  //     return {
+  //       ...state, // this is the initialFormState
+  //       ...ticket, // this is the ticket details
+  //     };
+  //   });
+  // }, [ticket]);
 
   function handleChange(event) {
     setFormState({
@@ -125,21 +125,21 @@ function TicketForm() {
     return (event) => {
       event.preventDefault();
       //if statement to handle update ticket and create ticket
-      if (id) {
+      if (_id) {
         // from saved ticket to submitted
-        updateTicket({ id: id, ...formState, isSubmitted: isSubmitted, dueDate: dateValue })
+        updateTicket({ id: _id, ...formState, isSubmitted: isSubmitted, dueDate: dateValue })
           .then(() => {
             dispatch({
               type: "updateTicket",
               data: {
-                id: id,
+                id: _id,
                 ...formState,
                 isSubmitted: isSubmitted,
                 dueDate: dateValue
               },
             });
             //if user update ticket with form, leave ticket to show on the page.
-            navigate(`/mytickets/${id}`);
+            navigate(`/mytickets/${_id}`);
           })
           .catch((error) => console.log(error));
       } else {
