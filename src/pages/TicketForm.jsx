@@ -227,7 +227,7 @@ function TicketForm() {
 
         <Grid item xs={12} md={6} lg={4}>
           <Card sx={{ p: 4, pb: 3 }}>
-            <FormControl sx={{ m: 1, minWidth: 220 }}>
+            <FormControl sx={{ m: 1, minWidth: 180 }}>
               <InputLabel>Target</InputLabel>
               <Select
                 name="target"
@@ -244,7 +244,7 @@ function TicketForm() {
               <FormHelperText>Target Audience</FormHelperText>
             </FormControl>
 
-            <FormControl sx={{ m: 1, minWidth: 160 }}>
+            <FormControl sx={{ m: 1, minWidth: 180 }}>
               <InputLabel>Impact</InputLabel>
               <Select
                 name="impact"
@@ -261,7 +261,7 @@ function TicketForm() {
               <FormHelperText>Project Impact</FormHelperText>
             </FormControl>
 
-            <FormControl sx={{ m: 1, minWidth: 160 }}>
+            <FormControl sx={{ m: 1, minWidth: 180}}>
               <InputLabel>Confidence</InputLabel>
               <Select
                 name="confidence"
@@ -278,7 +278,7 @@ function TicketForm() {
               <FormHelperText>How Confidence you are?</FormHelperText>
             </FormControl>
 
-            <FormControl sx={{ m: 1, minWidth: 160 }}>
+            <FormControl sx={{ m: 1, minWidth: 180 }}>
               <InputLabel>Effort</InputLabel>
               <Select
                 name="effort"
@@ -292,7 +292,7 @@ function TicketForm() {
                   </MenuItem>
                 ))}
               </Select>
-              <FormHelperText>Estimate Effort of the project?</FormHelperText>
+              <FormHelperText>Effort of the project?</FormHelperText>
             </FormControl>
           </Card>
           <Stack direction="row" mt={2} spacing={2}>
