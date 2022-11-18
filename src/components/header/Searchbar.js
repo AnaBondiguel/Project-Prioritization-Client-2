@@ -62,9 +62,9 @@ export default function Searchbar() {
 
   //setup onKeyUp to search for all the submitted tickets
   function handleSubmit(event) {
-    
     fetchTickets();
-    if (event.key === "Enter") {
+    console.log(event);
+    if (event.key === "Enter" || event.type === "click") {
       const filteredTickets = getFilteredTickets();
       console.log("filterticket", filteredTickets);
       dispatch({ type: "setFilteredTickets", data: filteredTickets });
@@ -103,7 +103,7 @@ export default function Searchbar() {
         console.log("Error!", error);
       })
       .finally(() => {
-        console.log("Fetch completed.");
+        // console.log("Fetch completed.");
       });
   }
 
@@ -119,7 +119,7 @@ export default function Searchbar() {
   };
 
   return (
-    <ClickAwayListener onClickAway={handleClose} >
+    <ClickAwayListener onClickAway={handleClose}>
       <div>
         {!open && (
           <IconButton onClick={handleOpen}>
@@ -128,7 +128,7 @@ export default function Searchbar() {
         )}
 
         <Slide direction="down" in={open} mountOnEnter unmountOnExit>
-          <StyledSearchbar >
+          <StyledSearchbar>
             <Input
               autoFocus
               fullWidth
@@ -146,7 +146,9 @@ export default function Searchbar() {
               }
               sx={{ mr: 1, fontWeight: "fontWeightBold" }}
             />
-            <Button variant="contained" onClick={handleSubmit}>Search</Button>
+            <Button variant="contained" onClick={handleSubmit}>
+              Search
+            </Button>
           </StyledSearchbar>
         </Slide>
       </div>
