@@ -22,7 +22,7 @@ export const TicketTable = (data) => {
   const listing = window.location.href
  
   
-  const [limit, setLimit] = useState(5);
+  const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(0);
 
 
@@ -123,13 +123,14 @@ export const TicketTable = (data) => {
       </Box>
 
       <TablePagination
+        rowsPerPageOptions={[5, 10, 25]}
         component="div"
         count={tickets.length}
         onPageChange={handlePageChange}
         onRowsPerPageChange={handleLimitChange}
         page={page}
         rowsPerPage={limit}
-        rowsPerPageOptions={[5, 10, 25]}
+        
       />
     </Card>
   );
