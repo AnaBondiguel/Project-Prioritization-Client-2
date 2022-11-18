@@ -24,6 +24,7 @@ const TicketDetails = () => {
   // const {loggedInUser} = store;
   const location = useLocation();
   const ticket = JSON.parse(location.state.ticket);
+  console.log(ticket);
 
   //  !test to get user role
   const { loggedInUser } = store;

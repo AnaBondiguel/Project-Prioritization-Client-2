@@ -52,18 +52,20 @@ export default function reducer (state, action) {
             }
         }
         case 'updateTicket': {
-            console.log(action.data)
-            console.log(state.tickets)
-            const ticket = state.tickets.find((ticket) => ticket._id === action.data.id)
-            console.log(ticket)
-            console.log(action.data)
-            const updatedTicket = Object.assign(ticket, action.data)       
-//we only changed one ticket and need to remain the rest of ticket list the same as before
-            const otherTickets = state.tickets.filter((ticket) => ticket.id !== action.data.id)
-            return {
-                ...state,
-                tickets: [updatedTicket, ...otherTickets]
-            }
+           const ticket = state.tickets.find(
+             (ticket) => ticket._id === action.data._id
+           );
+           console.log(ticket);
+           console.log(action.data);
+           const updatedTicket = Object.assign(ticket, action.data);
+           //we only changed one ticket and need to remain the rest of ticket list the same as before
+           const otherTickets = state.tickets.filter(
+             (ticket) => ticket.id !== action.data.id
+           );
+           return {
+             ...state,
+             tickets: [updatedTicket, ...otherTickets],
+           };
         }
         case "updateUser": {
           const user = JSON.parse(localStorage.getItem("user"));
