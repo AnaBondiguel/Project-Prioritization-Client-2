@@ -120,6 +120,10 @@ function TicketForm() {
     };
   }
 
+  let saveButton = false
+  if (ticket.isSubmitted) {
+    saveButton = true;
+  }
   return (
     <Container className="main-content-container px-4 pb-4">
       <EditOrNewTicketHeader id={_id} />
@@ -240,6 +244,7 @@ function TicketForm() {
               variant="contained"
               color="warning"
               onClick={handleClick({ isSubmitted: false })}
+              disabled={saveButton}
             >
               Save
             </Button>

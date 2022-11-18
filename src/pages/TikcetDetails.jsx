@@ -59,9 +59,7 @@ export default function TikcetDetails() {
     user.id === ticket.author.id
   ) {
     delButton = true;
-  } else {
-    delButton = false;
-  }
+  } 
   // console.log(delButton);
   return (
     <Container  className="main-content-container px-4 pb-4">
