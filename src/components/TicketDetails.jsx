@@ -9,8 +9,6 @@ import {
 } from "react-router-dom";
 import {
   deleteTicket,
-  getTicket,
-  updateTicket,
 } from "../services/ticketServices";
 import Feedbacks from "./Feedbacks";
 import { useGlobalState } from "../utils/StateContext";
@@ -26,6 +24,7 @@ const TicketDetails = () => {
   // const {loggedInUser} = store;
   const location = useLocation();
   const ticket = JSON.parse(location.state.ticket);
+  console.log(ticket);
 
   //  !test to get user role
   const { loggedInUser } = store;

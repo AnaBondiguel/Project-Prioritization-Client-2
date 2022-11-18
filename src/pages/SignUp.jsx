@@ -1,10 +1,10 @@
 // @mui
 import { styled } from "@mui/material/styles";
-import { Link, Container, Typography, Box } from "@mui/material";
+import { Link, Container, Typography } from "@mui/material";
 // hooks
 import useResponsive from "../@mui/hooks/useReponsive";
 // sections
-import SignupForm from "../@mui/components/userpage/SignupForm";
+import SignupForm from "../components/userpage/SignupForm";
 
 // ----------------------------------------------------------------------
 

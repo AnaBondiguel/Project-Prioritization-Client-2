@@ -4,7 +4,7 @@ import { deepPurple } from "@mui/material/colors";
 import { Link, useNavigate } from "react-router-dom";
 import { useGlobalState } from "../utils/StateContext";
 import { getTickets } from "../services/ticketServices";
-import iceScoreCalculation from "./ICE_Score";
+import iceScoreCalculation from "../components/ICE_Score";
 
 function TicketsList({ tickets, onAddTicketClick }) {
   // console.log(tickets);
@@ -62,18 +62,18 @@ function MyTickets() {
       return;
     }
     // console.log("tickets at top:", tickets) && refreshed
-      getTickets()
-        .then((tickets) => {
-          // console.log("tickets inside:", tickets)
-          dispatch({ type: "setTickets", data: tickets });
-        })
-        .catch((error) => console.log(error));
+    getTickets()
+      .then((tickets) => {
+        // console.log("tickets inside:", tickets)
+        dispatch({ type: "setTickets", data: tickets });
+      })
+      .catch((error) => console.log(error));
   }, [dispatch, loggedInUser]);
 
   const ticketsView =
     tickets && tickets.length > 0 ? (
       <TicketsList
-        tickets={tickets}  
+        tickets={tickets}
         onAddTicketClick={() => navigate("/newticket")}
       />
     ) : (

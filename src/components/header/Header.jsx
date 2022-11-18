@@ -3,15 +3,14 @@
 import { styled } from "@mui/material/styles";
 import { Box, Stack, AppBar, Toolbar, IconButton } from "@mui/material";
 // utils
-import { bgBlur } from "../cssStyles";
+import { bgBlur } from "../../@mui/cssStyles.js";
 // components
-import Iconify from "../components/iconify";
+import Iconify from "../../@mui/components/iconify.js";
 //
 import Searchbar from "./Searchbar";
 import AccountPopover from "./AccountPopover";
-import Logo from '../components/logo/Logo'
-// import LanguagePopover from "./LanguagePopover";
-// import NotificationsPopover from "./NotificationsPopover";
+import Logo from '../logo/Logo.js'
+
 
 // ----------------------------------------------------------------------
 

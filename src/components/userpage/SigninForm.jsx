@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { login } from "../../../services/authServices";
+import { login } from "../../services/authServices";
 import { useNavigate } from "react-router-dom";
-import { useGlobalState } from "../../../utils/StateContext";
+import { useGlobalState } from "../../utils/StateContext";
 
 // @mui
 import {
@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 // components
-import Iconify from "../iconify";
+import Iconify from "../../@mui/components/iconify";
 // ------------------------------------------------------------
 
 // ----------------------------------------------------------------------

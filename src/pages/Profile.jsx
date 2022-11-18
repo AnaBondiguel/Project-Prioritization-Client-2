@@ -1,5 +1,5 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
-import { ProfileDetails } from "../@mui/components/userpage/ProfileDetails";
+import { ProfileDetails } from "../components/userpage/ProfileDetails";
 
 import React from "react";
 

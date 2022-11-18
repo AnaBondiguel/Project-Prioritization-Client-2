@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Typography } from "@mui/material";
 import { useGlobalState } from "../utils/StateContext";
 import {  getAllTickets } from "../services/ticketServices";
-import TicketTable from "./TicketTable";
+import TicketTable from "../components/TicketTable.jsx";
 
 
 
@@ -30,7 +30,7 @@ function Listings(){
       }
     }, [dispatch, tickets, loggedInUser])
   
-    if(!tickets) return "null";
+    if(!tickets) return ;
 
     return (
       //if users log in their account, they can see their tickets, otherwise, please sign in. 

@@ -1,5 +1,5 @@
 // component
-import SvgColor from "../components/svgcolor/SvgColor";
+import SvgColor from "../../@mui/components/svgcolor/SvgColor";
 
 // ----------------------------------------------------------------------
 
@@ -28,12 +28,12 @@ const navConfig = [
   },
   {
     title: "blog",
-    path: "/dashboard/blog",
+    path: "/blog",
     icon: icon("ic_blog"),
   },
   {
-    title: "login",
-    path: "/login",
+    title: "Sing In",
+    path: "/signin",
     icon: icon("ic_lock"),
   },
   {

@@ -15,7 +15,7 @@ import {
 //
 import { useGlobalState } from "../../utils/StateContext.jsx";
 import { logout } from "../../services/authServices.jsx";
-import stringAvatar from "../theme/stringAvatar.js";
+import stringAvatar from "../../@mui/theme/stringAvatar";
 // ----------------------------------------------------------------------
 
 const MENU_OPTIONS = [
