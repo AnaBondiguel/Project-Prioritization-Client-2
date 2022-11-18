@@ -1,4 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { useGlobalState } from "../../utils/StateContext.jsx";
+import { getAllTickets } from "../../services/ticketServices.jsx";
 // @mui
 import { styled } from "@mui/material/styles";
 import {
@@ -11,8 +13,9 @@ import {
 } from "@mui/material";
 // utils
 import { bgBlur } from "../../@mui/cssStyles";
-// component
 import Iconify from "../../@mui/components/iconify";
+// component
+import { useNavigate } from "react-router-dom";
 
 // ----------------------------------------------------------------------
 
@@ -40,6 +43,71 @@ const StyledSearchbar = styled("div")(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 export default function Searchbar() {
+  // ----------------------------------------------------------------------
+  let initialData = {
+    userInput: "",
+  };
+
+  const [data, setData] = useState(initialData);
+  let navigate = useNavigate();
+  const { dispatch } = useGlobalState();
+
+  function handleOnChange(event) {
+    setData({
+      ...data,
+      userInput: event.target.value,
+    });
+    // console.log(event.target.value);
+  }
+
+  //setup onKeyUp to search for all the submitted tickets
+  function handleSubmit(event) {
+    
+    fetchTickets();
+    if (event.key === "Enter") {
+      const filteredTickets = getFilteredTickets();
+      console.log("filterticket", filteredTickets);
+      dispatch({ type: "setFilteredTickets", data: filteredTickets });
+      //Once we found the tickets, we'll see the tickets on the search results page
+      navigate("/searchresults");
+    }
+  }
+
+  function getFilteredTickets() {
+    if (!data.userInput) {
+      return data.tickets;
+    }
+    let filteredTickets = data.tickets.filter((ticket) => {
+      if (
+        ticket.initialtive.includes(data.userInput) ||
+        ticket.target.includes(data.userInput)
+      )
+        return ticket;
+    });
+    return filteredTickets;
+  }
+
+  // console.log(data.tickets);
+  // fetch ticket from all the submitted listing tickets
+
+  function fetchTickets() {
+    getAllTickets()
+      .then((tickets) => {
+        // console.log("insearch", tickets);
+        setData({
+          ...data,
+          tickets: tickets,
+        });
+      })
+      .catch((error) => {
+        console.log("Error!", error);
+      })
+      .finally(() => {
+        console.log("Fetch completed.");
+      });
+  }
+
+  // -----------------------------------------
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -51,7 +119,7 @@ export default function Searchbar() {
   };
 
   return (
-    <ClickAwayListener onClickAway={handleClose}>
+    <ClickAwayListener onClickAway={handleClose} >
       <div>
         {!open && (
           <IconButton onClick={handleOpen}>
@@ -60,11 +128,13 @@ export default function Searchbar() {
         )}
 
         <Slide direction="down" in={open} mountOnEnter unmountOnExit>
-          <StyledSearchbar>
+          <StyledSearchbar >
             <Input
               autoFocus
               fullWidth
               disableUnderline
+              onChange={handleOnChange}
+              onKeyUp={handleSubmit}
               placeholder="Search…"
               startAdornment={
                 <InputAdornment position="start">
@@ -76,9 +146,7 @@ export default function Searchbar() {
               }
               sx={{ mr: 1, fontWeight: "fontWeightBold" }}
             />
-            <Button variant="contained" onClick={handleClose}>
-              Search
-            </Button>
+            <Button variant="contained" onClick={handleSubmit}>Search</Button>
           </StyledSearchbar>
         </Slide>
       </div>

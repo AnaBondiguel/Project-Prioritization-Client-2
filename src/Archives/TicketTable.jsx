@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import iceScoreCalculation from "../components/ICE_Score";
 
 function TicketTable({ tickets }) {
+  if(!tickets) return;
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
