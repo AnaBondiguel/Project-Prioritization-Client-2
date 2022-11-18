@@ -1,6 +1,6 @@
 import { Box, Container } from "@mui/material";
 import { CustomerListResults } from "../@mui/components/tickets/customer-list-results";
-import { CustomerListToolbar } from "../@mui/components//tickets/customer-list-toolbar";
+import { CustomerListToolbar } from "../@mui/components/tickets/MyTicketsHeader";
 import { customers } from "../_mocks/customers";
 import React from "react";
 
