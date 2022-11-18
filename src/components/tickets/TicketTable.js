@@ -41,7 +41,7 @@ export const TicketTable = (data) => {
       <Box sx={{ minWidth: 850 }}>
         <Table>
           <TableHead>
-            <TableRow>
+            <TableRow sx={{ background: "#dadada" }}>
               {listing.includes("listing") ? (
                 <TableCell>Author</TableCell>
               ) : (
@@ -54,16 +54,15 @@ export const TicketTable = (data) => {
               {listing.includes("listing") ? (
                 <TableCell />
               ) : (
-                 <TableCell>Status</TableCell>
+                <TableCell>Status</TableCell>
               )}
-             
             </TableRow>
           </TableHead>
           <TableBody>
-            {tickets.slice(page*limit, page*limit+limit).map((ticket) => (
+            {tickets.slice(page * limit, page * limit + limit).map((ticket) => (
               <TableRow hover key={ticket._id}>
                 {listing.includes("listing") ? (
-                  <TableCell>
+                  <TableCell sx={{ color: "#204969" }}>
                     {`${ticket.author.firstName}` +
                       " " +
                       `${ticket.author.lastName}`}
@@ -94,7 +93,7 @@ export const TicketTable = (data) => {
                   </Box>
                 </TableCell>
                 <TableCell>{ticket.target}</TableCell>
-                <TableCell>
+                <TableCell sx={{ color: "#008c9e" }}>
                   {iceScoreCalculation(
                     ticket.impact,
                     ticket.confidence,
@@ -130,7 +129,6 @@ export const TicketTable = (data) => {
         onRowsPerPageChange={handleLimitChange}
         page={page}
         rowsPerPage={limit}
-        
       />
     </Card>
   );
