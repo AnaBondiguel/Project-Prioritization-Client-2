@@ -53,14 +53,12 @@ export default function TikcetDetails() {
     box = "";
   }
   let delButton = false;
-  if (
-    ticket.isSubmitted &&
-    user.role === "manager" &&
-    user.id === ticket.author.id
-  ) {
+  let colorButton = "sucess";
+  if (ticket.isSubmitted && user.role === "manager") {
     delButton = true;
-  } 
-  // console.log(delButton);
+    colorButton = "warning";
+  }
+
   return (
     <Container className="main-content-container px-4 pb-4">
       <TicketDetailsHeader />
@@ -122,7 +120,7 @@ export default function TikcetDetails() {
               Target:
               <Chip
                 label={`${ticket.target}`}
-                color="primary"
+                color={colorButton}
                 variant="outlined"
                 size="small"
               />
@@ -150,14 +148,14 @@ export default function TikcetDetails() {
           <Stack direction="row" mt={2} spacing={2} display={box}>
             <Button
               variant="contained"
-              color="success"
+              color={colorButton}
               component={Link}
               to={`/mytickets/update/${_id}`}
               state={{
                 ticket: JSON.stringify(ticket),
               }}
             >
-              Edit
+              {delButton ? "Update" : "Edit"}
             </Button>
             <Button
               variant="outlined"

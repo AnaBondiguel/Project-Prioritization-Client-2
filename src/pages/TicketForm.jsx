@@ -122,8 +122,10 @@ function TicketForm() {
   }
 
   let saveButton = false
+  let colorButton = "sucess"
   if (ticket && ticket.isSubmitted) {
     saveButton = true;
+    colorButton = "warning"
   }
   return (
     <Container className="main-content-container px-4 pb-4">
@@ -261,7 +263,7 @@ function TicketForm() {
               <FormHelperText>Project Impact</FormHelperText>
             </FormControl>
 
-            <FormControl sx={{ m: 1, minWidth: 180}}>
+            <FormControl sx={{ m: 1, minWidth: 180 }}>
               <InputLabel>Confidence</InputLabel>
               <Select
                 name="confidence"
@@ -306,10 +308,10 @@ function TicketForm() {
             </Button>
             <Button
               variant="contained"
-              color="success"
+              color={colorButton}
               onClick={handleClick({ isSubmitted: true })}
             >
-              Submit
+              {saveButton ? "Update" : "Submit"}
             </Button>
           </Stack>
         </Grid>

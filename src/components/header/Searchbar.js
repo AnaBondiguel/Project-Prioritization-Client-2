@@ -57,13 +57,13 @@ export default function Searchbar() {
       ...data,
       userInput: event.target.value,
     });
-    // console.log(event.target.value);
+    
   }
 
   //setup onKeyUp to search for all the submitted tickets
   function handleSubmit(event) {
     fetchTickets();
-    console.log(event);
+    // console.log(event);
     if (event.key === "Enter" || event.type === "click") {
       const filteredTickets = getFilteredTickets();
       console.log("filterticket", filteredTickets);
@@ -93,7 +93,7 @@ export default function Searchbar() {
   function fetchTickets() {
     getAllTickets()
       .then((tickets) => {
-        // console.log("insearch", tickets);
+       
         setData({
           ...data,
           tickets: tickets,
@@ -103,7 +103,7 @@ export default function Searchbar() {
         console.log("Error!", error);
       })
       .finally(() => {
-        // console.log("Fetch completed.");
+        console.log("Fetch completed.");
       });
   }
 
