@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Scrollbar from "../scrollbar/Scrollbar";
-import { format } from "date-fns";
+// import { format } from "date-fns";
 import {
-  Avatar,
+
   Box,
   Card,
   Table,
@@ -15,7 +15,8 @@ import {
 } from "@mui/material";
 // import { getInitials } from "../../utils/get-initials";
 
-export const CustomerListResults = ({ customers, ...rest }) => {
+export const CustomerListResults = (data) => {
+  const tickets = data.tickets
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(0);
 
@@ -26,9 +27,10 @@ export const CustomerListResults = ({ customers, ...rest }) => {
   const handlePageChange = (event, newPage) => {
     setPage(newPage);
   };
+  if (!tickets) return;
 
   return (
-    <Card {...rest}>
+    <Card>
       <Scrollbar>
         <Box sx={{ minWidth: 1050 }}>
           <Table>
@@ -42,8 +44,8 @@ export const CustomerListResults = ({ customers, ...rest }) => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {customers.slice(0, limit).map((customer) => (
-                <TableRow hover key={customer.id}>
+              {tickets.map((ticket) => (
+                <TableRow hover key={ticket.id}>
                   <TableCell>
                     <Box
                       sx={{
@@ -51,21 +53,21 @@ export const CustomerListResults = ({ customers, ...rest }) => {
                         display: "flex",
                       }}
                     >
-                      <Avatar src={customer.avatarUrl} sx={{ mr: 2 }} />
+                      {/* <Avatar src={customer.avatarUrl} sx={{ mr: 2 }} /> */}
 
                       <Typography color="textPrimary" variant="body1">
-                        {customer.name}
+                        {ticket.initialtive}
                       </Typography>
                     </Box>
                   </TableCell>
-                  <TableCell>{customer.email}</TableCell>
+                  <TableCell>{ticket.dueDate}</TableCell>
                   <TableCell>
-                    {`${customer.address.city}, ${customer.address.state}, ${customer.address.country}`}
+                    {`${ticket.effort}, ${ticket.impact}, ${ticket.confidence}`}
                   </TableCell>
-                  <TableCell>{customer.phone}</TableCell>
-                  <TableCell>
-                    {format(customer.createdAt, "dd/MM/yyyy")}
-                  </TableCell>
+                 
+                  {/* <TableCell>
+                    {format(ticket.createdAt, "dd/MM/yyyy")}
+                  </TableCell> */}
                 </TableRow>
               ))}
             </TableBody>
@@ -74,7 +76,7 @@ export const CustomerListResults = ({ customers, ...rest }) => {
 
         <TablePagination
           component="div"
-          count={customers.length}
+          count={tickets.length}
           onPageChange={handlePageChange}
           onRowsPerPageChange={handleLimitChange}
           page={page}
