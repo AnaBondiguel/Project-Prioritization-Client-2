@@ -24,7 +24,7 @@ import SubmissionSuccess from "./components/SubmissionSuccess";
 import Profile from './pages/Profile'
 import SignIn from './pages/SignIn.jsx'
 // ----------------------------------------------------------------
-import Tickets from './pages/Tickets'
+import MyTickets1 from "./pages/MyTickets.jsx";
 // ----------------------------------------------------------------
 import SignUp from './pages/SignUp.jsx'
 import FeedbackForm from "./components/FeedbackForm";
@@ -101,7 +101,7 @@ function App() {
             />
             
             <Route path="mytickets" element={<MyTickets />} />
-            <Route path="blog" element={<Tickets />} />
+            <Route path="blog" element={<MyTickets1 />} />
             <Route path="profile" element={<Profile />} />
             <Route path="listings" element={<Listings />} />
             <Route path="newticket" element={<TicketForm />} />

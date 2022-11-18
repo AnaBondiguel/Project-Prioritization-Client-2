@@ -1,7 +1,7 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
+import {Box, Container} from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
-import {MyTickets} from "../@mui/components/tickets/MyTicketsHeader.js";
+import MyTicketsHeader from "../@mui/components/tickets/MyTicketsHeader.js";
 // import { useParams } from "react-router-dom";
 
 const columns = [
@@ -49,11 +49,12 @@ const rows = [
 ];
 
 
-export default function Tickets() {
+export default function MyTickets1() {
   
   return (
     <>
-      <MyTickets />
+    <Container>
+      <MyTicketsHeader />
       <Box sx={{ height: 400, width: "100%" }}>
         <DataGrid
           rows={rows}
@@ -64,6 +65,7 @@ export default function Tickets() {
           experimentalFeatures={{ newEditingApi: true }}
         />
       </Box>
+    </Container>
     </>
   );
 }
