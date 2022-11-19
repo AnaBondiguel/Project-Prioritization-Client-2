@@ -52,12 +52,11 @@ function TicketForm() {
   const initialFormState = {
     initialtive: "",
     description: "",
-    target: "",
+    target: "Others",
     dueDate: Date.now(),
-    impact: "",
-    confidence: "",
-    effort: "",
-    feedback: "",
+    impact: "?",
+    confidence: "?",
+    effort: "?",
   };
   let ticket = initialFormState;
   let initialDate = null;
