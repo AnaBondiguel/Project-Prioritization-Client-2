@@ -47,6 +47,7 @@ function App() {
   useEffect(() => {
     // ------------------------------------------------------
     // * can get from backend or use array instead
+    
     getImpacts()
       .then((impacts) => dispatch({ type: "setImpacts", data: impacts }))
       .catch((error) => console.log(error));
