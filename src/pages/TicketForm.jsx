@@ -107,7 +107,7 @@ function TicketForm() {
             },
           });
           //if user update ticket with form, leave ticket to show on the page.
-          navigate(`/mytickets`);
+          navigate(`/mytickets/${_id}`, {state:{ticket: JSON.stringify(ticket)}});
         })
         .catch((error) =>
           setError(error.response.data.errors || error.response.data.error)
