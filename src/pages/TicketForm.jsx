@@ -8,6 +8,7 @@ import {
   Stack,
   Typography,
   Chip,
+  Alert
 } from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
@@ -71,11 +72,13 @@ function TicketForm() {
   const { impacts, confidences, efforts } = store;
   // ! date is in ininitialFormState no need another one
   const [dateValue, setDateValue] = useState(initialDate); //for date picker
+  const [error, setError] = useState([]); // error messages
   const user = JSON.parse(localStorage.getItem("user"));
   const { _id } = useParams();
   let navigate = useNavigate();
 
   function handleChange(event) {
+    setError([]);
     setFormState({
       ...formState,
       [event.target.name]: event.target.value,
@@ -107,7 +110,9 @@ function TicketForm() {
             //if user update ticket with form, leave ticket to show on the page.
             navigate(`/mytickets`);
           })
-          .catch((error) => console.log(error));
+          .catch((error) =>
+            setError(error.response.data.errors || error.response.data.error)
+          );
       } else {
         // from creation to submitted
         createTicket({
@@ -123,7 +128,9 @@ function TicketForm() {
               ? navigate("/submissionsuccess")
               : navigate("/mytickets");
           })
-          .catch((error) => console.log(error));
+          .catch((error) =>
+            setError(error.response.data.errors || error.response.data.error)
+          );
       }
     };
   }
@@ -303,6 +310,30 @@ function TicketForm() {
               </Select>
               <FormHelperText>Effort of the project?</FormHelperText>
             </FormControl>
+            
+            {
+              // -----------------------------------
+              //check error type and condition
+              error && typeof error === "string" ? (
+                <Alert variant="outlined" severity="error" sx={{ m: 1 }}>
+                  {error}
+                </Alert>
+              ) : error ? (
+                error.map((err, i) => (
+                  <Alert
+                    key={i}
+                    variant="outlined"
+                    severity="error"
+                    sx={{ m: 1 }}
+                  >
+                    {err.msg}
+                  </Alert>
+                ))
+              ) : (
+                <></>
+              )
+              //-------------------------------------
+            }
           </Card>
           <Stack direction="row" mt={2} spacing={2}>
             <Button

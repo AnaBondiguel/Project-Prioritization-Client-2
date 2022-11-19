@@ -18,7 +18,7 @@ export const ProfileDetails = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
   const { dispatch } = useGlobalState();
-  const [error, setError] = useState([]);
+  const [error, setError] = useState([]); // set error value
   const [values, setValues] = useState({
     firstName: user.firstName,
     lastName: user.lastName,
@@ -41,7 +41,7 @@ export const ProfileDetails = () => {
         navigate("/");
       })
       .catch((error) =>
-        setError(error.response.data.errors || error.response.data.error)
+        setError(error.response.data.errors || error.response.data.error) // ! error will be string or array need to be seted
       );
     
   };
@@ -90,7 +90,10 @@ export const ProfileDetails = () => {
           </Grid>
         </CardContent>
         <Divider />
-        {error && typeof error === "string" ? (
+        
+        {// -----------------------------------
+        //check error type and condition
+        error && typeof error === "string" ? (
           <Alert variant="outlined" severity="error" sx={{ m: 1 }}>
             {error}
           </Alert>
@@ -102,7 +105,9 @@ export const ProfileDetails = () => {
           ))
         ) : (
           <></>
-        )}
+        )
+        //-------------------------------------
+        }
         <Box
           sx={{
             display: "flex",
