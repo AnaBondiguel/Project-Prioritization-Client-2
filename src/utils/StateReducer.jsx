@@ -36,6 +36,12 @@ export default function reducer (state, action) {
           tickets: action.data,
         };
       }
+      case "getTicket": {
+        return {
+          ...state,
+          ticket: action.data,
+        };
+      }
       case "addTicket": {
         return {
           ...state,
@@ -55,6 +61,7 @@ export default function reducer (state, action) {
         const ticket = state.tickets.find(
           (ticket) => ticket._id === action.data._id
         );
+        
         console.log(ticket);
         console.log(action.data);
         const updatedTicket = Object.assign(ticket, action.data);

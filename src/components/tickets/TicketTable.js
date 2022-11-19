@@ -17,14 +17,11 @@ import {
 } from "@mui/material";
 
 export const TicketTable = (data) => {
-
   const tickets = data.tickets;
-  const listing = window.location.href
- 
-  
+  const listing = window.location.href;
+
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(0);
-
 
   const handleLimitChange = (event) => {
     setLimit(event.target.value);
@@ -84,9 +81,6 @@ export const TicketTable = (data) => {
                       variant="body1"
                       component={Link}
                       to={`/mytickets/${ticket._id}`}
-                      state={{
-                        ticket: JSON.stringify(ticket),
-                      }}
                     >
                       {ticket.initialtive}
                     </Typography>

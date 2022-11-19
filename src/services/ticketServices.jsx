@@ -1,37 +1,6 @@
 import projectAPI from "../config/api";
 
 
-// const tickets = [
-//   {
-//     id: 1,
-//     initiative: "Whiteboard on Pricing LP",
-//     description: "Add whiteboard icon to the pricing page",
-//     target: "Team",
-//     impact: "Medium",
-//     confidence: "Large",
-//     effort: "small",
-//     dueDate: "2022-03-12",
-//     // user_id: 1,
-//     ICE_Score: "24",
-//     priority: "1",
-//     feedback: "Great work",
-//   },
-//   {
-//     id: 2,
-//     initiative: "3 card Iform for free",
-//     description: "3 card Iform for free",
-//     target: "Edu",
-//     impact: "Medium",
-//     confidence: "Large",
-//     effort: "small",
-//     dueDate: "2022-01-11",
-//     // user_id: 1,
-//     ICE_Score: "21",
-//     priority: "2",
-//     feedback: "Well done",
-//   },
-// ];
-
 function transformTicket(ticket) {
  let transformedTicket = {
     author: ticket.author,
@@ -42,6 +11,8 @@ function transformTicket(ticket) {
     confidence: ticket.confidence,
     effort: ticket.effort,
     dueDate: ticket.dueDate,
+    isSubmitted: ticket.isSubmitted,
+    _id: ticket._id,
   };
   return transformedTicket;
 }

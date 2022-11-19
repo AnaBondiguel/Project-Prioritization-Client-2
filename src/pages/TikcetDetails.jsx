@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Container,
   Grid,
@@ -8,16 +8,10 @@ import {
   Chip,
   Stack,
 } from "@mui/material";
-import {
-  useNavigate,
-  useLocation,
-  useParams,
-  Link,
-  Outlet,
-} from "react-router-dom";
+import { useNavigate, useParams, Link, Outlet } from "react-router-dom";
 import TicketDetailsHeader from "../components/tickets/TicketDetailsHeader";
 import { useGlobalState } from "../utils/StateContext";
-import { deleteTicket } from "../services/ticketServices";
+import { getTicket, deleteTicket } from "../services/ticketServices";
 import Feedbacks from "../components/Feedbacks";
 import dateFormat from "dateformat";
 import iceScoreCalculation from "../components/ICE_Score";
@@ -27,12 +21,18 @@ export default function TikcetDetails() {
   const { _id } = useParams();
   const { store, dispatch } = useGlobalState();
 
-  const location = useLocation();
-  const ticket = JSON.parse(location.state.ticket);
-
   //  !test to get user role
-  const { loggedInUser } = store;
+  const { loggedInUser, ticket } = store;
   const user = JSON.parse(loggedInUser);
+
+  useEffect(() => {
+    const fetchTicket = async () => {
+      const result = await getTicket(_id);
+      dispatch({ type: "getTicket", data: result });
+    };
+
+    fetchTicket();
+  }, [dispatch, _id]);
 
   //setup onClick for delete button
   function handleDelete() {
@@ -46,7 +46,7 @@ export default function TikcetDetails() {
 
   let box = "none";
   if (
-    (user.id === ticket.author.id && !ticket.isSubmitted) ||
+    (user._id === ticket.author._id && !ticket.isSubmitted) ||
     user.role === "manager"
   ) {
     box = "";
@@ -189,7 +189,7 @@ export default function TikcetDetails() {
         <Grid item xs={12} md={12} lg={12}>
           {ticket.author._id === user.id || user.role === "manager" ? (
             <>
-              <Feedbacks  />
+              <Feedbacks />
 
               <Outlet />
             </>
