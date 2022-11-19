@@ -10,14 +10,15 @@ export default function Feedbacks() {
   const { _id } = useParams();
   const user = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
-
-  function handleDel(event) {
     
+  console.log(window.location)
+  
+  function handleDel(event) {
     deleteFeedback(event.target.value, _id)
       .then(() => {
         dispatch({ type: "deleteFeedback", data: event.target.value });
         console.log("deleteFeedback");
-        navigate(0)
+        navigate(0);
       })
       .catch((err) => {
         console.log(err);
@@ -25,11 +26,13 @@ export default function Feedbacks() {
   }
 
   useEffect(() => {
+    
     const fetchFeedback = async () => {
       const response = await getFeedback(_id);
-    
+
       dispatch({ type: "setFeedbacks", data: response.findFeedback });
     };
+    
 
     fetchFeedback();
   }, [dispatch, _id]);
@@ -37,6 +40,7 @@ export default function Feedbacks() {
   if (!feedbacks) return;
 
   if (feedbacks.length > 0) {
+    
     return (
       <>
         <Stack
@@ -74,7 +78,7 @@ export default function Feedbacks() {
                   size="small"
                   sx={{ m: 3 }}
                   value={feedback._id}
-                  onClick={handleDel}  
+                  onClick={handleDel}
                 >
                   Delete
                 </Button>

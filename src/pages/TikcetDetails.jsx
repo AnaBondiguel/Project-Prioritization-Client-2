@@ -189,7 +189,7 @@ export default function TikcetDetails() {
         <Grid item xs={12} md={12} lg={12}>
           {ticket.author._id === user.id || user.role === "manager" ? (
             <>
-              <Feedbacks ticket={ticket} />
+              <Feedbacks  />
 
               <Outlet />
             </>

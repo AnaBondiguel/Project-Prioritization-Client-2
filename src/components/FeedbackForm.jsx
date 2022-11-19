@@ -27,9 +27,9 @@ export default function FeedbackForm() {
         ticketId: _id,
       }).then((feedback) => {
         dispatch({ type: "createFeedbacks", data: feedback });
-        navigate(0)
+        navigate(-1);   
       }).catch((error) => console.log(error));
-
+       
 
   }
 
