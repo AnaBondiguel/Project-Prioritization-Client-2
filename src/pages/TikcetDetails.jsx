@@ -7,7 +7,6 @@ import {
   Typography,
   Chip,
   Stack,
-  Paper,
 } from "@mui/material";
 import {
   useNavigate,
