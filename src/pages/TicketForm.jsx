@@ -142,7 +142,7 @@ function TicketForm() {
           {ticket && ticket.isSubmitted && ticket.author._id !== user.id ? (
             <Card sx={{ p: 5 }}>
               <Typography variant="h4" sx={{ color: "text.primary" }} noWrap>
-                {`${ticket.initialtive}` + "          "}
+                {`${ticket.initialtive}`}
                 {ticket.isSubmitted ? (
                   <Chip
                     label="Submitted"
