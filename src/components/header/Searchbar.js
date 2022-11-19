@@ -57,7 +57,6 @@ export default function Searchbar() {
       ...data,
       userInput: event.target.value,
     });
-    
   }
 
   //setup onKeyUp to search for all the submitted tickets
@@ -77,12 +76,14 @@ export default function Searchbar() {
     if (!data.userInput) {
       return data.tickets;
     }
+
+    // eslint-disable-next-line array-callback-return
     let filteredTickets = data.tickets.filter((ticket) => {
       if (
-        ticket.initialtive.includes(data.userInput) ||
-        ticket.target.includes(data.userInput)
+        !ticket.initialtive.includes(data.userInput) ||
+        !ticket.target.includes(data.userInput)
       )
-        return ticket;
+       return  ticket;
     });
     return filteredTickets;
   }
@@ -93,7 +94,6 @@ export default function Searchbar() {
   function fetchTickets() {
     getAllTickets()
       .then((tickets) => {
-       
         setData({
           ...data,
           tickets: tickets,

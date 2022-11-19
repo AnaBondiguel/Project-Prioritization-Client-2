@@ -9,6 +9,7 @@ import {
   Divider,
   Grid,
   TextField,
+  Alert,
 } from "@mui/material";
 import { updateUser } from "../../services/authServices";
 import { useGlobalState } from "../../utils/StateContext";
@@ -17,6 +18,7 @@ export const ProfileDetails = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
   const { dispatch } = useGlobalState();
+  const [error, setError] = useState([]);
   const [values, setValues] = useState({
     firstName: user.firstName,
     lastName: user.lastName,
@@ -24,19 +26,24 @@ export const ProfileDetails = () => {
   });
 
   const handleChange = (event) => {
+    setError([]);
     setValues({
       ...values,
       [event.target.name]: event.target.value,
     });
-    console.log(user._id)
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    updateUser({ id: user._id, ...values }).then(() => {
-      dispatch({ type: "updateUser", data: { id: user._id, ...values } });
-    });
-    navigate("/");
+    updateUser({ id: user._id, ...values })
+      .then(() => {
+        dispatch({ type: "updateUser", data: { id: user._id, ...values } });
+        navigate("/");
+      })
+      .catch((error) =>
+        setError(error.response.data.errors || error.response.data.error)
+      );
+    
   };
 
   return (
@@ -83,6 +90,19 @@ export const ProfileDetails = () => {
           </Grid>
         </CardContent>
         <Divider />
+        {error && typeof error === "string" ? (
+          <Alert variant="outlined" severity="error" sx={{ m: 1 }}>
+            {error}
+          </Alert>
+        ) : error ? (
+          error.map((err, i) => (
+            <Alert key={i} variant="outlined" severity="error" sx={{ m: 1 }}>
+              {err.msg}
+            </Alert>
+          ))
+        ) : (
+          <></>
+        )}
         <Box
           sx={{
             display: "flex",
