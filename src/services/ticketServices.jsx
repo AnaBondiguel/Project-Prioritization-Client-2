@@ -92,7 +92,7 @@ export async function deleteTicket(id) {
 export async function updateTicket(ticket) {
    //return ticket;
 
-	const response = await projectAPI.put(`/api/tickets/${ticket.id}`, ticket);
+	const response = await projectAPI.put(`/api/tickets/${ticket._id}`, ticket);
 	return response.data;
 }
 
