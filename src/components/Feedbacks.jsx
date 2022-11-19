@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Typography, Card, Stack } from "@mui/material";
+import { Typography, Card, Stack, Grid, Button } from "@mui/material";
 import { useGlobalState } from "../utils/StateContext";
 import { getFeedback } from "../services/feedbackServices";
 import { useParams } from "react-router-dom";
@@ -10,6 +10,7 @@ export default function Feedbacks() {
   // console.log(feedbacks);
   // const user = JSON.parse(store.loggedInUser)
   const { _id } = useParams();
+  const user = JSON.parse(localStorage.getItem("user"))
 
   useEffect(() => {
     const fetchFeedback = async () => {
@@ -41,17 +42,36 @@ export default function Feedbacks() {
         </Stack>
 
         {feedbacks.map((feedback) => (
-          <Card key={feedback._id} sx={{ p: 0.5, background: "#7DAFC2", mt: 1, maxWidth: 800 }}>
-            <Typography  variant="h6">
-              {feedback.context}
-            </Typography>
-            <Typography
-              variant="body2"
-              sx={{ color: "text.secondary" }}
-            >
-              By {feedback.feedbackBy.firstName} {feedback.feedbackBy.lastName}
-            </Typography>
-          </Card>
+          <Grid container spacing={1} key={feedback._id}>
+            <Grid item xs={10} md={10} lg={10}>
+              <Card
+                
+                sx={{ pl: 1, pt: 1, background: "#7DAFC2", mt: 1 }}
+              >
+                <Typography variant="h6">{feedback.context}</Typography>
+                <Typography
+                  variant="body2"
+                  align="right"
+                  sx={{ color: "text.secondary", mr: 5 }}
+                >
+                  By {feedback.feedbackBy.firstName}{" "}
+                  {feedback.feedbackBy.lastName}
+                </Typography>
+              </Card>
+            </Grid>
+            <Grid item xs={2} md={2} lg={2}>
+              {feedback.feedbackBy._id === user.id ?
+              <Button
+                variant="outlined"
+                color="error"
+                size="small"
+                sx={{m: 3}}
+                // onClick={handleDelete}
+              >
+                Delete
+              </Button> : <></>}
+            </Grid>
+          </Grid>
         ))}
       </>
     );

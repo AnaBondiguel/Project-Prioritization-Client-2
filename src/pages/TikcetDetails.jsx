@@ -170,7 +170,7 @@ export default function TikcetDetails() {
           </Stack>
         </Grid>
 
-        <Grid item md={3} lg={1}>
+        <Grid item md={3} lg={3}>
           {user.role === "manager" && user.id !== ticket.author._id ? (
             <Button
               variant="contained"
@@ -188,7 +188,7 @@ export default function TikcetDetails() {
           )}
         </Grid>
         <Grid item xs={12} md={12} lg={12}>
-          {ticket.author.id === user.id || user.role === "manager" ? (
+          {ticket.author._id === user.id || user.role === "manager" ? (
             <>
               <Feedbacks ticket={ticket} />
 
