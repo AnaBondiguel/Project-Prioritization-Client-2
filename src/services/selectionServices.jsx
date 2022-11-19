@@ -24,7 +24,7 @@
 //   const response = await projectAPI.get('/api/tickets/impact');
 //   return response.data;
 // }
-export async function getImpacts(){
+export function getImpacts(){
     const impacts = [
         {name:"?"},
         {name:"Small"},
@@ -41,7 +41,7 @@ export async function getImpacts(){
 //   return response.data;
 // }
 
-export async function getConfidences(){
+export function getConfidences(){
     const confidences = [
         {name:"?"},
         {name:"Small"},
@@ -58,7 +58,7 @@ export async function getConfidences(){
 //   return response.data;
 // }
 
-export async function getEfforts(){
+export function getEfforts(){
     const efforts = [
         {name:"?"},
         {name:"Small"},
@@ -70,7 +70,7 @@ export async function getEfforts(){
     return efforts;
 }
 
-export async function priorityValue(){
+export function priorityValue(){
 const priorityValue = [
     "P-0", 
     "P-1", 
