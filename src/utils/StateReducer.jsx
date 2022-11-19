@@ -53,7 +53,7 @@ export default function reducer (state, action) {
         }
         case 'updateTicket': {
            const ticket = state.tickets.find(
-             (ticket) => ticket._id === action.data._id
+             (ticket) => ticket._id === action.data.id
            );
            console.log(ticket);
            console.log(action.data);
