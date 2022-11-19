@@ -21,7 +21,7 @@ export default function Feedbacks() {
     fetchFeedback();
   }, [dispatch, _id]);
 
-  console.log(feedbacks);
+  // console.log(feedbacks);
 
   if (!feedbacks) return;
 

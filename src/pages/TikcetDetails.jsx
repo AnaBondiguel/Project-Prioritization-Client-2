@@ -171,7 +171,7 @@ export default function TikcetDetails() {
         </Grid>
 
         <Grid item md={3} lg={1}>
-          {user.role === "manager" ? (
+          {user.role === "manager" && user.id !== ticket.author._id ? (
             <Button
               variant="contained"
               color="secondary"
