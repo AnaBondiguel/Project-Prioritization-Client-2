@@ -9,6 +9,7 @@ export default function Feedbacks() {
   const { feedbacks } = store;
   const { _id } = useParams();
   const user = JSON.parse(localStorage.getItem("user"));
+  const navigate = useNavigate();
 
   function handleDel(event) {
     
@@ -16,6 +17,7 @@ export default function Feedbacks() {
       .then(() => {
         dispatch({ type: "deleteFeedback", data: event.target.value });
         console.log("deleteFeedback");
+        navigate(0)
       })
       .catch((err) => {
         console.log(err);

@@ -8,7 +8,7 @@ import {
   Stack,
   Typography,
   Chip,
-  Alert
+  Alert,
 } from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
@@ -85,54 +85,51 @@ function TicketForm() {
     });
   }
 
-  function handleClick({ isSubmitted = false }) {
-    return (event) => {
-      event.preventDefault();
-      //if statement to handle update ticket and create ticket
-      if (_id) {
-        // from saved ticket to submitted
-        updateTicket({
-          id: _id,
-          ...formState,
-          isSubmitted: isSubmitted,
-          dueDate: dateValue,
+  function handleClick(event) {
+    event.preventDefault();
+    //if statement to handle update ticket and create ticket
+    if (_id) {
+      // from saved ticket to submitted
+      updateTicket({
+        id: _id,
+        ...formState,
+        isSubmitted: event.target.value,
+        dueDate: dateValue,
+      })
+        .then(() => {
+          dispatch({
+            type: "updateTicket",
+            data: {
+              id: _id,
+              ...formState,
+              isSubmitted: event.target.value,
+              dueDate: dateValue,
+            },
+          });
+          //if user update ticket with form, leave ticket to show on the page.
+          navigate(`/mytickets`);
         })
-          .then(() => {
-            dispatch({
-              type: "updateTicket",
-              data: {
-                id: _id,
-                ...formState,
-                isSubmitted: isSubmitted,
-                dueDate: dateValue,
-              },
-            });
-            //if user update ticket with form, leave ticket to show on the page.
-            navigate(`/mytickets`);
-          })
-          .catch((error) =>
-            setError(error.response.data.errors || error.response.data.error)
-          );
-      } else {
-        // from creation to submitted
-        createTicket({
-          ...formState,
-          ticket_id: uuidv4(),
-          isSubmitted: isSubmitted,
-          dueDate: dateValue,
+        .catch((error) =>
+          setError(error.response.data.errors || error.response.data.error)
+        );
+    } else {
+      // from creation to submitted
+      console.log(event.target.value);
+      createTicket({
+        ...formState,
+        ticket_id: uuidv4(),
+        isSubmitted: event.target.value,
+        dueDate: dateValue,
+      })
+        .then((ticket) => {
+          dispatch({ type: "addTicket", data: ticket });
+          //we can navigate back to the my tickets page once we create a ticket.
+          event.target.value === "false" ? navigate("/mytickets") : navigate("/submissionsuccess");
         })
-          .then((ticket) => {
-            dispatch({ type: "addTicket", data: ticket });
-            //we can navigate back to the my tickets page once we create a ticket.
-            isSubmitted
-              ? navigate("/submissionsuccess")
-              : navigate("/mytickets");
-          })
-          .catch((error) =>
-            setError(error.response.data.errors || error.response.data.error)
-          );
-      }
-    };
+        .catch((error) =>
+          setError(error.response.data.errors || error.response.data.error)
+        );
+    }
   }
 
   let saveButton = false;
@@ -310,7 +307,7 @@ function TicketForm() {
               </Select>
               <FormHelperText>Effort of the project?</FormHelperText>
             </FormControl>
-            
+
             {
               // -----------------------------------
               //check error type and condition
@@ -339,7 +336,8 @@ function TicketForm() {
             <Button
               variant="contained"
               color="warning"
-              onClick={handleClick({ isSubmitted: false })}
+              value={false}
+              onClick={handleClick}
               disabled={saveButton}
             >
               Save
@@ -347,7 +345,8 @@ function TicketForm() {
             <Button
               variant="contained"
               color={colorButton}
-              onClick={handleClick({ isSubmitted: true })}
+              value={true}
+              onClick={handleClick}
             >
               {saveButton ? "Update" : "Submit"}
             </Button>
