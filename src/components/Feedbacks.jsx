@@ -11,7 +11,6 @@ export default function Feedbacks() {
   const user = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
     
-  console.log(window.location)
   
   function handleDel(event) {
     deleteFeedback(event.target.value, _id)
