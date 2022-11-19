@@ -9,7 +9,8 @@ import {
   Stack,
   IconButton,
   InputAdornment,
-  TextField
+  TextField,
+  Alert,
 } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 // components
@@ -25,6 +26,8 @@ export default function SigninForm() {
   };
 
   const [formState, setFormState] = useState(initialFormState);
+  const [error, setError] = useState(null);
+
   const { dispatch } = useGlobalState();
 
   const navigate = useNavigate();
@@ -33,6 +36,7 @@ export default function SigninForm() {
 
   //setup onchange for email and password
   function handleChange(event) {
+    setError(null);
     setFormState({
       ...formState,
       [event.target.name]: event.target.value,
@@ -71,8 +75,10 @@ export default function SigninForm() {
         //go to home page
         navigate("/");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => setError(error.response.data.error));
   }
+  console.log(error);
+  
 
   return (
     <>
@@ -99,6 +105,10 @@ export default function SigninForm() {
             ),
           }}
         />
+
+       {error?<Alert variant="outlined" severity="error">
+          {error}
+        </Alert> : <></>} 
       </Stack>
 
       <Stack

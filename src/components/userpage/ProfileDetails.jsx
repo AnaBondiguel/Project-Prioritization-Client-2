@@ -28,7 +28,7 @@ export const ProfileDetails = () => {
       ...values,
       [event.target.name]: event.target.value,
     });
-    console.log(user._id)
+    console.log(values)
   };
 
   const handleSubmit = (event) => {
