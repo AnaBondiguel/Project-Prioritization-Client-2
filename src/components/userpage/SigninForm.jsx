@@ -75,11 +75,11 @@ export default function SigninForm() {
         //go to home page
         navigate("/");
       })
-      .catch((error) => setError(error.response.data.error));
+      .catch((error) =>
+        setError(error.response.data.errors || error.response.data.error)
+      );
   }
-  console.log(error);
   
-
   return (
     <>
       <Stack spacing={3}>
@@ -105,11 +105,21 @@ export default function SigninForm() {
             ),
           }}
         />
-
-       {error?<Alert variant="outlined" severity="error">
-          {error}
-        </Alert> : <></>} 
       </Stack>
+
+      {error && typeof(error) === "string" ? 
+        (<Alert variant="outlined" severity="error" sx={{ m: 1 }}>
+          {error}
+        </Alert>)
+       : error ? (
+        error.map((err, i) => (
+          <Alert key={i} variant="outlined" severity="error" sx={{ m: 1 }}>
+            {err.msg}
+          </Alert>
+        ))
+      ) : (
+        <></>
+      )}
 
       <Stack
         direction="row"

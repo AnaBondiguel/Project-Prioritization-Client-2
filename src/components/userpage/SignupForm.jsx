@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useGlobalState } from "../../utils/StateContext";
 
 // @mui
-import { Stack, TextField } from "@mui/material";
+import { Stack, TextField, Alert } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
 // components
 // ------------------------------------------------------------
@@ -21,11 +21,13 @@ export default function SignupForm() {
   };
 
   const [formState, setFormState] = useState(initialFormState);
+  const [error, setError] = useState([]);
   const { dispatch } = useGlobalState();
   let navigate = useNavigate();
 
   //setup onchange for firstname, lastname, email, password
   function handleChange(event) {
+    setError([]);
     setFormState({
       ...formState,
       [event.target.name]: event.target.value,
@@ -35,20 +37,25 @@ export default function SignupForm() {
   //setup submit button for sign up
   function handleSubmit(event) {
     event.preventDefault();
-    register(formState).then((data) => {
-      let user = data.newUser;
-      let token = data.token;
-      console.log(data)
-      localStorage.setItem("token", token);
+    register(formState)
+      .then((data) => {
+        let user = data.newUser;
+        let token = data.token;
+        console.log(data);
+        localStorage.setItem("token", token);
 
-      localStorage.setItem("user", JSON.stringify(user)); 
+        localStorage.setItem("user", JSON.stringify(user));
 
-      // todo: check if this is needed
-      dispatch({ type: "setLoggedInUser", data: JSON.stringify(user) });
-      dispatch({ type: "setToken", data: token });
-      navigate("/");
-    });
+        // todo: check if this is needed
+        dispatch({ type: "setLoggedInUser", data: JSON.stringify(user) });
+        dispatch({ type: "setToken", data: token });
+        navigate("/");
+      })
+      .catch((error) =>
+        setError(error.response.data.errors || error.response.data.error)
+      );
   }
+
 
   return (
     <>
@@ -81,7 +88,19 @@ export default function SignupForm() {
         justifyContent="space-between"
         sx={{ my: 2 }}
       ></Stack>
-
+      {error && typeof error === "string" ? (
+        <Alert variant="outlined" severity="error" sx={{ m: 1 }}>
+          {error}
+        </Alert>
+      ) : error ? (
+        error.map((err, i) => (
+          <Alert key={i} variant="outlined" severity="error" sx={{ m: 1 }}>
+            {err.msg}
+          </Alert>
+        ))
+      ) : (
+        <></>
+      )}
       <LoadingButton
         fullWidth
         size="large"
