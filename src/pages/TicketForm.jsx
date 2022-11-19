@@ -1,5 +1,14 @@
 import React, { useState } from "react";
-import { Grid, Button, Container, Card, Select, Stack, Typography, Chip } from "@mui/material";
+import {
+  Grid,
+  Button,
+  Container,
+  Card,
+  Select,
+  Stack,
+  Typography,
+  Chip,
+} from "@mui/material";
 import InputLabel from "@mui/material/InputLabel";
 import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
@@ -40,14 +49,6 @@ const target = ["Free", "Pro", "Teams", "Education", "All", "Others"];
 function TicketForm() {
   const location = useLocation();
   // console.log(location.state)
-
-  if (location.state) {
-    var ticket = JSON.parse(location.state.ticket);
-    var initialDate = ticket.dueDate;
-  } else {
-    initialDate = null;
-  }
-
   const initialFormState = {
     initialtive: "",
     description: "",
@@ -58,13 +59,20 @@ function TicketForm() {
     effort: "",
     feedback: "",
   };
+  let ticket = initialFormState;
+  let initialDate = null;
 
-  const [formState, setFormState] = useState(ticket || initialFormState);
+  if (location.state) {
+    ticket = JSON.parse(location.state.ticket);
+    initialDate = ticket.dueDate;
+  }
+
+  const [formState, setFormState] = useState(ticket);
   const { dispatch, store } = useGlobalState();
   const { impacts, confidences, efforts } = store;
   // ! date is in ininitialFormState no need another one
   const [dateValue, setDateValue] = useState(initialDate); //for date picker
-  const user = JSON.parse(localStorage.getItem("user"))
+  const user = JSON.parse(localStorage.getItem("user"));
   const { _id } = useParams();
   let navigate = useNavigate();
 
@@ -121,11 +129,11 @@ function TicketForm() {
     };
   }
 
-  let saveButton = false
+  let saveButton = false;
   let colorButton = "success";
   if (ticket && ticket.isSubmitted) {
     saveButton = true;
-    colorButton = "warning"
+    colorButton = "warning";
   }
   return (
     <Container className="main-content-container px-4 pb-4">

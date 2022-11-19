@@ -43,6 +43,7 @@ export default function TikcetDetails() {
   }
 
   if (!ticket || !user) return null;
+  
   let box = "none";
   if (
     (user.id === ticket.author.id && !ticket.isSubmitted) ||
