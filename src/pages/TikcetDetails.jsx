@@ -7,6 +7,7 @@ import {
   Typography,
   Chip,
   Stack,
+  Paper,
 } from "@mui/material";
 import {
   useNavigate,
@@ -43,7 +44,7 @@ export default function TikcetDetails() {
   }
 
   if (!ticket || !user) return null;
-  
+
   let box = "none";
   if (
     (user.id === ticket.author.id && !ticket.isSubmitted) ||
@@ -63,11 +64,12 @@ export default function TikcetDetails() {
     <Container className="main-content-container px-4 pb-4">
       <TicketDetailsHeader />
 
-      <Grid container spacing={3}>
+      <Grid container spacing={1}>
         <Grid item xs={12} md={6} lg={8}>
           <Card sx={{ p: 5 }}>
-            <Typography variant="h4" sx={{ color: "text.primary" }} noWrap>
-              {`${ticket.initialtive}` + "          "}
+            <Typography variant="h4" sx={{ color: "text.primary" }}>
+              {ticket.initialtive}
+              {"   "}
               {ticket.isSubmitted ? (
                 <Chip
                   label="Submitted"
@@ -89,7 +91,7 @@ export default function TikcetDetails() {
               sx={{ color: "text.secondary" }}
               noWrap
             >
-              {`${ticket.author.firstName}` + " " + `${ticket.author.lastName}`}
+              {ticket.author.firstName} {ticket.author.lastName}
             </Typography>
             <Typography variant="subtitle1" sx={{ color: "info.main" }} noWrap>
               Launch Date: {dateFormat(ticket.dueDate, "ddd, mmm dS, yyyy")}
@@ -117,7 +119,7 @@ export default function TikcetDetails() {
         <Grid item xs={12} md={6} lg={4}>
           <Card sx={{ p: 4, pb: 3 }}>
             <Typography variant="subtitle1" noWrap>
-              Target:
+              Target:{" "}
               <Chip
                 label={`${ticket.target}`}
                 color={colorButton}
@@ -167,16 +169,12 @@ export default function TikcetDetails() {
             </Button>
           </Stack>
         </Grid>
-      </Grid>
 
-      {/* {user.role === "manager" ? (
-        <>
-          <Paper>
-            <Feedbacks ticket={ticket} />
-          </Paper>
-          <hr />
-          <Paper>
+        <Grid item md={3} lg={1}>
+          {user.role === "manager" ? (
             <Button
+              variant="contained"
+              color="secondary"
               component={Link}
               to="feedback"
               state={{
@@ -185,16 +183,22 @@ export default function TikcetDetails() {
             >
               Add Feedback
             </Button>
+          ) : (
+            <></>
+          )}
+        </Grid>
+        <Grid item xs={12} md={12} lg={12}>
+          {ticket.author.id === user.id || user.role === "manager" ? (
+            <>
+              <Feedbacks ticket={ticket} />
 
-            <Outlet />
-          </Paper>
-        </>
-      ) : (
-        <Paper>
-          No feedback because current user role is {user.role}
-          <p>{user.email}</p>
-        </Paper>
-      )} */}
+              <Outlet />
+            </>
+          ) : (
+            <></>
+          )}
+        </Grid>
+      </Grid>
     </Container>
   );
 }

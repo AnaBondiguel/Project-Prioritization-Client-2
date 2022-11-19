@@ -144,7 +144,7 @@ function TicketForm() {
   return (
     <Container className="main-content-container px-4 pb-4">
       <EditOrNewTicketHeader id={_id} />
-      <Grid container spacing={3}>
+      <Grid container spacing={1}>
         <Grid item xs={12} md={6} lg={8}>
           {ticket && ticket.isSubmitted && ticket.author._id !== user.id ? (
             <Card sx={{ p: 5 }}>
