@@ -58,13 +58,16 @@ export const TicketTable = (data) => {
           <TableBody>
             {tickets.slice(page * limit, page * limit + limit).map((ticket) => (
               <TableRow
-                hover
+                
                 key={ticket._id}
                 // ----------------------------------------------------------------
-                // set rows color different
+                // set rows color different and hover color
                 sx={{
                   "&:nth-of-type(even)": {
                     backgroundColor: "#ddd",
+                  },
+                  "&:hover": {
+                    backgroundColor: "blue",
                   },
                 }}
                 // ---------------------------------------------------------------
