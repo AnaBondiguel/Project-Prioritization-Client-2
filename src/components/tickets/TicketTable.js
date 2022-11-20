@@ -16,6 +16,7 @@ import {
   Chip,
 } from "@mui/material";
 
+
 export const TicketTable = (data) => {
   const tickets = data.tickets;
   const listing = window.location.href;
@@ -38,7 +39,7 @@ export const TicketTable = (data) => {
       <Box sx={{ minWidth: 850 }}>
         <Table>
           <TableHead>
-            <TableRow sx={{ background: "#dadada" }}>
+            <TableRow sx={{ background: "#637381" }}>
               {listing.includes("listing") ? (
                 <TableCell>Author</TableCell>
               ) : (

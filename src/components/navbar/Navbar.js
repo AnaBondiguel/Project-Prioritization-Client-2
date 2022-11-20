@@ -67,8 +67,7 @@ export default function Nav({ openNav, onCloseNav }) {
         <StyledAccount>
           <Avatar
             {...stringAvatar(
-              // eslint-disable-next-line no-useless-concat
-              `${user.firstName[0]}` + " " + `${user.lastName[0]}`
+              `${user.firstName[0]} ${user.lastName[0]}`
             )}
           />
 
