@@ -12,7 +12,7 @@ const navConfig = [
     path: "/listings",
   },
   {
-    title: "blog",
+    title: "Profile",
     path: "/blog",
   },
   {
