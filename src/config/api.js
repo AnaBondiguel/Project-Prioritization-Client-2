@@ -3,7 +3,7 @@ import axios from 'axios';
 // Define an API
 const projectAPI = axios.create({
   //deployment for backend
-  baseURL: "https://projectprioritization.herokuapp.com/",
+  baseURL: "https://projectprioritization.up.railway.app/",
 });
 
 //If we don't have these code, it will give us 401 error, we are not specified any authorization header to our request. 
