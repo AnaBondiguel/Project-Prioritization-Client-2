@@ -38,8 +38,9 @@ export const TicketTable = (data) => {
       <Box sx={{ minWidth: 850 }}>
         <Table>
           <TableHead>
-            <TableRow sx={{ background: "#637381" }}>
-              {listing.includes("listing") ? (
+            <TableRow sx={{ background: "#92CEC1" }}>
+              {listing.includes("listing") ||
+              listing.includes("searchresults") ? (
                 <TableCell>Author</TableCell>
               ) : (
                 <TableCell />
@@ -48,7 +49,8 @@ export const TicketTable = (data) => {
               <TableCell>Target</TableCell>
               <TableCell>ICE</TableCell>
               <TableCell>Launch Date</TableCell>
-              {listing.includes("listing") ? (
+              {listing.includes("listing") ||
+              listing.includes("searchresults") ? (
                 <TableCell />
               ) : (
                 <TableCell>Status</TableCell>
@@ -58,21 +60,21 @@ export const TicketTable = (data) => {
           <TableBody>
             {tickets.slice(page * limit, page * limit + limit).map((ticket) => (
               <TableRow
-                
                 key={ticket._id}
                 // ----------------------------------------------------------------
                 // set rows color different and hover color
                 sx={{
                   "&:nth-of-type(even)": {
-                    backgroundColor: "#ddd",
+                    backgroundColor: "#ededed",
                   },
                   "&:hover": {
-                    backgroundColor: "blue",
+                    backgroundColor: "#ddd",
                   },
                 }}
                 // ---------------------------------------------------------------
               >
-                {listing.includes("listing") ? (
+                {listing.includes("listing") ||
+                listing.includes("searchresults") ? (
                   <TableCell sx={{ color: "#204969" }}>
                     {`${ticket.author.firstName}` +
                       " " +
@@ -112,7 +114,8 @@ export const TicketTable = (data) => {
                   {dateFormat(ticket.dueDate, "mm/dd/yyyy")}
                 </TableCell>
 
-                {listing.includes("listing") ? (
+                {listing.includes("listing") ||
+                listing.includes("searchresults") ? (
                   <TableCell />
                 ) : (
                   <TableCell>

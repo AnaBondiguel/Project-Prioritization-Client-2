@@ -64,7 +64,7 @@ export default function Searchbar() {
       console.log("filterticket", filteredTickets);
       dispatch({ type: "setFilteredTickets", data: filteredTickets });
       //Once we found the tickets, we'll see the tickets on the search results page
-      navigate("/searchresults");
+      navigate("/searchresults", {state: {input}});
     }
     
   }
@@ -78,7 +78,7 @@ export default function Searchbar() {
     let filteredTickets = tickets.filter((ticket) => {
       if (
         ticket.initialtive.includes(input) ||
-        ticket.target.includes(input)
+        ticket.target.includes(input) || ticket.author.email.includes(input)
       )
         return ticket;
     });

@@ -2,23 +2,28 @@ import React from "react";
 import { useGlobalState } from "../utils/StateContext";
 import { TicketTable } from "./tickets/TicketTable.js";
 import { Stack, Typography, Container, Paper } from "@mui/material";
+import {useLocation} from "react-router-dom"
 
 function SearchResults() {
   const { store } = useGlobalState();
   const { filteredTickets } = store;
-
+  const location = useLocation();
+ 
   return (
     <div>
       <Container>
         <Stack
-          direction="row"
-          alignItems="center"
+          direction="column"
+         
           justifyContent="space-between"
           mb={5}
           mt={5}
         >
           <Typography variant="h4" gutterBottom>
-            Search Results
+            Search Results for 
+          </Typography>
+          <Typography variant="h5" >
+           for "{location.state.input}"
           </Typography>
         </Stack>
         {filteredTickets && !filteredTickets.length > 0 ? (
