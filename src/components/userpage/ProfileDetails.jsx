@@ -15,6 +15,7 @@ import { updateUser } from "../../services/authServices";
 import { useGlobalState } from "../../utils/StateContext";
 
 export const ProfileDetails = () => {
+  //  get user info from localStorage
   const user = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
   const { dispatch } = useGlobalState();
@@ -40,10 +41,10 @@ export const ProfileDetails = () => {
         dispatch({ type: "updateUser", data: { id: user._id, ...values } });
         navigate("/");
       })
-      .catch((error) =>
-        setError(error.response.data.errors || error.response.data.error) // ! error will be string or array need to be seted
+      .catch(
+        (error) =>
+          setError(error.response.data.errors || error.response.data.error) // ! error will be string or array need to be seted
       );
-    
   };
 
   return (
@@ -90,23 +91,24 @@ export const ProfileDetails = () => {
           </Grid>
         </CardContent>
         <Divider />
-        
-        {// -----------------------------------
-        //check error type and condition
-        error && typeof error === "string" ? (
-          <Alert variant="outlined" severity="error" sx={{ m: 1 }}>
-            {error}
-          </Alert>
-        ) : error ? (
-          error.map((err, i) => (
-            <Alert key={i} variant="outlined" severity="error" sx={{ m: 1 }}>
-              {err.msg}
+
+        {
+          // -----------------------------------
+          //check error type and condition
+          error && typeof error === "string" ? (
+            <Alert variant="outlined" severity="error" sx={{ m: 1 }}>
+              {error}
             </Alert>
-          ))
-        ) : (
-          <></>
-        )
-        //-------------------------------------
+          ) : error ? (
+            error.map((err, i) => (
+              <Alert key={i} variant="outlined" severity="error" sx={{ m: 1 }}>
+                {err.msg}
+              </Alert>
+            ))
+          ) : (
+            <></>
+          )
+          //-------------------------------------
         }
         <Box
           sx={{

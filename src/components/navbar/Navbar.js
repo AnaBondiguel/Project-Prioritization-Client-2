@@ -1,21 +1,20 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-// @mui
+// @mui -------------------
 import { styled, alpha } from "@mui/material/styles";
 import { Box, Drawer, Typography, Avatar, Divider } from "@mui/material";
 // hooks
 import useResponsive from "../../@mui/hooks/useReponsive";
 // components
 import stringAvatar from "../../@mui/theme/stringAvatar.js";
-// import Logo from "../../../components/logo";
 import Scrollbar from "../../@mui/components/scrollbar/Scrollbar";
 import NavSection from "../nav-section/NavSection";
-//
+//---------------------------
 import navConfig from "./config";
 import { useGlobalState } from "../../utils/StateContext.jsx";
 
 // ----------------------------------------------------------------------
-
+//  style theme
 const NAV_WIDTH = 280;
 
 const StyledAccount = styled("div")(({ theme }) => ({
@@ -27,9 +26,6 @@ const StyledAccount = styled("div")(({ theme }) => ({
 }));
 
 // ----------------------------------------------------------------------
-
-
-
 
 export default function Nav({ openNav, onCloseNav }) {
   const { pathname } = useLocation();
@@ -44,7 +40,6 @@ export default function Nav({ openNav, onCloseNav }) {
     if (openNav) {
       onCloseNav();
     }
-    
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
@@ -66,10 +61,8 @@ export default function Nav({ openNav, onCloseNav }) {
       <Box sx={{ mb: 5, mx: 2.5, mt: 5 }}>
         <StyledAccount>
           <Avatar
-            {...stringAvatar(
-              `${user.firstName[0]} ${user.lastName[0]}`
-            )}
-          />
+            {...stringAvatar(`${user.firstName[0]} ${user.lastName[0]}`)}
+          /> 
 
           <Box sx={{ ml: 2 }}>
             <Typography variant="subtitle2" sx={{ color: "text.primary" }}>
@@ -98,10 +91,11 @@ export default function Nav({ openNav, onCloseNav }) {
       component="nav"
       sx={{
         flexShrink: { lg: 0 },
-        width: { lg: NAV_WIDTH }
+        width: { lg: NAV_WIDTH },
       }}
     >
-      {isDesktop ? (
+      { // ! reponsive web conition 
+      isDesktop ? (
         <Drawer
           open
           variant="permanent"

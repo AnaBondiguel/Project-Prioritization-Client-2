@@ -2,12 +2,9 @@ import { useState } from "react";
 import { register } from "../../services/authServices";
 import { useNavigate } from "react-router-dom";
 import { useGlobalState } from "../../utils/StateContext";
-
 // @mui
 import { Stack, TextField, Alert } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
-// components
-// ------------------------------------------------------------
 
 // ----------------------------------------------------------------------
 
@@ -41,12 +38,9 @@ export default function SignupForm() {
       .then((data) => {
         let user = data.newUser;
         let token = data.token;
-        console.log(data);
+        // console.log(data);
         localStorage.setItem("token", token);
-
         localStorage.setItem("user", JSON.stringify(user));
-
-        // todo: check if this is needed
         dispatch({ type: "setLoggedInUser", data: JSON.stringify(user) });
         dispatch({ type: "setToken", data: token });
         navigate("/");
@@ -55,7 +49,6 @@ export default function SignupForm() {
         setError(error.response.data.errors || error.response.data.error)
       );
   }
-
 
   return (
     <>

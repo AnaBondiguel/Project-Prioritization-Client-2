@@ -1,31 +1,25 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { getTickets } from "../services/ticketServices";
-import {Box, Container} from "@mui/material";
-
+import { Box, Container } from "@mui/material";
+// components
 import MyTicketsHeader from "../components/tickets/MyTicketsHeader.js";
-// import { useParams } from "react-router-dom";
-// import {customers} from '../_mocks/customers'
-import {TicketTable} from '../components/tickets/TicketTable'
+import { TicketTable } from "../components/tickets/TicketTable";
 import { useGlobalState } from "../utils/StateContext";
 
 export default function MyTickets() {
-    // let navigate = useNavigate();
-   const { store, dispatch } = useGlobalState();
-  // Get the list of tickets
+  const { store, dispatch } = useGlobalState();
   useEffect(() => {
-    // ! rewrite
+    // use async  function to get all tikets form the users
     const fetchMyTickets = async () => {
       const result = await getTickets();
       dispatch({ type: "setTickets", data: result });
     };
-    
-      fetchMyTickets();
-    
+
+    fetchMyTickets();
   }, [dispatch]);
 
- 
   const { tickets } = store;
- 
+
   return (
     <>
       <Container>

@@ -2,29 +2,21 @@ import React from "react";
 import { useGlobalState } from "../utils/StateContext";
 import { TicketTable } from "./tickets/TicketTable.js";
 import { Stack, Typography, Container, Paper } from "@mui/material";
-import {useLocation} from "react-router-dom"
+import { useLocation } from "react-router-dom";
 
 function SearchResults() {
   const { store } = useGlobalState();
-  const { filteredTickets } = store;
-  const location = useLocation();
- 
+  const { filteredTickets } = store; // get filtered Tickets from global state
+  const location = useLocation(); // get to input value from searchbar
+
   return (
     <div>
       <Container>
-        <Stack
-          direction="column"
-         
-          justifyContent="space-between"
-          mb={5}
-          mt={5}
-        >
+        <Stack direction="column" justifyContent="space-between" mb={5} mt={5}>
           <Typography variant="h4" gutterBottom>
-            Search Results for 
+            Search Results for
           </Typography>
-          <Typography variant="h5" >
-           for "{location.state.input}"
-          </Typography>
+          <Typography variant="h5">for "{location.state.input}"</Typography>
         </Stack>
         {filteredTickets && !filteredTickets.length > 0 ? (
           <Paper

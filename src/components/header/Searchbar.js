@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+// global state and reducer
 import { useGlobalState } from "../../utils/StateContext.jsx";
 import { getAllTickets } from "../../services/ticketServices.jsx";
 // @mui
@@ -14,14 +16,12 @@ import {
 // utils
 import { bgBlur } from "../../@mui/cssStyles";
 import Iconify from "../../@mui/components/iconify";
-// component
-import { useNavigate } from "react-router-dom";
 
 // ----------------------------------------------------------------------
 
 const HEADER_MOBILE = 64;
 const HEADER_DESKTOP = 92;
-
+//  theme for search bar
 const StyledSearchbar = styled("div")(({ theme }) => ({
   ...bgBlur({ color: theme.palette.background.default }),
   top: 0,
@@ -55,37 +55,35 @@ export default function Searchbar() {
     setInput(event.target.value);
   }
 
-  //setup onKeyUp to search for all the submitted tickets
+  //setup onKeyUp  adn click to search for all the submitted tickets
   function handleSubmit(event) {
     fetchTickets();
-    
+
     if (event.key === "Enter" || event.type === "click") {
       const filteredTickets = getFilteredTickets();
       console.log("filterticket", filteredTickets);
-      dispatch({ type: "setFilteredTickets", data: filteredTickets });
-      //Once we found the tickets, we'll see the tickets on the search results page
-      navigate("/searchresults", {state: {input}});
+      dispatch({ type: "setFilteredTickets", data: filteredTickets }); //Once we found the tickets, we'll see the tickets on console
+      navigate("/searchresults", { state: { input } }); // pass state value input to search results
     }
-    
   }
 
   function getFilteredTickets() {
     if (!input) {
-      return ;
+      return;
     }
 
     // eslint-disable-next-line array-callback-return
     let filteredTickets = tickets.filter((ticket) => {
       if (
         ticket.initialtive.includes(input) ||
-        ticket.target.includes(input) || ticket.author.email.includes(input)
+        ticket.target.includes(input) ||
+        ticket.author.email.includes(input)
       )
         return ticket;
     });
     return filteredTickets;
   }
 
-  // console.log(data.tickets);
   // fetch ticket from all the submitted listing tickets
 
   function fetchTickets() {
@@ -98,7 +96,6 @@ export default function Searchbar() {
       })
       .finally(() => {
         console.log("Fetch completed.");
-        
       });
   }
 
@@ -112,6 +109,7 @@ export default function Searchbar() {
   const handleClose = () => {
     setOpen(false);
   };
+  //  ------------------------------------------------
 
   return (
     <ClickAwayListener onClickAway={handleClose}>

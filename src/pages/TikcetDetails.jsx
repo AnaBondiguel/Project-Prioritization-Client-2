@@ -21,11 +21,11 @@ export default function TikcetDetails() {
   const { _id } = useParams();
   const { store, dispatch } = useGlobalState();
 
-  //  !test to get user role
   const { loggedInUser, ticket } = store;
-  const user = JSON.parse(loggedInUser);
+  const user = JSON.parse(loggedInUser); // get user info form global state
 
   useEffect(() => {
+    // get single ticket using global reducer
     const fetchTicket = async () => {
       const result = await getTicket(_id);
       dispatch({ type: "getTicket", data: result });
@@ -43,7 +43,8 @@ export default function TikcetDetails() {
   }
 
   if (!ticket || !user) return null;
-
+  // -------------------------------
+  //  conditon to change the button show or disabled
   let box = "none";
   if (
     (user._id === ticket.author._id && !ticket.isSubmitted) ||
@@ -58,7 +59,7 @@ export default function TikcetDetails() {
     delButton = true;
     colorButton = "warning";
   }
-
+  // ----------------------------
   return (
     <Container className="main-content-container px-4 pb-4">
       <TicketDetailsHeader />
@@ -190,7 +191,6 @@ export default function TikcetDetails() {
           {ticket.author._id === user.id || user.role === "manager" ? (
             <>
               <Feedbacks />
-
               <Outlet />
             </>
           ) : (

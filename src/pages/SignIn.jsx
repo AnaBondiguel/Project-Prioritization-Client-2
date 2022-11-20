@@ -1,9 +1,9 @@
 // @mui
 import { styled } from "@mui/material/styles";
-import { Link, Container, Typography} from "@mui/material";
+import { Link, Container, Typography } from "@mui/material";
 // hooks
 import useResponsive from "../@mui/hooks/useReponsive";
-// sections
+// components signin form
 import SigninForm from "../components/userpage/SigninForm";
 
 // ----------------------------------------------------------------------

@@ -10,8 +10,8 @@ export default function Feedbacks() {
   const { _id } = useParams();
   const user = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
-    
-  
+
+  // button to delet feedback
   function handleDel(event) {
     deleteFeedback(event.target.value, _id)
       .then(() => {
@@ -24,14 +24,13 @@ export default function Feedbacks() {
       });
   }
 
+  //  mont feedbaks when dispatch happend
   useEffect(() => {
-    
     const fetchFeedback = async () => {
       const response = await getFeedback(_id);
 
       dispatch({ type: "setFeedbacks", data: response.findFeedback });
     };
-    
 
     fetchFeedback();
   }, [dispatch, _id]);
@@ -39,7 +38,6 @@ export default function Feedbacks() {
   if (!feedbacks) return;
 
   if (feedbacks.length > 0) {
-    
     return (
       <>
         <Stack

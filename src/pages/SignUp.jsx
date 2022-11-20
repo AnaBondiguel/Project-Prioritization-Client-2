@@ -3,7 +3,7 @@ import { styled } from "@mui/material/styles";
 import { Link, Container, Typography } from "@mui/material";
 // hooks
 import useResponsive from "../@mui/hooks/useReponsive";
-// sections
+// conponet sign up form
 import SignupForm from "../components/userpage/SignupForm";
 
 // ----------------------------------------------------------------------

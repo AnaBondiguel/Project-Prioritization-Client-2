@@ -21,12 +21,10 @@ import stringAvatar from "../../@mui/theme/stringAvatar";
 const MENU_OPTIONS = [
   {
     label: "Home",
-    icon: "eva:home-fill",
     to: "/",
   },
   {
     label: "Profile",
-    icon: "eva:person-fill",
     to: "/profile",
   },
 ];

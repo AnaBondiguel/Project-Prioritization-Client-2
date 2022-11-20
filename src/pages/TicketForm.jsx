@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import { useGlobalState } from "../utils/StateContext";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { v4 as uuidv4 } from "uuid";
+// @mui
 import {
   Grid,
   Button,
@@ -15,17 +19,15 @@ import FormControl from "@mui/material/FormControl";
 import MenuItem from "@mui/material/MenuItem";
 import FormHelperText from "@mui/material/FormHelperText";
 import dateFormat from "dateformat";
-
-import { useGlobalState } from "../utils/StateContext";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
-import { createTicket, updateTicket } from "../services/ticketServices";
-
 import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import TextField from "@mui/material/TextField";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+// ----------------------------------------------------------------
+// hooks
+import { createTicket, updateTicket } from "../services/ticketServices";
+//  component Header of the page
 import EditOrNewTicketHeader from "../components/tickets/EditOrNewTicketHeader";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { v4 as uuidv4 } from "uuid";
 
 /**
  * TicketForm is also used for the edit page
@@ -45,6 +47,7 @@ import { v4 as uuidv4 } from "uuid";
  * }, [location.state])
  */
 
+//  differer way to get enum compart to impact, confidence and effort
 const target = ["Free", "Pro", "Teams", "Education", "All", "Others"];
 
 function TicketForm() {
@@ -70,11 +73,10 @@ function TicketForm() {
   const [formState, setFormState] = useState(ticket);
   const { dispatch, store } = useGlobalState();
   const { impacts, confidences, efforts } = store;
-  // ! date is in ininitialFormState no need another one
   const [dateValue, setDateValue] = useState(initialDate); //for date picker
   const [error, setError] = useState([]); // error messages
   const user = JSON.parse(localStorage.getItem("user"));
-  const { _id } = useParams();
+  const { _id } = useParams(); // get ticket id from params
   let navigate = useNavigate();
 
   function handleChange(event) {
@@ -107,7 +109,9 @@ function TicketForm() {
             },
           });
           //if user update ticket with form, leave ticket to show on the page.
-          navigate(`/mytickets/${_id}`, {state:{ticket: JSON.stringify(ticket)}});
+          navigate(`/mytickets/${_id}`, {
+            state: { ticket: JSON.stringify(ticket) },
+          });
         })
         .catch((error) =>
           setError(error.response.data.errors || error.response.data.error)
@@ -124,7 +128,9 @@ function TicketForm() {
         .then((ticket) => {
           dispatch({ type: "addTicket", data: ticket });
           //we can navigate back to the my tickets page once we create a ticket.
-          event.target.value === "false" ? navigate("/mytickets") : navigate("/submissionsuccess");
+          event.target.value === "false"
+            ? navigate("/mytickets")
+            : navigate("/submissionsuccess");
         })
         .catch((error) =>
           setError(error.response.data.errors || error.response.data.error)
@@ -132,12 +138,16 @@ function TicketForm() {
     }
   }
 
+  // ----------------------------------------------------------------
+  //  this is conditon redering to control the button to show different content
   let saveButton = false;
   let colorButton = "success";
   if (ticket && ticket.isSubmitted) {
     saveButton = true;
     colorButton = "warning";
   }
+  // ----------------------------
+
   return (
     <Container className="main-content-container px-4 pb-4">
       <EditOrNewTicketHeader id={_id} />

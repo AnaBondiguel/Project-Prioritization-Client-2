@@ -1,28 +1,28 @@
 import { React, useEffect, useReducer } from "react";
-import ScrollToTop from "./@mui/components/scrolltotop/ScroolToTop";
-import ThemeProvider from "./@mui/theme";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { StateContext } from "./utils/StateContext";
+//  reducer
 import reducer from "./utils/StateReducer";
 import {
   getImpacts,
   getConfidences,
   getEfforts,
 } from "./services/selectionServices";
+// @mui
+import ScrollToTop from "./@mui/components/scrolltotop/ScroolToTop";
+import ThemeProvider from "./@mui/theme";
+
 // -----------------------------------------------------------
-// pages
+// pages and components
 import Home from "./pages/Home.jsx";
 import TicketForm from "./pages/TicketForm";
-// import TicketDetails from "./components/TicketDetails";
 import SearchResults from "./components/SearchResults";
 import SubmissionSuccess from "./components/SubmissionSuccess";
 import Profile from "./pages/Profile";
 import SignIn from "./pages/SignIn.jsx";
-// ----------------------------------------------------------------
 import MyTickets from "./pages/MyTickets.jsx";
 import SubmittedTickets from "./pages/SubmittedTickets";
 import TicketDetails from "./pages/TikcetDetails";
-// ----------------------------------------------------------------
 import SignUp from "./pages/SignUp.jsx";
 import FeedbackForm from "./components/FeedbackForm";
 import Page404 from "./pages/Page404.jsx";
@@ -43,12 +43,10 @@ function App() {
   };
   const [store, dispatch] = useReducer(reducer, initialState);
   const user = JSON.parse(localStorage.getItem("user"));
-  // todo ------------------------------------------------
 
   useEffect(() => {
     // ------------------------------------------------------
     // * can get from backend or use array instead
-    
     getImpacts()
       .then((impacts) => dispatch({ type: "setImpacts", data: impacts }))
       .catch((error) => console.log(error));
@@ -64,12 +62,10 @@ function App() {
       .catch((error) => console.log(error));
   }, []);
   // ---------------------------------
-  //  todo ------------------------------------------
 
   return (
     <ThemeProvider>
       <ScrollToTop />
-      {/* <StyledChart /> */}
       <StateContext.Provider value={{ store, dispatch }}>
         {/* <Router />    
       //----------------------------------------------------------------

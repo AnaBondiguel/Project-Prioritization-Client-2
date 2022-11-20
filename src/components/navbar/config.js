@@ -1,3 +1,4 @@
+// Routes for the nav bar
 const navConfig = [
   {
     title: "My Tickets",

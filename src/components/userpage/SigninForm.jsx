@@ -2,7 +2,6 @@ import { useState } from "react";
 import { login } from "../../services/authServices";
 import { useNavigate } from "react-router-dom";
 import { useGlobalState } from "../../utils/StateContext";
-
 // @mui
 import {
   Link,
@@ -26,7 +25,7 @@ export default function SigninForm() {
   };
 
   const [formState, setFormState] = useState(initialFormState);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(null); //set error value
 
   const { dispatch } = useGlobalState();
 
@@ -36,12 +35,13 @@ export default function SigninForm() {
 
   //setup onchange for email and password
   function handleChange(event) {
-    setError(null);
+    setError(null); // error set nul when you event chang(type in the field)
     setFormState({
       ...formState,
       [event.target.name]: event.target.value,
     });
   }
+
   //setup submit button for sign in
   function handleSubmit(event) {
     event.preventDefault();
@@ -49,37 +49,18 @@ export default function SigninForm() {
     login(formState)
       .then((data) => {
         const user = data.user;
-        // user: { username, role }
-        // const loggedInUser = sessionStorage.getItem('user')
-        // ...
-        /*
-            // TicketForm.jsx
-            const Form = (props) => {
-                return <form>...</form>
-            }
-
-            if (loggedInUser.role === 'manager') {
-                return <TicketForm disabledFields={['initiative', 'description']} />
-            }
-
-            return <TicketForm disabledFields={['priority']} />
-            */
-        // ! get user info
-        // console.log(user)
-
         const token = data.token;
         localStorage.setItem("token", token);
         localStorage.setItem("user", JSON.stringify(user));
         dispatch({ type: "setLoggedInUser", data: JSON.stringify(user) });
         dispatch({ type: "setToken", data: token });
-        //go to home page
-        navigate("/");
+        navigate("/"); //go to home page
       })
       .catch((error) =>
         setError(error.response.data.errors || error.response.data.error)
       );
   }
-  
+
   return (
     <>
       <Stack spacing={3}>
@@ -88,7 +69,7 @@ export default function SigninForm() {
         <TextField
           name="password"
           label="Password"
-          type={showPassword ? "text" : "password"}
+          type={showPassword ? "text" : "password"} //show password you type
           onChange={handleChange}
           InputProps={{
             endAdornment: (
@@ -107,11 +88,11 @@ export default function SigninForm() {
         />
       </Stack>
 
-      {error && typeof(error) === "string" ? 
-        (<Alert variant="outlined" severity="error" sx={{ m: 1 }}>
+      {error && typeof error === "string" ? ( //condition redering when error is single string or array
+        <Alert variant="outlined" severity="error" sx={{ m: 1 }}>
           {error}
-        </Alert>)
-       : error ? (
+        </Alert>
+      ) : error ? (
         error.map((err, i) => (
           <Alert key={i} variant="outlined" severity="error" sx={{ m: 1 }}>
             {err.msg}
@@ -122,6 +103,8 @@ export default function SigninForm() {
       )}
 
       <Stack
+        //----------------------------------------------------------------
+        // future function
         direction="row"
         alignItems="center"
         justifyContent="space-between"

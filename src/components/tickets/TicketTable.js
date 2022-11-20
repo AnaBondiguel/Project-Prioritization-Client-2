@@ -17,9 +17,13 @@ import {
 } from "@mui/material";
 
 export const TicketTable = (data) => {
+  // data is value passed from prvious page
   const tickets = data.tickets;
+  // get href value for condition rendering
   const listing = window.location.href;
 
+  // table control
+  // how many rows show for a single table page
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(0);
 
@@ -30,6 +34,7 @@ export const TicketTable = (data) => {
   const handlePageChange = (event, newPage) => {
     setPage(newPage);
   };
+  // ----------------------------
 
   if (!tickets) return;
 
@@ -39,7 +44,7 @@ export const TicketTable = (data) => {
         <Table>
           <TableHead>
             <TableRow sx={{ background: "#92CEC1" }}>
-              {listing.includes("listing") ||
+              {listing.includes("listing") || //this conition redering when in different page
               listing.includes("searchresults") ? (
                 <TableCell>Author</TableCell>
               ) : (
@@ -90,8 +95,6 @@ export const TicketTable = (data) => {
                       display: "flex",
                     }}
                   >
-                    {/* <Avatar src={customer.avatarUrl} sx={{ mr: 2 }} /> */}
-
                     <Typography
                       color="textPrimary"
                       variant="body1"

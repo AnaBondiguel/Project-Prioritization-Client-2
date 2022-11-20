@@ -4,9 +4,9 @@ import { styled } from "@mui/material/styles";
 import { Box, Stack, AppBar, Toolbar, IconButton } from "@mui/material";
 // utils
 import { bgBlur } from "../../@mui/cssStyles.js";
-// components
+
 import Iconify from "../../@mui/components/iconify.js";
-//
+// components
 import Searchbar from "./Searchbar";
 import AccountPopover from "./AccountPopover";
 import Logo from '../logo/Logo.js'
@@ -41,10 +41,6 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-
-// Header.propTypes = {
-//   onOpenNav: PropTypes.func,
-// };
 
 export default function Header({ onOpenNav }) {
   

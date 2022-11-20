@@ -1,9 +1,7 @@
 import { Stack, Typography } from "@mui/material";
 import React from "react";
 
-
 export default function SubmittedTicketsHeader() {
- 
   return (
     <Stack
       direction="row"
@@ -15,7 +13,6 @@ export default function SubmittedTicketsHeader() {
       <Typography variant="h4" gutterBottom>
         Submitted Tickets
       </Typography>
-
     </Stack>
   );
 }

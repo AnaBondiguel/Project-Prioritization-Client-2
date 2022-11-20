@@ -5,6 +5,7 @@ import { styled } from "@mui/material/styles";
 import { Outlet } from "react-router-dom";
 
 // ----------------------------------------------------------------
+// layout and theme
 const APP_BAR_MOBILE = 64;
 const APP_BAR_DESKTOP = 92;
 
@@ -22,7 +23,7 @@ const Main = styled("div")(({ theme }) => ({
   paddingBottom: theme.spacing(10),
   // ----------------------
   // backgroundColor: "#efefef",
-//  -------------------------
+  //  -------------------------
   [theme.breakpoints.up("lg")]: {
     paddingTop: APP_BAR_DESKTOP + 24,
     paddingLeft: theme.spacing(2),
