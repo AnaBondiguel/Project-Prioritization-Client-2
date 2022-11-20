@@ -297,4 +297,4 @@ There are some required features that we designed in the part A, we have not bee
 
 - We should enable users to view their manager's feedback.
 
-We will work on these features after we submit our assignment. 
+We will work on these features after we submit our assignment.
