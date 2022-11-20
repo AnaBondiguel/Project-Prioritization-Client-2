@@ -21,7 +21,7 @@ function SearchResults() {
             Search Results
           </Typography>
         </Stack>
-        {!filteredTickets.length > 0 ? (
+        {filteredTickets && !filteredTickets.length > 0 ? (
           <Paper
             sx={{
               textAlign: "center",

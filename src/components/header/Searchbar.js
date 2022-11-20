@@ -97,8 +97,8 @@ export default function Searchbar() {
         console.log("Error!", error);
       })
       .finally(() => {
-        // console.log("Fetch completed.");
-        // console.log(tickets);
+        console.log("Fetch completed.");
+        
       });
   }
 
