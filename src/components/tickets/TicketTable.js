@@ -16,7 +16,6 @@ import {
   Chip,
 } from "@mui/material";
 
-
 export const TicketTable = (data) => {
   const tickets = data.tickets;
   const listing = window.location.href;
@@ -58,7 +57,18 @@ export const TicketTable = (data) => {
           </TableHead>
           <TableBody>
             {tickets.slice(page * limit, page * limit + limit).map((ticket) => (
-              <TableRow hover key={ticket._id}>
+              <TableRow
+                hover
+                key={ticket._id}
+                // ----------------------------------------------------------------
+                // set rows color different
+                sx={{
+                  "&:nth-of-type(even)": {
+                    backgroundColor: "#ddd",
+                  },
+                }}
+                // ---------------------------------------------------------------
+              >
                 {listing.includes("listing") ? (
                   <TableCell sx={{ color: "#204969" }}>
                     {`${ticket.author.firstName}` +
