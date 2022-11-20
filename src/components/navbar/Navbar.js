@@ -99,7 +99,7 @@ export default function Nav({ openNav, onCloseNav }) {
       component="nav"
       sx={{
         flexShrink: { lg: 0 },
-        width: { lg: NAV_WIDTH },
+        width: { lg: NAV_WIDTH }
       }}
     >
       {isDesktop ? (
@@ -109,7 +109,9 @@ export default function Nav({ openNav, onCloseNav }) {
           PaperProps={{
             sx: {
               width: NAV_WIDTH,
-              bgcolor: "background.default",
+              // -----------------
+              // bgcolor: "#FFFFFF",
+              // -------------------
               borderRightStyle: "dashed",
             },
           }}
