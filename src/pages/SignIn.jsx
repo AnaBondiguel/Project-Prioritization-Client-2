@@ -22,6 +22,7 @@ const StyledSection = styled("div")(({ theme }) => ({
   justifyContent: "center",
   boxShadow: theme.customShadows.card,
   backgroundColor: theme.palette.background.default,
+  backgroundImage: `url("https://img.freepik.com/free-photo/grunge-paint-background_1409-1337.jpg?w=2000")`,
 }));
 
 const StyledContent = styled("div")(({ theme }) => ({

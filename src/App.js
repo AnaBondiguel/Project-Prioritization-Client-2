@@ -92,7 +92,7 @@ function App() {
             />
 
             <Route path="mytickets" element={<MyTickets />} />
-            <Route path="blog" element={<MyTickets />} />
+            <Route path="blog" element={<Profile />} />
             <Route path="profile" element={<Profile />} />
             <Route path="listings" element={<SubmittedTickets />} />
             <Route path="newticket" element={<TicketForm />} />
