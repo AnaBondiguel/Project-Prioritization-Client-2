@@ -47,13 +47,8 @@ Back End
 
 ![Modules](client/public/images/modulesbackend.png)
 
-<<<<<<< HEAD
-The front end code is categorised into folders based on their purpose:
-Chen's writing
-=======
 The front end code is categorised into folders based on their purpose: 
 Chen's writing:
->>>>>>> frontend_test
 
 - Demonstrates DRY (Don’t Repeat Yourself) coding principles
 
@@ -75,13 +70,9 @@ We used UUIDV4 to generate a unique token to validate users.
 
 We used Jest and Supertest for unit testing for our front-end and back-end.
 
-<<<<<<< HEAD
-Chen's writing
-=======
 We used Cypress to do automated integration testing. It allows a code coverage report to be generated after running tests in Cypress.
 
 Chen's writing:
->>>>>>> frontend_test
 
 - Demonstrates good code flow control for user stories
 
@@ -110,7 +101,7 @@ export async function createTicket(ticket) {
 
 In StateReducer.jsx:
 
-```
+``` Javascript
 export default function reducer (state, action) {
     switch(action.type) {
         case 'addTicket': {
@@ -123,7 +114,7 @@ export default function reducer (state, action) {
 
 In TicketForm.jsx:
 
-```
+``` Javascript
 function handleClick({ isSubmitted = false }) {
     return (event) => {
       event.preventDefault();
