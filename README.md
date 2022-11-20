@@ -32,8 +32,10 @@ Frond End
 ![Modules](client/public/images/modulesfrontend.png)
 
 The front end code is categorised into folders based on their purpose:
+Chen's writing: update your information 
 
-The assets folder contains images. The components folder contains components that make up each page of the website. The pages folder contains the code for each page, and the components from the components folder are imported into each of these pages. The service folder contains code that communicate with back-end code. The utils folder contains StateContext.jsx and StateReducer.jsx. The tests folder contains code for Jest testing for all the functionalities of our app that interacts with users.
+The assets folder contains images and the manual testing excel. @mui folder contains the styling framework for the app. 
+The components folder contains components that make up each page of the website. The pages folder contains the code for each page, and the components from the components folder are imported into each of these pages. The service folder contains code that communicate with back-end code. The utils folder contains StateContext.jsx and StateReducer.jsx. The tests folder contains code for Jest testing for all the functionalities of our app that interacts with users.
 
 
 Back End
@@ -41,7 +43,7 @@ Back End
 ![Modules](client/public/images/modulesbackend.png)
 
 The front end code is categorised into folders based on their purpose: 
-Chen's writing 
+Chen's writing:
 
 - Demonstrates DRY (Don’t Repeat Yourself) coding principles
 
@@ -63,7 +65,9 @@ We used UUIDV4 to generate a unique token to validate users.
 
 We used Jest and Supertest for unit testing for our front-end and back-end. 
 
-Chen's writing 
+We used Cypress to do automated integration testing. It allows a code coverage report to be generated after running tests in Cypress.
+
+Chen's writing:
 
 - Demonstrates good code flow control for user stories
 
@@ -71,11 +75,11 @@ We used the user stories for the code control flow during our coding process. Ea
 
 User story 1 Idea submission
 
-As Yel, Software Engineer, I want to communicate my project ideas to my team, so I need to fill a form and submit it to my team/manager.
+As James, Software Engineer, I want to communicate my project ideas to my team, so I need to fill a form and submit it to my team/manager.
 
 Acceptance Criteria
 
-“We have to formally fill in an online form if we want to share our project ideas to the team.” – Yel
+“We have to formally fill in an online form if we want to share our project ideas to the team.” – James
 
 In ticketService.jsx:
 
@@ -188,7 +192,7 @@ We used Git and Github as our source control tool. The team worked off three rep
 ![Git1](client/public/images/gitbranch1.png)
 ![Git2](client/public/images/gitbranch2.png)
 
-R4. **Demonstrate your ability to work in a team**:
+# R4. **Demonstrate your ability to work in a team**:
 
 - Use a recognised project management methodology & a recognised task delegation methodology
 
@@ -203,3 +207,33 @@ We used Trello to divid our project into several incremental steps with regular 
 A Trello board was used to track miscellaneous tasks
 
 ![Trello](client/public/images/Trello.png)
+
+# R5. Produce a working application that meets client and user needs
+
+During the requirements gathering process, the client emailed us a number of features and services he would like to be included in the site:
+
+### Editing ICE scores 
+
+- When managers log into their account, they want to edit the fields of impact, confidence, and effort in order to change the ICE score for a particular project ticket. Once they changed the ICE scores, they can provide feedback to explain the changes of ICE scores.
+
+![Edit_ICE](client/public/images/ICE_Score.png)
+
+
+
+
+
+
+
+# R10. Design features vs built features
+
+There are some required features that we designed in the part A, we have not been able to completed for the Part B due to the time limitations:
+
+- We need to add manager status selection for our users in the sign up page.
+
+- We should to allow users to edit their manager/employee status in their profile page.
+
+- We should enable managers to edit their feedback.
+
+- We should enable users to view their manager's feedback.
+
+We will work on these features after we submit our assignment. 
