@@ -191,10 +191,10 @@ In order to write more testable, flexible, and maintainable code, we followed th
 
 For example, when ticket form is completed from the front-end, a new ticket is created from the values of the form. Then the information is saved and a HTTP request is sent to the back-end.
 
-R3. Employ and utilise proper source control methodology (git)
+# R3. Employ and utilise proper source control methodology (git)
 We used Git and Github as our source control tool. The team worked off three repositories: one is for the frond-end for both team members because the frond-end has a lot of work. The second one is for the back-end for Chen's individual work. The third one is for the front-end for Ana's individual work. Eventually, Ana merged her front-end work from her individual repository to the front-end repository in common for both members. We did use branches for developing a particular feature or styling framework. Once the branch code was agreed, we pulled requests to merge the changes to the master branch. When merge conflicts arises we will talk and check with the person whose code is causing the conflicts.
 
-R4. **Demonstrate your ability to work in a team**:
+# R4. **Demonstrate your ability to work in a team**:
 
 - Use a recognised project management methodology & a recognised task delegation methodology
 
@@ -205,3 +205,35 @@ We divided our project between both of us: Chen is responsible for the back-end,
 We set up a meeting every Monday to discuss the week plan and chart regularly online if there are problems that need to be solved immediately.
 
 We used Trello to divid our project into several incremental steps with regular feedback from our users and the two of us. We prioritized smaller pieces of the project requirement by their importance and organised regular meetings to ensure our latest developements meet our client's expectations. Therefore, we can effetively respond to changing requirements.
+
+# R5 Produce a working application that meets client and user needs
+
+PlaceHolder
+
+# R6 Deploy the application to a cloud hosting service
+
+PlaceHolder
+
+# R7 Produce an application with an intuitive user interface
+
+PlaceHolder
+
+# R8 **Provides evidence of user testing**:
+
+PlaceHolder
+
+# R9 Utilises a formal testing framework
+
+PlaceHolder
+
+# R10 A link (URL) to your deployed website
+
+PlaceHolder
+
+# R11 A link to your GitHub repository (repo)
+
+PlaceHolder
+
+# R12 The contents of your README.md as submitted for Full Stack App - Part A
+
+PlaceHolder
