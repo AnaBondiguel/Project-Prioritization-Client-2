@@ -44,25 +44,21 @@ const StyledSearchbar = styled("div")(({ theme }) => ({
 
 export default function Searchbar() {
   // ----------------------------------------------------------------------
-  let initialData = {
-    userInput: "",
-  };
 
-  const [data, setData] = useState(initialData);
+  const [tickets, setTickets] = useState([]);
+  const [input, setInput] = useState("");
+
   let navigate = useNavigate();
   const { dispatch } = useGlobalState();
 
   function handleOnChange(event) {
-    setData({
-      ...data,
-      userInput: event.target.value,
-    });
+    setInput(event.target.value);
   }
 
   //setup onKeyUp to search for all the submitted tickets
   function handleSubmit(event) {
     fetchTickets();
-    // console.log(event);
+    
     if (event.key === "Enter" || event.type === "click") {
       const filteredTickets = getFilteredTickets();
       console.log("filterticket", filteredTickets);
@@ -70,20 +66,21 @@ export default function Searchbar() {
       //Once we found the tickets, we'll see the tickets on the search results page
       navigate("/searchresults");
     }
+    
   }
 
   function getFilteredTickets() {
-    if (!data.userInput) {
-      return data.tickets;
+    if (!input) {
+      return ;
     }
 
     // eslint-disable-next-line array-callback-return
-    let filteredTickets = data.tickets.filter((ticket) => {
+    let filteredTickets = tickets.filter((ticket) => {
       if (
-        !ticket.initialtive.includes(data.userInput) ||
-        !ticket.target.includes(data.userInput)
+        ticket.initialtive.includes(input) ||
+        ticket.target.includes(input)
       )
-       return  ticket;
+        return ticket;
     });
     return filteredTickets;
   }
@@ -94,16 +91,14 @@ export default function Searchbar() {
   function fetchTickets() {
     getAllTickets()
       .then((tickets) => {
-        setData({
-          ...data,
-          tickets: tickets,
-        });
+        setTickets(tickets);
       })
       .catch((error) => {
         console.log("Error!", error);
       })
       .finally(() => {
-        console.log("Fetch completed.");
+        // console.log("Fetch completed.");
+        // console.log(tickets);
       });
   }
 
