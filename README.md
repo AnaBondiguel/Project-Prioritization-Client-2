@@ -230,9 +230,15 @@ PlaceHolder
 
 PlaceHolder
 
+Heroku Backend: <https://projectprioritization.herokuapp.com/api/>
+
+Railway Backend: <https://projectprioritization.up.railway.app/api>
+
 # R11 A link to your GitHub repository (repo)
 
 PlaceHolder
+
+Back-End: <https://github.com/OrangeKami/Project_Prioritization_Server>
 
 # R12 The contents of your README.md as submitted for Full Stack App - Part A
 
