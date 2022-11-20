@@ -17,7 +17,7 @@ const navConfig = [
     path: "/blog",
   },
   {
-    title: "Sing In",
+    title: "Sign In",
     path: "/signin",
   },
   {

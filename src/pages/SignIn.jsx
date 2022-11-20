@@ -37,7 +37,7 @@ const StyledContent = styled("div")(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-export default function SingIn() {
+export default function SignIn() {
   const mdUp = useResponsive("up", "md");
 
   return (

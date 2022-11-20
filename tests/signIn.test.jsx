@@ -4,7 +4,7 @@ import {render, screen} from '@testing-library/react';
 // import SigninForm from '../src/components/userpage/SigninForm';
 // import {login} from '../src/services/authServices';
 import React from 'react';
-import SingIn from '../src/pages/SignIn'
+import SignIn from '../src/pages/SignIn'
 
 jest.mock('../src/components/userpage/SigninForm', () => {
     return <></>
@@ -19,7 +19,7 @@ jest.mock('../src/components/userpage/SigninForm', () => {
     // ARRANGE
     render(
        
-            <SingIn/>
+            <SignIn/>
     
           )
   
