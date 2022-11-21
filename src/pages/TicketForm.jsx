@@ -93,7 +93,7 @@ function TicketForm() {
     if (_id) {
       // from saved ticket to submitted
       updateTicket({
-        id: _id,
+        _id: _id,
         ...formState,
         isSubmitted: event.target.value,
         dueDate: dateValue,
