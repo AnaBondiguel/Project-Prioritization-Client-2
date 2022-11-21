@@ -59,11 +59,20 @@ describe("User Sign Up and Sign in Functionality Testing", function () {
   });
 
   // -----------------------------------------
-  it("Signs in the user account that was created by the previous test", function () {
+  // user adn manager redering to different page
+  it("Signs in the user account", function () {
     cy.visit("localhost:3000/signin");
     cy.get('input[name="email"]').type("user1@gmail.com");
     cy.get('input[name="password"]').type("test@123");
     cy.contains("button", "Sign In").click();
     cy.location("pathname").should("eq", "/mytickets");
   });
+
+   it("Signs in the manager account", function () {
+     cy.visit("localhost:3000/signin");
+     cy.get('input[name="email"]').type("ana@test.com");
+     cy.get('input[name="password"]').type("test@123");
+     cy.contains("button", "Sign In").click();
+     cy.location("pathname").should("eq", "/listings");
+   });
 });

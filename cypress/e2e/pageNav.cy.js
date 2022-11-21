@@ -20,6 +20,6 @@ describe('page nav test', () => {
 });
 
 // log in
-describe('manager log in', () => {
+describe('user log in', () => {
 
 });
