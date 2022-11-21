@@ -251,8 +251,8 @@ R3. Employ and utilise proper source control methodology (git)
 
 We used Git and Github as our source control tool. The team worked off three repositories: one is for the frond-end for both team members because the frond-end has a lot of work. The second one is for the back-end for Chen's individual work. The third one is for the front-end for Ana's individual work. Eventually, Ana merged her front-end work from her individual repository to the front-end repository in common for both members. We did use branches for developing a particular feature or styling framework or testing. Once the branch code was agreed, we pulled requests to merge the changes to the master branch. When merge conflicts arises we will talk and check with the person whose code is causing the conflicts.
 
-![Git1](client/public/images/gitbranch1.png)
-![Git2](client/public/images/gitbranch2.png)
+![Git1](/public/images/gitbranch1.png)
+![Git2](/public/images//gitbranch2.png)
 
 # R4. **Demonstrate your ability to work in a team**:
 
