@@ -8,6 +8,27 @@ describe("user account pop over nav test", () => {
     cy.contains("button", "Sign In").click();
   });
 
+
+  // Home button link to the page according role
+  it("to home page /mytickets for user role", () => {
+    cy.wait(2000);
+    cy.get(".MuiButtonBase-root > .MuiAvatar-root").click();
+    cy.wait(2000);
+    cy.contains('a', "Home").click();
+    cy.location("pathname").should("eq", "/mytickets");
+    
+  });
+
+   it("to profile page /profile ", () => {
+     cy.wait(2000);
+     cy.get(".MuiButtonBase-root > .MuiAvatar-root").click();
+     cy.wait(2000);
+     cy.get(".css-1ludl2-MuiStack-root").contains("a", "Profile").click();
+     cy.location("pathname").should("eq", "/profile");
+     cy.wait(2000);
+   });
+
+
   // user log out when click
   it("log out", () => {
     cy.wait(2000);

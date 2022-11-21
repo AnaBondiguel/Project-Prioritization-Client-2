@@ -245,14 +245,28 @@ Railway Backend: <https://projectprioritization.up.railway.app/api>
 
 
 # R8 **Provides evidence of user testing**:
+![Jest](client/public/images/JestTest.png)
+![Cypress1](client/public/images/Cypress1.png)
+![Cypress2](client/public/images/Cypress2.png)
+![Cypress3](client/public/images/Cypress3.png)
+![ManualTest1](client/public/images/manualtest1.png)
+![ManualTest2](client/public/images/manualtest2.png)
+![ManualTest3](client/public/images/manualtest3.png)
+![ManualTest4](client/public/images/manualtest4.png)
 
 
 
 # R9 Utilises a formal testing framework
 
+In this project, we used three testings: Unit Testing, System Integration Testing, and User Acceptance Testing. 
 
+Firstly, Jest is easy to integrate JavaScript testing framework and is commonly used to test Express, Node.js, and React applications. 
 
+Secondly, Cypress is primarily used for the front-end testing to test web applications and also for a large variety of tests including unit testis, system integration tests and end to end tests. 
 
+Thirdly, user acceptance testing is usually at the final stage of testing and is when real users of the software uses the final production website to complete a series of tests that are defined by the developer. 
+
+We started with unit testing with Jest. Indiviudal unit or component was tested to ensure the validation for each component function before all the function components were intergrated further. We used Jest to tested backend routes as well as controllers. In the front-end, we used Cypress as system integration tests to ensure our components were working together as we expected. Finally, we moved to user acceptance testing that the tests were designed to as see if our website can support users' day-to-day usage. We completed the tests with the Head of Growth B2B Marketing, Francois to understand what we have done well to meet his expectation and what we need to improve for our app in the future. User acceptance testing is performed on the live environment to ensure that to production website functions the same as the development environment. Our user acceptance testing was implemented by using a spread sheet with pre-planned tests that we described. If expected result was not met, we fixed bugs and tested it again. If users required more features, but we did not have time to complete. We will make coments for future development. 
 
 
 # R10. Design features vs built features
@@ -269,7 +283,7 @@ We will work on these features after we submit our assignment.
 
 # R11 A link to your GitHub repository (repo)
 
-PlaceHolder
+Front-end: <https://github.com/AnaBondiguel/Project-Prioritization-Client-2.git>
 
 Back-End: <https://github.com/OrangeKami/Project_Prioritization_Server>
 
