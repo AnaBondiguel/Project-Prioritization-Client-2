@@ -75,13 +75,7 @@ We used UUIDV4 to generate a unique token to validate users.
 
 We used Jest and Supertest for unit testing for our front-end and back-end.
 
-<<<<<<< HEAD
 Chen's writing
-=======
-We used Cypress to do automated integration testing. It allows a code coverage report to be generated after running tests in Cypress.
-
-Chen's writing:
->>>>>>> frontend_test
 
 - Demonstrates good code flow control for user stories
 
@@ -300,10 +294,8 @@ There are some required features that we designed in the part A, we have not bee
 
 - We need to add manager status selection for our users in the sign up page.
 
-- We should to allow users to edit their manager/employee status in their profile page.
+- We can build admin account to allow managers to edit their manager/employee status and delete submitted tickets in the future. 
 
 - We should enable managers to edit their feedback.
-
-- We should enable users to view their manager's feedback.
 
 We will work on these features after we submit our assignment. 
