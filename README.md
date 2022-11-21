@@ -235,7 +235,7 @@ During the requirements gathering process, the client emailed us a number of fea
 
 # R6 Deploy the application to a cloud hosting service
 
-Netlify Frontend: 
+Netlify Frontend: <https://projectprioritization.netlify.app/signup>
 
 Heroku Backend: <https://projectprioritization.herokuapp.com/api/>
 

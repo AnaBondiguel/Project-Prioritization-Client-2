@@ -93,7 +93,7 @@ function TicketForm() {
     if (_id) {
       // from saved ticket to submitted
       updateTicket({
-        id: _id,
+        _id: _id,
         ...formState,
         isSubmitted: event.target.value,
         dueDate: dateValue,
@@ -211,7 +211,7 @@ function TicketForm() {
               <Grid item md={9} xs={12}>
                 <TextField
                   fullWidth
-                  label="Initialtive"
+                  label="Initiative"
                   name="initialtive"
                   onChange={handleChange}
                   value={formState.initialtive}

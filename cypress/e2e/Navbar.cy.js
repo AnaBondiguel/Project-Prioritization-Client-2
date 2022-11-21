@@ -44,16 +44,6 @@ describe("user nav to different pages", () => {
   });
 
   // --------------------------------------------------
-  //  Button at my tickets page
-  it("nav to new ticket page after click add ticket button at /mytickets", () => {
-    cy.wait(2000);
-    cy.contains("a", "Add Ticket").click();
-    cy.wait(2000);
-    cy.location("pathname").should("eq", "/newticket");
-  });
-
-
-
   // user log out
   it("log out", () => {
     cy.wait(2000);

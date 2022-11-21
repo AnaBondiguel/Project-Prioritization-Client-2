@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import dateFormat from "dateformat";
 import {
   Box,
-  Card,
   Table,
   TableBody,
   TableCell,
@@ -14,7 +13,9 @@ import {
   TableRow,
   Typography,
   Chip,
+  Paper,
 } from "@mui/material";
+import TableContainer from "@mui/material/TableContainer";
 
 export const TicketTable = (data) => {
   // data is value passed from prvious page
@@ -39,8 +40,8 @@ export const TicketTable = (data) => {
   if (!tickets) return;
 
   return (
-    <Card>
-      <Box sx={{ minWidth: 850 }}>
+    <Paper sx={{ width: "100%", overflow: "hidden" }}>
+      <TableContainer >
         <Table>
           <TableHead>
             <TableRow sx={{ background: "#92CEC1" }}>
@@ -50,7 +51,7 @@ export const TicketTable = (data) => {
               ) : (
                 <TableCell />
               )}
-              <TableCell>Initialtive</TableCell>
+              <TableCell>Initiative</TableCell>
               <TableCell>Target</TableCell>
               <TableCell>ICE</TableCell>
               <TableCell>Launch Date</TableCell>
@@ -133,7 +134,7 @@ export const TicketTable = (data) => {
             ))}
           </TableBody>
         </Table>
-      </Box>
+      </TableContainer>
 
       <TablePagination
         rowsPerPageOptions={[5, 10, 25]}
@@ -144,6 +145,6 @@ export const TicketTable = (data) => {
         page={page}
         rowsPerPage={limit}
       />
-    </Card>
+    </Paper>
   );
 };
