@@ -70,7 +70,9 @@ We used UUIDV4 to generate a unique token to validate users.
 
 We used Jest and Supertest for unit testing for our front-end and back-end.
 
-Chen's writing
+We used Cypress to do automated integration testing. It allows a code coverage report to be generated after running tests in Cypress.
+
+Chen's writing:
 
 - Demonstrates good code flow control for user stories
 
