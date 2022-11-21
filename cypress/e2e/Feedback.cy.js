@@ -1,5 +1,5 @@
 // Role == manager
-// can leave feedback to sunmitted ticket and delete tickets
+// can leave feedback to the submitted tickets and the delete tickets
 describe("manager add feedback", () => {
   beforeEach(() => {
     cy.viewport(1240, 1000);
@@ -60,11 +60,11 @@ describe("manager delete feedback", () => {
 
   // see feedback
   it("delete feedback", () => {
-    // check the feedback is valid
+    // check whether the feedback is valid or not
     cy.contains("This is cypress test for Feedback");
     // delete feedback
     cy.contains("button", "Delete")
     // can't figue out the button on multiple feedback
-    // ! Need manual test delete feedback
+    // ! Need manual test for the delete button of the feedback, please see our user acceptance testing (excel)
   });
 });

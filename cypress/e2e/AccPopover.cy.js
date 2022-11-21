@@ -9,7 +9,7 @@ describe("user account pop over nav test", () => {
   });
 
 
-  // Home button link to the page according role
+  // Home button link to the page according the role of users
   it("to home page /mytickets for user role", () => {
     cy.wait(2000);
     cy.get(".MuiButtonBase-root > .MuiAvatar-root").click();
@@ -29,7 +29,7 @@ describe("user account pop over nav test", () => {
    });
 
 
-  // user log out when click
+  // users log out when they click the button
   it("log out", () => {
     cy.wait(2000);
     cy.get(".MuiButtonBase-root > .MuiAvatar-root").click();

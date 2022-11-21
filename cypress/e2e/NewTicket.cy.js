@@ -9,7 +9,7 @@ describe("New Ticket page", () => {
   });
 
   // field not valid
-  it("clear the field will get warning", () => {
+  it("Empty field will get a warning", () => {
     cy.get('input[name="initialtive"]').clear();
     cy.get('textarea[name="description"]').clear();
     cy.wait(2000);

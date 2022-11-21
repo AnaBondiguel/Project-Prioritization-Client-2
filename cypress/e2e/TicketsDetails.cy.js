@@ -26,7 +26,7 @@ describe("When access with as user and ticket is not submitted", () => {
 });
 
 // access to other users submitted ticket
-describe("Access to other users submitted ticket", () => {
+describe("Access to other users' submitted ticket", () => {
   beforeEach(() => {
     cy.viewport(1240, 768);
     cy.visit("localhost:3000/signin");
@@ -37,7 +37,7 @@ describe("Access to other users submitted ticket", () => {
     cy.visit("http://localhost:3000/mytickets/63790a09cb4755597889b368");
   });
 
-    it("no save and submit button show in detail page", () => {
+    it("no save and submit button show in the ticket details page", () => {
       cy.wait(2000);
       cy.contains("Submitted")
       cy.get("button").not("save");
@@ -59,7 +59,7 @@ describe("Manager access to other user's submitted ticket and edit button show a
     cy.visit("http://localhost:3000/mytickets/63790a09cb4755597889b368");
   });
 
-  it("manager will be seen the update button and delete button which is disabled", () => {
+  it("manager will see the update button and the delete button which is disabled", () => {
     cy.wait(2000);
     cy.contains("Submitted");
     cy.contains("button", "Delete").should('be.disabled')

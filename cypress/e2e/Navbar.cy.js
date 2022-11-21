@@ -21,7 +21,7 @@ describe("user nav to different pages", () => {
     cy.contains("a", "New Ticket").click();
     cy.location("pathname").should("eq", "/newticket");
     cy.wait(2000);
-    //  nav to all submitted tikcets page
+    //  nav to all submitted tickets page
     cy.contains("a", "Listings").click();
     cy.location("pathname").should("eq", "/listings");
     cy.wait(2000);
@@ -33,7 +33,7 @@ describe("user nav to different pages", () => {
     cy.contains("a", "Profile").click();
     cy.location("pathname").should("eq", "/blog");
     cy.wait(2000);
-    //  nav to sign in page will reder to mytickets page because user is already logged in
+    //  nav to sign in page will render to mytickets page because the user has already been logged in
     cy.contains("a", "Sign In").click();
     cy.location("pathname").should("eq", "/mytickets");
     cy.wait(2000);

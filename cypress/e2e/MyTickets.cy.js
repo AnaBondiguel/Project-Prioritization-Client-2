@@ -16,7 +16,7 @@ it("nav to new ticket page after click add ticket button at /mytickets", () => {
 });
 
 // click initiative title nav to ticket details page
-it("nav to details page after click Link ticket intiative", () => {
+it("nav to details page after click the link of ticket initiative", () => {
   cy.wait(2000);
   cy.contains("a", "WhiteBoard").click();
   cy.wait(2000);

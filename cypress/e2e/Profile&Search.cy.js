@@ -15,7 +15,7 @@ describe('Serchbar testing', () => {
     cy.location("pathname").should("eq", "/mytickets");
   })
 
-  // test serchbar can go to SearchResults page
+  // test search bar can go to SearchResults page
     it("input something in searchbar will nav to serchresults page", ()=>{
       cy.get(".css-h3bten-MuiButtonBase-root-MuiIconButton-root").click();   
       cy.get('input').type("test{enter}");
@@ -37,7 +37,7 @@ describe("Profile editing", () => {
   });
 
   // field not valid
-  it("clear the field will get warning", () => {
+  it("Empty field will get a warning", () => {
     cy.get('input[name="firstName"]').clear()
     cy.get('input[name="email"]').type("user1@");
     cy.wait(2000);
@@ -47,7 +47,7 @@ describe("Profile editing", () => {
   });
 
   // edit success
-  it("edit success and jump to home page", () => {
+  it("Edit success and jump to home page", () => {
     cy.get('input[name="firstName"]').clear().type("user1");
     cy.contains("button", "Save details").click();
     // succes nv back to home page

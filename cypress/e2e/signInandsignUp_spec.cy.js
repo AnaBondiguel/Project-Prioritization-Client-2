@@ -1,17 +1,17 @@
 // sing in and sign up page nav
 describe("signin signup page nav test", () => {
-  it("showing sign in page withour authorize", () => {
+  it("showing sign in page without authorization", () => {
     cy.visit("localhost:3000/mytickets");
     cy.location("pathname").should("eq", "/signin");
   });
 
-  it("jump to sign up page with click link sign Up?", () => {
+  it("jump to sign up page with click link sign up?", () => {
     cy.visit("localhost:3000/signin");
     cy.contains("a", "Sign Up?").click();
     cy.location("pathname").should("eq", "/signup");
   });
 
-  it("jump to sign in page with click link sign In", () => {
+  it("jump to sign in page with click link sign in", () => {
     cy.visit("localhost:3000/signup");
     cy.contains("a", "Sign In").click();
     cy.location("pathname").should("eq", "/signin");
@@ -20,7 +20,7 @@ describe("signin signup page nav test", () => {
 
 // ---------------------------------------------------------------------------------
 // sigin signup
-describe("User Sign Up and Sign in Functionality Testing", function () {
+describe("User Sign up and Sign in Functionality Testing", function () {
   // -------------------------------
   // sign up function
   it("signup  user", function () {
@@ -50,7 +50,7 @@ describe("User Sign Up and Sign in Functionality Testing", function () {
     cy.contains("Email already in use");
   });
 
-  it("signup with  eamil is an invalid email address /password and confirmPassword not match", function () {
+  it("signup with email is an invalid email address / password and confirmPassword not match", function () {
     cy.visit("localhost:3000/signup");
     cy.get('input[name="firstName"]').type("Cypress");
     cy.get('input[name="lastName"]').type("Test");
@@ -87,7 +87,7 @@ describe("User Sign Up and Sign in Functionality Testing", function () {
 
   // -----------------------------------------
   // user and manager redering to different page
-  it("Signs in the user account", function () {
+  it("Sign in the user account", function () {
     cy.visit("localhost:3000/signin");
     cy.get('input[name="email"]').type("user1@gmail.com");
     cy.get('input[name="password"]').type("test@123");
@@ -96,7 +96,7 @@ describe("User Sign Up and Sign in Functionality Testing", function () {
     cy.location("pathname").should("eq", "/mytickets");
   });
 
-  it("Signs in the manager account", function () {
+  it("Sign in the manager account", function () {
     cy.visit("localhost:3000/signin");
     cy.get('input[name="email"]').type("ana@test.com");
     cy.get('input[name="password"]').type("test@123");

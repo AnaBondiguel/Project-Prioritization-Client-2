@@ -1,6 +1,6 @@
-// different role in updateticket form with different action
+// different roles in the updateticket form with different actions
 // ROLE === user
-// can only access own unsubmitted ticket
+// can only access own unsubmitted tickets
 describe("update ticket", () => {
   beforeEach(() => {
     cy.viewport(1240, 768);
@@ -15,7 +15,7 @@ describe("update ticket", () => {
   });
 
   // update success
-  it("clear the field will get warning", () => {
+  it("Empty field will get a warning", () => {
     cy.get('textarea[name="description"]').clear().type("This is Cypress Test for update ticket");
     cy.contains("button", "Save").click();
     cy.location("pathname").should("eq", "/mytickets/6371cb29cf404ad955485eb9");
@@ -41,7 +41,7 @@ describe("update ticket", () => {
   });
 
   // can only upde ICE and target
-  it("clear the field will get warning", () => {
+  it("Empty the field will get a warning", () => {
     cy.get("#mui-component-select-target").click();
     cy.wait(2000);
     cy.contains("li", "Free").click()

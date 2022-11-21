@@ -2,6 +2,20 @@
 
 CA Final Assessment Server
 
+# Access to our app
+
+for employees
+
+ - email: user1@gmail.com
+
+ - password: test@123
+
+for managers
+
+- email: ana@test.com
+
+- password: test@123
+
 # R1.At a minimum use the following technologies:
 
 We built a MERN full-stack app "Project Prioritisation" by:
@@ -243,6 +257,21 @@ Railway Backend: <https://projectprioritization.up.railway.app/api>
 
 # R7 Produce an application with an intuitive user interface
 
+- For MyTickets page and listings page, we made ticket initiative with clicked link because we want users to go to the ticket details page to view ticket information if users are interested in a particular project ticket. We also enabled users to view their ticket status (not submit/submitted) in the MyTickets page, this feature will inform our users which ticket has been submitted/completed and which ticket still need to work on. 
+
+![TicketLink](client/doc/images/TicketLink.png)
+![TicketStatus](client/doc/images/TicketStatus.png)
+
+- For NewTicket page, we used select components from MUI to allow users to choose setup values of impact, confidence, effort and target. We also used data picker from MUI to enable our users to select a due date for their project.
+
+![NewTicket](client/doc/images/NewTicket.png)
+
+- For users, we designed a dropdown feature that show users their username, home, profile, and logout buttons. It helps users to find user administration activities easily. 
+
+![Dropdown](client/doc/images/Dropdown.png)
+
+Chen' writing:
+
 
 # R8 **Provides evidence of user testing**:
 ![Jest](client/public/images/JestTest.png)
@@ -266,7 +295,7 @@ Secondly, Cypress is primarily used for the front-end testing to test web applic
 
 Thirdly, user acceptance testing is usually at the final stage of testing and is when real users of the software uses the final production website to complete a series of tests that are defined by the developer. 
 
-We started with unit testing with Jest. Indiviudal unit or component was tested to ensure the validation for each component function before all the function components were intergrated further. We used Jest to tested backend routes as well as controllers. In the front-end, we used Cypress as system integration tests to ensure our components were working together as we expected. Finally, we moved to user acceptance testing that the tests were designed to as see if our website can support users' day-to-day usage. We completed the tests with the Head of Growth B2B Marketing, Francois to understand what we have done well to meet his expectation and what we need to improve for our app in the future. User acceptance testing is performed on the live environment to ensure that to production website functions the same as the development environment. Our user acceptance testing was implemented by using a spread sheet with pre-planned tests that we described. If expected result was not met, we fixed bugs and tested it again. If users required more features, but we did not have time to complete. We will make coments for future development. 
+We started with unit testing with Jest. Individual unit or component was tested to ensure the validation for each component function before all the function components were intergrated further. We used Jest to tested backend routes as well as controllers. In the front-end, we used Cypress as system integration tests to ensure our components were working together as we expected. Finally, we moved to user acceptance testing that the tests were designed to as see if our website can support users' day-to-day usage. We completed the tests with the Head of Growth B2B Marketing, Francois to understand what we have done well to meet his expectation and what we need to improve for our app in the future. User acceptance testing is performed on the live environment to ensure that to production website functions the same as the development environment. Our user acceptance testing was implemented by using a spread sheet with pre-planned tests that we described. If expected result was not met, we fixed bugs and tested it again. If users required more features, but we did not have time to complete. We will make coments for future development. 
 
 
 # R10. Design features vs built features
