@@ -15,6 +15,12 @@ it("nav to new ticket page after click add ticket button at /mytickets", () => {
   cy.location("pathname").should("eq", "/newticket");
 });
 
-// click initiative nav to new page 
+// click initiative title nav to ticket details page
+it("nav to new ticket page after click add ticket button at /mytickets", () => {
+  cy.wait(2000);
+  cy.contains("a", "WhiteBoard").click();
+  cy.wait(2000);
+  cy.location("pathname").should("eq", "/mytickets/6371cb29cf404ad955485eb9");
+});
 });
 
