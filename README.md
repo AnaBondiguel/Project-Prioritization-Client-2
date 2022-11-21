@@ -47,13 +47,8 @@ Back End
 
 ![Modules](client/public/images/modulesbackend.png)
 
-<<<<<<< HEAD
 The front end code is categorised into folders based on their purpose:
 Chen's writing
-=======
-The front end code is categorised into folders based on their purpose: 
-Chen's writing:
->>>>>>> frontend_test
 
 - Demonstrates DRY (Don’t Repeat Yourself) coding principles
 
