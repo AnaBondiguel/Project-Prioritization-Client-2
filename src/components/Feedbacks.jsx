@@ -48,7 +48,7 @@ export default function Feedbacks() {
           mb={1}
         >
           <Typography variant="h5" gutterBottom>
-            Feedbacks
+            Feedback
           </Typography>
         </Stack>
 
