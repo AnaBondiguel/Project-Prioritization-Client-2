@@ -22,7 +22,7 @@ import Profile from "./pages/Profile";
 import SignIn from "./pages/SignIn.jsx";
 import MyTickets from "./pages/MyTickets.jsx";
 import SubmittedTickets from "./pages/SubmittedTickets";
-import TicketDetails from "./pages/TikcetDetails";
+import TicketDetails from "./pages/TicketDetails";
 import SignUp from "./pages/SignUp.jsx";
 import FeedbackForm from "./components/FeedbackForm";
 import Page404 from "./pages/Page404.jsx";
