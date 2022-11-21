@@ -86,7 +86,7 @@ describe("User Sign Up and Sign in Functionality Testing", function () {
   });
 
   // -----------------------------------------
-  // user adn manager redering to different page
+  // user and manager redering to different page
   it("Signs in the user account", function () {
     cy.visit("localhost:3000/signin");
     cy.get('input[name="email"]').type("user1@gmail.com");

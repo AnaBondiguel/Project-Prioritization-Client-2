@@ -50,7 +50,7 @@ export const TicketTable = (data) => {
               ) : (
                 <TableCell />
               )}
-              <TableCell>Initialtive</TableCell>
+              <TableCell>Initiative</TableCell>
               <TableCell>Target</TableCell>
               <TableCell>ICE</TableCell>
               <TableCell>Launch Date</TableCell>
