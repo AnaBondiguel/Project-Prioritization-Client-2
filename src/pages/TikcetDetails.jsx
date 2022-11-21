@@ -188,7 +188,7 @@ export default function TikcetDetails() {
           )}
         </Grid>
         <Grid item xs={12} md={12} lg={12}>
-          {ticket.author._id === user.id || user.role === "manager" ? (
+          {ticket.author._id === user._id || user.role === "manager" ? (
             <>
               <Feedbacks />
               <Outlet />
