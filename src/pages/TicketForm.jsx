@@ -211,7 +211,7 @@ function TicketForm() {
               <Grid item md={9} xs={12}>
                 <TextField
                   fullWidth
-                  label="Initialtive"
+                  label="Initiative"
                   name="initialtive"
                   onChange={handleChange}
                   value={formState.initialtive}
