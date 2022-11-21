@@ -10,19 +10,21 @@ describe("New Ticket page", () => {
 
   // field not valid
   it("clear the field will get warning", () => {
-    cy.get('input[name="firstName"]').clear();
-    cy.get('input[name="email"]').type("user1@");
+    cy.get('input[name="initialtive"]').clear();
+    cy.get('textarea[name="description"]').clear();
     cy.wait(2000);
-    cy.contains("button", "Save details").click();
+    cy.contains("button", "Save").click();
     cy.contains("Fields can't be blank");
-    cy.contains("invalid email address");
+    cy.contains("Descrpition length is between 5-200");
+    cy.contains("Title length is between 5-30");
   });
 
   // edit success
-  it("edit success and jump to home page", () => {
-    cy.get('input[name="firstName"]').clear().type("user1");
-    cy.contains("button", "Save details").click();
-    // succes nv back to home page
-    cy.location("pathname").should("eq", "/mytickets");
+ it("New ticket success", () => {
+    cy.get('input[name="initialtive"]').type("Cypress Test");
+    cy.get('textarea[name="description"]').type("This is Cypress Test");
+    cy.wait(2000);
+    cy.contains("button", "Save").click();
+     cy.location("pathname").should("eq", "/mytickets");
   });
 });
