@@ -70,13 +70,7 @@ We used UUIDV4 to generate a unique token to validate users.
 
 We used Jest and Supertest for unit testing for our front-end and back-end.
 
-<<<<<<< HEAD
 Chen's writing
-=======
-We used Cypress to do automated integration testing. It allows a code coverage report to be generated after running tests in Cypress.
-
-Chen's writing:
->>>>>>> 375712e6a9c207d1ee763e5e87c9360854e81116
 
 - Demonstrates good code flow control for user stories
 
@@ -201,58 +195,6 @@ For example, when ticket form is completed from the front-end, a new ticket is c
 
 # R3. Employ and utilise proper source control methodology (git)
 
-We used Git and Github as our source control tool. The team worked off three repositories: one is for the frond-end for both team members because the frond-end has a lot of work. The second one is for the back-end for Chen's individual work. The third one is for the front-end for Ana's individual work. Eventually, Ana merged her front-end work from her individual repository to the front-end repository in common for both members. We did use branches for developing a particular feature or styling framework. Once the branch code was agreed, we pulled requests to merge the changes to the master branch. When merge conflicts arises we will talk and check with the person whose code is causing the conflicts.
-
-# R4. **Demonstrate your ability to work in a team**:
-
-- Use a recognised project management methodology & a recognised task delegation methodology
-
-We used Trello to manage our project and chose to adopt an agile project management methodology to develop our application because we needed to have faster feedback cycles so we can identify problem earlier, prioritise more important tasks, and meet our client requirements.
-
-We divided our project between both of us: Chen is responsible for the back-end, Ana is responsible for the front-end. Once Chen did the back-end, Ana connected her front-end to the back-end. Ana built all the features for employee users, and Chen built all the features for manager users. Ana wrote up all the documentation, and Chen improved page styling.
-
-We set up a meeting every Monday to discuss the week plan and chart regularly online if there are problems that need to be solved immediately.
-
-We used Trello to divid our project into several incremental steps with regular feedback from our users and the two of us. We prioritized smaller pieces of the project requirement by their importance and organised regular meetings to ensure our latest developements meet our client's expectations. Therefore, we can effetively respond to changing requirements.
-
-# R5 Produce a working application that meets client and user needs
-
-PlaceHolder
-
-# R6 Deploy the application to a cloud hosting service
-
-PlaceHolder
-
-# R7 Produce an application with an intuitive user interface
-
-PlaceHolder
-
-# R8 **Provides evidence of user testing**:
-
-PlaceHolder
-
-# R9 Utilises a formal testing framework
-
-PlaceHolder
-
-# R10 A link (URL) to your deployed website
-
-PlaceHolder
-
-Heroku Backend: <https://projectprioritization.herokuapp.com/api/>
-
-Railway Backend: <https://projectprioritization.up.railway.app/api>
-
-# R11 A link to your GitHub repository (repo)
-
-PlaceHolder
-
-Back-End: <https://github.com/OrangeKami/Project_Prioritization_Server>
-
-# R12 The contents of your README.md as submitted for Full Stack App - Part A
-
-R3. Employ and utilise proper source control methodology (git)
-
 We used Git and Github as our source control tool. The team worked off three repositories: one is for the frond-end for both team members because the frond-end has a lot of work. The second one is for the back-end for Chen's individual work. The third one is for the front-end for Ana's individual work. Eventually, Ana merged her front-end work from her individual repository to the front-end repository in common for both members. We did use branches for developing a particular feature or styling framework or testing. Once the branch code was agreed, we pulled requests to merge the changes to the master branch. When merge conflicts arises we will talk and check with the person whose code is causing the conflicts.
 
 ![Git1](client/public/images/gitbranch1.png)
@@ -268,9 +210,9 @@ We divided our project between both of us: Chen is responsible for the back-end,
 
 We set up a meeting every Monday to discuss the week plan and chart regularly online if there are problems that need to be solved immediately.
 
-We used Trello to divid our project into several incremental steps with regular feedback from our users and the two of us. We prioritized smaller pieces of the project requirement by their importance and organised regular meetings to ensure our latest developements meet our client's expectations. Therefore, we can effetively respond to changing requirements.
+We used Trello to divide our project into several incremental steps with regular feedback from our users and the two of us. We prioritized smaller pieces of the project requirement by their importance and organised regular meetings to ensure our latest developements meet our client's expectations. Therefore, we can effetively respond to changing requirements.
 
-A Trello board was used to track miscellaneous tasks
+A Trello board was used to track miscellaneous tasks and demonstrate who is in charge in a certain task. 
 
 ![Trello](client/public/images/Trello.png)
 
@@ -284,6 +226,33 @@ During the requirements gathering process, the client emailed us a number of fea
 
 ![Edit_ICE](client/public/images/ICE_Score.png)
 
+### Adding submission status 
+- Our users sent us the feedback about how they were going to know whether they had been submitted their tickets or not. We decided to add ticket status feature to make users easily identify the ticket submission status.
+
+![Submission_Status](client/public/images/submission_status.png)
+
+# R6 Deploy the application to a cloud hosting service
+
+Netlify Frontend: 
+
+Heroku Backend: <https://projectprioritization.herokuapp.com/api/>
+
+Railway Backend: <https://projectprioritization.up.railway.app/api>
+
+# R7 Produce an application with an intuitive user interface
+
+
+# R8 **Provides evidence of user testing**:
+
+
+
+# R9 Utilises a formal testing framework
+
+
+
+
+
+
 # R10. Design features vs built features
 
 There are some required features that we designed in the part A, we have not been able to completed for the Part B due to the time limitations:
@@ -295,3 +264,11 @@ There are some required features that we designed in the part A, we have not bee
 - We should enable managers to edit their feedback.
 
 We will work on these features after we submit our assignment. 
+
+# R11 A link to your GitHub repository (repo)
+
+PlaceHolder
+
+Back-End: <https://github.com/OrangeKami/Project_Prioritization_Server>
+
+# R12 The contents of your README.md as submitted for Full Stack App - Part A
