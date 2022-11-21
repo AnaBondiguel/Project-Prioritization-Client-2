@@ -40,7 +40,7 @@ describe("update ticket", () => {
     cy.contains("a", "Update").click();
   });
 
-  // field not valid
+  // can only upde ICE and target
   it("clear the field will get warning", () => {
     cy.get("#mui-component-select-target").click();
     cy.wait(2000);
@@ -49,7 +49,7 @@ describe("update ticket", () => {
     cy.contains("button", "Save").should("be.disabled");
     cy.contains("button", "Update").click();
     cy.wait(2000);
-    // check changed value
+    // check changed target value
     cy.get(".MuiChip-label").contains("Free");
   });
 
