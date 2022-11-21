@@ -1,4 +1,4 @@
-describe("Profile editing", () => {
+describe("My tickets page testing", () => {
   beforeEach(() => {
     cy.viewport(1240, 768);
     cy.visit("localhost:3000/signin");
@@ -16,7 +16,7 @@ it("nav to new ticket page after click add ticket button at /mytickets", () => {
 });
 
 // click initiative title nav to ticket details page
-it("nav to new ticket page after click add ticket button at /mytickets", () => {
+it("nav to details page after click Link ticket intiative", () => {
   cy.wait(2000);
   cy.contains("a", "WhiteBoard").click();
   cy.wait(2000);

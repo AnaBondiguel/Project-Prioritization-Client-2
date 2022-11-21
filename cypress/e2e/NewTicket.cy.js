@@ -17,6 +17,7 @@ describe("New Ticket page", () => {
     cy.contains("Fields can't be blank");
     cy.contains("Descrpition length is between 5-200");
     cy.contains("Title length is between 5-30");
+    cy.wait(2000);
   });
 
   // edit success
@@ -25,6 +26,6 @@ describe("New Ticket page", () => {
     cy.get('textarea[name="description"]').type("This is Cypress Test");
     cy.wait(2000);
     cy.contains("button", "Save").click();
-     cy.location("pathname").should("eq", "/mytickets");
+    cy.location("pathname").should("eq", "/mytickets");
   });
 });
