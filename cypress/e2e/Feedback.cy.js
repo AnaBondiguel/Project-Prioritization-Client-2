@@ -18,6 +18,7 @@ describe("manager add feedback", () => {
     cy.location("pathname").should("include", "/feedback")
     cy.get('textarea[name="context"]').type("This is cypress test for Feedback");
     cy.contains("button", "Submit").click();
+    cy.wait(2000);
     // check new feedback is shown
     cy.contains("This is cypress test for Feedback");
   });
@@ -39,6 +40,7 @@ describe("see feedback", () => {
   // see feedback
   it("see feedback", () => {
     // get value that manager send
+    cy.wait(2000);
     cy.contains("This is cypress test for Feedback");
   });
 });
