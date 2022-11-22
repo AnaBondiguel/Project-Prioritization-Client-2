@@ -2,19 +2,23 @@
 
 CA Final Assessment Server
 
-# Access to our app
 
+# Access to our app
+```
 for employees
 
  - email: user1@gmail.com
 
  - password: test@123
+```
 
+```
 for managers
 
 - email: ana@test.com
 
 - password: test@123
+```
 
 # R1.At a minimum use the following technologies:
 
@@ -240,12 +244,13 @@ During the requirements gathering process, the client emailed us a number of fea
 
 - When managers log into their account, they want to edit the fields of impact, confidence, and effort in order to change the ICE score for a particular project ticket. Once they changed the ICE scores, they can provide feedback to explain the changes of ICE scores.
 
-![Edit_ICE](client/public/images/ICE_Score.png)
+![Edit_ICE](/doc/images/ICE_Score.png)
 
++-
 ### Adding submission status 
 - Our users sent us the feedback about how they were going to know whether they had been submitted their tickets or not. We decided to add ticket status feature to make users easily identify the ticket submission status.
 
-![Submission_Status](client/public/images/submission_status.png)
+![Submission_Status](/doc/images/submission_status.png)
 
 # R6 Deploy the application to a cloud hosting service
 
