@@ -1,5 +1,5 @@
 // search test
-describe('Serchbar testing', () => {
+describe('Searchbar testing', () => {
   beforeEach(() => {
     cy.viewport(1240, 768);
     cy.visit("localhost:3000/signin");
@@ -39,7 +39,7 @@ describe("Profile editing", () => {
   // field not valid
   it("Empty field will get a warning", () => {
     cy.get('input[name="firstName"]').clear()
-    cy.get('input[name="email"]').type("user1@");
+    cy.get('input[name="email"]').type("user1@gmail.com");
     cy.wait(2000);
     cy.contains("button", "Save details").click();
     cy.contains("Fields can't be blank");

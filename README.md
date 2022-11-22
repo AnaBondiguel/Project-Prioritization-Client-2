@@ -70,7 +70,7 @@ We tried to reuse ticket form as much as possible, for example, users can used t
 
 - Uses appropriate libraries
 
-We used Axio to shorten the code required to make HTTP requests.
+We used Axios to shorten the code required to make HTTP requests.
 
 We used Date-fns to format our dueDate for users to choose the date for their project deadline.
 
@@ -222,7 +222,7 @@ We used Git and Github as our source control tool. The team worked off three rep
 
 We used Trello to manage our project and chose to adopt an agile project management methodology to develop our application because we needed to have faster feedback cycles so we can identify problem earlier, prioritise more important tasks, and meet our client requirements.
 
-We divided our project between both of us: Chen is responsible for the back-end, Ana is responsible for the front-end. Once Chen did the back-end, Ana connected her front-end to the back-end. Ana built all the features for employee users, and Chen built all the features for manager users. Ana wrote up all the documentation, and Chen improved page styling.
+We divided our project between both of us: Chen was responsible for the back-end [Chen_Backend](https://github.com/OrangeKami/Project_Prioritization_Server.git), Ana was responsible for the front-end [Ana_Frontend](https://github.com/AnaBondiguel/Project_Prioritization.git) and built all the features/functionality for employee users. Once Chen did the back-end, Ana connected her front-end to the back-end and fixed all the bugs. Then Ana merged her front-end to their common front-end respository[Common_Frontend](https://github.com/AnaBondiguel/Project-Prioritization-Client-2.git), so Chen could continue to build all the features for manager users. Ana wrote up all the documentations, and Chen improved page styling. 
 
 We set up a meeting every Monday to discuss the week plan and chart regularly online if there are problems that need to be solved immediately.
 
@@ -270,8 +270,22 @@ Railway Backend: <https://projectprioritization.up.railway.app/api>
 
 ![Dropdown](client/doc/images/Dropdown.png)
 
-Chen' writing:
+- For search bar, there are many tickets on the list. It is not easy for users to search for a particular project ticket/idea, so we designed a search bar for users to search for the ticket initiative, target, and owner.
 
+![Search_Bar](client/doc/images/Searchbar.png)
+
+- For nav bar, we designed an nav bar to show our users their username, email, and role. Users are acknowledged that they are loged in as employee/manager, so they can view and use different features/functionality. For example, managers can edit other users' ICE score. 
+
+![NavBar](client/doc/images/Navbar.png)
+
+- For Canva logo, our users can click on it, users are redirected back to their home page. For employee users, they will be back to the MyTickets page. For manager users, they will be back to the SumittedTickets (listings) page.
+
+![Logo](client/doc/images/Logo.png)
+
+- For side bar and nav bar, they will be hidden when users use iphone or ipad on the top left of the page. If users want to view side bar and nav bar, they can click the hamburger menu bar. 
+
+![HamburgerBar](client/doc/images/HamburgerBar.png)
+![ResponsiveSideBar](client/doc/images/ResponsiveSideBar.png)
 
 # R8 **Provides evidence of user testing**:
 ![Jest](client/public/images/JestTest.png)
@@ -282,8 +296,6 @@ Chen' writing:
 ![ManualTest2](client/public/images/manualtest2.png)
 ![ManualTest3](client/public/images/manualtest3.png)
 ![ManualTest4](client/public/images/manualtest4.png)
-
-
 
 # R9 Utilises a formal testing framework
 
