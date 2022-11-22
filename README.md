@@ -147,7 +147,7 @@ Hosting:
 
   We used Cypress to do automated integration testing. It allows a code coverage report to be generated after running tests in Cypress.
 
-  We used bcryot to hash the password.
+  We used bcrypt to hash the password.
 
   We used body-parser to convert JSON to url-encoded.
 
@@ -281,9 +281,9 @@ Hosting:
 
   <br />
 
-Another example to demonstrate good code flow control for user stories: 
+  Another example to demonstrate good code flow control for user stories:
 
-Using conditional rendering to make sure that only authorised users are allowed to enter the main page.
+  Using conditional rendering to make sure that only authorised users are allowed to enter the main page.
 
   <details><summary>Rendering Condition</summary>
 
