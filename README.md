@@ -96,15 +96,15 @@ Hosting:
 
   - tests folder is for some manually test.
 
-    <br />
+  <br />
 
-    <details><summary>Back End</summary>
+  <details><summary>Back End</summary>
 
-    ![Modules](/doc/images/modulesbackend.png)
+  ![Modules](/doc/images/modulesbackend.png)
 
-    </details>
-    
-    <br />
+  </details>
+  
+  <br />
 
   The back end folder contains four main sub-directories where the modules reside:
 
@@ -353,20 +353,20 @@ During the requirements gathering process, the client emailed us a number of fea
 
 - For search bar, there are many tickets on the list. It is not easy for users to search for a particular project ticket/idea, so we designed a search bar for users to search for the ticket initiative, target, and owner.
 
-![Search_Bar](client/doc/images/Searchbar.png)
+![Search_Bar](/doc/images/Searchbar.png)
 
 - For nav bar, we designed an nav bar to show our users their username, email, and role. Users are acknowledged that they are loged in as employee/manager, so they can view and use different features/functionality. For example, managers can edit other users' ICE score. 
 
-![NavBar](client/doc/images/Navbar.png)
+![NavBar](/doc/images/Navbar.png)
 
 - For Canva logo, our users can click on it, users are redirected back to their home page. For employee users, they will be back to the MyTickets page. For manager users, they will be back to the SumittedTickets (listings) page.
 
-![Logo](client/doc/images/Logo.png)
+![Logo](/doc/images/Logo.png)
 
 - For side bar and nav bar, they will be hidden when users use iphone or ipad on the top left of the page. If users want to view side bar and nav bar, they can click the hamburger menu bar. 
 
-![HamburgerBar](client/doc/images/HamburgerBar.png)
-![ResponsiveSideBar](client/doc/images/ResponsiveSideBar.png)
+![HamburgerBar](/doc/images/HamburgerBar.png)
+![ResponsiveSideBar](/doc/images/ResponsiveSideBar.png)
 
 # R8 **Provides evidence of user testing**:
 
