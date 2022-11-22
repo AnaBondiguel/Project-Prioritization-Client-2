@@ -49,7 +49,7 @@ The code files for the application is separated into two directories that are li
 
 Frond End
 
-![Modules](client/public/images/modulesfrontend.png)
+![Modules](/doc/images/modulesfrontend.png)
 
 The front end code is categorised into folders based on their purpose:
 Chen's writing: update your information
@@ -59,7 +59,7 @@ The components folder contains components that make up each page of the website.
 
 Back End
 
-![Modules](client/public/images/modulesbackend.png)
+![Modules](/doc/images/modulesbackend.png)
 
 The front end code is categorised into folders based on their purpose:
 Chen's writing:
@@ -213,8 +213,8 @@ For example, when ticket form is completed from the front-end, a new ticket is c
 
 We used Git and Github as our source control tool. The team worked off three repositories: one is for the frond-end for both team members because the frond-end has a lot of work. The second one is for the back-end for Chen's individual work. The third one is for the front-end for Ana's individual work. Eventually, Ana merged her front-end work from her individual repository to the front-end repository in common for both members. We did use branches for developing a particular feature or styling framework or testing. Once the branch code was agreed, we pulled requests to merge the changes to the master branch. When merge conflicts arises we will talk and check with the person whose code is causing the conflicts.
 
-![Git1](client/public/images/gitbranch1.png)
-![Git2](client/public/images/gitbranch2.png)
+![Git1](/doc/images/gitbranch1.png)
+![Git2](/doc/images/gitbranch2.png)
 
 # R4. **Demonstrate your ability to work in a team**:
 
@@ -230,7 +230,7 @@ We used Trello to divide our project into several incremental steps with regular
 
 A Trello board was used to track miscellaneous tasks and demonstrate who is in charge in a certain task. 
 
-![Trello](client/public/images/Trello.png)
+![Trello](/doc/images/Trello.png)
 
 # R5. Produce a working application that meets client and user needs
 
@@ -259,29 +259,29 @@ Railway Backend: <https://projectprioritization.up.railway.app/api>
 
 - For MyTickets page and listings page, we made ticket initiative with clicked link because we want users to go to the ticket details page to view ticket information if users are interested in a particular project ticket. We also enabled users to view their ticket status (not submit/submitted) in the MyTickets page, this feature will inform our users which ticket has been submitted/completed and which ticket still need to work on. 
 
-![TicketLink](client/doc/images/TicketLink.png)
-![TicketStatus](client/doc/images/TicketStatus.png)
+![TicketLink](/doc/images/TicketLink.png)
+![TicketStatus](/doc/images/TicketStatus.png)
 
 - For NewTicket page, we used select components from MUI to allow users to choose setup values of impact, confidence, effort and target. We also used data picker from MUI to enable our users to select a due date for their project.
 
-![NewTicket](client/doc/images/NewTicket.png)
+![NewTicket](doc/images/NewTicket.png)
 
 - For users, we designed a dropdown feature that show users their username, home, profile, and logout buttons. It helps users to find user administration activities easily. 
 
-![Dropdown](client/doc/images/Dropdown.png)
+![Dropdown](/doc/images/Dropdown.png)
 
 Chen' writing:
 
 
 # R8 **Provides evidence of user testing**:
-![Jest](client/public/images/JestTest.png)
-![Cypress1](client/public/images/Cypress1.png)
-![Cypress2](client/public/images/Cypress2.png)
-![Cypress3](client/public/images/Cypress3.png)
-![ManualTest1](client/public/images/manualtest1.png)
-![ManualTest2](client/public/images/manualtest2.png)
-![ManualTest3](client/public/images/manualtest3.png)
-![ManualTest4](client/public/images/manualtest4.png)
+![Jest](/doc/images/JestTest.png)
+![Cypress1](/doc/images/Cypress1.png)
+![Cypress2](/doc/images/Cypress2.png)
+![Cypress3](/doc/images/Cypress3.png)
+![ManualTest1](/doc/images/ManualTest1.png)
+![ManualTest2](/doc/images/ManualTest2.png)
+![ManualTest3](/doc/images/ManualTest3.png)
+![ManualTest4](/doc/images/ManualTest4.png)
 
 
 
