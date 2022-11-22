@@ -10,7 +10,7 @@ CA Final Assessment Server
 
 Front-End
 
-Heroku: <https://projectprioritization.netlify.app>
+Netlify: <https://projectprioritization.netlify.app>
 
 Back-End
 
@@ -58,8 +58,8 @@ Database and storage:
 
 Hosting:
 
-- Heroku to host the back end content
-- Netlify to host the front end content
+- Heroku and Railway to host the back-end content
+- Netlify to host the front-end content
 
 # R2.Write well designed code that:
 
@@ -77,24 +77,31 @@ Hosting:
     
     <br />
 
-  The front end code is categorised into folders based on their purpose:
+  The front end code is categorised into different folders based on their purpose:
 
-  - The assets folder contains images and the manual testing excel. @mui folder contains the styling framework for the app.
-    The components folder contains components that make up each page of the website. The pages folder contains the code for each page, and the components from the components folder are imported into each of these pages. The service folder contains code that communicate with back-end code. The utils folder contains StateContext.jsx and StateReducer.jsx. The tests folder contains code for Jest testing for all the functionalities of our app that interacts with users.
+  - The doc folder contains images and the manual testing excel. 
+  
+  - The @mui folder contains the styling framework for the app. 
+  
+  - The components folder contains components that make up each page of the website. Some of these components are reused throughout the website such as the ticketTable in the tickets folder. We also have some main website components such as Header, Logo, and Navbar, and put page components into their own folders. For example, we put the headers of the tickets relevent pages into the ticket folder. The most important component is TicketTable. 
+  
+  - The pages folder contains all the pages will be displayed on the main screen or the "Outlet /" Part from react-dom-router.
 
-  - The components folder contains components that make up each page of the website. Some of these components are reused throughout the website such as the ticketTable in the tickets folder. And some main website components such as Header, Logo, Navbar. And we also put page componets into their own folders. Such as ticket folder, we put the Headers of the tikcet relavent pages into it, and also the most important component ticketTable. In user folder, we put signin, signup and also profile form components into it. In header, there are Searchbar and AccountPopover components in it.
+  - The service folder contains code with API action that communicates with back-end code. 
+  
+  - The utils folder contains StateContext.jsx and StateReducer.jsx. We used GlobalContext and Reducer in our project.
+  
+  - The tests folder contains code for Jest testing for the functionalities of our app that interacts with users.
 
-  - The pages folder contains all the pages will display on the main screen or the "Outlet /" Part from react-dom-router.
+  - The cypress folder is for Cypress tests only.
+  
+  - The config folder contains Axios connecting settings.
+  
+  - The user folder contains signin, signup and profile forms.
 
-  - config folder contians axios connecting settings.
+  - The header folder contains Searchbar and AccountPopover components.
 
-  - services folder are Api action to connect to the Back-end
-
-  - utils folder are GlobalContext and Reducer we will use in our project.
-
-  - cypress folder is for Cypress test only.
-
-  - tests folder is for some manually test.
+  - The archives folder contains Ana's all the initial front-end code for employee users to create, delete, edit, submit, and search tickets.
 
     <br />
 
@@ -108,19 +115,19 @@ Hosting:
 
   The back end folder contains four main sub-directories where the modules reside:
 
-  - The controllers folder contains the code where Express interacts with the MongoDB Atlas database to store and retrieve data. Controllers are grouped by page and/or functionality. For example, user signup, signin and edit profile functions are grouped in the auth.controllers.js file in the controllers folder.
+  - The controller folders contain the code where Express interacts with the MongoDB Atlas database to store and retrieve data. Controllers are grouped by page and/or functionality. For example, user signup, signin and edit profile functions are grouped in the auth.controllers.js file in the controllers folder.
 
-  - The models folder contains the mongoose schema for each collection.
+  - The model folders contain the mongoose schema for each controller.
 
-  - The routes folder contains the routes used by Express routers. The routes are grouped by page and/or function, for example, all user routes (signin, edit, signup) are contained in the users.route.js routes file.
+  - The route folders contain the routes used by Express routers. The routes are grouped by page and/or function. For example, all user routes (signin, edit, signup) are contained in the users.route.js routes file.
 
-  - The test folder contains the jset tests files for each routre in the routes folder.
+  - The test folder contains the jest test file for each router in the route folder.
 
-  - The middleware folder contains the middlewares is for authorization, role judgement, and schema validation, for example, user.middleware.js is to help to grant the role of the user after isAuth middleware.
+  - The middleware folder contains the middlewares for authorization, role judgement, and schema validation. For example, user.middleware.js is to help to grant the role of the user after isAuth middleware.
 
 - Demonstrates DRY (Don’t Repeat Yourself) coding principles
 
-  We tried to reuse ticket form as much as possible, for example, users can used the ticket form for both creating and editing before submission. The all the ticket submitted listing table is used both Listing.jsx and SearchResult.jsx. The navigation bar component is contained in the main App.js file in the front-end so that it only needs to be called on once, without having to be included in the render function of each page.
+  We tried to reuse the ticket form as much as possible. For example, users can use the ticket form for both creating and editing before submission. All the ticket submitted listing table is used by both Listing.jsx and SearchResult.jsx. The navigation bar component is contained in the main App.js file in the front-end so that it only needs to be called on once, without having to be included in the render function of each page.
 
 - Uses appropriate libraries
 
@@ -130,7 +137,7 @@ Hosting:
 
   We used Cors to enable data to be transmitted between the back-end and the front-end. It allows the use of a custom API.
 
-  We used JSON web token that allows users to create a token based on their email address for authetication.
+  We used JSON web token that allows users to create a token based on their email address for authentication.
 
   We used Nodemon to allow the express server to restart automatically after changing each code.
 
@@ -142,9 +149,13 @@ Hosting:
 
   We used bcryot to hash the password.
 
-  We user body-parser to covert JSON to urlencoded.
+  We used body-parser to convert JSON to url-encoded.
 
-  We used JWT for web token.
+  We used JWT for web token. Our token is signed by using a private secret key. Our server can generate a token that has the claim "logged in as administrator" and provide that to our client. 
+
+  We used react-router-dom to implement dynamic routing in our web application. 
+
+  We used Material UI to style our website. 
 
   <br />
 
@@ -154,11 +165,11 @@ Hosting:
 
   User story 1 Idea submission
 
-  As James, Software Engineer, I want to communicate my project ideas to my team, so I need to fill a form and submit it to my team/manager.
+  As Yel, Software Engineer, I want to communicate my project ideas to my team, so I need to fill a form and submit it to my team/manager.
 
   Acceptance Criteria
 
-  “We have to formally fill in an online form if we want to share our project ideas to the team.” – James
+  “We have to formally fill in an online form if we want to share our project ideas to the team.” – Yel
 
   <br />
 
@@ -195,74 +206,84 @@ Hosting:
   <details><summary>In TicketForm.jsx:</summary>
 
   ```Javascript
-  function handleClick({ isSubmitted = false }) {
-      return (event) => {
-        event.preventDefault();
-        //if statement to handle update ticket and create ticket
-        if (_id) {
-          // from saved ticket to submitted
-          updateTicket({
-            id: _id,
-            ...formState,
-            isSubmitted: isSubmitted,
-            dueDate: dateValue,
-          })
-            .then(() => {
-              dispatch({
-                type: "updateTicket",
-                data: {
-                  id: _id,
-                  ...formState,
-                  isSubmitted: isSubmitted,
-                  dueDate: dateValue,
-                },
-              });
-              //if user update ticket with form, leave ticket to show on the page.
-              // navigate(`/mytickets/${_id}`);
-              navigate(`/mytickets`);
-            })
-            .catch((error) => console.log(error));
-        } else {
-          // from creation to submitted
-          createTicket({
-            ...formState,
-            ticket_id: uuidv4(),
-            isSubmitted: isSubmitted,
-            dueDate: dateValue,
-          })
-            .then((ticket) => {
-              dispatch({ type: "addTicket", data: ticket });
-              //we can navigate back to the my tickets page once we create a ticket.
-              isSubmitted
-                ? navigate("/submissionsuccess")
-                : navigate("/mytickets");
-            })
-            .catch((error) => console.log(error));
-        }
-      };
+    function handleClick(event) {
+    event.preventDefault();
+    //if statement to handle update ticket and create ticket
+    if (_id) {
+      // from saved ticket to submitted
+      updateTicket({
+        _id: _id,
+        ...formState,
+        isSubmitted: event.target.value,
+        dueDate: dateValue,
+      })
+        .then(() => {
+          dispatch({
+            type: "updateTicket",
+            data: {
+              id: _id,
+              ...formState,
+              isSubmitted: event.target.value,
+              dueDate: dateValue,
+            },
+          });
+          //if user update ticket with form, leave ticket to show on the page.
+          navigate(`/mytickets/${_id}`, {
+            state: { ticket: JSON.stringify(ticket) },
+          });
+        })
+        .catch((error) =>
+          setError(error.response.data.errors || error.response.data.error)
+        );
+    } else {
+      // from creation to submitted
+      console.log(event.target.value);
+      createTicket({
+        ...formState,
+        ticket_id: uuidv4(),
+        isSubmitted: event.target.value,
+        dueDate: dateValue,
+      })
+        .then((ticket) => {
+          dispatch({ type: "addTicket", data: ticket });
+          //we can navigate back to the my tickets page once we create a ticket.
+          event.target.value === "false"
+            ? navigate("/mytickets")
+            : navigate("/submissionsuccess");
+        })
+        .catch((error) =>
+          setError(error.response.data.errors || error.response.data.error)
+        );
     }
+  }
 
-        <Button
+           <Stack direction="row" mt={2} spacing={2}>
+              <Button
                 variant="contained"
                 color="warning"
-                onClick={handleClick({ isSubmitted: false })}
+                value={false}
+                onClick={handleClick}
                 disabled={saveButton}
               >
                 Save
               </Button>
               <Button
                 variant="contained"
-                color="success"
-                onClick={handleClick({ isSubmitted: true })}
+                color={colorButton}
+                value={true}
+                onClick={handleClick}
               >
-                Submit
+                {saveButton ? "Update" : "Submit"}
               </Button>
+          </Stack>
   ```
   </details>
 
   <br />
 
-- Using conditionak rendering to make sure that only authorized users are allowed to enter the main page.
+Another example to demonstrate good code flow control for user stories: 
+
+Using conditional rendering to make sure that only authorised users are allowed to enter the main page.
 
   <details><summary>Rendering Condition</summary>
 
@@ -279,9 +300,9 @@ Hosting:
 
 - Applies Object Oriented (OO) principles/patterns & Uses appropriate data structures
 
-  In order to write more testable, flexible, and maintainable code, we followed the four principles of object-oriented programming: abstraction, inheritance, encapsulation, and polymorphism. For our application, each component has its own function and each page is written as a function with all the functionality for the page that contained in various methods. Our structure is followed:
+  In order to write more testable, flexible, and maintainable code, we followed the four principles of object-oriented programming: abstraction, inheritance, encapsulation, and polymorphism. For our application, each component has its own function and each page is written as a function with all the functionality for the page that contains various methods. Our structure is followed:
 
-- Function Name
+- Function name
 
 - State objects contains keys with values that are subject to change
 
@@ -291,11 +312,12 @@ Hosting:
 
 - A render function to display the contents of the page
 
-  For example, when ticket form is completed from the front-end, a new ticket is created from the values of the form. Then the information is saved and a HTTP request is sent to the back-end.
+  For example, when a ticket form is completed from the front-end, a new ticket is created from the values of the form. Then the information is saved and a HTTP request is sent to the back-end.
+
 
 # R3. Employ and utilise proper source control methodology (git)
 
-We used Git and Github as our source control tool. The team worked off three repositories: one is for the frond-end for both team members because the frond-end has a lot of work. The second one is for the back-end for Chen's individual work. The third one is for the front-end for Ana's individual work. Eventually, Ana merged her front-end work from her individual repository to the front-end repository in common for both members. We did use branches for developing a particular feature or styling framework or testing. Once the branch code was agreed, we pulled requests to merge the changes to the master branch. When merge conflicts arises we will talk and check with the person whose code is causing the conflicts.
+We used Git and Github as our source control tool. The team worked off three repositories: one is for the frond-end for both team members because the frond-end has a lot of work [Common_Frontend](https://github.com/AnaBondiguel/Project-Prioritization-Client-2.git). The second one is for the back-end for Chen's individual work [Chen_Backend](https://github.com/OrangeKami/Project_Prioritization_Server.git). The third one is for the front-end for Ana's individual work [Ana_Frontend](https://github.com/AnaBondiguel/Project_Prioritization.git). Eventually, Ana merged her front-end work from her individual repository to the front-end repository in common for both members. We did use branches for developing a particular feature or styling framework or testing, etc. Once the branch code was agreed, we pulled requests to merge the changes to the master branch. When merge conflicts arise we will talk and check with the person whose code is causing the conflicts.
 
 <details><summary>Image</summary>
 
@@ -308,18 +330,16 @@ We used Git and Github as our source control tool. The team worked off three rep
 
 - Use a recognised project management methodology & a recognised task delegation methodology
 
-  We used Trello to manage our project and chose to adopt an agile project management methodology to develop our application because we needed to have faster feedback cycles so we can identify problem earlier, prioritise more important tasks, and meet our client requirements.
-
-We divided our project between both of us: Chen was responsible for the back-end [Chen_Backend](https://github.com/OrangeKami/Project_Prioritization_Server.git), Ana was responsible for the front-end [Ana_Frontend](https://github.com/AnaBondiguel/Project_Prioritization.git) and built all the features/functionality for employee users. Once Chen did the back-end, Ana connected her front-end to the back-end and fixed all the bugs. Then Ana merged her front-end to their common front-end respository[Common_Frontend](https://github.com/AnaBondiguel/Project-Prioritization-Client-2.git), so Chen could continue to build all the features for manager users. Ana wrote up all the documentations, and Chen improved page styling. 
-
-  We set up a meeting every Monday to discuss the week plan and chart regularly online if there are problems that need to be solved immediately.
-
-  We used Trello to divide our project into several incremental steps with regular feedback from our users and the two of us. We prioritized smaller pieces of the project requirement by their importance and organised regular meetings to ensure our latest developements meet our client's expectations. Therefore, we can effetively respond to changing requirements.
+  We used Trello to manage our project and chose to adopt an agile project management methodology to develop our application because we needed to have faster feedback cycles so we can identify problems earlier, prioritise more important tasks, and meet our client requirements. We used Trello to divide our project into several incremental steps with regular feedback from our users and the two of us. We prioritized smaller pieces of the project requirement by their importance and organised regular meetings to ensure our latest developments meet our client's expectations. Therefore, we can effectively respond to changing requirements.
 
   A Trello board was used to track miscellaneous tasks and demonstrate who is in charge in a certain task.
+  ![TrelloWebsite](https://trello.com/b/XXhZNZa6/project-prioritisation-application)
+  ![Trello](/doc/images/Trello.png)
 
-![Trello](/doc/images/Trello.png)
+  We divided our project between both of us: Chen was responsible for the back-end [Chen_Backend](https://github.com/OrangeKami/Project_Prioritization_Server.git). Ana was responsible for the front-end [Ana_Frontend](https://github.com/AnaBondiguel/Project_Prioritization.git) and built all the features/functionality for employee users to create, delete, edit, submit, and search tickets. Once Chen did the back-end, Ana connected her front-end to the back-end and fixed all the bugs. Then Ana merged her front-end to their common front-end respository[Common_Frontend](https://github.com/AnaBondiguel/Project-Prioritization-Client-2.git), so Chen could continue to build all the features for manager users to create and delete feedback and edit ICE scores. Ana wrote up all the documentations, and Chen improved page styling. We set up a meeting every Monday to discuss the week plan and chart regularly the Discord if there are problems that need to be solved immediately.
 
+   ![Discord](/doc/images/Discord.png)
+ 
 # R5. Produce a working application that meets client and user needs
 
 During the requirements gathering process, the client emailed us a number of features and services he would like to be included in the site:

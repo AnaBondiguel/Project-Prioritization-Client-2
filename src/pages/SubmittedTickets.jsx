@@ -13,7 +13,7 @@ export default function SubmittedTickets() {
   const { tickets, loggedInUser } = store;
 
   useEffect(() => {
-    // get all submiited tikets as listings
+    // get all submitted tickets as listings
     const fetchSubmittedTickets = async () => {
       const result = await getAllTickets();
       dispatch({ type: "setTickets", data: result });

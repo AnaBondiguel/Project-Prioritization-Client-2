@@ -45,7 +45,7 @@ export const TicketTable = (data) => {
         <Table>
           <TableHead>
             <TableRow sx={{ background: "#92CEC1" }}>
-              {listing.includes("listing") || //this conition redering when in different page
+              {listing.includes("listing") || //this conition rendering when in different page
               listing.includes("searchresults") ? (
                 <TableCell>Author</TableCell>
               ) : (

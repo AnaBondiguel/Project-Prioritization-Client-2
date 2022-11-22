@@ -169,8 +169,8 @@ export default function TikcetDetails() {
             </Button>
           </Stack>
         </Grid>
-
-        <Grid item md={3} lg={3}>
+{/* Only users' role is manager, they can add feedback */}
+        <Grid item md={3} lg={3}> 
           {user.role === "manager" && user._id !== ticket.author._id ? (
             <Button
               variant="contained"

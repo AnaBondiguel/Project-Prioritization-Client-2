@@ -26,6 +26,7 @@ export const ProfileDetails = () => {
     email: user.email,
   });
 
+  //handle user entering inputs to their first name, last name, and email address.
   const handleChange = (event) => {
     setError([]);
     setValues({
@@ -34,6 +35,7 @@ export const ProfileDetails = () => {
     });
   };
 
+  //handle "save details" button to update user profile information. 
   const handleSubmit = (event) => {
     event.preventDefault();
     updateUser({ id: user._id, ...values })

@@ -55,7 +55,7 @@ export default function Searchbar() {
     setInput(event.target.value);
   }
 
-  //setup onKeyUp  adn click to search for all the submitted tickets
+  //setup onKeyUp and click to search for all the submitted tickets
   function handleSubmit(event) {
     fetchTickets();
 

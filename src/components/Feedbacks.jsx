@@ -11,7 +11,7 @@ export default function Feedbacks() {
   const user = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
 
-  // button to delet feedback
+  // button to delete feedback
   function handleDel(event) {
     deleteFeedback(event.target.value, _id)
       .then(() => {
@@ -24,7 +24,7 @@ export default function Feedbacks() {
       });
   }
 
-  //  mont feedbaks when dispatch happend
+  //  Mount feedbacks when dispatch happened
   useEffect(() => {
     const fetchFeedback = async () => {
       const response = await getFeedback(_id);
@@ -37,6 +37,7 @@ export default function Feedbacks() {
 
   if (!feedbacks) return;
 
+  //If there are exsited feedback, listing all the feedback 
   if (feedbacks.length > 0) {
     return (
       <>

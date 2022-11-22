@@ -9,6 +9,7 @@ function SearchResults() {
   const { filteredTickets } = store; // get filtered Tickets from global state
   const location = useLocation(); // get to input value from searchbar
 
+  //If filterTickets exist, it will show the tickets. Otherwise, it will show "Not found".
   return (
     <div>
       <Container>
