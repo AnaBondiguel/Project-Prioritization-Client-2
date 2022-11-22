@@ -49,163 +49,169 @@ Hosting:
 
 - Separates the program into modules that each deal with one particular focus, or concern
 
-The code files for the application is separated into two directories that are linked to two separate Github repositories, Project-Proritization-Client-2 (for front end) and Project-Proritization-Server (for back end).
+  The code files for the application is separated into two directories that are linked to two separate Github repositories, Project-Proritization-Client-2 (for front end) and Project-Proritization-Server (for back end).
 
-Frond End
+  <details><summary>Frond End</summary>
 
-![Modules](/doc/images/modulesfrontend.png)
+  ![Modules](/doc/images/modulesfrontend.png)
 
-The front end code is categorised into folders based on their purpose:
-Chen's writing: update your information
+  </details><br />
 
-The assets folder contains images and the manual testing excel. @mui folder contains the styling framework for the app.
+  The front end code is categorised into folders based on their purpose:
+
+  Chen's writing: update your information
+
+  The assets folder contains images and the manual testing excel. @mui folder contains the styling framework for the app.
 The components folder contains components that make up each page of the website. The pages folder contains the code for each page, and the components from the components folder are imported into each of these pages. The service folder contains code that communicate with back-end code. The utils folder contains StateContext.jsx and StateReducer.jsx. The tests folder contains code for Jest testing for all the functionalities of our app that interacts with users.
 
-Back End
+<details><summary>Back End</summary>
 
-![Modules](/doc/images/modulesbackend.png)
+  ![Modules](/doc/images/modulesbackend.png)
 
-The front end code is categorised into folders based on their purpose:
-Chen's writing:
+</details><br />
+
+  The front end code is categorised into folders based on their purpose:
+  
+  Chen's writing:
 
 - Demonstrates DRY (Don’t Repeat Yourself) coding principles
 
-We tried to reuse ticket form as much as possible, for example, users can used the ticket form for both creating and editing before submission. The all the ticket submitted listing table is used both Listing.jsx and SearchResult.jsx. The navigation bar component is contained in the main App.js file in the front-end so that it only needs to be called on once, without having to be included in the render function of each page.
+  We tried to reuse ticket form as much as possible, for example, users can used the ticket form for both creating and editing before submission. The all the ticket submitted listing table is used both Listing.jsx and SearchResult.jsx. The navigation bar component is contained in the main App.js file in the front-end so that it only needs to be called on once, without having to be included in the render function of each page.
 
 - Uses appropriate libraries
 
-We used Axio to shorten the code required to make HTTP requests.
+  We used Axio to shorten the code required to make HTTP requests.
 
-We used Date-fns to format our dueDate for users to choose the date for their project deadline.
+  We used Date-fns to format our dueDate for users to choose the date for their project deadline.
 
-We used Cors to enable data to be transmitted between the back-end and the front-end. It allows the use of a custom API.
+  We used Cors to enable data to be transmitted between the back-end and the front-end. It allows the use of a custom API.
 
-We used JSON web token that allows users to create a token based on their email address for authetication.
+  We used JSON web token that allows users to create a token based on their email address for authetication.
 
-We used Nodemon to allow the express server to restart automatically after changing each code.
+  We used Nodemon to allow the express server to restart automatically after changing each code.
 
-We used UUIDV4 to generate a unique token to validate users.
+  We used UUIDV4 to generate a unique token to validate users.
 
-We used Jest and Supertest for unit testing for our front-end and back-end.
+  We used Jest and Supertest for unit testing for our front-end and back-end.
 
-We used Cypress to do automated integration testing. It allows a code coverage report to be generated after running tests in Cypress.
+  We used Cypress to do automated integration testing. It allows a code coverage report to be generated after running tests in Cypress.
 
-Chen's writing:
+  Chen's writing:
 
 - Demonstrates good code flow control for user stories
 
-We used the user stories for the code control flow during our coding process. Each feature/function contains the expected output from our user stories. For example:
+  We used the user stories for the code control flow during our coding process. Each feature/function contains the expected output from our user stories. For example:
 
-User story 1 Idea submission
+  User story 1 Idea submission
 
-As James, Software Engineer, I want to communicate my project ideas to my team, so I need to fill a form and submit it to my team/manager.
+  As James, Software Engineer, I want to communicate my project ideas to my team, so I need to fill a form and submit it to my team/manager.
 
-Acceptance Criteria
+  Acceptance Criteria
 
-“We have to formally fill in an online form if we want to share our project ideas to the team.” – James
+  “We have to formally fill in an online form if we want to share our project ideas to the team.” – James<br />
 
+    <details><summary>In ticketService.jsx:</summary>
 
-<details><summary>In ticketService.jsx:</summary>
+    //create a ticket
 
-//create a ticket
+    ```Javascript
+    import projectAPI from "../config/api";
 
-```Javascript
-import projectAPI from "../config/api";
+    export async function createTicket(ticket) {
+      const response = await projectAPI.post('/api/tickets/new', ticket);
+      return response.data;
+    }
+    ```
 
-export async function createTicket(ticket) {
-  const response = await projectAPI.post('/api/tickets/new', ticket);
-	return response.data;
-}
-```
-</details><br />
+    </details><br />
 
-<details><summary>In StateReducer.jsx:</summary>
+  <details><summary>In StateReducer.jsx:</summary>
 
+  ```Javascript
+  export default function reducer (state, action) {
+      switch(action.type) {
+          case 'addTicket': {
+              return {
+                  ...state,
+                  tickets: [action.data, ...(state.tickets || [])]
+              }
+          }
+  ```
 
-```Javascript
-export default function reducer (state, action) {
-    switch(action.type) {
-        case 'addTicket': {
-            return {
-                ...state,
-                tickets: [action.data, ...(state.tickets || [])]
-            }
+  </details><br />
+
+  <details><summary>In TicketForm.jsx:</summary>
+
+  ```Javascript
+  function handleClick({ isSubmitted = false }) {
+      return (event) => {
+        event.preventDefault();
+        //if statement to handle update ticket and create ticket
+        if (_id) {
+          // from saved ticket to submitted
+          updateTicket({
+            id: _id,
+            ...formState,
+            isSubmitted: isSubmitted,
+            dueDate: dateValue,
+          })
+            .then(() => {
+              dispatch({
+                type: "updateTicket",
+                data: {
+                  id: _id,
+                  ...formState,
+                  isSubmitted: isSubmitted,
+                  dueDate: dateValue,
+                },
+              });
+              //if user update ticket with form, leave ticket to show on the page.
+              // navigate(`/mytickets/${_id}`);
+              navigate(`/mytickets`);
+            })
+            .catch((error) => console.log(error));
+        } else {
+          // from creation to submitted
+          createTicket({
+            ...formState,
+            ticket_id: uuidv4(),
+            isSubmitted: isSubmitted,
+            dueDate: dateValue,
+          })
+            .then((ticket) => {
+              dispatch({ type: "addTicket", data: ticket });
+              //we can navigate back to the my tickets page once we create a ticket.
+              isSubmitted
+                ? navigate("/submissionsuccess")
+                : navigate("/mytickets");
+            })
+            .catch((error) => console.log(error));
         }
-```
+      };
+    }
 
-</details><br />
+        <Button
+                variant="contained"
+                color="warning"
+                onClick={handleClick({ isSubmitted: false })}
+                disabled={saveButton}
+              >
+                Save
+              </Button>
+              <Button
+                variant="contained"
+                color="success"
+                onClick={handleClick({ isSubmitted: true })}
+              >
+                Submit
+              </Button>
+  ```
 
-<details><summary>In TicketForm.jsx:</summary>
-
-```Javascript
-function handleClick({ isSubmitted = false }) {
-    return (event) => {
-      event.preventDefault();
-      //if statement to handle update ticket and create ticket
-      if (_id) {
-        // from saved ticket to submitted
-        updateTicket({
-          id: _id,
-          ...formState,
-          isSubmitted: isSubmitted,
-          dueDate: dateValue,
-        })
-          .then(() => {
-            dispatch({
-              type: "updateTicket",
-              data: {
-                id: _id,
-                ...formState,
-                isSubmitted: isSubmitted,
-                dueDate: dateValue,
-              },
-            });
-            //if user update ticket with form, leave ticket to show on the page.
-            // navigate(`/mytickets/${_id}`);
-            navigate(`/mytickets`);
-          })
-          .catch((error) => console.log(error));
-      } else {
-        // from creation to submitted
-        createTicket({
-          ...formState,
-          ticket_id: uuidv4(),
-          isSubmitted: isSubmitted,
-          dueDate: dateValue,
-        })
-          .then((ticket) => {
-            dispatch({ type: "addTicket", data: ticket });
-            //we can navigate back to the my tickets page once we create a ticket.
-            isSubmitted
-              ? navigate("/submissionsuccess")
-              : navigate("/mytickets");
-          })
-          .catch((error) => console.log(error));
-      }
-    };
-  }
-
-      <Button
-              variant="contained"
-              color="warning"
-              onClick={handleClick({ isSubmitted: false })}
-              disabled={saveButton}
-            >
-              Save
-            </Button>
-            <Button
-              variant="contained"
-              color="success"
-              onClick={handleClick({ isSubmitted: true })}
-            >
-              Submit
-            </Button>
-```
-</details><br />
+  </details><br />
 
 - Applies Object Oriented (OO) principles/patterns & Uses appropriate data structures
 
-In order to write more testable, flexible, and maintainable code, we followed the four principles of object-oriented programming: abstraction, inheritance, encapsulation, and polymorphism. For our application, each component has its own function and each page is written as a function with all the functionality for the page that contained in various methods. Our structure is followed:
+  In order to write more testable, flexible, and maintainable code, we followed the four principles of object-oriented programming: abstraction, inheritance, encapsulation, and polymorphism. For our application, each component has its own function and each page is written as a function with all the functionality for the page that contained in various methods. Our structure is followed:
 
 - Function Name
 
@@ -217,14 +223,18 @@ In order to write more testable, flexible, and maintainable code, we followed th
 
 - A render function to display the contents of the page
 
-For example, when ticket form is completed from the front-end, a new ticket is created from the values of the form. Then the information is saved and a HTTP request is sent to the back-end.
+  For example, when ticket form is completed from the front-end, a new ticket is created from the values of the form. Then the information is saved and a HTTP request is sent to the back-end.
 
 # R3. Employ and utilise proper source control methodology (git)
 
 We used Git and Github as our source control tool. The team worked off three repositories: one is for the frond-end for both team members because the frond-end has a lot of work. The second one is for the back-end for Chen's individual work. The third one is for the front-end for Ana's individual work. Eventually, Ana merged her front-end work from her individual repository to the front-end repository in common for both members. We did use branches for developing a particular feature or styling framework or testing. Once the branch code was agreed, we pulled requests to merge the changes to the master branch. When merge conflicts arises we will talk and check with the person whose code is causing the conflicts.
 
+<details><summary>Image</summary>
+
 ![Git1](/doc/images/gitbranch1.png)
 ![Git2](/doc/images/gitbranch2.png)
+
+</details><br />
 
 # R4. **Demonstrate your ability to work in a team**:
 
