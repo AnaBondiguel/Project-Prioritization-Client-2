@@ -1,7 +1,5 @@
 import projectAPI from "../config/api";
 
-
-
 export async function register(data) {
   const response = await projectAPI.post("/api/auth/signUp", data);
   

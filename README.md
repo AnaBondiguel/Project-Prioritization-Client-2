@@ -59,16 +59,31 @@ Hosting:
 
   The front end code is categorised into folders based on their purpose:
 
-  Chen's writing: update your information
-
-  The assets folder contains images and the manual testing excel. @mui folder contains the styling framework for the app.
+  - The assets folder contains images and the manual testing excel. @mui folder contains the styling framework for the app.
 The components folder contains components that make up each page of the website. The pages folder contains the code for each page, and the components from the components folder are imported into each of these pages. The service folder contains code that communicate with back-end code. The utils folder contains StateContext.jsx and StateReducer.jsx. The tests folder contains code for Jest testing for all the functionalities of our app that interacts with users.
 
-<details><summary>Back End</summary>
+  - The components folder contains components that make up each page of the website. Some of these components are reused throughout the website such as the  ticketTable in the tickets folder. And some main website components such as Header, Logo, Navbar. And we also put page componets into their own folders. Such as ticket folder, we put the Headers of the tikcet relavent pages into it, and also the most important component ticketTable. In user folder, we put signin, signup and also profile form components into it. In header, there are Searchbar and AccountPopover components in it.
+
+  - The pages folder contains all the pages will display on the main screen or the <Outlet /> Part from react-dom-router.
+
+  - config folder contians axios connecting settings.
+
+  - services folder are Api action to connect to the Back-end
+
+  - utils folder are GlobalContext and Reducer we will use in our project.
+
+  - cypress folder is for Cypress test only.
+
+  - tests folder is for some manually test. 
+  
+  <br />
+  
+  <details><summary>Back End</summary>
 
   ![Modules](/doc/images/modulesbackend.png)
+  
 
-</details><br />
+  </details><br />
 
   The front end code is categorised into folders based on their purpose:
   
