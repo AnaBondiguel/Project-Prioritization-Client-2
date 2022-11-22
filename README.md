@@ -2,6 +2,22 @@
 
 CA Final Assessment Server
 
+----
+
+<br />
+
+# R6.Deploy the application to a cloud hosting service
+
+Front-End
+
+Heroku: <https://projectprioritization.netlify.app>
+
+Back-End
+
+Railway: <https://projectprioritization.up.railway.app/api>
+
+Heroku: <https://projectprioritization.herokuapp.com/api/>
+
 # Access to our app
 
 ```
@@ -51,20 +67,24 @@ Hosting:
 
   The code files for the application is separated into two directories that are linked to two separate Github repositories, Project-Proritization-Client-2 (for front end) and Project-Proritization-Server (for back end).
 
-  <details><summary>Frond End</summary>
+    <br />
+
+    <details><summary>Frond End</summary>
 
   ![Modules](/doc/images/modulesfrontend.png)
 
-  </details><br />
+    </details>
+    
+    <br />
 
   The front end code is categorised into folders based on their purpose:
 
   - The assets folder contains images and the manual testing excel. @mui folder contains the styling framework for the app.
-The components folder contains components that make up each page of the website. The pages folder contains the code for each page, and the components from the components folder are imported into each of these pages. The service folder contains code that communicate with back-end code. The utils folder contains StateContext.jsx and StateReducer.jsx. The tests folder contains code for Jest testing for all the functionalities of our app that interacts with users.
+    The components folder contains components that make up each page of the website. The pages folder contains the code for each page, and the components from the components folder are imported into each of these pages. The service folder contains code that communicate with back-end code. The utils folder contains StateContext.jsx and StateReducer.jsx. The tests folder contains code for Jest testing for all the functionalities of our app that interacts with users.
 
-  - The components folder contains components that make up each page of the website. Some of these components are reused throughout the website such as the  ticketTable in the tickets folder. And some main website components such as Header, Logo, Navbar. And we also put page componets into their own folders. Such as ticket folder, we put the Headers of the tikcet relavent pages into it, and also the most important component ticketTable. In user folder, we put signin, signup and also profile form components into it. In header, there are Searchbar and AccountPopover components in it.
+  - The components folder contains components that make up each page of the website. Some of these components are reused throughout the website such as the ticketTable in the tickets folder. And some main website components such as Header, Logo, Navbar. And we also put page componets into their own folders. Such as ticket folder, we put the Headers of the tikcet relavent pages into it, and also the most important component ticketTable. In user folder, we put signin, signup and also profile form components into it. In header, there are Searchbar and AccountPopover components in it.
 
-  - The pages folder contains all the pages will display on the main screen or the <Outlet /> Part from react-dom-router.
+  - The pages folder contains all the pages will display on the main screen or the "Outlet /" Part from react-dom-router.
 
   - config folder contians axios connecting settings.
 
@@ -74,20 +94,29 @@ The components folder contains components that make up each page of the website.
 
   - cypress folder is for Cypress test only.
 
-  - tests folder is for some manually test. 
-  
-  <br />
-  
-  <details><summary>Back End</summary>
+  - tests folder is for some manually test.
 
-  ![Modules](/doc/images/modulesbackend.png)
-  
+    <br />
 
-  </details><br />
+    <details><summary>Back End</summary>
 
-  The front end code is categorised into folders based on their purpose:
-  
-  Chen's writing:
+    ![Modules](/doc/images/modulesbackend.png)
+
+    </details>
+    
+    <br />
+
+  The back end folder contains four main sub-directories where the modules reside:
+
+  - The controllers folder contains the code where Express interacts with the MongoDB Atlas database to store and retrieve data. Controllers are grouped by page and/or functionality. For example, user signup, signin and edit profile functions are grouped in the auth.controllers.js file in the controllers folder.
+
+  - The models folder contains the mongoose schema for each collection.
+
+  - The routes folder contains the routes used by Express routers. The routes are grouped by page and/or function, for example, all user routes (signin, edit, signup) are contained in the users.route.js routes file.
+
+  - The test folder contains the jset tests files for each routre in the routes folder.
+
+  - The middleware folder contains the middlewares is for authorization, role judgement, and schema validation, for example, user.middleware.js is to help to grant the role of the user after isAuth middleware.
 
 - Demonstrates DRY (Don’t Repeat Yourself) coding principles
 
@@ -111,7 +140,13 @@ The components folder contains components that make up each page of the website.
 
   We used Cypress to do automated integration testing. It allows a code coverage report to be generated after running tests in Cypress.
 
-  Chen's writing:
+  We used bcryot to hash the password.
+
+  We user body-parser to covert JSON to urlencoded.
+
+  We used JWT for web token.
+
+  <br />
 
 - Demonstrates good code flow control for user stories
 
@@ -123,20 +158,22 @@ The components folder contains components that make up each page of the website.
 
   Acceptance Criteria
 
-  “We have to formally fill in an online form if we want to share our project ideas to the team.” – James<br />
+  “We have to formally fill in an online form if we want to share our project ideas to the team.” – James
+
+  <br />
 
     <details><summary>In ticketService.jsx:</summary>
 
-    //create a ticket
+  //create a ticket
 
-    ```Javascript
-    import projectAPI from "../config/api";
+  ```Javascript
+  import projectAPI from "../config/api";
 
-    export async function createTicket(ticket) {
-      const response = await projectAPI.post('/api/tickets/new', ticket);
-      return response.data;
-    }
-    ```
+  export async function createTicket(ticket) {
+    const response = await projectAPI.post('/api/tickets/new', ticket);
+    return response.data;
+  }
+  ```
 
     </details><br />
 
@@ -221,8 +258,24 @@ The components folder contains components that make up each page of the website.
                 Submit
               </Button>
   ```
+  </details>
 
-  </details><br />
+  <br />
+
+- Using conditionak rendering to make sure that only authorized users are allowed to enter the main page.
+
+  <details><summary>Rendering Condition</summary>
+
+  <br />
+
+  ![condition 1](doc/images/Condition1.png)
+
+  <br />
+
+  ![condition 1](doc/images/Condition2.png)
+  </details>
+
+  <br />
 
 - Applies Object Oriented (OO) principles/patterns & Uses appropriate data structures
 
@@ -255,15 +308,15 @@ We used Git and Github as our source control tool. The team worked off three rep
 
 - Use a recognised project management methodology & a recognised task delegation methodology
 
-We used Trello to manage our project and chose to adopt an agile project management methodology to develop our application because we needed to have faster feedback cycles so we can identify problem earlier, prioritise more important tasks, and meet our client requirements.
+  We used Trello to manage our project and chose to adopt an agile project management methodology to develop our application because we needed to have faster feedback cycles so we can identify problem earlier, prioritise more important tasks, and meet our client requirements.
 
-We divided our project between both of us: Chen is responsible for the back-end, Ana is responsible for the front-end. Once Chen did the back-end, Ana connected her front-end to the back-end. Ana built all the features for employee users, and Chen built all the features for manager users. Ana wrote up all the documentation, and Chen improved page styling.
+  We divided our project between both of us: Chen is responsible for the back-end, Ana is responsible for the front-end. Once Chen did the back-end, Ana connected her front-end to the back-end. Ana built all the features for employee users, and Chen built all the features for manager users. Ana wrote up all the documentation, and Chen improved page styling.
 
-We set up a meeting every Monday to discuss the week plan and chart regularly online if there are problems that need to be solved immediately.
+  We set up a meeting every Monday to discuss the week plan and chart regularly online if there are problems that need to be solved immediately.
 
-We used Trello to divide our project into several incremental steps with regular feedback from our users and the two of us. We prioritized smaller pieces of the project requirement by their importance and organised regular meetings to ensure our latest developements meet our client's expectations. Therefore, we can effetively respond to changing requirements.
+  We used Trello to divide our project into several incremental steps with regular feedback from our users and the two of us. We prioritized smaller pieces of the project requirement by their importance and organised regular meetings to ensure our latest developements meet our client's expectations. Therefore, we can effetively respond to changing requirements.
 
-A Trello board was used to track miscellaneous tasks and demonstrate who is in charge in a certain task.
+  A Trello board was used to track miscellaneous tasks and demonstrate who is in charge in a certain task.
 
 ![Trello](/doc/images/Trello.png)
 
@@ -277,21 +330,11 @@ During the requirements gathering process, the client emailed us a number of fea
 
 ![Edit_ICE](/doc/images/ICE_Score.png)
 
-+-
-
 ### Adding submission status
 
 - Our users sent us the feedback about how they were going to know whether they had been submitted their tickets or not. We decided to add ticket status feature to make users easily identify the ticket submission status.
 
 ![Submission_Status](/doc/images/submission_status.png)
-
-# R6 Deploy the application to a cloud hosting service
-
-Netlify Frontend: <https://projectprioritization.netlify.app/signup>
-
-Heroku Backend: <https://projectprioritization.herokuapp.com/api/>
-
-Railway Backend: <https://projectprioritization.up.railway.app/api>
 
 # R7 Produce an application with an intuitive user interface
 
