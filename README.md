@@ -435,38 +435,38 @@ During the requirements gathering process, the client emailed us a number of fea
 
 - For MyTickets page and listings page, we made a ticket initiative with a clicked link because we want users to go to the ticket details page to view ticket information if users are interested in a particular project ticket. We also enabled users to view their ticket status (not submit/submitted) in the MyTickets page, this feature will inform our users which ticket has been submitted/completed and which ticket still needs to work on.
 
-<details><summary>Image</summary>
+<details><summary>Image</summary></details>
 
 ![TicketLink](/docs/images/TicketLink.png)
 ![TicketStatus](/docs/images/TicketStatus.png)
 
 - For the NewTicket page, we used select components from MUI to allow users to choose setup values of impact, confidence, effort and target. We also used a date picker from MUI to enable our users to select a due date for their project.
 
-<details><summary>Image</summary>
+<details><summary>Image</summary></details>
 
 ![NewTicket](docs/images/NewTicket.png)
 
 - For users, we designed a dropdown feature that shows users their username, home, profile, and logout buttons. It helps users to find user administration activities easily.
 
-<details><summary>Image</summary>
+<details><summary>Image</summary></details>
 
 ![Dropdown](/docs/images/Dropdown.png)
 
 - For the earch bar, there are many tickets on the list. It is not easy for users to search for a particular project ticket/idea, so we designed a search bar for users to search for the ticket initiative, target, and owner.
 
-<details><summary>Image</summary>
+<details><summary>Image</summary></details>
 
 ![Search_Bar](/docs/images/Searchbar.png)
 
 - For the nav bar, we designed an nav bar to show our users their username, email, and role. Users are acknowledged that they are logged in as employee/manager, so they can view and use different features/functionality. For example, managers can edit other users' ICE scores. 
 
-<details><summary>Image</summary>
+<details><summary>Image</summary></details>
 
 ![NavBar](/docs/images/Navbar.png)
 
 - For Canva logo, our users can click on it, users are redirected back to their home page. For employee users, they will be back to the MyTickets page. For manager users, they will be back to the SumittedTickets (listings) page.
 
-<details><summary>Image</summary>
+<details><summary>Image</summary></details>
 
 ![Logo](/docs/images/Logo.png)
 
