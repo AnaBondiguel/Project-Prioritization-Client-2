@@ -444,13 +444,29 @@ During the requirements gathering process, the client emailed us a number of fea
   <source src="./doc/CypressTest.mp4" type="video/mp4">
 </video><br /><br />
 
-<details><summary> Manual Testing and Backend Testing</summary>
+<details><summary>Backend Testing</summary>
 
 ![Jest](/doc/images/JestTest.png)
-![ManualTest1](/doc/images/ManualTest1.png)
-![ManualTest2](/doc/images/ManualTest2.png)
-![ManualTest3](/doc/images/ManualTest3.png)
-![ManualTest4](/doc/images/ManualTest4.png)
+
+<summary> Cypress Testing</summary>
+
+![CypressTest1](/doc/images/Cypress_AccPopover.png)
+![CypressTest2](/doc/images/Cypress_Feedback.png)
+![CypressTest3](/doc/images/Cypress_MyTickets.png)
+![CypressTest4](/doc/images/Cypress_Navbar.png)
+![CypressTest5](/doc/images/Cypress_NewTicket.png)
+![CypressTest6](/doc/images/Cypress_ProfileSearch.png)
+![CypressTest7](/doc/images/Cypress_TicketDetails.png)
+![CypressTest8](/doc/images/Cypress_signInandsignUp_spec.png)
+![CypressTest9](/doc/images/Cypress_updateTicket.png)
+
+<summary> Manual Testing</summary>
+
+![ManualTest1](/doc/images/manualtest1.png)
+![ManualTest2](/doc/images/manualtest2.png)
+![ManualTest3](/doc/images/manualtest3.png)
+![ManualTest4](/doc/images/manualtest4.png)
+
 
 </details><br />
 
