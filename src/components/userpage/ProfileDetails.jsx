@@ -1,5 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { updateUser } from "../../services/authServices";
+import { useGlobalState } from "../../utils/StateContext";
+// @mui
 import {
   Box,
   Button,
@@ -11,8 +14,7 @@ import {
   TextField,
   Alert,
 } from "@mui/material";
-import { updateUser } from "../../services/authServices";
-import { useGlobalState } from "../../utils/StateContext";
+// -------------------------------
 
 export const ProfileDetails = () => {
   //  get user info from localStorage

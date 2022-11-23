@@ -13,11 +13,10 @@ import {
   InputAdornment,
   ClickAwayListener,
 } from "@mui/material";
-// utils
 import { bgBlur } from "../../@mui/cssStyles";
 import Iconify from "../../@mui/components/iconify";
 
-// ----------------------------------------------------------------------
+// theme ----------------------------------------------------------------------
 
 const HEADER_MOBILE = 64;
 const HEADER_DESKTOP = 92;
@@ -43,7 +42,6 @@ const StyledSearchbar = styled("div")(({ theme }) => ({
 // ----------------------------------------------------------------------
 
 export default function Searchbar() {
-  // ----------------------------------------------------------------------
 
   const [tickets, setTickets] = useState([]);
   const [input, setInput] = useState("");
@@ -61,7 +59,6 @@ export default function Searchbar() {
 
     if (event.key === "Enter" || event.type === "click") {
       const filteredTickets = getFilteredTickets();
-      console.log("filterticket", filteredTickets);
       dispatch({ type: "setFilteredTickets", data: filteredTickets }); //Once we found the tickets, we'll see the tickets on console
       navigate("/searchresults", { state: { input } }); // pass state value input to search results
     }
@@ -99,7 +96,7 @@ export default function Searchbar() {
       });
   }
 
-  // -----------------------------------------
+  // condition check-----------------------------------------
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {

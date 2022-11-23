@@ -1,8 +1,8 @@
 import { useState } from "react";
 import iceScoreCalculation from "../ICE_Score";
 import { Link } from "react-router-dom";
-
 import dateFormat from "dateformat";
+//  mui
 import {
   Box,
   Table,
@@ -16,13 +16,15 @@ import {
   Paper,
 } from "@mui/material";
 import TableContainer from "@mui/material/TableContainer";
+// ---------------------------
 
 export const TicketTable = (data) => {
   // data is value passed from prvious page
   const tickets = data.tickets;
   // get href value for condition rendering
   const listing = window.location.href;
-
+  
+  // -------------------------------
   // table control
   // how many rows show for a single table page
   const [limit, setLimit] = useState(10);
@@ -35,7 +37,7 @@ export const TicketTable = (data) => {
   const handlePageChange = (event, newPage) => {
     setPage(newPage);
   };
-  // ----------------------------
+  // --------------------------------
 
   if (!tickets) return;
 

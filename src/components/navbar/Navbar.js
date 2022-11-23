@@ -1,17 +1,15 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useGlobalState } from "../../utils/StateContext.jsx";
 // @mui -------------------
 import { styled, alpha } from "@mui/material/styles";
 import { Box, Drawer, Typography, Avatar, Divider } from "@mui/material";
-// hooks
 import useResponsive from "../../@mui/hooks/useReponsive";
-// components
 import stringAvatar from "../../@mui/theme/stringAvatar.js";
 import Scrollbar from "../../@mui/components/scrollbar/Scrollbar";
 import NavSection from "../nav-section/NavSection";
-//---------------------------
+//get rooutes info from config.js---------------------------
 import navConfig from "./config";
-import { useGlobalState } from "../../utils/StateContext.jsx";
 
 // ----------------------------------------------------------------------
 //  style theme

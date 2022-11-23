@@ -2,7 +2,7 @@ import { Stack, Typography } from "@mui/material";
 import React from "react";
 
 // ----------------------------------------------------------------
-// data is conition to detain is to a newticket page or update exist page
+// data is condition to detain is to a newticket page or update exist page
 export default function EditOrNewTicketHeader(data) {
   return (
     <Stack

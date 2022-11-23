@@ -6,7 +6,6 @@ import { Box, Link } from "@mui/material";
 
 const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
   // OR using local (public folder)
-  // -------------------------------------------------------
   const logo = (
     <Box
       component="img"

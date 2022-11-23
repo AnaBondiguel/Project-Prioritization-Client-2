@@ -12,9 +12,7 @@ import {
   Alert,
 } from "@mui/material";
 import { LoadingButton } from "@mui/lab";
-// components
 import Iconify from "../../@mui/components/iconify";
-// ------------------------------------------------------------
 
 // ----------------------------------------------------------------------
 
@@ -103,7 +101,6 @@ export default function SigninForm() {
       )}
 
       <Stack
-        //----------------------------------------------------------------
         // future function
         direction="row"
         alignItems="center"

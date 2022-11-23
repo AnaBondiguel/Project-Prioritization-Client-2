@@ -67,10 +67,6 @@ function App() {
     <ThemeProvider>
       <ScrollToTop />
       <StateContext.Provider value={{ store, dispatch }}>
-        {/* <Router />    
-      //----------------------------------------------------------------
-      //  ! useNavigation can not use in useRoute change back to Routes 
-      */}
         <Routes>
           <Route
             path="/"

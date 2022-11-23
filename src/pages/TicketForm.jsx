@@ -52,7 +52,6 @@ const target = ["Free", "Pro", "Teams", "Education", "All", "Others"];
 
 function TicketForm() {
   const location = useLocation();
-  // console.log(location.state)
   const initialFormState = {
     initialtive: "",
     description: "",
@@ -118,7 +117,6 @@ function TicketForm() {
         );
     } else {
       // from creation to submitted
-      console.log(event.target.value);
       createTicket({
         ...formState,
         ticket_id: uuidv4(),
@@ -146,7 +144,7 @@ function TicketForm() {
     saveButton = true;
     colorButton = "warning";
   }
-  // ----------------------------
+  // ----------------------------------------------------------------
 
   return (
     <Container className="main-content-container px-4 pb-4">
