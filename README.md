@@ -343,7 +343,9 @@ We used Git and Github as our source control tool. The team worked off three rep
   We used Trello to manage our project and chose to adopt an agile project management methodology to develop our application because we needed to have faster feedback cycles so we can identify problems earlier, prioritise more important tasks, and meet our client requirements. We used Trello to divide our project into several incremental steps with regular feedback from our users and the two of us. We prioritized smaller pieces of the project requirement by their importance and organised regular meetings to ensure our latest developments meet our client's expectations. Therefore, we can effectively respond to changing requirements.
 
   A Trello board was used to track miscellaneous tasks and demonstrate who is in charge in a certain task.
+
   [TrelloWebsite](https://trello.com/invite/b/XXhZNZa6/ATTIbe36218bf499d6eb7509d296e159711cC3BA5D35/project-prioritisation-application)
+
   ![Trello](/docs/images/Trello.png)
 
   We divided our project between both of us: Chen was responsible for the back-end [Chen_Backend](https://github.com/OrangeKami/Project_Prioritization_Server.git). Ana was responsible for the front-end [Ana_Frontend](https://github.com/AnaBondiguel/Project_Prioritization.git) and built all the features/functionality for employee users to create, delete, edit, submit, and search tickets. Once Chen did the back-end, Ana connected her front-end to the back-end and fixed all the bugs. Then Ana merged her front-end to their common front-end respository[Common_Frontend](https://github.com/AnaBondiguel/Project-Prioritization-Client-2.git), so Chen could continue to build all the features for manager users to create and delete feedback and edit ICE scores. Ana wrote up all the documentations, and Chen improved page styling. We set up a meeting every Monday to discuss the week plan and chart regularly the Discord if there are problems that need to be solved immediately. For the details of each member's responsibilities, please see our Trello board.
@@ -358,124 +360,139 @@ During the requirements gathering process, the client emailed us a number of fea
 
 - Our client's primary request is to be able to collect project ideas from all the people in Canva, so we decided to create a feature that users can submit their project tickets online. 
 
-<details><summary>Image</summary></details>
+  <details><summary>Image</summary>
 
-![NewTicket](/docs/images/NewTicket.png)
-![TicketDetails](/docs/images/TicketDetails.png)
-![EditTicket](/docs/images/EditTicket.png)
+  ![NewTicket](/docs/images/NewTicket.png)
+  ![TicketDetails](/docs/images/TicketDetails.png)
+  ![EditTicket](/docs/images/EditTicket.png)
+  </details>
 
 ### Edit ICE scores
 
 - When managers log into their account, they want to edit the fields of impact, confidence, and effort in order to change the ICE score for a particular project ticket. Once they changed the ICE scores, they can provide feedback to explain the changes of ICE scores.
 
-<details><summary>Image</summary></details>
+  <details><summary>Image</summary>
 
-![Edit_ICE](/docs/images/ICE_Score.png)
-
+  ![Edit_ICE](/docs/images/ICE_Score.png)
+  </details>
 ### Add submission status
 
 - Our users sent us feedback about how they were going to know whether they had submitted their tickets or not. We decided to add a ticket status feature to make users easily identify the ticket submission status.
 
-<details><summary>Image</summary></details>
+  <details><summary>Image</summary>
 
-![Submission_Status](/docs/images/submission_status.png)
+  ![Submission_Status](/docs/images/submission_status.png)
+  </details>
 
 ### Add, view and delete project feedback
 
 - The managers want to be able to write feedback to their team members, so we decided to create a feature that manager users can submit their feedback online.
 
-<details><summary>Image</summary></details>
+  <details><summary>Image</summary>
 
-![Feedback](/docs/images/Feedback.png)
+  ![Feedback](/docs/images/Feedback.png)
+  </details>
 
 ### Be able to view their own ticket detail, manager's feedback, and ticket list
 
 - Our client wants to be able to view the own ticket details and feedback as well as their own ticket list. We list tickets (including both not submit and submitted) in the table to show to our users tickets, and also show their ticket information and feedback in the ticket details page.
 
-<details><summary>Image</summary></details>
+  <details><summary>Image</summary>
 
-![ViewTicketFeedback](/docs/images/ViewTicketFeedback.png)
-![ViewMyTicketList](/docs/images/MyTicketList.png)
+  ![ViewTicketFeedback](/docs/images/ViewTicketFeedback.png)
+  ![ViewMyTicketList](/docs/images/MyTicketList.png)
+  </details>
 
 ### Be able to view all the submitted tickets from everyone
 
 - Our client wants to be able view all the submitted tickets from everyone in the company. We list tickets (submitted only) in the listings page.
 
-<details><summary>Image</summary></details>
+  <details><summary>Image</summary>
 
-![ViewListings](/docs/images/ListingPage.png)
+  ![ViewListings](/docs/images/ListingPage.png)
+  </details>
 
 ### Edit user profile
 
 - We designed a user profile to allow our users to be able to edit their account information as they requested. 
 
-<details><summary>Image</summary></details>
+  <details><summary>Image</summary>
 
-![Account](/docs/images/Account.png)
+  ![Account](/docs/images/Account.png)
+  </details>
 
 ### Sign in & Sign up
 
 - Sign in and sign up pages are the common standards for users to register into the application.
 
-<details><summary>Image</summary></details>
+  <details><summary>Image</summary>
 
-![SignIn](/docs/images/SignUp.png)
-![SignUp](/docs/images/SignIn.png)
+  ![SignIn](/docs/images/SignUp.png)
+  ![SignUp](/docs/images/SignIn.png)
+  </details>
 
 ### Search for project tickets
 
 - Our client wants to be able to find a particular ticket as they need, so we built a search bar for them. They can search for the project initiative, target, and owner.
 
-<details><summary>Image</summary></details>
+  <details><summary>Image</summary>
 
-- ![Search_Bar](/docs/images/Searchbar.png)
+  - ![Search_Bar](/docs/images/Searchbar.png)
+  </details>
 
 
 # R7 Produce an application with an intuitive user interface
 
 - For MyTickets page and listings page, we made a ticket initiative with a clicked link because we want users to go to the ticket details page to view ticket information if users are interested in a particular project ticket. We also enabled users to view their ticket status (not submit/submitted) in the MyTickets page, this feature will inform our users which ticket has been submitted/completed and which ticket still needs to work on.
 
-<details><summary>Image</summary></details>
+  <details><summary>Image</summary>
 
-![TicketLink](/docs/images/TicketLink.png)
-![TicketStatus](/docs/images/TicketStatus.png)
+  ![TicketLink](/docs/images/TicketLink.png)
+  ![TicketStatus](/docs/images/TicketStatus.png)
+  </details>
 
 - For the NewTicket page, we used select components from MUI to allow users to choose setup values of impact, confidence, effort and target. We also used a date picker from MUI to enable our users to select a due date for their project.
 
-<details><summary>Image</summary></details>
+  <details><summary>Image</summary>
 
-![NewTicket](docs/images/NewTicket.png)
+  ![NewTicket](docs/images/NewTicket.png)
+  </details>
 
 - For users, we designed a dropdown feature that shows users their username, home, profile, and logout buttons. It helps users to find user administration activities easily.
 
-<details><summary>Image</summary></details>
+  <details><summary>Image</summary>
 
-![Dropdown](/docs/images/Dropdown.png)
+  ![Dropdown](/docs/images/Dropdown.png)
+  </details>
 
 - For the earch bar, there are many tickets on the list. It is not easy for users to search for a particular project ticket/idea, so we designed a search bar for users to search for the ticket initiative, target, and owner.
 
-<details><summary>Image</summary></details>
+  <details><summary>Image</summary>
 
-![Search_Bar](/docs/images/Searchbar.png)
+  ![Search_Bar](/docs/images/Searchbar.png)
+  </details>
 
 - For the nav bar, we designed an nav bar to show our users their username, email, and role. Users are acknowledged that they are logged in as employee/manager, so they can view and use different features/functionality. For example, managers can edit other users' ICE scores. 
 
-<details><summary>Image</summary></details>
+  <details><summary>Image</summary>
 
-![NavBar](/docs/images/Navbar.png)
+  ![NavBar](/docs/images/Navbar.png)
+  </details>
 
 - For Canva logo, our users can click on it, users are redirected back to their home page. For employee users, they will be back to the MyTickets page. For manager users, they will be back to the SumittedTickets (listings) page.
 
-<details><summary>Image</summary></details>
+  <details><summary>Image</summary>
 
-![Logo](/docs/images/Logo.png)
+  ![Logo](/docs/images/Logo.png)
+  </details>
 
 - For the side bar and nav bar, they will be hidden when users use iphone or ipad on the top left of the page. If users want to view the side bar and nav bar, they can click the hamburger menu bar. 
 
-<details><summary>Image</summary>
+  <details><summary>Image</summary>
 
-![HamburgerBar](/docs/images/HamburgerBar.png)
-![ResponsiveSideBar](/docs/images/ResponsiveSideBar.png)
+  ![HamburgerBar](/docs/images/HamburgerBar.png)
+  ![ResponsiveSideBar](/docs/images/ResponsiveSideBar.png)
+  </details>
 
 # R8 **Provides evidence of user testing**:
 
@@ -483,11 +500,12 @@ During the requirements gathering process, the client emailed us a number of fea
   <source src="./docs/CypressTest.mp4" type="video/mp4">
 </video><br /><br />
 
-<details><summary>Backend Testing</summary></details>
+<details><summary>Backend Testing</summary>
 
 ![Jest](/docs/images/JestTest.png)
+</details><br>
 
-<details><summary> Cypress Testing</summary></details>
+<details><summary> Cypress Testing</summary>
 
 ![CypressTest1](/docs/images/Cypress_AccPopover.png)
 ![CypressTest2](/docs/images/Cypress_Feedback.png)
@@ -498,13 +516,15 @@ During the requirements gathering process, the client emailed us a number of fea
 ![CypressTest7](/docs/images/Cypress_TicketDetails.png)
 ![CypressTest8](/docs/images/Cypress_signInandsignUp_spec.png)
 ![CypressTest9](/docs/images/Cypress_updateTicket.png)
+</details><br />
 
-<details><summary> Manual Testing</summary></details>
+<details><summary> Manual Testing</summary>
 
 ![ManualTest1](/docs/images/manualtest1.png)
 ![ManualTest2](/docs/images/manualtest2.png)
 ![ManualTest3](/docs/images/manualtest3.png)
 ![ManualTest4](/docs/images/manualtest4.png)
+</details>
 
 <br />
 
@@ -538,7 +558,11 @@ There are some required features that we designed in the part A, we have not bee
 
 - We should enable managers to edit their feedback.
 
+- We should allow user to upload their avatar image, however we use string avatar instead.
+
 We will work on these features after we submit our assignment.
+
+<br/>
 
 # R12 The contents of your README.md as submitted for Full Stack App - Part A
 
@@ -604,21 +628,21 @@ We will work on these features after we submit our assignment.
 
 <details><summary> DFD Levle 0</summary>
 
-![level0](docs/Part-Adocs/DataFlowDiagram/DFDLevel0.png)
+![level0](docs/Part-A/docs/DataFlowDiagram/DFDLevel0.png)
 
 </details><br />
 
 <details><summary>DFD Levle 1</summary>
 
-![level1](docs/Part-Adocs/DataFlowDiagram/DFDLevel1.png)
+![level1](docs/Part-A/docs/DataFlowDiagram/DFDLevel1.png)
 
 </details><br />
 
 <details><summary>DFD Levle 2</summary>
 
-![level2](docs/Part-Adocs/DataFlowDiagram/DFDLevel2_1.png)
+![level2](docs/Part-A/docs/DataFlowDiagram/DFDLevel2_1.png)
 
-![level2](docs/Part-Adocs/DataFlowDiagram/DFDlevel2_2.png)
+![level2](docs/Part-A/docs/DataFlowDiagram/DFDlevel2_2.png)
 
 </details><br />
 
@@ -755,19 +779,19 @@ We had two meetings with Francois Bondiguel - Head of Growth Marketing B2B at Ca
 
 <details><summary> Introduction </summary>
 
-![Introduction1](doc/Part-Adocs/UserStory/Introduction1.png)
-![Introduction2](doc/Part-Adocs/UserStory/Introduction2.png)
-![Introduction3](doc/Part-Adocs/UserStory/Introduction3.png)
-![Introduction4](doc/Part-Adocs/UserStory/Introduction4.png)
+![Introduction1](doc/Part-A/docs/UserStory/Introduction1.png)
+![Introduction2](doc/Part-A/docs/UserStory/Introduction2.png)
+![Introduction3](doc/Part-A/docs/UserStory/Introduction3.png)
+![Introduction4](doc/Part-A/docs/UserStory/Introduction4.png)
 
 </details><br />
 
 <details><summary> Questions </summary>
 
-![Question1](docs/Part-Adocs/UserStory/Question1.png)
-![Question2](docs/Part-Adocs/UserStory/Question2.png)
-![Question3](docs/Part-Adocs/UserStory/Question3.png)
-![Question4](docs/Part-Adocs/UserStory/Question4.png)
+![Question1](docs/Part-A/docs/UserStory/Question1.png)
+![Question2](docs/Part-A/docs/UserStory/Question2.png)
+![Question3](docs/Part-A/docs/UserStory/Question3.png)
+![Question4](docs/Part-A/docs/UserStory/Question4.png)
 
 </details><br />
 
@@ -775,67 +799,67 @@ We had two meetings with Francois Bondiguel - Head of Growth Marketing B2B at Ca
 
 <details><summary> Login and Signup Page</summary>
 
-![Login](docs/Part-Adocs/Wireframes/Login_and_Signup_Pages.png)
+![Login](docs/Part-A/docs/Wireframes/Login_and_Signup_Pages.png)
 
 </details><br />
 
 <details><summary> Landing Page</summary>
 
-![Landing](docs/Part-Adocs/Wireframes/Landing_Page.png)
+![Landing](docs/Part-A/docs/Wireframes/Landing_Page.png)
 
 </details><br />
 
 <details><summary> Listing Page</summary>
 
-![Listings](docs/Part-Adocs/Wireframes/Listing_Page.png)
+![Listings](docs/Part-A/docs/Wireframes/Listing_Page.png)
 
 </details><br />
 
 <details><summary> My Tickets Page</summary>
 
-![My Ticket](docs/Part-Adocs/Wireframes/My_tickets.png)
+![My Ticket](docs/Part-A/docs/Wireframes/My_tickets.png)
 
 </details><br />
 
 <details><summary> Ticket Details Page</summary>
 
-![Single Ticket](docs/Part-Adocs/Wireframes/Ticket_Details.png)
+![Single Ticket](docs/Part-A/docs/Wireframes/Ticket_Details.png)
 
 </details><br />
 
 <details><summary> New Ticket Page</summary>
 
-![New Ticket](docs/Part-Adocs/Wireframes/New_ticket.png)
+![New Ticket](docs/Part-A/docs/Wireframes/New_ticket.png)
 
 </details><br />
 
 <details><summary> Search Result Page</summary>
 
-![Search](docs/Part-Adocs/Wireframes/Search_results.png)
+![Search](docs/Part-A/docs/Wireframes/Search_results.png)
 
 </details><br />
 
 <details><summary> Submission Success Page</summary>
 
-![Submission](docs/Part-Adocs/Wireframes/Submission_success_page.png)
+![Submission](docs/Part-A/docs/Wireframes/Submission_success_page.png)
 
 </details><br />
 
 <details><summary> Edit Ticket Page</summary>
 
-![Edit Ticket](docs/Part-Adocs/Wireframes/Edit_Tickets.png)
+![Edit Ticket](docs/Part-A/docs/Wireframes/Edit_Tickets.png)
 
 </details><br />
 
 <details><summary> Edit Profile Page</summary>
 
-![Edit Profile](docs/Part-Adocs/Wireframes/Edit_Profile.png)
+![Edit Profile](docs/Part-A/docs/Wireframes/Edit_Profile.png)
 
 </details><br />
 
 <details><summary> Sitemap </summary>
 
-![Sitemap](docs/Part-Adocs/Sitemap/Sitemap.png)
+![Sitemap](docs/Part-A/docs/Sitemap/Sitemap.png)
 
 </details><br />
 
@@ -850,7 +874,9 @@ Reference:
 Radigan, D. (2022). Agile vs. waterfall project management. Retrieved May 13, 2022, from https://www.atlassian.com/agile/project-management/project-management-intro
 
 ![TrelloWeek1](docs/Part-A/docs/ScreenshotsTrello/Trelloweek1.png)
-![TrelloWeek2](doc/Part-A/docs/ScreenshotsTrello/Trelloweek2.png)
+
+![TrelloWeek2](docs/Part-A/docs/ScreenshotsTrello/Trelloweek2.png)
+
 ![TrelloFinal](docs/Part-A/docs/ScreenshotsTrello/TrelloFinal.png)
 
 Our Trello website
