@@ -604,21 +604,21 @@ We will work on these features after we submit our assignment.
 
 <details><summary> DFD Levle 0</summary>
 
-![level0](doc/Part-Adocs/DataFlowDiagram/DFDLevel0.png)
+![level0](docs/Part-Adocs/DataFlowDiagram/DFDLevel0.png)
 
 </details><br />
 
 <details><summary>DFD Levle 1</summary>
 
-![level1](doc/Part-Adocs/DataFlowDiagram/DFDLevel1.png)
+![level1](docs/Part-Adocs/DataFlowDiagram/DFDLevel1.png)
 
 </details><br />
 
 <details><summary>DFD Levle 2</summary>
 
-![level2](doc/Part-Adocs/DataFlowDiagram/DFDLevel2_1.png)
+![level2](docs/Part-Adocs/DataFlowDiagram/DFDLevel2_1.png)
 
-![level2](doc/Part-Adocs/DataFlowDiagram/DFDlevel2_2.png)
+![level2](docs/Part-Adocs/DataFlowDiagram/DFDlevel2_2.png)
 
 </details><br />
 
@@ -764,10 +764,10 @@ We had two meetings with Francois Bondiguel - Head of Growth Marketing B2B at Ca
 
 <details><summary> Questions </summary>
 
-![Question1](doc/Part-Adocs/UserStory/Question1.png)
-![Question2](doc/Part-Adocs/UserStory/Question2.png)
-![Question3](doc/Part-Adocs/UserStory/Question3.png)
-![Question4](doc/Part-Adocs/UserStory/Question4.png)
+![Question1](docs/Part-Adocs/UserStory/Question1.png)
+![Question2](docs/Part-Adocs/UserStory/Question2.png)
+![Question3](docs/Part-Adocs/UserStory/Question3.png)
+![Question4](docs/Part-Adocs/UserStory/Question4.png)
 
 </details><br />
 
@@ -775,67 +775,67 @@ We had two meetings with Francois Bondiguel - Head of Growth Marketing B2B at Ca
 
 <details><summary> Login and Signup Page</summary>
 
-![Login](doc/Part-Adocs/Wireframes/Login_and_Signup_Pages.png)
+![Login](docs/Part-Adocs/Wireframes/Login_and_Signup_Pages.png)
 
 </details><br />
 
 <details><summary> Landing Page</summary>
 
-![Landing](doc/Part-Adocs/Wireframes/Landing_Page.png)
+![Landing](docs/Part-Adocs/Wireframes/Landing_Page.png)
 
 </details><br />
 
 <details><summary> Listing Page</summary>
 
-![Listings](doc/Part-Adocs/Wireframes/Listing_Page.png)
+![Listings](docs/Part-Adocs/Wireframes/Listing_Page.png)
 
 </details><br />
 
 <details><summary> My Tickets Page</summary>
 
-![My Ticket](doc/Part-Adocs/Wireframes/My_tickets.png)
+![My Ticket](docs/Part-Adocs/Wireframes/My_tickets.png)
 
 </details><br />
 
 <details><summary> Ticket Details Page</summary>
 
-![Single Ticket](doc/Part-Adocs/Wireframes/Ticket_Details.png)
+![Single Ticket](docs/Part-Adocs/Wireframes/Ticket_Details.png)
 
 </details><br />
 
 <details><summary> New Ticket Page</summary>
 
-![New Ticket](doc/Part-Adocs/Wireframes/New_ticket.png)
+![New Ticket](docs/Part-Adocs/Wireframes/New_ticket.png)
 
 </details><br />
 
 <details><summary> Search Result Page</summary>
 
-![Search](doc/Part-Adocs/Wireframes/Search_results.png)
+![Search](docs/Part-Adocs/Wireframes/Search_results.png)
 
 </details><br />
 
 <details><summary> Submission Success Page</summary>
 
-![Submission](doc/Part-Adocs/Wireframes/Submission_success_page.png)
+![Submission](docs/Part-Adocs/Wireframes/Submission_success_page.png)
 
 </details><br />
 
 <details><summary> Edit Ticket Page</summary>
 
-![Edit Ticket](doc/Part-Adocs/Wireframes/Edit_Tickets.png)
+![Edit Ticket](docs/Part-Adocs/Wireframes/Edit_Tickets.png)
 
 </details><br />
 
 <details><summary> Edit Profile Page</summary>
 
-![Edit Profile](doc/Part-Adocs/Wireframes/Edit_Profile.png)
+![Edit Profile](docs/Part-Adocs/Wireframes/Edit_Profile.png)
 
 </details><br />
 
 <details><summary> Sitemap </summary>
 
-![Sitemap](doc/Part-Adocs/Sitemap/Sitemap.png)
+![Sitemap](docs/Part-Adocs/Sitemap/Sitemap.png)
 
 </details><br />
 
@@ -849,9 +849,9 @@ Reference:
 
 Radigan, D. (2022). Agile vs. waterfall project management. Retrieved May 13, 2022, from https://www.atlassian.com/agile/project-management/project-management-intro
 
-![TrelloWeek1](doc/Part-A/docs/ScreenshotsTrello/Trelloweek1.png)
+![TrelloWeek1](docs/Part-A/docs/ScreenshotsTrello/Trelloweek1.png)
 ![TrelloWeek2](doc/Part-A/docs/ScreenshotsTrello/Trelloweek2.png)
-![TrelloFinal](doc/Part-A/docs/ScreenshotsTrello/TrelloFinal.png)
+![TrelloFinal](docs/Part-A/docs/ScreenshotsTrello/TrelloFinal.png)
 
 Our Trello website
 
