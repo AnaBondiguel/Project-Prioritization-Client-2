@@ -467,7 +467,6 @@ During the requirements gathering process, the client emailed us a number of fea
 ![ManualTest3](/doc/images/manualtest3.png)
 ![ManualTest4](/doc/images/manualtest4.png)
 
-
 </details><br />
 
 # R9 Utilises a formal testing framework
