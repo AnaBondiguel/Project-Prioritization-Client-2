@@ -139,31 +139,31 @@ Testing:
 
 - Uses appropriate libraries
 
-  We used Axios to shorten the code required to make HTTP requests.
+  - We used Axios to shorten the code required to make HTTP requests.
 
-  We used Date-fns to format our dueDate for users to choose the date for their project deadline.
+  - We used Date-fns to format our dueDate for users to choose the date for their project deadline.
 
-  We used Cors to enable data to be transmitted between the back-end and the front-end. It allows the use of a custom API.
+  - We used Cors to enable data to be transmitted between the back-end and the front-end. It allows the use of a custom API.
 
-  We used JSON web token that allows users to create a token based on their email address for authentication.
+  - We used JSON web token that allows users to create a token based on their email address for authentication.
 
-  We used Nodemon to allow the express server to restart automatically after changing each code.
+  - We used Nodemon to allow the express server to restart automatically after changing each code.
 
-  We used UUIDV4 to generate a unique token to validate users.
+  - We used UUIDV4 to generate a unique token to validate users.
 
-  We used Jest and Supertest for unit testing for our front-end and back-end.
+  - We used Jest and Supertest for unit testing for our front-end and back-end.
 
-  We used Cypress to do automated integration testing. It allows a code coverage report to be generated after running tests in Cypress.
+  - We used Cypress to do automated integration testing. It allows a code coverage report to be generated after running tests in Cypress.
 
-  We used bcrypt to hash the password.
+  - We used bcrypt to hash the password.
 
-  We used body-parser to convert JSON to url-encoded.
+  - We used body-parser to convert JSON to url-encoded.
 
-  We used JWT for web token. Our token is signed by using a private secret key. Our server can generate a token that has the claim "logged in as administrator" and provide that to our client. 
+  - We used JWT for web token. Our token is signed by using a private secret key. Our server can generate a token that has the claim "logged in as administrator" and provide that to our client.
 
-  We used react-router-dom to implement dynamic routing in our web application. 
+  - We used react-router-dom to implement dynamic routing in our web application.
 
-  We used Material UI to style our website. 
+  - We used Material UI to style our website.
 
   <br />
 
@@ -301,28 +301,28 @@ Testing:
 
   <br />
 
-  ![condition 1](docs/images/Condition2.png)
+  ![condition 2](docs/images/Condition2.png)
   </details>
 
   <br />
 
 - Applies Object Oriented (OO) principles/patterns & Uses appropriate data structures
 
-  - In order to write more testable, flexible, and maintainable code, we followed the four principles of object-oriented programming: abstraction, inheritance, encapsulation, and polymorphism. We reused code of existing objects, used states and methods for our functions, and controllers and models for the architectural pattern to develop our user interfaces. 
- 
-  - For our application, each component has its own function and each page is written as a function with all the functionality for the page that contains various methods. Our structure is followed:
+   In order to write more testable, flexible, and maintainable code, we followed the four principles of object-oriented programming: abstraction, inheritance, encapsulation, and polymorphism. We reused code of existing objects, used states and methods for our functions, and controllers and models for the architectural pattern to develop our user interfaces.
 
-- Function name
+   For our application, each component has its own function and each page is written as a function with all the functionality for the page that contains various methods. Our structure is followed:
 
-- State objects contains keys with values that are subject to change
+  - Function name
 
-- UseEffect to fetch data from the MongoDB database and render it on the page
+  - State objects contains keys with values that are subject to change
 
-- All the functions to control the functionality. e.g. handleChange and handleClick allows users to fill and submit the form.
+  - UseEffect to fetch data from the MongoDB database and render it on the page
 
-- A render function to display the contents of the page
+  - All the functions to control the functionality. e.g. handleChange and handleClick allows users to fill and submit the form.
 
-  - For example, when a ticket form is completed from the front-end, a new ticket is created from the values of the form. Then the information is saved and a HTTP request is sent to the back-end.
+  - A render function to display the contents of the page
+
+  For example, when a ticket form is completed from the front-end, a new ticket is created from the values of the form. Then the information is saved and a HTTP request is sent to the back-end.
 
 
 # R3. Employ and utilise proper source control methodology (git)
