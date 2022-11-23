@@ -358,7 +358,7 @@ During the requirements gathering process, the client emailed us a number of fea
 
 - Our client's primary request is to be able to collect project ideas from all the people in Canva, so we decided to create a feature that users can submit their project tickets online. 
 
-<details><summary>Image</summary>
+<details><summary>Image</summary></details>
 
 ![NewTicket](/docs/images/NewTicket.png)
 ![TicketDetails](/docs/images/TicketDetails.png)
@@ -368,7 +368,7 @@ During the requirements gathering process, the client emailed us a number of fea
 
 - When managers log into their account, they want to edit the fields of impact, confidence, and effort in order to change the ICE score for a particular project ticket. Once they changed the ICE scores, they can provide feedback to explain the changes of ICE scores.
 
-<details><summary>Image</summary>
+<details><summary>Image</summary></details>
 
 ![Edit_ICE](/docs/images/ICE_Score.png)
 
@@ -376,7 +376,7 @@ During the requirements gathering process, the client emailed us a number of fea
 
 - Our users sent us feedback about how they were going to know whether they had submitted their tickets or not. We decided to add a ticket status feature to make users easily identify the ticket submission status.
 
-<details><summary>Image</summary>
+<details><summary>Image</summary></details>
 
 ![Submission_Status](/docs/images/submission_status.png)
 
@@ -384,7 +384,7 @@ During the requirements gathering process, the client emailed us a number of fea
 
 - The managers want to be able to write feedback to their team members, so we decided to create a feature that manager users can submit their feedback online.
 
-<details><summary>Image</summary>
+<details><summary>Image</summary></details>
 
 ![Feedback](/docs/images/Feedback.png)
 
@@ -392,7 +392,7 @@ During the requirements gathering process, the client emailed us a number of fea
 
 - Our client wants to be able to view the own ticket details and feedback as well as their own ticket list. We list tickets (including both not submit and submitted) in the table to show to our users tickets, and also show their ticket information and feedback in the ticket details page.
 
-<details><summary>Image</summary>
+<details><summary>Image</summary></details>
 
 ![ViewTicketFeedback](/docs/images/ViewTicketFeedback.png)
 ![ViewMyTicketList](/docs/images/MyTicketList.png)
@@ -401,7 +401,7 @@ During the requirements gathering process, the client emailed us a number of fea
 
 - Our client wants to be able view all the submitted tickets from everyone in the company. We list tickets (submitted only) in the listings page.
 
-<details><summary>Image</summary>
+<details><summary>Image</summary></details>
 
 ![ViewListings](/docs/images/ListingPage.png)
 
@@ -409,7 +409,7 @@ During the requirements gathering process, the client emailed us a number of fea
 
 - We designed a user profile to allow our users to be able to edit their account information as they requested. 
 
-<details><summary>Image</summary>
+<details><summary>Image</summary></details>
 
 ![Account](/docs/images/Account.png)
 
@@ -417,7 +417,7 @@ During the requirements gathering process, the client emailed us a number of fea
 
 - Sign in and sign up pages are the common standards for users to register into the application.
 
-<details><summary>Image</summary>
+<details><summary>Image</summary></details>
 
 ![SignIn](/docs/images/SignUp.png)
 ![SignUp](/docs/images/SignIn.png)
@@ -426,7 +426,7 @@ During the requirements gathering process, the client emailed us a number of fea
 
 - Our client wants to be able to find a particular ticket as they need, so we built a search bar for them. They can search for the project initiative, target, and owner.
 
-<details><summary>Image</summary>
+<details><summary>Image</summary></details>
 
 - ![Search_Bar](/docs/images/Searchbar.png)
 
