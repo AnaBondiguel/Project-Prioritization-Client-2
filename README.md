@@ -358,6 +358,8 @@ During the requirements gathering process, the client emailed us a number of fea
 
 - Our client's primary request is to be able to collect project ideas from all the people in Canva, so we decided to create a feature that users can submit their project tickets online. 
 
+<details><summary>Image</summary>
+
 ![NewTicket](/doc/images/NewTicket.png)
 ![TicketDetails](/doc/images/TicketDetails.png)
 ![EditTicket](/doc/images/EditTicket.png)
@@ -366,11 +368,15 @@ During the requirements gathering process, the client emailed us a number of fea
 
 - When managers log into their account, they want to edit the fields of impact, confidence, and effort in order to change the ICE score for a particular project ticket. Once they changed the ICE scores, they can provide feedback to explain the changes of ICE scores.
 
+<details><summary>Image</summary>
+
 ![Edit_ICE](/doc/images/ICE_Score.png)
 
 ### Add submission status
 
 - Our users sent us feedback about how they were going to know whether they had submitted their tickets or not. We decided to add a ticket status feature to make users easily identify the ticket submission status.
+
+<details><summary>Image</summary>
 
 ![Submission_Status](/doc/images/submission_status.png)
 
@@ -378,11 +384,15 @@ During the requirements gathering process, the client emailed us a number of fea
 
 - The managers want to be able to write feedback to their team members, so we decided to create a feature that manager users can submit their feedback online.
 
+<details><summary>Image</summary>
+
 ![Feedback](/doc/images/Feedback.png)
 
 ### Be able to view their own ticket detail, manager's feedback, and ticket list
 
 - Our client wants to be able to view the own ticket details and feedback as well as their own ticket list. We list tickets (including both not submit and submitted) in the table to show to our users tickets, and also show their ticket information and feedback in the ticket details page.
+
+<details><summary>Image</summary>
 
 ![ViewTicketFeedback](/doc/images/ViewTicketFeedback.png)
 ![ViewMyTicketList](/doc/images/MyTicketList.png)
@@ -391,17 +401,23 @@ During the requirements gathering process, the client emailed us a number of fea
 
 - Our client wants to be able view all the submitted tickets from everyone in the company. We list tickets (submitted only) in the listings page.
 
+<details><summary>Image</summary>
+
 ![ViewListings](/doc/images/ListingPage.png)
 
 ### Edit user profile
 
 - We designed a user profile to allow our users to be able to edit their account information as they requested. 
 
+<details><summary>Image</summary>
+
 ![Account](/doc/images/Account.png)
 
 ### Sign in & Sign up
 
 - Sign in and sign up pages are the common standards for users to register into the application.
+
+<details><summary>Image</summary>
 
 ![SignIn](/doc/images/SignUp.png)
 ![SignUp](/doc/images/SignIn.png)
@@ -410,6 +426,8 @@ During the requirements gathering process, the client emailed us a number of fea
 
 - Our client wants to be able to find a particular ticket as they need, so we built a search bar for them. They can search for the project initiative, target, and owner.
 
+<details><summary>Image</summary>
+
 - ![Search_Bar](/doc/images/Searchbar.png)
 
 
@@ -417,30 +435,44 @@ During the requirements gathering process, the client emailed us a number of fea
 
 - For MyTickets page and listings page, we made a ticket initiative with a clicked link because we want users to go to the ticket details page to view ticket information if users are interested in a particular project ticket. We also enabled users to view their ticket status (not submit/submitted) in the MyTickets page, this feature will inform our users which ticket has been submitted/completed and which ticket still needs to work on.
 
+<details><summary>Image</summary>
+
 ![TicketLink](/doc/images/TicketLink.png)
 ![TicketStatus](/doc/images/TicketStatus.png)
 
 - For the NewTicket page, we used select components from MUI to allow users to choose setup values of impact, confidence, effort and target. We also used a date picker from MUI to enable our users to select a due date for their project.
 
+<details><summary>Image</summary>
+
 ![NewTicket](doc/images/NewTicket.png)
 
 - For users, we designed a dropdown feature that shows users their username, home, profile, and logout buttons. It helps users to find user administration activities easily.
+
+<details><summary>Image</summary>
 
 ![Dropdown](/doc/images/Dropdown.png)
 
 - For the earch bar, there are many tickets on the list. It is not easy for users to search for a particular project ticket/idea, so we designed a search bar for users to search for the ticket initiative, target, and owner.
 
+<details><summary>Image</summary>
+
 ![Search_Bar](/doc/images/Searchbar.png)
 
 - For the nav bar, we designed an nav bar to show our users their username, email, and role. Users are acknowledged that they are logged in as employee/manager, so they can view and use different features/functionality. For example, managers can edit other users' ICE scores. 
+
+<details><summary>Image</summary>
 
 ![NavBar](/doc/images/Navbar.png)
 
 - For Canva logo, our users can click on it, users are redirected back to their home page. For employee users, they will be back to the MyTickets page. For manager users, they will be back to the SumittedTickets (listings) page.
 
+<details><summary>Image</summary>
+
 ![Logo](/doc/images/Logo.png)
 
 - For the side bar and nav bar, they will be hidden when users use iphone or ipad on the top left of the page. If users want to view the side bar and nav bar, they can click the hamburger menu bar. 
+
+<details><summary>Image</summary>
 
 ![HamburgerBar](/doc/images/HamburgerBar.png)
 ![ResponsiveSideBar](/doc/images/ResponsiveSideBar.png)
@@ -451,11 +483,11 @@ During the requirements gathering process, the client emailed us a number of fea
   <source src="./doc/CypressTest.mp4" type="video/mp4">
 </video><br /><br />
 
-<details><summary>Backend Testing</summary>
+<details><summary>Backend Testing</summary></details>
 
 ![Jest](/doc/images/JestTest.png)
 
-<summary> Cypress Testing</summary>
+<details><summary> Cypress Testing</summary></details>
 
 ![CypressTest1](/doc/images/Cypress_AccPopover.png)
 ![CypressTest2](/doc/images/Cypress_Feedback.png)
@@ -467,14 +499,14 @@ During the requirements gathering process, the client emailed us a number of fea
 ![CypressTest8](/doc/images/Cypress_signInandsignUp_spec.png)
 ![CypressTest9](/doc/images/Cypress_updateTicket.png)
 
-<summary> Manual Testing</summary>
+<details><summary> Manual Testing</summary></details>
 
 ![ManualTest1](/doc/images/manualtest1.png)
 ![ManualTest2](/doc/images/manualtest2.png)
 ![ManualTest3](/doc/images/manualtest3.png)
 ![ManualTest4](/doc/images/manualtest4.png)
 
-</details><br />
+<br />
 
 # R9 Utilises a formal testing framework
 
