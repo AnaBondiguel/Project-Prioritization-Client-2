@@ -79,7 +79,7 @@ Testing:
 
     <details><summary>Frond End</summary>
 
-  ![Modules](/doc/images/modulesfrontend.png)
+  ![Modules](/docs/images/modulesfrontend.png)
 
     </details>
     
@@ -87,7 +87,7 @@ Testing:
 
   The front end code is categorised into different folders based on their purpose:
 
-  - The doc folder contains images and the manual testing excel. 
+  - The docs folder contains images and the manual testing excel. 
   
   - The @mui folder contains the styling framework for the app. 
   
@@ -115,7 +115,7 @@ Testing:
 
   <details><summary>Back End</summary>
 
-  ![Modules](/doc/images/modulesbackend.png)
+  ![Modules](/docs/images/modulesbackend.png)
 
   </details>
   
@@ -297,11 +297,11 @@ Testing:
 
   <br />
 
-  ![condition 1](doc/images/Condition1.png)
+  ![condition 1](docs/images/Condition1.png)
 
   <br />
 
-  ![condition 1](doc/images/Condition2.png)
+  ![condition 1](docs/images/Condition2.png)
   </details>
 
   <br />
@@ -331,8 +331,8 @@ We used Git and Github as our source control tool. The team worked off three rep
 
 <details><summary>Image</summary>
 
-![Git1](/doc/images/gitbranch1.png)
-![Git2](/doc/images/gitbranch2.png)
+![Git1](/docs/images/gitbranch1.png)
+![Git2](/docs/images/gitbranch2.png)
 
 </details><br />
 
@@ -344,11 +344,11 @@ We used Git and Github as our source control tool. The team worked off three rep
 
   A Trello board was used to track miscellaneous tasks and demonstrate who is in charge in a certain task.
   [TrelloWebsite](https://trello.com/invite/b/XXhZNZa6/ATTIbe36218bf499d6eb7509d296e159711cC3BA5D35/project-prioritisation-application)
-  ![Trello](/doc/images/Trello.png)
+  ![Trello](/docs/images/Trello.png)
 
   We divided our project between both of us: Chen was responsible for the back-end [Chen_Backend](https://github.com/OrangeKami/Project_Prioritization_Server.git). Ana was responsible for the front-end [Ana_Frontend](https://github.com/AnaBondiguel/Project_Prioritization.git) and built all the features/functionality for employee users to create, delete, edit, submit, and search tickets. Once Chen did the back-end, Ana connected her front-end to the back-end and fixed all the bugs. Then Ana merged her front-end to their common front-end respository[Common_Frontend](https://github.com/AnaBondiguel/Project-Prioritization-Client-2.git), so Chen could continue to build all the features for manager users to create and delete feedback and edit ICE scores. Ana wrote up all the documentations, and Chen improved page styling. We set up a meeting every Monday to discuss the week plan and chart regularly the Discord if there are problems that need to be solved immediately. For the details of each member's responsibilities, please see our Trello board.
 
-   ![Discord](/doc/images/Discord.png)
+   ![Discord](/docs/images/Discord.png)
  
 # R5. Produce a working application that meets client and user needs
 
@@ -360,9 +360,9 @@ During the requirements gathering process, the client emailed us a number of fea
 
 <details><summary>Image</summary>
 
-![NewTicket](/doc/images/NewTicket.png)
-![TicketDetails](/doc/images/TicketDetails.png)
-![EditTicket](/doc/images/EditTicket.png)
+![NewTicket](/docs/images/NewTicket.png)
+![TicketDetails](/docs/images/TicketDetails.png)
+![EditTicket](/docs/images/EditTicket.png)
 
 ### Edit ICE scores
 
@@ -370,7 +370,7 @@ During the requirements gathering process, the client emailed us a number of fea
 
 <details><summary>Image</summary>
 
-![Edit_ICE](/doc/images/ICE_Score.png)
+![Edit_ICE](/docs/images/ICE_Score.png)
 
 ### Add submission status
 
@@ -378,7 +378,7 @@ During the requirements gathering process, the client emailed us a number of fea
 
 <details><summary>Image</summary>
 
-![Submission_Status](/doc/images/submission_status.png)
+![Submission_Status](/docs/images/submission_status.png)
 
 ### Add, view and delete project feedback
 
@@ -386,7 +386,7 @@ During the requirements gathering process, the client emailed us a number of fea
 
 <details><summary>Image</summary>
 
-![Feedback](/doc/images/Feedback.png)
+![Feedback](/docs/images/Feedback.png)
 
 ### Be able to view their own ticket detail, manager's feedback, and ticket list
 
@@ -394,8 +394,8 @@ During the requirements gathering process, the client emailed us a number of fea
 
 <details><summary>Image</summary>
 
-![ViewTicketFeedback](/doc/images/ViewTicketFeedback.png)
-![ViewMyTicketList](/doc/images/MyTicketList.png)
+![ViewTicketFeedback](/docs/images/ViewTicketFeedback.png)
+![ViewMyTicketList](/docs/images/MyTicketList.png)
 
 ### Be able to view all the submitted tickets from everyone
 
@@ -403,7 +403,7 @@ During the requirements gathering process, the client emailed us a number of fea
 
 <details><summary>Image</summary>
 
-![ViewListings](/doc/images/ListingPage.png)
+![ViewListings](/docs/images/ListingPage.png)
 
 ### Edit user profile
 
@@ -411,7 +411,7 @@ During the requirements gathering process, the client emailed us a number of fea
 
 <details><summary>Image</summary>
 
-![Account](/doc/images/Account.png)
+![Account](/docs/images/Account.png)
 
 ### Sign in & Sign up
 
@@ -419,8 +419,8 @@ During the requirements gathering process, the client emailed us a number of fea
 
 <details><summary>Image</summary>
 
-![SignIn](/doc/images/SignUp.png)
-![SignUp](/doc/images/SignIn.png)
+![SignIn](/docs/images/SignUp.png)
+![SignUp](/docs/images/SignIn.png)
 
 ### Search for project tickets
 
@@ -428,7 +428,7 @@ During the requirements gathering process, the client emailed us a number of fea
 
 <details><summary>Image</summary>
 
-- ![Search_Bar](/doc/images/Searchbar.png)
+- ![Search_Bar](/docs/images/Searchbar.png)
 
 
 # R7 Produce an application with an intuitive user interface
@@ -437,74 +437,74 @@ During the requirements gathering process, the client emailed us a number of fea
 
 <details><summary>Image</summary>
 
-![TicketLink](/doc/images/TicketLink.png)
-![TicketStatus](/doc/images/TicketStatus.png)
+![TicketLink](/docs/images/TicketLink.png)
+![TicketStatus](/docs/images/TicketStatus.png)
 
 - For the NewTicket page, we used select components from MUI to allow users to choose setup values of impact, confidence, effort and target. We also used a date picker from MUI to enable our users to select a due date for their project.
 
 <details><summary>Image</summary>
 
-![NewTicket](doc/images/NewTicket.png)
+![NewTicket](docs/images/NewTicket.png)
 
 - For users, we designed a dropdown feature that shows users their username, home, profile, and logout buttons. It helps users to find user administration activities easily.
 
 <details><summary>Image</summary>
 
-![Dropdown](/doc/images/Dropdown.png)
+![Dropdown](/docs/images/Dropdown.png)
 
 - For the earch bar, there are many tickets on the list. It is not easy for users to search for a particular project ticket/idea, so we designed a search bar for users to search for the ticket initiative, target, and owner.
 
 <details><summary>Image</summary>
 
-![Search_Bar](/doc/images/Searchbar.png)
+![Search_Bar](/docs/images/Searchbar.png)
 
 - For the nav bar, we designed an nav bar to show our users their username, email, and role. Users are acknowledged that they are logged in as employee/manager, so they can view and use different features/functionality. For example, managers can edit other users' ICE scores. 
 
 <details><summary>Image</summary>
 
-![NavBar](/doc/images/Navbar.png)
+![NavBar](/docs/images/Navbar.png)
 
 - For Canva logo, our users can click on it, users are redirected back to their home page. For employee users, they will be back to the MyTickets page. For manager users, they will be back to the SumittedTickets (listings) page.
 
 <details><summary>Image</summary>
 
-![Logo](/doc/images/Logo.png)
+![Logo](/docs/images/Logo.png)
 
 - For the side bar and nav bar, they will be hidden when users use iphone or ipad on the top left of the page. If users want to view the side bar and nav bar, they can click the hamburger menu bar. 
 
 <details><summary>Image</summary>
 
-![HamburgerBar](/doc/images/HamburgerBar.png)
-![ResponsiveSideBar](/doc/images/ResponsiveSideBar.png)
+![HamburgerBar](/docs/images/HamburgerBar.png)
+![ResponsiveSideBar](/docs/images/ResponsiveSideBar.png)
 
 # R8 **Provides evidence of user testing**:
 
 <video autosize: true controls>
-  <source src="./doc/CypressTest.mp4" type="video/mp4">
+  <source src="./docs/CypressTest.mp4" type="video/mp4">
 </video><br /><br />
 
 <details><summary>Backend Testing</summary></details>
 
-![Jest](/doc/images/JestTest.png)
+![Jest](/docs/images/JestTest.png)
 
 <details><summary> Cypress Testing</summary></details>
 
-![CypressTest1](/doc/images/Cypress_AccPopover.png)
-![CypressTest2](/doc/images/Cypress_Feedback.png)
-![CypressTest3](/doc/images/Cypress_MyTickets.png)
-![CypressTest4](/doc/images/Cypress_Navbar.png)
-![CypressTest5](/doc/images/Cypress_NewTicket.png)
-![CypressTest6](/doc/images/Cypress_ProfileSearch.png)
-![CypressTest7](/doc/images/Cypress_TicketDetails.png)
-![CypressTest8](/doc/images/Cypress_signInandsignUp_spec.png)
-![CypressTest9](/doc/images/Cypress_updateTicket.png)
+![CypressTest1](/docs/images/Cypress_AccPopover.png)
+![CypressTest2](/docs/images/Cypress_Feedback.png)
+![CypressTest3](/docs/images/Cypress_MyTickets.png)
+![CypressTest4](/docs/images/Cypress_Navbar.png)
+![CypressTest5](/docs/images/Cypress_NewTicket.png)
+![CypressTest6](/docs/images/Cypress_ProfileSearch.png)
+![CypressTest7](/docs/images/Cypress_TicketDetails.png)
+![CypressTest8](/docs/images/Cypress_signInandsignUp_spec.png)
+![CypressTest9](/docs/images/Cypress_updateTicket.png)
 
 <details><summary> Manual Testing</summary></details>
 
-![ManualTest1](/doc/images/manualtest1.png)
-![ManualTest2](/doc/images/manualtest2.png)
-![ManualTest3](/doc/images/manualtest3.png)
-![ManualTest4](/doc/images/manualtest4.png)
+![ManualTest1](/docs/images/manualtest1.png)
+![ManualTest2](/docs/images/manualtest2.png)
+![ManualTest3](/docs/images/manualtest3.png)
+![ManualTest4](/docs/images/manualtest4.png)
 
 <br />
 
@@ -604,21 +604,21 @@ We will work on these features after we submit our assignment.
 
 <details><summary> DFD Levle 0</summary>
 
-![level0](doc/Part-Adocs/DataFlowDiagram/DFDLevel0.png)
+![level0](docs/Part-Adocs/DataFlowDiagram/DFDLevel0.png)
 
 </details><br />
 
 <details><summary>DFD Levle 1</summary>
 
-![level1](doc/Part-Adocs/DataFlowDiagram/DFDLevel1.png)
+![level1](docs/Part-Adocs/DataFlowDiagram/DFDLevel1.png)
 
 </details><br />
 
 <details><summary>DFD Levle 2</summary>
 
-![level2](doc/Part-Adocs/DataFlowDiagram/DFDLevel2_1.png)
+![level2](docs/Part-Adocs/DataFlowDiagram/DFDLevel2_1.png)
 
-![level2](doc/Part-Adocs/DataFlowDiagram/DFDlevel2_2.png)
+![level2](docs/Part-Adocs/DataFlowDiagram/DFDlevel2_2.png)
 
 </details><br />
 
@@ -626,7 +626,7 @@ We will work on these features after we submit our assignment.
 
 <details><summary>Architecture Diagram</summary>
 
-![Application_Architecture_Diagram](doc/Part-A/docs/ApplicationArchitectureDiagram/ApplicationArchitectureDiagram.png)
+![Application_Architecture_Diagram](docs/Part-A/docs/ApplicationArchitectureDiagram/ApplicationArchitectureDiagram.png)
 
 </details><br />
 
@@ -755,19 +755,19 @@ We had two meetings with Francois Bondiguel - Head of Growth Marketing B2B at Ca
 
 <details><summary> Introduction </summary>
 
-![Introduction1](doc/Part-Adocs/UserStory/Introduction1.png)
-![Introduction2](doc/Part-Adocs/UserStory/Introduction2.png)
-![Introduction3](doc/Part-Adocs/UserStory/Introduction3.png)
-![Introduction4](doc/Part-Adocs/UserStory/Introduction4.png)
+![Introduction1](docs/Part-Adocs/UserStory/Introduction1.png)
+![Introduction2](docs/Part-Adocs/UserStory/Introduction2.png)
+![Introduction3](docs/Part-Adocs/UserStory/Introduction3.png)
+![Introduction4](docs/Part-Adocs/UserStory/Introduction4.png)
 
 </details><br />
 
 <details><summary> Questions </summary>
 
-![Question1](doc/Part-Adocs/UserStory/Question1.png)
-![Question2](doc/Part-Adocs/UserStory/Question2.png)
-![Question3](doc/Part-Adocs/UserStory/Question3.png)
-![Question4](doc/Part-Adocs/UserStory/Question4.png)
+![Question1](docs/Part-Adocs/UserStory/Question1.png)
+![Question2](docs/Part-Adocs/UserStory/Question2.png)
+![Question3](docs/Part-Adocs/UserStory/Question3.png)
+![Question4](docs/Part-Adocs/UserStory/Question4.png)
 
 </details><br />
 
@@ -775,67 +775,67 @@ We had two meetings with Francois Bondiguel - Head of Growth Marketing B2B at Ca
 
 <details><summary> Login and Signup Page</summary>
 
-![Login](doc/Part-Adocs/Wireframes/Login_and_Signup_Pages.png)
+![Login](docs/Part-Adocs/Wireframes/Login_and_Signup_Pages.png)
 
 </details><br />
 
 <details><summary> Landing Page</summary>
 
-![Landing](doc/Part-Adocs/Wireframes/Landing_Page.png)
+![Landing](docs/Part-Adocs/Wireframes/Landing_Page.png)
 
 </details><br />
 
 <details><summary> Listing Page</summary>
 
-![Listings](doc/Part-Adocs/Wireframes/Listing_Page.png)
+![Listings](docs/Part-Adocs/Wireframes/Listing_Page.png)
 
 </details><br />
 
 <details><summary> My Tickets Page</summary>
 
-![My Ticket](doc/Part-Adocs/Wireframes/My_tickets.png)
+![My Ticket](docs/Part-Adocs/Wireframes/My_tickets.png)
 
 </details><br />
 
 <details><summary> Ticket Details Page</summary>
 
-![Single Ticket](doc/Part-Adocs/Wireframes/Ticket_Details.png)
+![Single Ticket](docs/Part-Adocs/Wireframes/Ticket_Details.png)
 
 </details><br />
 
 <details><summary> New Ticket Page</summary>
 
-![New Ticket](doc/Part-Adocs/Wireframes/New_ticket.png)
+![New Ticket](docs/Part-Adocs/Wireframes/New_ticket.png)
 
 </details><br />
 
 <details><summary> Search Result Page</summary>
 
-![Search](doc/Part-Adocs/Wireframes/Search_results.png)
+![Search](docs/Part-Adocs/Wireframes/Search_results.png)
 
 </details><br />
 
 <details><summary> Submission Success Page</summary>
 
-![Submission](doc/Part-Adocs/Wireframes/Submission_success_page.png)
+![Submission](docs/Part-Adocs/Wireframes/Submission_success_page.png)
 
 </details><br />
 
 <details><summary> Edit Ticket Page</summary>
 
-![Edit Ticket](doc/Part-Adocs/Wireframes/Edit_Tickets.png)
+![Edit Ticket](docs/Part-Adocs/Wireframes/Edit_Tickets.png)
 
 </details><br />
 
 <details><summary> Edit Profile Page</summary>
 
-![Edit Profile](doc/Part-Adocs/Wireframes/Edit_Profile.png)
+![Edit Profile](docs/Part-Adocs/Wireframes/Edit_Profile.png)
 
 </details><br />
 
 <details><summary> Sitemap </summary>
 
-![Sitemap](doc/Part-Adocs/Sitemap/Sitemap.png)
+![Sitemap](docs/Part-Adocs/Sitemap/Sitemap.png)
 
 </details><br />
 
@@ -849,9 +849,9 @@ Reference:
 
 Radigan, D. (2022). Agile vs. waterfall project management. Retrieved May 13, 2022, from https://www.atlassian.com/agile/project-management/project-management-intro
 
-![TrelloWeek1](doc/Part-A/docs/ScreenshotsTrello/Trelloweek1.png)
-![TrelloWeek2](doc/Part-A/docs/ScreenshotsTrello/Trelloweek2.png)
-![TrelloFinal](doc/Part-A/docs/ScreenshotsTrello/TrelloFinal.png)
+![TrelloWeek1](docs/Part-A/docs/ScreenshotsTrello/Trelloweek1.png)
+![TrelloWeek2](docs/Part-A/docs/ScreenshotsTrello/Trelloweek2.png)
+![TrelloFinal](docs/Part-A/docs/ScreenshotsTrello/TrelloFinal.png)
 
 Our Trello website
 
