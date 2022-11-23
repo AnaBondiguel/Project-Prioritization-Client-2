@@ -377,6 +377,7 @@ During the requirements gathering process, the client emailed us a number of fea
 
   ![Edit_ICE](/docs/images/ICE_Score.png)
   </details>
+  
 ### Add submission status
 
 - Our users sent us feedback about how they were going to know whether they had submitted their tickets or not. We decided to add a ticket status feature to make users easily identify the ticket submission status.
