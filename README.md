@@ -59,7 +59,14 @@ Database and storage:
 Hosting:
 
 - Heroku and Railway to host the back-end content
+
 - Netlify to host the front-end content
+
+Testing:
+
+- Jest: Backend Testing: <mark>npm start test</mark>
+
+- Cypress: Frontend Testing: <mark>npx cypress open</mark>
 
 # R2.Write well designed code that:
 
