@@ -394,7 +394,7 @@ During the requirements gathering process, the client emailed us a number of fea
   <source src="./doc/CypressTest.mp4" type="video/mp4">
 </video><br /><br />
 
-<details><summary> Screen shot forbackend and frontend  testing </summary>
+<details><summary> Manual Testing and Backend Testing</summary>
 
 ![Jest](/doc/images/JestTest.png)
 ![ManualTest1](/doc/images/ManualTest1.png)
