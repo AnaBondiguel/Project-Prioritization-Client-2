@@ -6,7 +6,7 @@ CA Final Assessment Server
 
 <br />
 
-# R6.Deploy the application to a cloud hosting service
+# R6.Deploy the application to a cloud hosting service & R10. A link (URL) to your deployed website
 
 Front-End
 
@@ -346,7 +346,7 @@ We used Git and Github as our source control tool. The team worked off three rep
   [TrelloWebsite](https://trello.com/invite/b/XXhZNZa6/ATTIbe36218bf499d6eb7509d296e159711cC3BA5D35/project-prioritisation-application)
   ![Trello](/doc/images/Trello.png)
 
-  We divided our project between both of us: Chen was responsible for the back-end [Chen_Backend](https://github.com/OrangeKami/Project_Prioritization_Server.git). Ana was responsible for the front-end [Ana_Frontend](https://github.com/AnaBondiguel/Project_Prioritization.git) and built all the features/functionality for employee users to create, delete, edit, submit, and search tickets. Once Chen did the back-end, Ana connected her front-end to the back-end and fixed all the bugs. Then Ana merged her front-end to their common front-end respository[Common_Frontend](https://github.com/AnaBondiguel/Project-Prioritization-Client-2.git), so Chen could continue to build all the features for manager users to create and delete feedback and edit ICE scores. Ana wrote up all the documentations, and Chen improved page styling. We set up a meeting every Monday to discuss the week plan and chart regularly the Discord if there are problems that need to be solved immediately.
+  We divided our project between both of us: Chen was responsible for the back-end [Chen_Backend](https://github.com/OrangeKami/Project_Prioritization_Server.git). Ana was responsible for the front-end [Ana_Frontend](https://github.com/AnaBondiguel/Project_Prioritization.git) and built all the features/functionality for employee users to create, delete, edit, submit, and search tickets. Once Chen did the back-end, Ana connected her front-end to the back-end and fixed all the bugs. Then Ana merged her front-end to their common front-end respository[Common_Frontend](https://github.com/AnaBondiguel/Project-Prioritization-Client-2.git), so Chen could continue to build all the features for manager users to create and delete feedback and edit ICE scores. Ana wrote up all the documentations, and Chen improved page styling. We set up a meeting every Monday to discuss the week plan and chart regularly the Discord if there are problems that need to be solved immediately. For the details of each member's responsibilities, please see our Trello board.
 
    ![Discord](/doc/images/Discord.png)
  
@@ -490,7 +490,13 @@ Thirdly, we used a spreadsheet to do our user acceptance testing that is usually
 
 We started with unit testing with Jest. Individual units or components were tested to ensure the validation for each component function before all the function components were integrated further. We used Jest to test backend routes as well as controllers. In the front-end, we used Cypress as system integration tests to ensure that our components were working together as we expected. Finally, we moved to the user acceptance testing that the tests were designed to see if our website can support users' day-to-day usage. We completed the tests with the Head of Growth B2B Marketing, Francois to understand what we have done well to meet his expectation and what needs to improve for our app in the future. User acceptance testing is performed on the live environment to ensure that the production website functions the same as the development environment. Our user acceptance testing was implemented by using a spreadsheet with pre-planned tests that we described. If the expected result was not met, we fixed bugs and tested it again. If users required more features, but we did not have time to complete. We will make comments for future development.
 
-# R10. Design features vs built features
+# R11. A link to your GitHub repository (repo)
+
+Front-end: <https://github.com/AnaBondiguel/Project-Prioritization-Client-2.git>
+
+Back-End: <https://github.com/OrangeKami/Project_Prioritization_Server>
+
+# R13. Design features vs built features
 
 There are some required features that we designed in the part A, we have not been able to completed for the Part B due to the time limitations:
 
@@ -501,12 +507,6 @@ There are some required features that we designed in the part A, we have not bee
 - We should enable managers to edit their feedback.
 
 We will work on these features after we submit our assignment.
-
-# R11 A link to your GitHub repository (repo)
-
-Front-end: <https://github.com/AnaBondiguel/Project-Prioritization-Client-2.git>
-
-Back-End: <https://github.com/OrangeKami/Project_Prioritization_Server>
 
 # R12 The contents of your README.md as submitted for Full Stack App - Part A
 
