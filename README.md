@@ -479,7 +479,9 @@ During the requirements gathering process, the client emailed us a number of fea
 
 # R9 Utilises a formal testing framework
 
-In this project, we used three testings: Unit Testing, System Integration Testing, and User Acceptance Testing.
+In this project, we followed several steps to carry out our formal testing: requirement analysis, planning about tests, test case documentation, setting up the testing environment,test execution, and closure of tests. Firstly, for requirement analysis, we understood the requirements like what is to be tested. Secondly, we were planning our test strategy and schedules, such as, app analysis and defining the scope of the test. Thirdly, we developed documentation of test cases, such as, Jest coverage report. Fourthly, we set up the test environment for testing, such as, our computers and installing Cypress and Jest to our app. Fifthly, we executed tests by using "npx cypress open" to open our spec folder to run the cypress tests for each web page and component functionality, using "npm test filename"  to carry out our unit testing, and engaging with our users to test our app. Finally, we analysed our test results and fixed bugs.
+
+We used three testings in our project: Unit Testing, System Integration Testing, and User Acceptance Testing.
 
 Firstly, we did our unit testing by using Jest, which is an easy to integrate JavaScript testing framework and is commonly used to test Express, Node.js, and React applications.
 
