@@ -308,9 +308,8 @@ Testing:
 
 - Applies Object Oriented (OO) principles/patterns & Uses appropriate data structures
 
-  In order to write more testable, flexible, and maintainable code, we followed the four principles of object-oriented programming: abstraction, inheritance, encapsulation, and polymorphism. 
-  what it is? functions?
-  
+  In order to write more testable, flexible, and maintainable code, we followed the four principles of object-oriented programming: abstraction, inheritance, encapsulation, and polymorphism. We reused code of existing objects, used states and methods for our functions, and controllers and models for the architectural pattern to develop our user interfaces. 
+ 
   For our application, each component has its own function and each page is written as a function with all the functionality for the page that contains various methods. Our structure is followed:
 
 - Function name
