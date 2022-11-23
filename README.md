@@ -1,8 +1,10 @@
-# Project_Prioritization_Server
+## Project Prioitization - T3A2 Part B
 
-CA Final Assessment Server
+---
 
-----
+### By Chen Zhang && Mingyang (Ana) Wang
+
+---
 
 <br />
 
