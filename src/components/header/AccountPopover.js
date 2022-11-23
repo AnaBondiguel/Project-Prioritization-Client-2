@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useGlobalState } from "../../utils/StateContext.jsx";
+import { logout } from "../../services/authServices.jsx";
 // @mui
 import { alpha } from "@mui/material/styles";
 import {
@@ -12,11 +14,9 @@ import {
   IconButton,
   Popover,
 } from "@mui/material";
-//
-import { useGlobalState } from "../../utils/StateContext.jsx";
-import { logout } from "../../services/authServices.jsx";
 import stringAvatar from "../../@mui/theme/stringAvatar";
-// ----------------------------------------------------------------------
+
+// drop down menu items------------------------------
 
 const MENU_OPTIONS = [
   {
@@ -29,7 +29,9 @@ const MENU_OPTIONS = [
   },
 ];
 
+
 export default function AccountPopover() {
+ // condition ------------------------------- 
   const [open, setOpen] = useState(null);
 
   const handleOpen = (event) => {
@@ -40,6 +42,7 @@ export default function AccountPopover() {
     setOpen(null);
   };
   // -----------------------------------------
+  
   const { store, dispatch } = useGlobalState();
   const { loggedInUser } = store;
   const user = JSON.parse(loggedInUser);

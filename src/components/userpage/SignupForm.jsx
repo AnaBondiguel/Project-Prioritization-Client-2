@@ -38,7 +38,6 @@ export default function SignupForm() {
       .then((data) => {
         let user = data.newUser;
         let token = data.token;
-        // console.log(data);
         localStorage.setItem("token", token);
         localStorage.setItem("user", JSON.stringify(user));
         dispatch({ type: "setLoggedInUser", data: JSON.stringify(user) });

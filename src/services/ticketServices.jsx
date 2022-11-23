@@ -35,10 +35,6 @@ export async function getTicket(id) {
   const response = await projectAPI.get(`/api/tickets/${id}`);
   let ticket = response.data;
   return ticket ? transformTicket(ticket) : null;
-  // const ticket = tickets.find(
-  //   (ticket) => ticket.id.toString() === id.toString()
-  // );
-  // return ticket ? transformTicket(ticket) : null;
 }
 
 //create a ticket
@@ -47,7 +43,6 @@ export async function createTicket(ticket) {
   const response = await projectAPI.post("/api/tickets/new", ticket);
   return response.data;
 }
-// console.log("hello")
 
 //delete a ticket
 export async function deleteTicket(id) {
@@ -59,7 +54,6 @@ export async function deleteTicket(id) {
 //update a ticket
 export async function updateTicket(ticket) {
   //return ticket;
-
   const response = await projectAPI.put(`/api/tickets/${ticket._id}`, ticket);
   return response.data;
 }
