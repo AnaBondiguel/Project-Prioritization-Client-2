@@ -308,9 +308,9 @@ Testing:
 
 - Applies Object Oriented (OO) principles/patterns & Uses appropriate data structures
 
-  In order to write more testable, flexible, and maintainable code, we followed the four principles of object-oriented programming: abstraction, inheritance, encapsulation, and polymorphism. We reused code of existing objects, used states and methods for our functions, and controllers and models for the architectural pattern to develop our user interfaces. 
+  - In order to write more testable, flexible, and maintainable code, we followed the four principles of object-oriented programming: abstraction, inheritance, encapsulation, and polymorphism. We reused code of existing objects, used states and methods for our functions, and controllers and models for the architectural pattern to develop our user interfaces. 
  
-  For our application, each component has its own function and each page is written as a function with all the functionality for the page that contains various methods. Our structure is followed:
+  - For our application, each component has its own function and each page is written as a function with all the functionality for the page that contains various methods. Our structure is followed:
 
 - Function name
 
@@ -322,7 +322,7 @@ Testing:
 
 - A render function to display the contents of the page
 
-  For example, when a ticket form is completed from the front-end, a new ticket is created from the values of the form. Then the information is saved and a HTTP request is sent to the back-end.
+  - For example, when a ticket form is completed from the front-end, a new ticket is created from the values of the form. Then the information is saved and a HTTP request is sent to the back-end.
 
 
 # R3. Employ and utilise proper source control methodology (git)
@@ -779,10 +779,10 @@ We had two meetings with Francois Bondiguel - Head of Growth Marketing B2B at Ca
 
 <details><summary> Introduction </summary>
 
-![Introduction1](doc/Part-A/docs/UserStory/Introduction1.png)
-![Introduction2](doc/Part-A/docs/UserStory/Introduction2.png)
-![Introduction3](doc/Part-A/docs/UserStory/Introduction3.png)
-![Introduction4](doc/Part-A/docs/UserStory/Introduction4.png)
+![Introduction1](docs/Part-A/docs/UserStory/Introduction1.png)
+![Introduction2](docs/Part-A/docs/UserStory/Introduction2.png)
+![Introduction3](docs/Part-A/docs/UserStory/Introduction3.png)
+![Introduction4](docs/Part-A/docs/UserStory/Introduction4.png)
 
 </details><br />
 
