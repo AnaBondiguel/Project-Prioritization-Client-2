@@ -307,7 +307,10 @@ Testing:
 
 - Applies Object Oriented (OO) principles/patterns & Uses appropriate data structures
 
-  In order to write more testable, flexible, and maintainable code, we followed the four principles of object-oriented programming: abstraction, inheritance, encapsulation, and polymorphism. For our application, each component has its own function and each page is written as a function with all the functionality for the page that contains various methods. Our structure is followed:
+  In order to write more testable, flexible, and maintainable code, we followed the four principles of object-oriented programming: abstraction, inheritance, encapsulation, and polymorphism. 
+  what it is? functions?
+  
+  For our application, each component has its own function and each page is written as a function with all the functionality for the page that contains various methods. Our structure is followed:
 
 - Function name
 
@@ -340,7 +343,7 @@ We used Git and Github as our source control tool. The team worked off three rep
   We used Trello to manage our project and chose to adopt an agile project management methodology to develop our application because we needed to have faster feedback cycles so we can identify problems earlier, prioritise more important tasks, and meet our client requirements. We used Trello to divide our project into several incremental steps with regular feedback from our users and the two of us. We prioritized smaller pieces of the project requirement by their importance and organised regular meetings to ensure our latest developments meet our client's expectations. Therefore, we can effectively respond to changing requirements.
 
   A Trello board was used to track miscellaneous tasks and demonstrate who is in charge in a certain task.
-  ![TrelloWebsite](https://trello.com/b/XXhZNZa6/project-prioritisation-application)
+  [TrelloWebsite](https://trello.com/invite/b/XXhZNZa6/ATTIbe36218bf499d6eb7509d296e159711cC3BA5D35/project-prioritisation-application)
   ![Trello](/doc/images/Trello.png)
 
   We divided our project between both of us: Chen was responsible for the back-end [Chen_Backend](https://github.com/OrangeKami/Project_Prioritization_Server.git). Ana was responsible for the front-end [Ana_Frontend](https://github.com/AnaBondiguel/Project_Prioritization.git) and built all the features/functionality for employee users to create, delete, edit, submit, and search tickets. Once Chen did the back-end, Ana connected her front-end to the back-end and fixed all the bugs. Then Ana merged her front-end to their common front-end respository[Common_Frontend](https://github.com/AnaBondiguel/Project-Prioritization-Client-2.git), so Chen could continue to build all the features for manager users to create and delete feedback and edit ICE scores. Ana wrote up all the documentations, and Chen improved page styling. We set up a meeting every Monday to discuss the week plan and chart regularly the Discord if there are problems that need to be solved immediately.
@@ -351,17 +354,64 @@ We used Git and Github as our source control tool. The team worked off three rep
 
 During the requirements gathering process, the client emailed us a number of features and services he would like to be included in the site:
 
-### Editing ICE scores
+### Add, edit, delete, and submit project tickets
+
+- Our client's primary request is to be able to collect project ideas from all the people in Canva, so we decided to create a feature that users can submit their project tickets online. 
+
+![NewTicket](/doc/images/NewTicket.png)
+![TicketDetails](/doc/images/TicketDetails.png)
+![EditTicket](/doc/images/EditTicket.png)
+
+### Edit ICE scores
 
 - When managers log into their account, they want to edit the fields of impact, confidence, and effort in order to change the ICE score for a particular project ticket. Once they changed the ICE scores, they can provide feedback to explain the changes of ICE scores.
 
 ![Edit_ICE](/doc/images/ICE_Score.png)
 
-### Adding submission status
+### Add submission status
 
 - Our users sent us the feedback about how they were going to know whether they had been submitted their tickets or not. We decided to add ticket status feature to make users easily identify the ticket submission status.
 
 ![Submission_Status](/doc/images/submission_status.png)
+
+### Add, view and delete project feedback
+
+- The managers want to be able to write feedback to their team members, so we decided to create a feature that manager users can submit their feedback online.
+
+![Feedback](/doc/images/Feedback.png)
+
+### Be able to view their own ticket detail, manager's feedback, and ticket list
+
+- Our client wants to be able to view the own ticket details and feedback as well as their own ticket list. We list tickets (inckuding both not sumbit and submitted) in the table to show to our users tickets, and also show their ticket information and feedback in the ticket details page.
+
+![ViewTicketFeedback](/doc/images/ViewTicketFeedback.png)
+![ViewMyTicketList](/doc/images/MyTicketList.png)
+
+### Be able to view all the submitted tickets from everyone
+
+- Our client wants to be able view all the submitted tickets from everyone in the company. We lists tickets (submitted only) in the listings page.
+
+![ViewListings](/doc/images/ListingPage.png)
+
+### Edit user profile
+
+- We designed user profile to allow our users to be able to edit their account information as they requested. 
+
+![Account](/doc/images/Account.png)
+
+### Sign in & Sign up
+
+- Sign in and sign up pages are the common standards for users to register into the application.
+
+![SignIn](/doc/images/SignUp.png)
+![SignUp](/doc/images/SignIn.png)
+
+### Search for project tickets
+
+- Our client wants to be able to find a particular ticket as they need, so we built a search bar for them. They can search for the project initiative, target, and owner.
+
+- ![Search_Bar](/doc/images/Searchbar.png)
+
 
 # R7 Produce an application with an intuitive user interface
 
